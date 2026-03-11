@@ -1,0 +1,159 @@
+{
+  "wrapper": "div.tw-bg-backgroundDark",
+  "sections": {
+    "pdp": {
+      "type": "pdp",
+      "blocks": {
+        "text_zTYKdp": {
+          "type": "text",
+          "settings": {
+            "title": "size",
+            "display_type": "button"
+          }
+        },
+        "text_FJhmWQ": {
+          "type": "text",
+          "settings": {
+            "title": "Size",
+            "display_type": "button"
+          }
+        }
+      },
+      "block_order": [
+        "text_zTYKdp",
+        "text_FJhmWQ"
+      ],
+      "settings": {}
+    },
+    "pdp_about": {
+      "type": "pdp_about",
+      "settings": {}
+    },
+    "icons": {
+      "type": "icons",
+      "blocks": {
+        "icon_NidkT7": {
+          "type": "icon",
+          "settings": {
+            "title": "No Artificial Flavors",
+            "icon": "shopify:\/\/shop_images\/Sconza-Icon-ArtFlavors.svg"
+          }
+        },
+        "icon_Ux4m3y": {
+          "type": "icon",
+          "settings": {
+            "title": "No High Fructose corn syrup",
+            "icon": "shopify:\/\/shop_images\/Sconza-Icon-NoCornSyrup.svg"
+          }
+        },
+        "icon_UYFCG8": {
+          "type": "icon",
+          "settings": {
+            "title": "No Artificial Colors",
+            "icon": "shopify:\/\/shop_images\/Sconza-Icon-ArtColors.svg"
+          }
+        },
+        "icon_4EMMgh": {
+          "type": "icon",
+          "settings": {
+            "title": "Real, Premium Ingredients",
+            "icon": "shopify:\/\/shop_images\/Sconza-Icon-Ingredients.svg"
+          }
+        }
+      },
+      "block_order": [
+        "icon_NidkT7",
+        "icon_Ux4m3y",
+        "icon_UYFCG8",
+        "icon_4EMMgh"
+      ],
+      "settings": {}
+    },
+    "1711486614f2ff2f7c": {
+      "type": "apps",
+      "blocks": {
+        "stamped_product_reviews_ugc_main_widget_J89Qgd": {
+          "type": "shopify:\/\/apps\/stamped-reviews\/blocks\/main-widget\/a103faaf-2125-4b0e-89fa-de5149736723",
+          "settings": {
+            "animation": true,
+            "tags_exclude": "",
+            "tags_include": "",
+            "search": "",
+            "linkify": true,
+            "use_metafields": false,
+            "sku_tagtype": "sku"
+          }
+        }
+      },
+      "block_order": [
+        "stamped_product_reviews_ugc_main_widget_J89Qgd"
+      ],
+      "disabled": true,
+      "settings": {}
+    },
+    "pdp_reviews": {
+      "type": "pdp_reviews",
+      "settings": {}
+    },
+    "pdp_image_carousel_jcDKDq": {
+      "type": "pdpImageCarousel",
+      "settings": {}
+    },
+    "pdp-related": {
+      "type": "pdp-related",
+      "settings": {}
+    },
+    "product-swatches": {
+      "type": "product-swatches",
+      "settings": {}
+    },
+    "1750213189c03082b7": {
+      "type": "apps",
+      "blocks": {
+        "biscuits_bundles_biscuits_bundle_form_pyQXJa": {
+          "type": "shopify:\/\/apps\/biscuits-bundles\/blocks\/biscuits-bundle-form\/9e9ff1bd-2cba-468f-b59f-a1ff63f6efe9",
+          "settings": {
+            "text_color": "#121212",
+            "card_color": "#fff",
+            "input_type": "rectangle",
+            "input_text_color": "#121212",
+            "input_color": "#fff",
+            "display_shadow": false,
+            "display_selection_count": false,
+            "display_running_totals": false,
+            "enable_product_links": false,
+            "card_padding": 10,
+            "grid_gap": 10,
+            "border_color": "#E1E1E1",
+            "border_radius": 0,
+            "highlight_type": "outline",
+            "selected_text_color": "#121212",
+            "selected_color": "#848484",
+            "border_thickness": 1,
+            "divider_color": "#E1E1E1",
+            "important_color": "#DD1D1D",
+            "padding_top": 0,
+            "padding_bottom": 0,
+            "custom_css": "",
+            "custom_js": ""
+          }
+        }
+      },
+      "block_order": [
+        "biscuits_bundles_biscuits_bundle_form_pyQXJa"
+      ],
+      "settings": {}
+    }
+  },
+  "order": [
+    "pdp",
+    "pdp_about",
+    "icons",
+    "1711486614f2ff2f7c",
+    "pdp_reviews",
+    "pdp_image_carousel_jcDKDq",
+    "pdp-related",
+    "product-swatches",
+    "1750213189c03082b7"
+  ]
+}

@@ -1,0 +1,83 @@
+{
+  "type": "footer",
+  "name": "Footer Group",
+  "sections": {
+    "footer_ribbon_bNL6Rb": {
+      "type": "footerRibbon",
+      "blocks": {
+        "item_9TA4Hf": {
+          "type": "item",
+          "settings": {
+            "heading": "Nothing Artificial",
+            "image": "shopify:\/\/shop_images\/leaf.svg"
+          }
+        },
+        "item_LePpBx": {
+          "type": "item",
+          "settings": {
+            "heading": "BITES OF JOY in every pack",
+            "image": "shopify:\/\/shop_images\/smile.svg"
+          }
+        },
+        "item_LxfXJD": {
+          "type": "item",
+          "settings": {
+            "heading": "Nothing Artificial",
+            "image": "shopify:\/\/shop_images\/leaf.svg"
+          }
+        },
+        "item_dphFJ8": {
+          "type": "item",
+          "settings": {
+            "heading": "BITES OF JOY in every pack",
+            "image": "shopify:\/\/shop_images\/smile.svg"
+          }
+        },
+        "item_MbCc98": {
+          "type": "item",
+          "settings": {
+            "heading": "Nothing Artificial",
+            "image": "shopify:\/\/shop_images\/leaf.svg"
+          }
+        },
+        "item_gKN7Fr": {
+          "type": "item",
+          "settings": {
+            "heading": "BITES OF JOY in every pack",
+            "image": "shopify:\/\/shop_images\/smile.svg"
+          }
+        }
+      },
+      "block_order": [
+        "item_9TA4Hf",
+        "item_LePpBx",
+        "item_LxfXJD",
+        "item_dphFJ8",
+        "item_MbCc98",
+        "item_gKN7Fr"
+      ],
+      "settings": {}
+    },
+    "1769542427082209b0": {
+      "type": "_blocks",
+      "settings": {}
+    },
+    "footer_9nGy8N": {
+      "type": "footer",
+      "settings": {
+        "newsletter_heading": "Let’s Sweeten the deal",
+        "newsletter_description": "Sign up to save 10% on your next order",
+        "form_code": "abcdefg",
+        "footer_1_menu": "footer-1",
+        "footer_2_menu": "footer-2",
+        "footer_3_menu": "footer-3",
+        "policy_menu": "policy-menu"
+      }
+    }
+  },
+  "order": [
+    "footer_ribbon_bNL6Rb",
+    "1769542427082209b0",
+    "footer_9nGy8N"
+  ]
+}

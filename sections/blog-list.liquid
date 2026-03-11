@@ -1,0 +1,109 @@
+<section class="blog__list tw-font-os tw-mt-20 tw-pt-0">
+  <div class="tw-container">
+    <div class="article__wrap d-flex">
+      <div class="blog__tags">
+        <div class="desktop-wrap">
+          <h2 class="tw-text-mainBlack2 tw-text-[35px] tw-font-bold tw-font-osc tw-uppercase tw-text-center">
+            Recent Posts
+          </h2>
+          <ul class="d-flex align-center justify-center list-reset">
+            <li
+              {% unless current_tags != blank %}
+              class="active"
+              {% endunless %}>
+              <button type="button" class="tw-text-mainBlack2 tw-text-base tw-font-bold tw-capitalize tw-font-osc tw-border-b-2 tw-border-mainGold animate hover:tw-border-mainGold">
+                All Posts
+              </button>
+            </li>
+            {% for tag in blogs.news.all_tags %}
+              <li
+                {% if current_tags contains tag %}
+                class="active"
+                {% endif %}>
+                <a href="/blogs/news/tagged/{{ tag | handleize }}" class="tw-text-mainBlack2 tw-text-base tw-font-bold tw-capitalize tw-font-osc tw-border-b-2 tw-border-mainGold animate hover:tw-border-mainGold">
+                  {{ tag }}
+                </a>
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+        <div class="mobile-wrap">
+          <div class="form__group">
+            <label class="sr-only">Choose Category</label>
+            <select>
+              <option
+                {% unless current_tags != blank %}
+                selected
+                disabled
+                {% endunless %}
+                value="/blogs/news">
+                View All
+              </option>
+              {% for tag in blogs.news.all_tags %}
+                <option
+                  {% if current_tags contains tag %}
+                  selected
+                  disabled
+                  {% endif %}
+                  value="/blogs/news/tagged/{{ tag | handleize }}">
+                  {{ tag }}
+                </option>
+              {% endfor %}
+            </select>
+          </div>
+        </div>
+      </div>
+
+      {%- paginate blog.articles by section.settings.posts_per_page -%}
+        {% for article in blog.articles %}
+          {% render 'default-article'
+            , data: article %}
+        {% endfor %}
+
+        <div class="d-flex justify-between blog__toolbar tw-bg-white tw-p-6 md:tw-m-0 tw-mx-10">
+          <div class="page-count d-flex align-center">
+            Showing {{ paginate.current_offset | plus: 1 }}-
+            {%- if paginate.next -%}
+              {{- paginate.current_offset | plus: paginate.page_size -}}
+            {%- else -%}
+              {{- paginate.items -}}
+            {%- endif %}
+            of {{ paginate.items }} items
+          </div>
+          <div class="pagination">
+            <div class="tw-container">
+              <ul class="d-flex list-reset align-center">
+                {% for part in paginate.parts %}
+                  <li
+                    {% if part.title == paginate.current_page %}
+                    class="current"
+                    {% endif %}>
+                    {% if part.is_link %}
+                      <a href="{{ part.url }}" class="animate">{{ part.title }}</a>
+                    {% else %}
+                      <span class="num">{{ part.title }}</span>
+                    {% endif %}
+                  </li>
+                {% endfor %}
+              </ul>
+            </div>
+          </div>
+        </div>
+      {% endpaginate %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+  {
+    "name": "Blog List",
+    "settings": [
+      {
+        "id": "posts_per_page",
+        "type": "number",
+        "label": "Articles / Page",
+        "default": 12
+      }
+    ]
+  }
+{% endschema %}

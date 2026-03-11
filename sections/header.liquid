@@ -1,0 +1,272 @@
+{% comment %}
+  <header class="tw-bg-white">
+  <nav class="tw-mx-auto tw-flex tw-max-w-7xl tw-items-center tw-justify-between tw-p-6 lg:tw-px-8" aria-label="Global">
+  <div class="tw-flex tw-flex-1">
+  {% render 'header-nav', nav: section.settings.menu_main, blocks: section.blocks %}
+  <div class="tw-flex lg:tw-hidden">
+  <button
+  type="button"
+  class="tw--m-2.5 tw-inline-flex tw-items-center tw-justify-center tw-rounded-md tw-p-2.5 tw-text-gray-700"
+  >
+  <span class="tw-sr-only">Open main menu</span>
+  <svg
+  class="tw-h-6 tw-w-6"
+  fill="none"
+  viewBox="0 0 24 24"
+  stroke-width="1.5"
+  stroke="currentColor"
+  aria-hidden="true"
+  >
+  <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+  </svg>
+  </button>
+  </div>
+  </div>
+  <a href="/" class="tw--m-1.5 tw-p-1.5">
+  <span class="tw-sr-only">Sconza Chocolate</span>
+  <img class="tw-h-8 tw-w-auto" src="{{ 'sconza-logo.svg' | asset_url }}" alt="">
+  </a>
+  <div class="tw-flex tw-flex-1 tw-justify-end">
+  <a href="#">
+  <span class="tw-sr-only">Account</span>
+  <img class="" src="{{ 'account.svg' | asset_url }}" alt="">
+  </a>
+  <button type="button">
+  <span class="tw-sr-only">Search</span>
+  <img class="" src="{{ 'search.svg' | asset_url }}" alt="">
+  </button>
+  <a href="/cart">
+  <span class="tw-sr-only">Cart</span>
+  <img class="" src="{{ 'cart.svg' | asset_url }}" alt="">
+  </a>
+  </div>
+  </nav>
+  <!-- Mobile menu, show/hide based on menu open state. -->
+  <div class="lg:tw-hidden" role="dialog" aria-modal="true">
+  <!-- Background backdrop, show/hide based on slide-over state. -->
+  <div class="tw-fixed tw-inset-0 tw-z-10"></div>
+  <div class="tw-fixed tw-inset-y-0 tw-left-0 tw-z-10 tw-w-full tw-overflow-y-auto tw-bg-white tw-px-6 tw-py-6">
+  <div class="tw-flex tw-items-center tw-justify-between">
+  <div class="tw-flex tw-flex-1">
+  <button type="button" class="tw--m-2.5 tw-rounded-md tw-p-2.5 tw-text-gray-700">
+  <span class="tw-sr-only">Close menu</span>
+  <svg
+  class="tw-h-6 tw-w-6"
+  fill="none"
+  viewBox="0 0 24 24"
+  stroke-width="1.5"
+  stroke="currentColor"
+  aria-hidden="true"
+  >
+  <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+  </svg>
+  </button>
+  </div>
+  <a href="#" class="tw--m-1.5 tw-p-1.5">
+  <span class="tw-sr-only">Sconza Chocolate</span>
+  <img class="tw-h-8 tw-w-auto" src="{{ 'sconza-logo.svg' | asset_url }}" alt="">
+  </a>
+  <div class="tw-flex tw-flex-1 tw-justify-end">
+  <a href="#" class="tw-text-sm tw-font-semibold tw-leading-6 tw-text-gray-900"
+  >Log in <span aria-hidden="true">&rarr;</span></a
+  >
+  </div>
+  </div>
+  <div class="tw-hidden tw-mt-6 tw-space-y-2">
+  <a
+  href="#"
+  class="tw--mx-3 tw-block tw-rounded-lg tw-px-3 tw-py-2 tw-text-base tw-font-semibold tw-leading-7 tw-text-gray-900 hover:tw-bg-gray-50"
+  >Product</a
+  >
+  <a
+  href="#"
+  class="tw--mx-3 tw-block tw-rounded-lg tw-px-3 tw-py-2 tw-text-base tw-font-semibold tw-leading-7 tw-text-gray-900 hover:tw-bg-gray-50"
+  >Features</a
+  >
+  <a
+  href="#"
+  class="tw--mx-3 tw-block tw-rounded-lg tw-px-3 tw-py-2 tw-text-base tw-font-semibold tw-leading-7 tw-text-gray-900 hover:tw-bg-gray-50"
+  >Company</a
+  >
+  </div>
+  </div>
+  </div>
+  </header>
+{% endcomment %}
+
+<!-- Dropdown overlay -->
+<div class="tw-fixed tw-top-0 tw-left-0 tw-hidden tw-w-full tw-bg-menuOverlay tw-mix-blend-multiply dropdown-overlay tw-h-[100dvh] tw--z-10 tw-transition-all tw-duration-300 tw-ease-in-out"></div>
+
+<header class="tw-fixed tw-top-0 tw-z-50 tw-w-full tw-transition-all tw-duration-300 tw-ease-in-out tw-bg-white header">
+  <div class="tw-relative tw-z-0">
+    <!-- Announcement -->
+    {% if section.blocks %}
+      {% for block in section.blocks %}
+        {% if block.type == 'alert_bar' %}
+          {% assign alert_bar = true %}
+        {% endif %}
+      {% endfor %}
+
+      {% if alert_bar %}
+        <div class="tw-flex tw-items-center tw-justify-center tw-py-3 tw-px-5 header-banner tw-transition-opacity tw-duration-500 tw-ease-in-out" style="background-color:#FFC90B;">
+          <div class="swiper js-alertSlider">
+            <div class="swiper-wrapper">
+              {% for block in section.blocks %}
+                {% if block.type == 'alert_bar' %}
+                  <div class="swiper-slide tw-text-center">
+                    {% if block.settings.link %}
+                      <a href="{{ block.settings.link }}" class="tw-text-sm tw-font-bold tw-text-center" style="color:#2A2A2A;">
+                        {{ block.settings.content }}
+                      </a>
+                    {% else %}
+                      <p class="tw-text-sm tw-font-bold tw-text-center" style="color:#2A2A2A;">
+                        {{ block.settings.content }}
+                      </p>
+                    {% endif %}
+                  </div>
+                {% endif %}
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      {% endif %}
+    {% endif %}
+
+    <div class="wrapper">
+      <div class="tw-flex tw-items-center tw-justify-between">
+        <!-- Toggle Menu -->
+        <button type="button" class="tw-block tw-w-1/3 lg:tw-hidden open-mobile-menu">
+          <img
+            src="{{ 'icon-menu.svg' | asset_url }}"
+            alt="icon menu"
+            class="open-menu-icon">
+          <img
+            src="{{ 'icon-menu-close.svg' | asset_url }}"
+            alt="icon menu close"
+            class="tw-hidden close-menu-icon">
+      </button>
+        <!-- Menu Desktop -->
+        {% render 'header-nav'
+          , nav: section.settings.menu_main
+          , blocks: section.blocks %}
+        <!-- Logo -->
+        <div class="tw-flex tw-justify-center tw-w-1/3">
+          <a href="/">
+            <img
+              src="{{ 'sconza-logo.svg' | asset_url }}"
+              alt="Sconza Chocolate"
+              class="sconza-logo tw-w-[110px] lg:tw-w-[145px] tw-py-4 tw-transition-[height]">
+          </a>
+        </div>
+        <!-- Action Buttons -->
+        <div class="tw-flex tw-items-center tw-justify-end tw-gap-2.5 tw-w-1/3">
+          <button type="button" class="tw-relative tw-hidden lg:tw-block dropdown-toggle">
+            <span class="title" style="font-weight:700;">
+              For Business
+            </span>
+             <div class="dropdown tw-hidden tw-bg-white tw-w-[188px] tw-py-5 tw-px-8 tw-absolute tw-left-1/2 tw--translate-x-1/2 tw-top-[calc(100%+5px)] tw-z-10">
+            <a
+                href="https://sconza.com/pages/wholesale"
+                class="tw-block tw-mb-5 tw-text-base tw-capitalize tw-text-mainBlack animate">Wholesale</a>
+              <a
+                href="https://sconza.com/pages/contract-manufacturing"
+                class="tw-block tw-text-base tw-mb-5 tw-capitalize tw-text-mainBlack animate">Contract Manufacturing</a>
+
+                  <a
+                href="https://sconza.com/pages/private-label"
+                class="tw-block tw-text-base tw-capitalize tw-text-mainBlack animate">Private Label</a>
+             </div>
+          </button>
+          <button type="button" class="tw-relative tw-hidden lg:tw-block dropdown-toggle">
+            <img src="{{ 'icon_person.svg' | asset_url }}" alt="icon person">
+            <!-- Dropdown -->
+            <div class="dropdown tw-hidden tw-bg-white tw-w-[188px] tw-py-5 tw-px-8 tw-absolute tw-left-1/2 tw--translate-x-1/2 tw-top-[calc(100%+5px)] tw-z-10">
+              <a
+                href="https://shopify.com/79332639026/account"
+                target="_blank"
+                class="tw-block tw-mb-5 tw-text-base tw-capitalize tw-text-mainBlack animate">Customer Login</a>
+              <a
+                href="https://wholesale.sconza.com/"
+                target="_blank"
+                class="tw-block tw-text-base tw-capitalize tw-text-mainBlack animate">Wholesale Login</a>
+            </div>
+          </button>
+          <button type="button" class="animate icon--search">
+            <img src="{{ 'icon_search.svg' | asset_url }}" alt="icon search">
+          </button>
+          <a href="/cart" class="tw-relative animate icon--cart">
+            <img src="{{ 'icon_shopping_basket.svg' | asset_url }}" alt="shopping basket">
+            {% if cart.item_count > 0 %}
+              <span class="tw-w-[17px] tw-h-[17px] tw-bg-[#F3AE0A] tw-rounded-full tw-flex tw-items-center tw-justify-center tw-text-xs tw-text-mainBlack tw-font-bold tw-absolute tw-top-1 tw-left-1/2 tw--translate-x-1/2">
+                {{- cart.item_count -}}
+              </span>
+            {% endif %}
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+{% render 'mobile-menu'
+  , nav: section.settings.menu_main
+  , blocks: section.blocks %}
+
+{% schema %}
+  {
+    "name": "Header",
+    "settings": [
+      {
+        "id": "menu_main",
+        "type": "link_list",
+        "label": "Main Menu"
+      }
+    ],
+    "blocks": [
+      {
+        "name": "Mega Menu CTA",
+        "type": "mega_menu_cta",
+        "settings": [
+          {
+            "type": "text",
+            "id": "heading",
+            "label": "Heading"
+          }, {
+            "type": "text",
+            "id": "link_text",
+            "label": "Link Text"
+          }, {
+            "type": "url",
+            "id": "link_url",
+            "label": "Link URL"
+          }, {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image",
+            "info": "JPG 1000x1500px"
+          }
+        ]
+      }, {
+        "name": "Alert Message",
+        "type": "alert_bar",
+        "settings": [
+          {
+            "type": "text",
+            "id": "content",
+            "label": "Content"
+          }, {
+            "type": "url",
+            "id": "link",
+            "label": "Link"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Header"
+      }
+    ]
+  }
+{% endschema %}

@@ -1,0 +1,167 @@
+{%- assign image = section.settings.image -%}
+
+<section class="tw-relative tw-z-0 !tw-bg-no-repeat !tw-bg-center !tw-bg-cover before:tw-absolute before:tw-left-0 before:tw-top-0 before:tw-size-full before:tw--z-10 before:tw-bg-overlay2 before:tw-mix-blend-multiply" style="background-image: url({{ image | image_url: width: image.width }});">
+  <div class="wrapper">
+    <div class="tw-h-[500px] md:tw-h-[600px] lg:tw-h-[680px] tw-flex tw-items-center tw-text-center tw-justify-center tw-flex-col">
+      {% if section.settings.subheading != blank %}
+        <p class="tw-text-mainGold tw-text-xl md:tw-text-3xl lg:tw-text-4xl tw-font-script">
+          {{ section.settings.subheading }}
+        </p>
+      {% endif %}
+      {% if section.settings.heading != blank %}
+        <h1 class="tw-text-white tw-text-[40px] md:tw-text-[55px] tw-leading-normal tw-uppercase tw-tracking-[0.413px] tw-font-osc tw-mb-5">
+          {{ section.settings.heading }}
+        </h1>
+      {% endif %}
+      {% if template.suffix contains 'career' %}
+        {% if section.settings.video_link != blank %}
+          <button
+            type="button"
+            class=""
+            data-video="{{ section.settings.video_link }}">
+            <img src="{{ "about-play.svg" | asset_url }}" alt="play icon">
+          </button>
+        {% elsif section.settings.video_file != blank %}
+          <button
+            type="button"
+            class=""
+            data-video="{{ section.settings.video_file }}">
+            <img src="{{ "about-play.svg" | asset_url }}" alt="play icon">
+          </button>
+        {% endif %}
+      {% else %}
+        {% if section.settings.video_link != blank and section.settings.button_text != blank %}
+          <button
+            type="button"
+            class="btn-primary-white"
+            data-video="{{ section.settings.video_link }}">
+            {{ section.settings.button_text }}
+          </button>
+        {% elsif section.settings.video_file != blank and section.settings.button_text != blank %}
+          <button
+            type="button"
+            class="btn-primary-white"
+            data-video="{{ section.settings.video_file }}">
+            {{ section.settings.button_text }}
+          </button>
+        {% endif %}
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+<div id="video-modal" class="tw-fixed tw-inset-0 tw-bg-black tw-bg-opacity-75 tw-z-50 tw-hidden tw-flex tw-items-center tw-justify-center">
+  <div class="tw-relative tw-bg-white tw-rounded-lg tw-overflow-hidden tw-w-full tw-max-w-3xl">
+    <button id="close-modal" class="tw-absolute tw-top-4 tw-right-4 tw-text-white tw-bg-black tw-rounded-full tw-p-2 tw-w-8 tw-h-8 tw-flex tw-items-center tw-justify-center">
+      &times;
+    </button>
+    <div class="video-container">
+      <iframe id="video-frame" class="tw-w-full tw-h-64 md:tw-h-96" src="" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const buttons = document.querySelectorAll('button[data-video]');
+    const modal = document.getElementById('video-modal');
+    const videoFrame = document.getElementById('video-frame');
+    const closeModal = document.getElementById('close-modal');
+
+    buttons.forEach(button => {
+      button.addEventListener('click', function() {
+        const videoSrc = this.getAttribute('data-video');
+        videoFrame.src = getVideoEmbedUrl(videoSrc);
+        modal.classList.remove('tw-hidden');
+      });
+    });
+
+    function closeVideoModal() {
+      modal.classList.add('tw-hidden');
+      videoFrame.src = '';
+    }
+
+    closeModal.addEventListener('click', closeVideoModal);
+
+    modal.addEventListener('click', function(event) {
+      if (event.target === modal) {
+        closeVideoModal();
+      }
+    });
+
+    function getVideoEmbedUrl(url) {
+      const youtubeRegex = /(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/\s]{11})/;
+      const vimeoRegex = /vimeo\.com\/(?:video\/)?(\d+)/;
+      const youtubeMatch = url.match(youtubeRegex);
+      const vimeoMatch = url.match(vimeoRegex);
+
+      if (youtubeMatch) {
+        return `https://www.youtube.com/embed/${youtubeMatch[1]}`;
+      } else if (vimeoMatch) {
+        return `https://player.vimeo.com/video/${vimeoMatch[1]}`;
+      } else {
+        return url;
+      }
+    }
+  });
+</script>
+
+{% comment %}
+  <section class="tw-relative tw-z-0 tw-bg-[url('../img/stories-bg.png')] tw-bg-no-repeat tw-bg-cover before:tw-absolute before:tw-left-0 before:tw-top-0 before:tw-size-full before:tw--z-10 before:tw-bg-mainBlack/[.3]">
+  <div class="wrapper">
+  <div class="tw-h-[500px] md:tw-h-[700px] lg:tw-h-[812px] tw-flex tw-justify-center tw-items-center">
+  <button type="button" class="hover:tw-scale-105 tw-transition-all tw-duration-300 tw-ease-in-out">
+  <img src="Careers_files/play-video.svg" alt="play">
+  </button>
+  </div>
+
+  </div>
+  </section>
+{% endcomment %}
+
+{% schema %}
+  {
+    "name": "Video CTA",
+    "settings": [
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "Heading"
+      },
+      {
+        "type": "text",
+        "id": "subheading",
+        "label": "Subheading"
+      },
+      {
+        "type": "text",
+        "id": "button_text",
+        "label": "Button Text"
+      },
+      {
+        "type": "url",
+        "id": "video_link",
+        "label": "Video Link"
+      }, {
+        "type": "video",
+        "id": "video_file",
+        "label": "Video File"
+      }, {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Image"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Video CTA"
+      }
+    ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

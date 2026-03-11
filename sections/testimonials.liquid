@@ -1,0 +1,114 @@
+<section class="tw-bg-backgroundLight tw-py-16 md:tw-py-[76px]">
+  <div class="tw-relative wrapper">
+    <img
+      src="{{ 'choc-2.png' | asset_url }}"
+      alt="choc"
+      class="tw-absolute tw-left-0 tw-block tw-w-24 md:tw-left-24 tw-top-40 md:tw-top-5">
+    <img
+      src="{{ 'flavor-group.png' | asset_url }}"
+      alt="group"
+      class="tw-absolute tw-right-0 tw--top-24 md:tw-top-10 md:tw-w-auto tw-w-[110.52px]">
+    <img
+      src="{{ 'almond-1.png' | asset_url }}"
+      alt="almond"
+      class="tw-absolute tw-right-0 tw-hidden md:tw-block -tw-bottom-5 tw-h-[155px] tw-z-10">
+    <!-- Section Heading -->
+    <div class="tw-text-center">
+      <h4 class="tw-text-xl md:tw-text-[35px] tw-leading-normal tw-font-script tw-text-mainGold tw-mb-2.5 lg:tw-mb-5">
+        {{ section.settings.subheading }}
+      </h4>
+      <h2 class="tw-text-mainBlack tw-text-4xl md:tw-text-[45px] md:tw-leading-[104.4%] tw-uppercase tw-font-extrabold tw-font-osc">
+        {{ section.settings.heading }}
+      </h2>
+    </div>
+    <div class="tw-px-5 md:tw-px-12 tw-mt-9 md:tw-mt-10 lg:tw-mt-[52px] tw-relative tw-z-0 md:tw-h-[600px]">
+      <!-- Slider -->
+      <div class="tw-h-full swiper testimonialsSwiper">
+        <!-- Swiper Wrapper -->
+        <div class="swiper-wrapper">
+          {%- for block in section.blocks -%}
+            {%- case block.type -%}
+              {%- when 'testimonial' -%}
+                <div class="swiper-slide">
+                  <div class="tw-flex tw-flex-col tw-items-center tw-justify-between tw-gap-10 tw-pb-10 md:tw-flex-row md:tw-pb-0 tw-bg-backgroundLight">
+                    <div class="tw-w-full md:tw-w-[588px] tw-flex tw-items-center tw-justify-center">
+                      {%- assign image = block.settings.image -%}
+                      {{ image | image_url: width: image.width | image_tag: class: 'tw-mb-3', loading: 'lazy' }}
+                    </div>
+                    <div class="tw-w-full md:tw-w-[432px] tw-flex tw-flex-col tw-items-center tw-text-center">
+                      <img src="{{ '5start-rating.svg' | asset_url }}" alt="rating">
+                      <h3 class="tw-mb-5 tw-text-xl tw-font-extrabold tw-text-mainBlack tw-font-osc md:tw-text-2xl tw-max-w-[362px]">
+                        {{ block.settings.quote }}
+                      </h3>
+                      <p class="tw-text-base tw-text-mainBlack tw-mb-2.5 tw-max-w-[432px]">
+                        {{ block.settings.content }}
+                      </p>
+                      <p class="tw-text-sm tw-font-bold tw-capitalize tw-font-osc tw-text-mainBlack">
+                        {{ block.settings.author }}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+            {%- endcase -%}
+          {%- endfor -%}
+        </div>
+      </div>
+      <!-- Pagination -->
+      <div class="tw-absolute tw-left-0 md:!tw-left-0 tw-z-10 tw-flex tw-flex-row md:tw-flex-col tw-items-start tw-justify-center md:tw-justify-start tw-gap-2 testimonials-pagination"></div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+  {
+    "name": "Testimonials",
+    "settings": [
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "Heading"
+      }, {
+        "type": "text",
+        "id": "subheading",
+        "label": "Subheading"
+      }
+    ],
+    "blocks": [
+      {
+        "name": "Testimonial",
+        "type": "testimonial",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image",
+            "info": "JPG 1100x1000px"
+          }, {
+            "type": "text",
+            "id": "quote",
+            "label": "Quote"
+          }, {
+            "type": "textarea",
+            "id": "content",
+            "label": "Content"
+          }, {
+            "type": "text",
+            "id": "author",
+            "label": "Author"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Testimonials"
+      }
+    ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

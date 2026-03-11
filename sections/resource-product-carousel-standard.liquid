@@ -1,0 +1,95 @@
+<section class="product-carousel {% if section.settings.arrows-top == true %}arrows--top{% endif %} product-carousel--standard">
+  <div class="container">
+    <div class="carousel__header d-flex justify-between align-center">
+      {% if section.settings.heading != blank %}
+        <h2>
+          {{ section.settings.heading }}
+        </h2>
+      {% endif %}
+      {% if section.settings.arrows-top == true %}
+        <div class="carousel__nav d-flex align-center"></div>
+      {% endif %}
+    </div>
+    <div class="carousel__slider">
+      {% for block in section.blocks %}
+        <div class="slick-protect">
+          {% assign product = block.settings.product %}
+          {% render 'default-product' data: product, img_size: '320x320', img_size_2x: '640x640' %}
+        </div>
+      {% endfor %}
+    </div>
+    
+  </div>
+</section>
+
+<script>
+  jQuery( document ).ready( function( $ ) {
+    $( '.product-carousel--standard .carousel__slider' ).slick({
+      {% if section.settings.scroll == true %}
+        infinite: true,
+        autoplay: true,
+      {% else %}
+        infinite: false,
+      {% endif %}
+      slidesToShow: {{ section.settings.slides }},
+      slidesToScroll: 1,
+      arrows: true,
+      dots: false,
+      {% if section.settings.arrows-top == true %}
+      appendArrows: '.carousel__nav',
+      {% endif %}
+      // responsive: [
+      //   {
+      //     breakpoint: 576,
+      //     settings: {
+      //       arrows: false
+      //     }
+      //   }
+      // ]
+    } );
+  } );
+</script>
+
+{% schema %}
+{
+	"name": "Prod Carousel Standard",
+  "settings": [
+    {
+      "id": "heading",
+      "type": "text",
+      "label": "Heading"
+    },
+    {
+      "type": "checkbox",
+      "id": "scroll",
+      "label": "Auto Scroll?",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "arrows-top",
+      "label": "Arrows Top?",
+      "default": false
+    },
+    {
+      "id": "slides",
+      "type": "number",
+      "label": "Slides To Show",
+      "default": 4
+    }
+  ],
+  "blocks": [
+		{
+			"type": "text",
+			"name": "Product",
+			"settings": [
+        {
+          "id": "product",
+          "type": "product",
+          "label": "Product" 
+        }
+			]
+		}
+	]
+}
+{% endschema %}

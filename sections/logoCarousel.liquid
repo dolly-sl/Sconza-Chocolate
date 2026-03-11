@@ -1,0 +1,106 @@
+{% comment %}
+  {{ section.settings.master_link }}
+
+  {%- for block in section.blocks -%}
+  {%- case block.type -%}
+  {%- when 'logo' -%}
+  {%- assign logo = block.settings.logo -%}
+  {{ logo | image_url: width: logo.width | image_tag: class: 'add_your_class_here', loading: 'lazy' }}
+
+  {{ block.settings.override_link }}
+  {%- endcase -%}
+  {%- endfor -%}
+{% endcomment %}
+
+<section class="tw-bg-mainOffWhite tw-pb-16 md:tw-pb-[76px] lg:tw-pb-[96px]">
+  <div class="wrapper">
+    <div class="tw-text-center tw-w-full">
+      {% if section.settings.heading != blank %}
+        <h2 class="tw-text-4xl tw-font-osc tw-font-bold tw-text-mainBlack tw-uppercase tw-mb-2">{{ section.settings.heading }}</h2>
+      {% endif %}
+      {% if section.settings.content != blank %}
+        <p class="tw-text-base tw-font-normal tw-text-mainBlack tw-mb-8">{{ section.settings.content }}</p>
+      {% endif %}
+    </div>
+    <div class="tw-relative tw-z-0 tw-px-5 md:tw-px-12">
+      <!-- Brands Slider -->
+      <div class="tw-w-full swiper brandsSwiper">
+        <!-- Swiper Wrapper -->
+        <div class="swiper-wrapper">
+          {%- for block in section.blocks -%}
+            {%- case block.type -%}
+              {%- when 'logo' -%}
+                <div class="tw-flex tw-items-center tw-justify-center swiper-slide">
+                  <a class="animate" href="{% if section.settings.override_link != blank %} {{ block.settings.override_link }} {% else %} {{ block.settings.master_link }} {% endif %}">
+                    {%- assign logo = block.settings.logo -%}
+                    {{
+                      logo | image_url: width: logo.width | image_tag: class: 'tw-object-contain tw-mx-auto tw-h-14', loading: 'lazy'
+                    }}
+                  </a>
+                </div>
+            {%- endcase -%}
+          {%- endfor -%}
+        </div>
+      </div>
+      <!-- Navigation Button -->
+      <button type="button" class="tw-absolute tw-left-0 tw-hidden tw--translate-y-1/2 button-prev-3 tw-top-1/2 md:tw-block animate">
+        <img src="{{ 'carousel-button-prev-2.svg' | asset_url }}" alt="button prev">
+      </button>
+      <button type="button" class="tw-absolute tw-right-0 tw-hidden tw--translate-y-1/2 button-next-3 tw-top-1/2 md:tw-block animate">
+        <img src="{{ 'carousel-button-next-2.svg' | asset_url }}" alt="button next">
+      </button>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+  {
+    "name": "Logo Carousel",
+    "settings": [
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "Heading"
+      }, {
+        "type": "textarea",
+        "id": "content",
+        "label": "Content"
+      }, {
+        "type": "url",
+        "id": "master_link",
+        "label": "Master Link",
+        "info": "Items will link here unless override link is provided. "
+      }
+    ],
+    "blocks": [
+      {
+        "name": "Logo",
+        "type": "logo",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "logo",
+            "label": "Logo",
+            "info": "PNG sized and colored to template"
+          }, {
+            "type": "url",
+            "id": "override_link",
+            "label": "Override Link",
+            "info": "Leave blank for master link"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Logo Carousel"
+      }
+    ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

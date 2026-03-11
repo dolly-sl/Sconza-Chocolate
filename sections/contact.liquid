@@ -1,0 +1,293 @@
+<section class="tw-bg-backgroundDark tw-pt-20 lg:tw-pt-10 tw-pb-20 tw-relative">
+  <img src="{{ 'vanilla-1.png' | asset_url }}" alt="vanilla" class="tw-absolute tw-right-0 lg:tw-block tw-hidden">
+  <div class="wrapper tw-relative">
+    <img
+      src="{{ 'vanilla-1.png' | asset_url }}"
+      alt="vanilla"
+      class="tw-absolute tw-left-80 tw--top-10 lg:tw-block tw-hidden"
+    >
+    <img src="{{ 'choc-7.png' | asset_url }}" alt="choc" class="tw-absolute tw-left-5 tw-top-10 lg:tw-block tw-hidden">
+    <img src="{{ 'choc-almond.png' | asset_url }}" alt="choc" class="tw-absolute tw-right-5 lg:tw-block tw-hidden">
+    <img
+      src="{{ 'choc-3.png' | asset_url }}"
+      alt="choc"
+      class="tw-absolute tw-right-0 tw-bottom-0 lg:tw-block tw-hidden"
+    >
+    <div class="tw-text-center">
+      <p class="tw-text-3xl md:tw-text-4xl tw-text-mainGold tw-font-script">Here For You</p>
+      <h2 class="tw-text-mainBlack2 tw-text-[45px] tw-font-bold tw-uppercase tw-tracking-[0.338px] tw-font-osc lg:tw-block tw-hidden">
+        {{ section.settings.subheading }}
+      </h2>
+      <h1 class="tw-text-mainBlack2 tw-text-[45px] tw-uppercase tw-tracking-[0.338px] tw-font-osc lg:tw-hidden tw-block tw-font-extrabold tw-mt-2.5">
+        {{ section.settings.heading }}
+      </h1>
+    </div>
+
+    <div class="tw-flex lg:tw-flex-row tw-flex-col tw-items-start tw-mt-10 lg:tw-mt-14 tw-gap-16">
+      <!-- Contact Form -->
+      <div class="tw-bg-white tw-py-8 tw-px-5 md:tw-px-14 tw-w-full lg:tw-w-[600px] xl:tw-w-[776px] tw-relative">
+  <img
+    src="{{ 'shape-2.png' | asset_url }}"
+    alt="shape"
+    class="tw-absolute tw--left-10 tw-bottom-32 lg:tw-block tw-hidden"
+  >
+  {% form 'contact', id: 'contact_form' %}
+    <div class="tw-space-y-5">
+      <!-- Message Location -->
+      {% if form.posted_successfully %}
+        <p class="tw-text-green-600 tw-font-bold">Thank you for contacting us! We will get back to you shortly.</p>
+      {% elsif form.errors %}
+        <p class="tw-text-red-600 tw-font-bold">There was an error with your submission. Please check the fields and try again.</p>
+      {% endif %}
+
+      <!-- Name Field -->
+      <div>
+        <label for="contact_name" class="tw-block tw-text-black tw-text-xs tw-tracking-[0.012px] tw-mb-2 md:tw-mb-3">Required Field*</label>
+        <input
+          type="text"
+          id="contact_name"
+          name="contact[name]"
+          class="tw-w-full tw-py-2.5 tw-px-5 tw-bg-inputBg placeholder:tw-text-inputPlacehoder tw-text-sm focus-within:tw-text-mainBlack tw-rounded tw-border tw-border-inputBg focus-within:tw-border-mainBlack focus:tw-outline-none focus-within:tw-bg-white tw-h-11"
+          placeholder="Name"
+          required
+        >
+      </div>
+      <!-- Email Field -->
+      <div>
+        <input
+          type="email"
+          id="contact_email"
+          name="contact[email]"
+          class="tw-w-full tw-py-2.5 tw-px-5 tw-bg-inputBg placeholder:tw-text-inputPlacehoder tw-text-sm focus-within:tw-text-mainBlack tw-rounded tw-border tw-border-inputBg focus-within:tw-border-mainBlack focus:tw-outline-none focus-within:tw-bg-white tw-h-11"
+          placeholder="Email Address*"
+          required
+        >
+      </div>
+      <!-- Phone Field -->
+      <div>
+        <input
+          type="tel"
+          id="contact_phone"
+          name="contact[phone]"
+          class="tw-w-full tw-py-2.5 tw-px-5 tw-bg-inputBg placeholder:tw-text-inputPlacehoder tw-text-sm focus-within:tw-text-mainBlack tw-rounded tw-border tw-border-inputBg focus-within:tw-border-mainBlack focus:tw-outline-none focus-within:tw-bg-white tw-h-11"
+          placeholder="Phone"
+        >
+      </div>
+      <!-- Message Field -->
+      <div>
+        <textarea
+          id="contact_message"
+          name="contact[body]"
+          class="tw-w-full tw-py-2.5 tw-px-5 tw-bg-inputBg placeholder:tw-text-inputPlacehoder tw-text-sm focus-within:tw-text-mainBlack tw-rounded tw-border tw-border-inputBg focus-within:tw-border-mainBlack focus:tw-outline-none focus-within:tw-bg-white tw-h-52 tw-resize-none"
+          placeholder="Message"
+          required
+        ></textarea>
+      </div>
+      <!-- Submit Button -->
+      <button type="submit" class="btn-primary tw-w-full md:tw-w-[167px]">Submit</button>
+    </div>
+  {% endform %}
+</div>
+
+
+      <!-- Customer Service -->
+      <div class="tw-w-full lg:tw-flex-1">
+        <h2 class="tw-text-black tw-text-lg md:tw-text-xl tw-uppercase md:tw-mb-4 tw-mb-8 tw-font-osc lg:tw-text-left tw-text-center">
+          {{ section.settings.sidebarheading }}
+        </h2>
+        <div class="tw-grid tw-grid-cols-1 md:tw-grid-cols-3 lg:tw-grid-cols-1 tw-gap-2.5">
+          <!-- Item -->
+          <div class="tw-bg-white/55 tw-p-4 tw-flex tw-items-center lg:tw-text-left tw-text-center lg:tw-items-start tw-gap-4 lg:tw-flex-row tw-flex-col">
+            <img src="{{ 'store.svg' | asset_url }}" alt="store">
+            <div>
+              <h4 class="tw-text-mainBlack tw-text-base tw-font-bold tw-uppercase tw-font-osc">Where to buy</h4>
+              <p class="tw-text-mainBlack tw-text-sm tw-underline">
+                {{ section.settings.wheretobuy }}
+              </p>
+            </div>
+          </div>
+          <!-- Item -->
+          <div class="tw-bg-white/55 tw-p-4 tw-flex tw-items-center lg:tw-text-left tw-text-center lg:tw-items-start tw-gap-4 lg:tw-flex-row tw-flex-col">
+            <img src="{{ 'location-pin.svg' | asset_url }}" alt="location">
+            <div>
+              <h4 class="tw-text-mainBlack tw-text-base tw-font-bold tw-uppercase tw-font-osc">Our Location</h4>
+              <p class="tw-text-mainBlack tw-text-sm underline">
+                {{ section.settings.location }}
+              </p>
+            </div>
+          </div>
+          <!-- Item -->
+          <div class="tw-bg-white/55 tw-p-4 tw-flex tw-items-center lg:tw-text-left tw-text-center lg:tw-items-start tw-gap-4 lg:tw-flex-row tw-flex-col">
+            <img src="{{ 'iphone.svg' | asset_url }}" alt="iphone">
+            <div>
+                </a>
+              <h4 class="tw-text-mainBlack tw-text-base tw-font-bold tw-uppercase tw-font-osc ">Reach Us Directly</h4>
+              <p class="tw-text-mainBlack tw-text-sm tw-underline">
+              {{ section.settings.reachus }}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- FAQ -->
+ {% if section.blocks.size > 0 %}
+<section class="tw-bg-backgroundLight tw-py-10 md:tw-py-16 lg:tw-py-20 tw-relative">
+  <img
+    src="{{ 'almond-4.png' | asset_url }}"
+    alt="almond"
+    class="tw-absolute tw-top-0 tw-left-0 tw-size-20 lg:tw-block tw-hidden"
+  >
+  <div class="wrapper tw-relative">
+    <img
+      src="{{ 'vanilla-1.png' | asset_url }}"
+      alt="vanilla"
+      class="tw-absolute tw--top-28 tw-left-0 lg:tw-block tw-hidden"
+    >
+    <img
+      src="{{ 'shape.png' | asset_url }}"
+      alt="shape"
+      class="tw-absolute tw--top-10 tw-right-28 lg:tw-block tw-hidden"
+    >
+    <img
+      src="{{ 'almond.png' | asset_url }}"
+      alt="almond"
+      class="tw-absolute tw--top-24 tw-right-0 lg:tw-block tw-hidden"
+    >
+    <img
+      src="{{ 'shape.png' | asset_url }}"
+      alt="shape"
+      class="tw-absolute tw-bottom-0 tw-left-0 lg:tw-block tw-hidden"
+    >
+    <img
+      src="{{ 'vanilla-1.png' | asset_url }}"
+      alt="shape"
+      class="tw-absolute tw--bottom-5 tw-right-0 lg:tw-block tw-hidden"
+    >
+    <img
+      src="{{ 'choc-8.png' | asset_url }}"
+      alt="shape"
+      class="tw-absolute tw--bottom-20 tw-right-80 lg:tw-block tw-hidden"
+    >
+
+    <div class="tw-flex tw-items-start tw-gap-5 md:tw-gap-7 lg:tw-gap-20 md:tw-flex-row tw-flex-col">
+      <div class="tw-w-full md:tw-w-[300px] lg:tw-w-[390px]">
+        <img
+          src="{{ 'choc-lemon.png' | asset_url }}"
+          alt="choc lemon"
+          class="tw-size-[390px] tw-mx-auto tw-object-contain"
+        >
+      </div>
+      <div class="tw-flex-1">
+        <h2 class="tw-text-mainBlack2 tw-text-xl md:tw-text-left tw-text-center md:tw-text-3xl lg:tw-text-4xl tw-uppercase tw-font-bold tw-tracking-[0.263px] tw-font-osc">
+          {{ section.settings.faqs }}
+        </h2>
+        <div class="tw-mt-6 accordion tw-border-b tw-border-borderAccordion">
+          {% for faq in section.blocks %}
+            <div class="tw-border-t tw-border-borderAccordion">
+              <button
+                type="button"
+                class="tw-flex tw-items-start tw-gap-3 lg:tw-gap-6 tw-text-left tw-py-5 tw-text-base active tw-font-bold md:tw-font-normal"
+                aria-expanded="true"
+              >
+                <span class="open-icon">
+                  <img src="{{ 'plus-icon-black.svg' | asset_url }}" alt="plus icon" class="tw-size-4">
+                </span>
+                {{ faq.settings.title }}
+              </button>
+              <div class="tw-pb-5 accordion-content tw-pl-5 lg:tw-pl-10" style="display: none;">
+                <p>
+                  {{ faq.settings.content }}
+                </p>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+        {% if section.settings.faqbuttontext != blank %}
+          <div class="tw-mt-7">
+            <a href="{{ section.settings.faqbuttonurl }}" class="btn-primary md:tw-w-[167px] tw-w-full">{{ section.settings.faqbuttontext }}</a>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+    </div>
+  </section>
+{% endif %}
+
+{% schema %}
+{
+  "name": "Contact Section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Sub Heading"
+    },
+    {
+      "type": "text",
+      "id": "sidebarheading",
+      "label": "Sidebar Heading"
+    },
+    {
+      "type": "richtext",
+      "id": "wheretobuy",
+      "label": "Where to Buy Text"
+    },
+    {
+      "type": "richtext",
+      "id": "location",
+      "label": "Location Text"
+    },
+    {
+      "type": "richtext",
+      "id": "reachus",
+      "label": "Reach Us Text"
+    },
+    {
+      "type": "text",
+      "id": "faqs",
+      "label": "FAQs Title"
+    },
+    {
+      "type": "text",
+      "id": "faqbuttontext",
+      "label": "FAQ Button Text"
+    },
+    {
+      "type": "url",
+      "id": "faqbuttonurl",
+      "label": "FAQ Button URL"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "faq",
+      "name": "FAQ",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "textarea",
+          "id": "content",
+          "label": "Content"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Contact Section"
+    }
+  ]
+}
+{% endschema %}

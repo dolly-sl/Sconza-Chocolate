@@ -1,0 +1,228 @@
+{
+  "wrapper": "div.tw-bg-backgroundDark",
+  "sections": {
+    "pdp": {
+      "type": "pdp-bundle",
+      "blocks": {
+        "text_FJhmWQ": {
+          "type": "text",
+          "settings": {
+            "title": "Size",
+            "display_type": "button"
+          }
+        },
+        "biscuits_bundles_biscuits_bundle_form_pikXhT": {
+          "type": "shopify:\/\/apps\/biscuits-bundles\/blocks\/biscuits-bundle-form\/9e9ff1bd-2cba-468f-b59f-a1ff63f6efe9",
+          "settings": {
+            "text_color": "#1e1c1c",
+            "card_color": "#efeee7",
+            "input_type": "rectangle",
+            "input_text_color": "#1e1c1c",
+            "input_color": "#ffffff",
+            "display_shadow": false,
+            "display_selection_count": false,
+            "display_running_totals": false,
+            "enable_product_links": false,
+            "card_padding": 10,
+            "grid_gap": 10,
+            "border_color": "#efeee7",
+            "border_radius": 8,
+            "highlight_type": "outline",
+            "selected_text_color": "#1e1c1c",
+            "selected_color": "#848484",
+            "border_thickness": 1,
+            "divider_color": "#efeee7",
+            "important_color": "#f3ae08",
+            "padding_top": 0,
+            "padding_bottom": 0,
+            "custom_css": "",
+            "custom_js": ""
+          }
+        }
+      },
+      "block_order": [
+        "text_FJhmWQ",
+        "biscuits_bundles_biscuits_bundle_form_pikXhT"
+      ],
+      "settings": {}
+    },
+    "plain_text_k4b6kt": {
+      "type": "plainText",
+      "settings": {
+        "heading": "Explore Your Flavor Options",
+        "subheading": "Discover the ultimate freedom to customize your snack experience with Mix & Match! Build your own pack by selecting any combination of flavors. Whether you’re craving the bright citrusy zing of Lemoncello Almonds, the buttery crunch of Toffee Almonds, the refreshing bite of Mint Crisp Cookie Bites, the rich indulgence of Double Chocolate Cherries, or the crisp snap of our THINS line—Mix & Match lets you create a snack bundle that’s uniquely yours. Sweeten your day, your way!",
+        "button_text": "",
+        "button_url": ""
+      }
+    },
+    "bundle_slider_7tiBhw": {
+      "type": "bundleSlider",
+      "blocks": {
+        "slide_XwRj7A": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Lemon_Blueberries_Render_Front_-_Transparent.png",
+            "subheading": "",
+            "heading": "Lemon Blueberries",
+            "content": "Dried blueberries wrapped in a smooth, white chocolate lemon coating"
+          }
+        },
+        "slide_nYN3zA": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Creme_Brulee_Almonds_Render_Front_-_Transparent.png",
+            "subheading": "",
+            "heading": "Crème Brûlée Almonds",
+            "content": "Caramelized flavor of crème brûlée wrapped around premium roasted almonds"
+          }
+        },
+        "slide_jiyEXd": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/MintCrispCookieBitesRenderFront-Transparent.png",
+            "subheading": "",
+            "heading": "Mint Crisp Cookie Bites",
+            "content": "Chocolate crispy cookies in premium dark and white chocolate, infused with mint"
+          }
+        },
+        "slide_6rPDVV": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/LemoncelloRenderFront-Transparent.png",
+            "subheading": "",
+            "heading": "Lemoncello",
+            "content": "California roasted almonds covered in smooth white chocolate and lemon crème"
+          }
+        },
+        "slide_cDpDKK": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Double_Chocolate_Cherries_Render_Front_-_Transparent.png",
+            "subheading": "",
+            "heading": "Double Chocolate Milk and White Chocolate Dried Cherries",
+            "content": "Whole dried cherries wrapped in silky milk and white chocolate"
+          }
+        },
+        "slide_zmpgax": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crunchy_Toffee_Render_Front_-_Transparent.png",
+            "subheading": "",
+            "heading": "Crunchy Toffee Milk Chocolate Roasted Almonds",
+            "content": "California almonds covered in crunchy toffee and creamy milk chocolate"
+          }
+        },
+        "slide_DJBnKE": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Dark_Chocolate_Coconut_THINS_5oz_Render_Front_-_Transparent.png",
+            "subheading": "",
+            "heading": "Dark Chocolate Coconut THINS",
+            "content": "California almonds covered in a thin layer of smooth dark chocolate and coconut crunch"
+          }
+        },
+        "slide_NfdQth": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Dark_Chocolate_SS_THINS_5oz_Render_Front_-_Transparent.png",
+            "subheading": "",
+            "heading": "Dark Chocolate Sea Salt THINS",
+            "content": "California roasted almonds covered in a thin layer of premium dark chocolate with a sprinkle of sea salt"
+          }
+        },
+        "slide_AmTkzQ": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Lemon_THINS_5oz_Render_Front_-_Transparent.png",
+            "subheading": "",
+            "heading": "Lemon THINS",
+            "content": "California roasted almonds are lightly dipped in yogurt and smooth lemon crème"
+          }
+        },
+        "slide_ppwBYq": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Strawberry_THINS_5oz_Render_Front_-_Transparent.png",
+            "subheading": "",
+            "heading": "Strawberry THINS",
+            "content": "Layers of yogurt and strawberry crème thinly draped over premium California almonds"
+          }
+        }
+      },
+      "block_order": [
+        "slide_XwRj7A",
+        "slide_nYN3zA",
+        "slide_jiyEXd",
+        "slide_6rPDVV",
+        "slide_cDpDKK",
+        "slide_zmpgax",
+        "slide_DJBnKE",
+        "slide_NfdQth",
+        "slide_AmTkzQ",
+        "slide_ppwBYq"
+      ],
+      "settings": {}
+    },
+    "icons": {
+      "type": "icons",
+      "blocks": {
+        "icon_NidkT7": {
+          "type": "icon",
+          "settings": {
+            "title": "No Artificial Flavors",
+            "icon": "shopify:\/\/shop_images\/Sconza-Icon-ArtFlavors.svg"
+          }
+        },
+        "icon_Ux4m3y": {
+          "type": "icon",
+          "settings": {
+            "title": "No High Fructose corn syrup",
+            "icon": "shopify:\/\/shop_images\/Sconza-Icon-NoCornSyrup.svg"
+          }
+        },
+        "icon_UYFCG8": {
+          "type": "icon",
+          "settings": {
+            "title": "No Artificial Colors",
+            "icon": "shopify:\/\/shop_images\/Sconza-Icon-ArtColors.svg"
+          }
+        },
+        "icon_4EMMgh": {
+          "type": "icon",
+          "settings": {
+            "title": "Real, Premium Ingredients",
+            "icon": "shopify:\/\/shop_images\/Sconza-Icon-Ingredients.svg"
+          }
+        }
+      },
+      "block_order": [
+        "icon_NidkT7",
+        "icon_Ux4m3y",
+        "icon_UYFCG8",
+        "icon_4EMMgh"
+      ],
+      "settings": {}
+    },
+    "pdp_reviews": {
+      "type": "pdp_reviews",
+      "settings": {}
+    },
+    "pdp-related": {
+      "type": "pdp-related",
+      "settings": {}
+    },
+    "product-swatches": {
+      "type": "product-swatches",
+      "settings": {}
+    }
+  },
+  "order": [
+    "pdp",
+    "plain_text_k4b6kt",
+    "bundle_slider_7tiBhw",
+    "icons",
+    "pdp_reviews",
+    "pdp-related",
+    "product-swatches"
+  ]
+}

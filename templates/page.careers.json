@@ -1,0 +1,165 @@
+{
+  "wrapper": "div.tw-bg-backgroundDark",
+  "sections": {
+    "imageHeroBanner": {
+      "type": "imageHeroBanner",
+      "settings": {
+        "heading": "Join Our Team",
+        "subtitle": "Ready to start a sweet career?",
+        "image": "shopify:\/\/shop_images\/Sconza_081.jpg",
+        "button_text": "Apply Now",
+        "button_link": "https:\/\/sconza.isolvedhire.com\/jobs\/",
+        "alignment": "center"
+      }
+    },
+    "plain_text_3UMQ7M": {
+      "type": "plainText",
+      "settings": {
+        "heading": "Competitive Compensation, Excellent Benefits, & Career Growth. Be Part of Our Sweet Team!",
+        "subheading": "Sconza is proud to be an Equal Opportunity Employer, and all employment offers are contingent upon applicants successfully completing background screenings. We are committed to providing reasonable accommodations for candidates with disabilities in our recruiting process.",
+        "button_text": "Open Positions",
+        "button_url": "https:\/\/sconza.isolvedhire.com\/jobs\/"
+      }
+    },
+    "icons_LwzfqH": {
+      "type": "icons",
+      "blocks": {
+        "icon_9pi4Xx": {
+          "type": "icon",
+          "settings": {
+            "title": "Above Market Pay",
+            "icon": "shopify:\/\/shop_images\/Sconza-Icon-MarketPay.svg"
+          }
+        },
+        "icon_MNyeR9": {
+          "type": "icon",
+          "settings": {
+            "title": "Medical & Dental insurance",
+            "icon": "shopify:\/\/shop_images\/Sconza-Icon-Medical.svg"
+          }
+        },
+        "icon_LyDjXt": {
+          "type": "icon",
+          "settings": {
+            "title": "Paid Vacation & Leave",
+            "icon": "shopify:\/\/shop_images\/Sconza-Icon-Vacations.svg"
+          }
+        },
+        "icon_WGJ6Uw": {
+          "type": "icon",
+          "settings": {
+            "title": "11 paid holidays",
+            "icon": "shopify:\/\/shop_images\/Sconza-Icon-Holidays.svg"
+          }
+        },
+        "icon_kx4Et4": {
+          "type": "icon",
+          "settings": {
+            "title": "401(k) company matching",
+            "icon": "shopify:\/\/shop_images\/Sconza-Icon-401k.svg"
+          }
+        },
+        "icon_Y4XVcX": {
+          "type": "icon",
+          "settings": {
+            "title": "Day, Swing and Grave shifts",
+            "icon": "shopify:\/\/shop_images\/Sconza-Icon-Shifts.svg"
+          }
+        }
+      },
+      "block_order": [
+        "icon_9pi4Xx",
+        "icon_MNyeR9",
+        "icon_LyDjXt",
+        "icon_WGJ6Uw",
+        "icon_kx4Et4",
+        "icon_Y4XVcX"
+      ],
+      "settings": {}
+    },
+    "video_cta_dT7qae": {
+      "type": "videoCTA",
+      "settings": {
+        "heading": "",
+        "subheading": "Discover what teammates say about life at Sconza.",
+        "button_text": "Play Video",
+        "video_link": "https:\/\/www.youtube.com\/watch?v=rhxlG84uDcE&t=4s",
+        "image": "shopify:\/\/shop_images\/choc-bg.jpg"
+      }
+    },
+    "social_carousel_cXxKLm": {
+      "type": "socialCarousel",
+      "blocks": {
+        "image_VmHD9U": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Untitled_design_70.png",
+            "link": ""
+          }
+        },
+        "image_p48PVp": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Sconza_Candy-81.jpg",
+            "link": ""
+          }
+        },
+        "image_M6RBy8": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/411-DCR03298.jpg",
+            "link": ""
+          }
+        },
+        "image_xAVgbD": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Sconza_Candy-3.jpg",
+            "link": ""
+          }
+        },
+        "image_NPP3UM": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Sconza_071.jpg",
+            "link": ""
+          }
+        },
+        "image_tAeU8Q": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Sconza_065edited_2.jpg",
+            "link": ""
+          }
+        },
+        "image_fC6EjL": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/240-DC308401.jpg",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_VmHD9U",
+        "image_p48PVp",
+        "image_M6RBy8",
+        "image_xAVgbD",
+        "image_NPP3UM",
+        "image_tAeU8Q",
+        "image_fC6EjL"
+      ],
+      "settings": {
+        "heading": "",
+        "subheading": ""
+      }
+    }
+  },
+  "order": [
+    "imageHeroBanner",
+    "plain_text_3UMQ7M",
+    "icons_LwzfqH",
+    "video_cta_dT7qae",
+    "social_carousel_cXxKLm"
+  ]
+}

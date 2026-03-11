@@ -1,0 +1,53 @@
+<section class="faqs">
+  <div class="container">
+    {% if section.settings.heading != blank %}
+      <h2>{{ section.settings.heading }}</h2>
+    {% endif %}
+
+    <div class="accordion__list">
+      {% for block in section.blocks %}
+        <div class="accordion__group {% if forloop.first == true %}active{%endif%}">
+          <button class="accordion__heading d-flex justify-between align-center">
+            <h3>{{ block.settings.question }}</h3>
+          </button>
+          <div class="accordion__copy" {% if forloop.first == true %}style="display:block;"{%endif%}>
+            {{ block.settings.answer }}
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+    
+  </div>
+</section>
+
+
+{% schema %}
+{
+	"name": "FAQs",
+  "settings": [
+    {
+      "id": "heading",
+      "type": "text",
+      "label": "Heading"
+    }
+  ],
+  "blocks": [
+		{
+			"type": "text",
+			"name": "FAQ",
+			"settings": [
+        {
+          "id": "question",
+          "type": "text",
+          "label": "Question"
+        },
+        {
+          "id": "answer",
+          "type": "richtext",
+          "label": "Answer"
+        }
+			]
+		}
+	]
+}
+{% endschema %}

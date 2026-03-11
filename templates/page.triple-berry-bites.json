@@ -1,0 +1,204 @@
+{
+  "wrapper": "div.tw-bg-backgroundDark",
+  "sections": {
+    "hero_slider_KYyJjh": {
+      "type": "heroSlider",
+      "blocks": {
+        "slide_mDqFNC": {
+          "type": "slide",
+          "settings": {
+            "heading": "Berry Bright<br>Bites",
+            "subheading": "New at Costco",
+            "content": "REAL freeze-dried strawberries, blueberries, & raspberries dipped in yogurt-flavored crème",
+            "button_text": "Find it at Costco",
+            "button_link": "https:\/\/www.costco.com\/w\/-\/locations",
+            "background_color": "",
+            "text_black": true,
+            "text_position": "middle_right",
+            "text_position_mobile": "top_center",
+            "image": "shopify:\/\/shop_images\/Triple_Berry_4.png",
+            "mobile_image": "shopify:\/\/shop_images\/Triple-Berry---Mobile.png"
+          }
+        }
+      },
+      "block_order": [
+        "slide_mDqFNC"
+      ],
+      "custom_css": [],
+      "name": "Hero Slider",
+      "settings": {}
+    },
+    "image_callouts_4WKBCW": {
+      "type": "imageCallouts",
+      "blocks": {
+        "callout_left_qTrpCL": {
+          "type": "callout_left",
+          "settings": {
+            "heading": "REAL FREEZE-DRIED BERRIES",
+            "content": "Made with REAL strawberries, blueberries, and raspberries — freeze-dried to lock in bright flavor and natural crunch."
+          }
+        },
+        "callout_left_PAEKJC": {
+          "type": "callout_left",
+          "settings": {
+            "heading": "SMOOTH YOGURT-FLAVORED CRÈME",
+            "content": "Creamy, lightly sweet coating that balances the crunch."
+          }
+        },
+        "callout_right_D7CQnj": {
+          "type": "callout_right",
+          "settings": {
+            "heading": "COSTCO-SIZE FAVORITE",
+            "content": "A generous 18 oz bag made for sharing and repeat snacking.",
+            "line_length": 80
+          }
+        },
+        "callout_right_UPNpUk": {
+          "type": "callout_right",
+          "settings": {
+            "heading": "PERFECT FOR SHARING",
+            "content": "Snack boards, workdays, study breaks, and sweet moments.",
+            "line_length": 80
+          }
+        }
+      },
+      "block_order": [
+        "callout_left_qTrpCL",
+        "callout_left_PAEKJC",
+        "callout_right_D7CQnj",
+        "callout_right_UPNpUk"
+      ],
+      "custom_css": [
+        "h2 {margin-top: -24px;}",
+        ".subheading {margin-bottom: 12px;}"
+      ],
+      "name": "Image with Callouts",
+      "settings": {
+        "heading": "Why You'll Love Triple Berry Bites",
+        "subheading": "Bright. Crunchy. Creamy. Joyful.",
+        "button_text": "",
+        "button_link": "",
+        "image": "shopify:\/\/shop_images\/Triple_Berry_b8c9c0dc-700e-482b-8259-b57909438e0e.png"
+      }
+    },
+    "split_image_text_8cyUWc": {
+      "type": "splitImageText",
+      "blocks": {
+        "block_4ALVaz": {
+          "type": "block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/34.jpg",
+            "heading": "Available at Costco in Select Regions",
+            "subheading": "A Treasure Hunt Find",
+            "content": "<p>Triple Berry Bites arrive at Costco warehouses beginning January. <br>Availability will vary by location and timing.<\/p>\n<br>\n<p><strong>Rolling out to Costco locations in:<\/strong><\/p>\n<ul style=\"list-style-type: disc; padding-left: 20px; margin-left: 0;\">\n  <li>San Diego<\/li>\n  <li>Bay Area<\/li>\n  <li>Northwest<\/li>\n  <li>Northeast<\/li>\n  <li>Southeast<\/li>\n  <li>Los Angeles<\/li>\n<\/ul>\n<br>\n<p><em>Timing may vary by warehouse as the rollout continues.<\/em><\/p>\n<br>",
+            "button_text": "Find A Costco Near You",
+            "button_link": "https:\/\/www.costco.com\/w\/-\/locations",
+            "alignment": "left"
+          }
+        }
+      },
+      "block_order": [
+        "block_4ALVaz"
+      ],
+      "name": "Split Image and Text",
+      "settings": {
+        "heading": "",
+        "subheading": "",
+        "content": "",
+        "button_text": "Find A Costco Near You",
+        "button_link": "",
+        "alignment": "center"
+      }
+    },
+    "testimonials_hGczUV": {
+      "type": "testimonials",
+      "blocks": {
+        "testimonial_nddcgz": {
+          "type": "testimonial",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Sweet_Moments.png",
+            "quote": "A Sweet Moment to Share",
+            "content": "Made with real fruit and meant to be shared.\nPerfect for Galentine’s gatherings, Valentine’s treats, or any moment that calls for something a little sweet and joyful.",
+            "author": ""
+          }
+        },
+        "testimonial_7bQagX": {
+          "type": "testimonial",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Everyday_Snacking.png",
+            "quote": "Perfect for Everyday Snacking",
+            "content": "Real freeze-dried fruit makes it easy to snack better.\nKeep a bowl on your desk, in the kitchen, or ready to grab when cravings hit.",
+            "author": ""
+          }
+        },
+        "testimonial_E8qK9Y": {
+          "type": "testimonial",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Topping.png",
+            "quote": "A Bright Topping for Bowls & Treats",
+            "content": "Add a pop of real fruit flavor.\nSprinkle over yogurt, parfaits, or desserts for color, crunch, and a naturally bright finish.",
+            "author": ""
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_nddcgz",
+        "testimonial_7bQagX",
+        "testimonial_E8qK9Y"
+      ],
+      "name": "Testimonials",
+      "settings": {
+        "heading": "Every day moments made a little brighter",
+        "subheading": "How to Enjoy"
+      }
+    },
+    "icons_wLQdqK": {
+      "type": "icons",
+      "blocks": {
+        "icon_8wEQKR": {
+          "type": "icon",
+          "settings": {
+            "title": "No Artificial Flavors",
+            "icon": "shopify:\/\/shop_images\/Sconza-Icon-ArtFlavors.svg"
+          }
+        },
+        "icon_PteGQy": {
+          "type": "icon",
+          "settings": {
+            "title": "No High Fructose corn syrup",
+            "icon": "shopify:\/\/shop_images\/Sconza-Icon-NoCornSyrup.svg"
+          }
+        },
+        "icon_hgQWBH": {
+          "type": "icon",
+          "settings": {
+            "title": "No Artificial Colors",
+            "icon": "shopify:\/\/shop_images\/Sconza-Icon-ArtColors.svg"
+          }
+        },
+        "icon_EfMcH4": {
+          "type": "icon",
+          "settings": {
+            "title": "Real, Premium Ingredients",
+            "icon": "shopify:\/\/shop_images\/Sconza-Icon-Ingredients.svg"
+          }
+        }
+      },
+      "block_order": [
+        "icon_8wEQKR",
+        "icon_PteGQy",
+        "icon_hgQWBH",
+        "icon_EfMcH4"
+      ],
+      "name": "Icons",
+      "settings": {}
+    }
+  },
+  "order": [
+    "hero_slider_KYyJjh",
+    "image_callouts_4WKBCW",
+    "split_image_text_8cyUWc",
+    "testimonials_hGczUV",
+    "icons_wLQdqK"
+  ]
+}

@@ -1,0 +1,65 @@
+<section
+class="article__single tw-bg-backgroundDark">
+  {% comment %} ARTICLE HERO {% endcomment %}
+  {%- assign image = article.image -%}
+
+  <section class="tw-relative tw-z-0 !tw-bg-no-repeat !tw-bg-cover !tw-bg-center" style="background-image:url({{ image | image_url: width: image.width }});">
+    <div class="wrapper">
+      <div class="tw-h-[500px] md:tw-h-[600px] lg:tw-h-[654px] tw-flex tw-items-center lg:tw-text-left tw-text-center lg:tw-items-start tw-justify-center tw-flex-col"></div>
+    </div>
+  </section>
+
+  <div class="tw-container tw-mt-9">
+    {% comment %} ARTICLE CONTENT {% endcomment %}
+    <div class="inner">
+      <div class="">
+        <span class="article__date eyebrow">
+          {{ article.published_at | date: '%B %e, %Y' }}
+        </span>
+        <h1 class="tw-text-mainBlack2 tw-text-[35px] tw-font-bold tw-font-osc tw-uppercase tw-text-left ">{{ article.title }}</h1>
+      </div>
+      <div class="article__content">
+        {{ article.content }}
+      </div>
+    </div>
+
+  </div>
+</section>
+{% comment %} ARTICLE RELATED {% endcomment %}
+<section class="article__related tw-bg-backgroundDark">
+  <div class="tw-container">
+    <h2 class="tw-text-center tw-text-mainBlack2 tw-text-[25px] tw-font-bold tw-font-osc tw-uppercase tw-leading-[1.13]">
+      Recommended Articles
+    </h2>
+    <div class="related__wrap d-flex">
+      {% comment %} If metafields for related articles selected {% endcomment %}
+      {% if article.metafields.sleepless.related_article_1 != blank or article.metafields.sleepless.related_article_2 != blank or article.metafields.sleepless.related_article_2 != blank
+      %}
+        {% if article.metafields.sleepless.related_article_1 != blank %}
+          {% assign article_one = articles[article.metafields.sleepless.related_article_1] %}
+          {% render 'default-article'
+            , data: article_one %}
+        {% endif %}
+
+        {% if article.metafields.sleepless.related_article_2 != blank %}
+          {% assign article_two = articles[article.metafields.sleepless.related_article_2] %}
+          {% render 'default-article'
+            , data: article_two %}
+        {% endif %}
+
+        {% if article.metafields.sleepless.related_article_3 != blank %}
+          {% assign article_three = articles[article.metafields.sleepless.related_article_3] %}
+          {% render 'default-article'
+            , data: article_three %}
+        {% endif %}
+
+      {% else %}
+        {% comment %} Otherwise just show latest 3 articles {% endcomment %}
+        {% for article in blog.articles limit: 3 %}
+          {% render 'default-article'
+            , data: article %}
+        {% endfor %}
+      {% endif %}
+    </div>
+  </div>
+</section>

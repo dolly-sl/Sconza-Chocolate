@@ -1,0 +1,421 @@
+{
+  "wrapper": "div.tw-bg-backgroundDark",
+  "sections": {
+    "hero_slider_d4YLgF": {
+      "type": "heroSlider",
+      "blocks": {
+        "slide_d7LhX9": {
+          "type": "slide",
+          "settings": {
+            "heading": "Private Label Chocolate &Confectionery Manufacturing For Retailers",
+            "subheading": "Retail-ready assortments designed to grow your brand",
+            "content": "",
+            "button_text": "Start Your Private Label Program",
+            "button_link": "https:\/\/wholesale.sconza.com\/contact-us\/",
+            "background_color": "",
+            "text_black": false,
+            "text_position": "middle_center",
+            "text_position_mobile": "middle_center",
+            "image": "shopify:\/\/shop_images\/Sconza_071.png",
+            "mobile_image": "shopify:\/\/shop_images\/Sconza_071-mobile.png"
+          }
+        }
+      },
+      "block_order": [
+        "slide_d7LhX9"
+      ],
+      "name": "Hero Slider",
+      "settings": {}
+    },
+    "imageHeroBanner": {
+      "type": "imageHeroBanner",
+      "disabled": true,
+      "settings": {
+        "heading": "For Business",
+        "subtitle": "Premium Private Label Confections, Built for Success",
+        "image": "shopify:\/\/shop_images\/Bowl_of_Cinnamon_Apple_Bites.jpg",
+        "button_text": "Contact Us",
+        "button_link": "shopify:\/\/pages\/contact",
+        "alignment": "left"
+      }
+    },
+    "plain_text_MHxaTc": {
+      "type": "richText",
+      "name": "Rich Text",
+      "settings": {
+        "heading": "Proven Programs. Ready for Retail.",
+        "content": "<h3>Private label programs designed to drive category growth and perform at retail.<\/h3><p><br\/>Sconza partners with retailers and national brands to deliver <strong>private label chocolate and confectionery manufacturing programs designed for retail success.<\/strong> Our ready-to-launch assortments combine premium ingredients, proven flavor profiles, and flexible packaging options to support grocery, club, and specialty retail distribution.<\/p>",
+        "button_text": "",
+        "button_url": ""
+      }
+    },
+    "rich_text_36wz6q": {
+      "type": "richText",
+      "disabled": true,
+      "name": "Rich Text",
+      "settings": {
+        "heading": "Trusted Since 1939. Four Generations of Candy Makers.",
+        "content": "<h3>Premium confections, ready for your brand.<\/h3><p>Sconza’s private label programs help retailers and partners launch distinctive candy assortments with speed and confidence. Built on four generations of confectionery expertise, our ready-to-scale offerings combine premium ingredients, proven best-sellers, and flexible packaging formats designed for today’s retail environment.<\/p>",
+        "button_text": "",
+        "button_url": ""
+      }
+    },
+    "tagline_4CefMg": {
+      "type": "tagline",
+      "disabled": true,
+      "settings": {
+        "tagline": "Trusted Since 1939 | Four Generations of Candy Makers"
+      }
+    },
+    "split_image_text_cRMdBV": {
+      "type": "splitImageText",
+      "blocks": {
+        "block_rgN6kV": {
+          "type": "block",
+          "disabled": true,
+          "settings": {
+            "image": "shopify:\/\/shop_images\/milk-chocolate.png",
+            "heading": "Private Label Confections",
+            "subheading": "Custom Confectionery Solutions at Scale",
+            "content": "<p><\/p><p><strong>Retail-Ready Assortments<\/strong><br\/>Proven flavor profiles and formats designed to perform across grocery, specialty, and club channels.<\/p><p><strong>Speed to Market<\/strong><br\/>Leverage established recipes and production capabilities to launch faster with less development risk.<\/p><p><strong>Flexible Packaging Options<\/strong><br\/>From stand-up pouches to seasonal gifting formats, tailored to your brand and shelf strategy.<\/p><p><strong>Premium Quality, Trusted Heritage<\/strong><br\/>Family-owned since 1939 with a reputation built on flavor, consistency, and craftsmanship.<\/p>",
+            "button_text": "",
+            "button_link": "",
+            "alignment": "left"
+          }
+        },
+        "block_gtzbr3": {
+          "type": "block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Packaging_Options.png",
+            "heading": "Private Label Confections",
+            "subheading": "Retail-Ready Assortments Built to Perform",
+            "content": "<p><strong>Retail-Ready Assortments<\/strong><br\/>Proven flavor profiles and packaging formats designed for performance across grocery, club, and specialty retail.<\/p><p><strong>Speed to Market<\/strong><br\/>Leverage established formulations and scalable production to reduce development timelines and minimize risk.<\/p><p><strong>Flexible Packaging Options<\/strong><br\/>From stand-up pouches and tubs to seasonal gifting and multi-pack configurations, formats are tailored to your brand and shelf strategy.<\/p><p><strong>Premium Quality, Reliable Execution<\/strong><br\/>Backed by four generations of confectionery manufacturing expertise.<\/p>",
+            "button_text": "",
+            "button_link": "",
+            "alignment": "left"
+          }
+        },
+        "block_gwYHUJ": {
+          "type": "block",
+          "disabled": true,
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Triple_Berry_b8c9c0dc-700e-482b-8259-b57909438e0e.png",
+            "heading": "Capabilities",
+            "subheading": "Private Label Manufacturing",
+            "content": "<ul><li>Custom candy formulation and product development<\/li><li>Chocolate panning, moguel, and coated confections<\/li><li>Flavor innovation and ingredient sourcing<\/li><li>Multiple packaging formats and bag sizes<\/li><li>Retail-ready and club-ready production<\/li><li>Scalable manufacturing for regional or national distribution<\/li><\/ul><p><\/p>",
+            "button_text": "",
+            "button_link": "",
+            "alignment": "left"
+          }
+        },
+        "block_VG3ag7": {
+          "type": "block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Choc2.jpg",
+            "heading": "Capabilities",
+            "subheading": "Private Label Manufacturing",
+            "content": "<p>As an <strong>experienced private label chocolate manufacturer<\/strong>, Sconza supports national retailers, club stores, and specialty brands with scalable confectionery production. Our vertically integrated manufacturing capabilities allow us to produce premium chocolate and panned confections that meet the quality, consistency, and volume requirements of large retail programs. <\/p><ul><li>Custom <strong>private label confectionery development<\/strong><\/li><li>Advanced <strong>chocolate panning and confectionery manufacturing expertise<\/strong><\/li><li>Flavor innovation and ingredient sourcing<\/li><li>Flexible <strong>private label packaging formats for retail distribution<\/strong><\/li><li>Scalable private label manufacturing for national retail distribution<\/li><\/ul><p><\/p>",
+            "button_text": "",
+            "button_link": "",
+            "alignment": "left"
+          }
+        },
+        "block_jN6bCw": {
+          "type": "block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/MultRetailChannels.png",
+            "heading": "Confectionery for multiple retail channels",
+            "subheading": "Private Label",
+            "content": "<p>Sconza's private label confectionery programs are designed to perform across a wide range of retail environments, including:<br\/><\/p><ul><li>Grocery retailers<\/li><li>Club stores<\/li><li>Specialty food retailers<\/li><li>Seasonal and promotional retail programs<\/li><\/ul>",
+            "button_text": "",
+            "button_link": "",
+            "alignment": "left"
+          }
+        }
+      },
+      "block_order": [
+        "block_rgN6kV",
+        "block_gtzbr3",
+        "block_gwYHUJ",
+        "block_VG3ag7",
+        "block_jN6bCw"
+      ],
+      "settings": {
+        "heading": "",
+        "subheading": "",
+        "content": "",
+        "button_text": "",
+        "button_link": "",
+        "alignment": "center"
+      }
+    },
+    "17695424902076f797": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_a8579f7_zhYCCD": {
+          "type": "ai_gen_block_a8579f7",
+          "disabled": true,
+          "settings": {
+            "title": "Why Choose Sconza Candy Company",
+            "description": "<p>A confectionery partner built for long-term growth. Our legacy is built on craftsmanship, innovation, and trust—values that continue to guide everything we make today.<\/p>",
+            "content_width": 800,
+            "text_alignment": "center",
+            "spacing": 20,
+            "background_color": "#fffdf8",
+            "title_color": "#1e1c1c",
+            "description_color": "#1e1c1c",
+            "link_color": "#1e1c1c",
+            "title_size": 32,
+            "description_size": 16,
+            "padding_top": 80,
+            "padding_bottom": 0,
+            "padding_horizontal": 20
+          },
+          "blocks": {}
+        },
+        "ai_gen_block_a8579f7_WNRrMG": {
+          "type": "ai_gen_block_a8579f7",
+          "settings": {
+            "title": "Why Retailers Choose Sconza for Private Label",
+            "description": "<p>A confectionery partner focused on growth, innovation, and category performance.<\/p>",
+            "content_width": 800,
+            "text_alignment": "center",
+            "spacing": 20,
+            "background_color": "#fffdf8",
+            "title_color": "#1e1c1c",
+            "description_color": "#1e1c1c",
+            "link_color": "#1e1c1c",
+            "title_size": 32,
+            "description_size": 16,
+            "padding_top": 70,
+            "padding_bottom": 0,
+            "padding_horizontal": 20
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_a8579f7_zhYCCD",
+        "ai_gen_block_a8579f7_WNRrMG"
+      ],
+      "settings": {}
+    },
+    "icons_Xti7Dy": {
+      "type": "icons",
+      "blocks": {
+        "icon_jp7iT8": {
+          "type": "icon",
+          "settings": {
+            "title": "Proven Private Label Program",
+            "icon": "shopify:\/\/shop_images\/Growth_1_1736731c-c108-419c-b311-e5c580dbe78d.png"
+          }
+        },
+        "icon_ATMt7R": {
+          "type": "icon",
+          "settings": {
+            "title": "Experience Across Grocery, Club & Specialty",
+            "icon": "shopify:\/\/shop_images\/Storefront_1.png"
+          }
+        },
+        "icon_46zM8e": {
+          "type": "icon",
+          "settings": {
+            "title": "Rigorous Food Safety & Quality Standards",
+            "icon": "shopify:\/\/shop_images\/certified_2.png"
+          }
+        },
+        "icon_LJVwqn": {
+          "type": "icon",
+          "settings": {
+            "title": "Seasonal & Everyday Assortments",
+            "icon": "shopify:\/\/shop_images\/Seasonal_1.png"
+          }
+        },
+        "icon_y3kqQH": {
+          "type": "icon",
+          "disabled": true,
+          "settings": {
+            "title": "Experience across retail, club, specialty & e-commerce",
+            "icon": "shopify:\/\/shop_images\/Seasonal.png"
+          }
+        }
+      },
+      "block_order": [
+        "icon_jp7iT8",
+        "icon_ATMt7R",
+        "icon_46zM8e",
+        "icon_LJVwqn",
+        "icon_y3kqQH"
+      ],
+      "name": "Icons",
+      "settings": {}
+    },
+    "blocks_tMJPTP": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_a8579f7_mpbPHt": {
+          "type": "ai_gen_block_a8579f7",
+          "settings": {
+            "title": "Retail-Ready. Fully Certified. Nationally Compliant.",
+            "description": "<p>Manufactured in our AA+ BRCGS certified California facility with third-party audited food safety systems designed to support national and regional private label retail programs. Sconza produces premium private label chocolate and confectionery products for retailers across the United States.<\/p>",
+            "content_width": 800,
+            "text_alignment": "center",
+            "spacing": 20,
+            "background_color": "#fffdf8",
+            "title_color": "#1e1c1c",
+            "description_color": "#1e1c1c",
+            "link_color": "#1e1c1c",
+            "title_size": 32,
+            "description_size": 16,
+            "padding_top": 50,
+            "padding_bottom": 40,
+            "padding_horizontal": 20
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_a8579f7_mpbPHt"
+      ],
+      "name": "Title and text",
+      "settings": {}
+    },
+    "logo_carousel_cYqjmj": {
+      "type": "logoCarousel",
+      "blocks": {
+        "logo_jnd6p6": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/BRC_FOOD.png",
+            "override_link": ""
+          }
+        },
+        "logo_WheQcE": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/OU_KOSHER.png",
+            "override_link": ""
+          }
+        },
+        "logo_xxhfgq": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/QAI_ORGANIC.png",
+            "override_link": ""
+          }
+        },
+        "logo_fUFhBX": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/FAIR_TRADE.png",
+            "override_link": ""
+          }
+        },
+        "logo_LErrY3": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/RSPO.png",
+            "override_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "logo_jnd6p6",
+        "logo_WheQcE",
+        "logo_xxhfgq",
+        "logo_fUFhBX",
+        "logo_LErrY3"
+      ],
+      "name": "Logo Carousel",
+      "settings": {
+        "heading": "",
+        "content": "",
+        "master_link": ""
+      }
+    },
+    "blocks_AHDLd7": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_a1f4ec0_JVb9Cz": {
+          "type": "ai_gen_block_a1f4ec0",
+          "settings": {
+            "section_title": "Explore Other Partnership Options",
+            "title_size": 36,
+            "title_color": "#1e1c1c",
+            "title_alignment": "center",
+            "title_spacing": 40,
+            "column_1_icon": "factory",
+            "column_1_heading": "Contract Manufacturing",
+            "column_1_description": "Full-scale chocolate and confectionery manufacturing for national brands and product developers.",
+            "column_1_button_text": "Learn More",
+            "column_1_link": "shopify:\/\/pages\/contract-manufacturing",
+            "column_2_icon": "package",
+            "column_2_heading": "Wholesale",
+            "column_2_description": "Premium confectionery products for grocery retailers, club stores, and specialty food distributors.",
+            "column_2_button_text": "Learn More",
+            "column_2_link": "shopify:\/\/pages\/wholesale",
+            "desktop_width_percent": 100,
+            "section_padding": 60,
+            "column_gap": 30,
+            "content_alignment": "center",
+            "background_color": "#ffffff",
+            "card_background": "#fefaef",
+            "card_border_color": "#e5e5e5",
+            "card_padding": 40,
+            "card_border_width": 1,
+            "card_border_radius": 8,
+            "icon_size": 50,
+            "icon_color": "#1e1c1c",
+            "icon_spacing": 20,
+            "heading_size": 24,
+            "heading_color": "#1e1c1c",
+            "heading_spacing": 15,
+            "description_size": 16,
+            "description_color": "#666666",
+            "description_spacing": 25,
+            "button_font_size": 16,
+            "button_padding_vertical": 12,
+            "button_padding_horizontal": 30,
+            "button_border_radius": 4,
+            "button_background": "#1e1c1c",
+            "button_text_color": "#ffffff",
+            "button_hover_background": "#000000",
+            "button_hover_text_color": "#ffffff"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_a1f4ec0_JVb9Cz"
+      ],
+      "name": "Partnership options",
+      "settings": {}
+    },
+    "image_hero_banner_DWGdza": {
+      "type": "imageHeroBanner",
+      "name": "Image Hero Banner",
+      "settings": {
+        "heading": "",
+        "subtitle": "Launch your private label program",
+        "image": "shopify:\/\/shop_images\/choc-bg.jpg",
+        "button_text": "Request A Consultation",
+        "button_link": "shopify:\/\/pages\/contact",
+        "alignment": "center"
+      }
+    }
+  },
+  "order": [
+    "hero_slider_d4YLgF",
+    "imageHeroBanner",
+    "plain_text_MHxaTc",
+    "rich_text_36wz6q",
+    "tagline_4CefMg",
+    "split_image_text_cRMdBV",
+    "17695424902076f797",
+    "icons_Xti7Dy",
+    "blocks_tMJPTP",
+    "logo_carousel_cYqjmj",
+    "blocks_AHDLd7",
+    "image_hero_banner_DWGdza"
+  ]
+}

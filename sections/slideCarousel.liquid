@@ -1,0 +1,66 @@
+<section class="tw-relative tw-bg-backgroundDark">
+  <!-- Candies Slider -->
+  <div class="tw-w-full swiper candiesSwiper">
+    <!-- Swiper Wrapper -->
+    <div class="swiper-wrapper">
+      {%- for block in section.blocks -%}
+        {%- case block.type -%}
+          {%- when 'slide' -%}
+            <div class="tw-cursor-pointer swiper-slide tw-group">
+              {%- assign image = block.settings.image -%}
+              <a href="{{ block.settings.link }}">
+                {{ image | image_url: width: image.width | image_tag: class: 'tw-w-[500px]', loading: 'lazy' }}
+                <div class="tw-text-center">
+                  <h3 class="tw-text-black tw-text-3xl lg:tw-text-[35px] tw-uppercase tw-font-osc tw-tw-font-extrabold">
+                    {{ block.settings.heading }}
+                  </h3>
+                  <button type="button" class="tw-opacity-100  btn-primary tw-mt-7 tw-mx-auto">Shop Now</button>
+                </div>
+              </a>
+            </div>
+        {%- endcase -%}
+      {%- endfor -%}
+    </div>
+  </div>
+  <!-- Navigation Button -->
+  <button type="button" class="tw-hidden tw-absolute tw-z-10 tw--translate-y-1/2 tw-left-10 lg:tw-left-20 button-prev-4 tw-top-1/2 animate">
+    <img src="{{ 'carousel-button-prev.svg' | asset_url }}" alt="button prev">
+  </button>
+  <button type="button" class="tw-hidden tw-absolute tw-z-10 tw--translate-y-1/2 tw-right-10 lg:tw-right-20 button-next-4 tw-top-1/2  animate">
+    <img src="{{ 'carousel-button-next.svg' | asset_url }}" alt="button next">
+  </button>
+</section>
+
+{% schema %}
+  {
+    "name": "Slide Carousel",
+    "settings": [],
+    "blocks": [
+      {
+        "name": "Slide",
+        "type": "slide",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image",
+            "info": "JPG 1100x1000px - Overlay will be added"
+          }, {
+            "type": "text",
+            "id": "heading",
+            "label": "Heading"
+          }, {
+            "type": "url",
+            "id": "link",
+            "label": "Link"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Slide Carousel"
+      }
+    ]
+  }
+{% endschema %}

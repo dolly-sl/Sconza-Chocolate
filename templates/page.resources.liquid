@@ -1,0 +1,207 @@
+<section class="blade-type">
+  <h1>Headers</h1>
+
+  <div class="display-wrap">
+    <div class="container">
+      <h2 class="sec-title">Header Nav Left ( --one )</h2>
+    </div>
+    {% section 'resource-header-one' %}
+  </div>
+  
+  <div class="display-wrap">
+    <div class="container">
+      <h2 class="sec-title">Header Nav Left ( --two )</h2>
+    </div>
+    {% section 'resource-header-two' %}
+  </div>
+  
+  <div class="display-wrap">
+    <div class="container">
+      <h2 class="sec-title">Header Nav Left ( --three )</h2>
+    </div>
+    {% section 'resource-header-three' %}
+  </div>
+  
+  <div class="display-wrap">
+    <div class="container">
+      <h2 class="sec-title">Header Nav Left ( --four )</h2>
+    </div>
+    {% section 'resource-header-four' %}
+  </div>
+
+  <div class="display-wrap">
+    <div class="container">
+      <h2 class="sec-title">Header Nav Split ( --five )</h2>
+    </div>
+    {% section 'resource-header-five' %}
+  </div>
+</section>
+
+<section class="blade-type">
+  <h1>Heroes</h1>
+
+  <div class="display-wrap">
+    <div class="container">
+      <h2 class="sec-title">Hero Full-Width</h2>
+    </div>
+    {% section 'resource-hero-full' %}
+  </div>
+  
+  <div class="display-wrap">
+    <div class="container">
+      <h2 class="sec-title">Hero Split ( Left )</h2>
+    </div>
+    {% section 'resource-hero-split' %}
+  </div>
+  
+  <div class="display-wrap">
+    <div class="container">
+      <h2 class="sec-title">Hero Split ( Right )</h2>
+    </div>
+    {% section 'resource-hero-split-alt' %}
+  </div>
+</section>
+
+<section class="blade-type">
+  <h1>Logo List</h1>
+
+  <div class="display-wrap">
+    {% section 'resource-logo-list' %}
+  </div>  
+</section>
+
+<section class="blade-type">
+  <h1>Accordions ( FAQs )</h1>
+
+  <div class="display-wrap">
+    {% section 'resource-faqs' %}
+  </div>  
+</section>
+
+<section class="blade-type">
+  <h1>Product Carousels</h1>
+
+  <div class="display-wrap">
+    <div class="container">
+      <h2 class="sec-title">Standard</h2>
+    </div>
+    {% section 'resource-product-carousel-standard' %}
+  </div>  
+
+  <div class="display-wrap">
+    <div class="container">
+      <h2 class="sec-title">Fixed</h2>
+    </div>
+    {% section 'resource-product-carousel-fixed' %}
+  </div>  
+
+  <div class="display-wrap">
+    <div class="container">
+      <h2 class="sec-title">Fixed ( Overflow )</h2>
+    </div>
+    {% section 'resource-product-carousel-fixed-overflow' %} 
+  </div>  
+</section>
+
+<section class="blade-type">
+  <h1>Generic Form Defaults</h1>
+
+  <div class="display-wrap">
+    <div class="container">
+      {% form 'customer_login' %}
+        {{ form_errors | default_errors }}
+      
+        <div class="form__group">
+          <label class="sr-only" for="email">Text Input</label>
+          <input type="text" placeholder="Text Input" name="customer[email]">
+        </div>
+
+        <div class="form__group">
+          <label class="sr-only" for="email">Textarea</label>
+          <textarea>This is a textarea</textarea>
+        </div>
+
+        <div class="form__group">
+          <label class="sr-only" for="email">Select</label>
+          <select>
+            <option selected disabled>Select</option>
+            <option>Option 1</option>
+            <option>Option 2</option>
+          </select>
+        </div>
+
+        <div class="form__group form__group--check">
+          <label>
+            <input type="checkbox">
+            <span class="checkmark"></span>
+            This is a custom checkbox
+          </label>
+        </div>
+
+        <div class="form__group form__group--radio">
+          <label>
+            <input name="radio" type="radio">
+            <span class="checkmark"></span>
+            This is a custom radio
+          </label>
+          <label>
+            <input name="radio" type="radio">
+            <span class="checkmark"></span>
+            This is a custom radio
+          </label>
+          <label>
+            <input name="radio" type="radio">
+            <span class="checkmark"></span>
+            This is a custom radio
+          </label>
+        </div>
+
+        <div class="actions d-flex justify-center">
+          <input type="submit" class="btn btn--solid" value="Sign in">
+        </div>
+      {% endform %}
+    </div>
+  </div>  
+</section>
+
+<section class="blade-type">
+  <h1>Modals</h1>
+  <div class="display-wrap">
+    <div class="container text-center">
+      {% section 'resource-modal' %}
+    </div>
+  </div>
+</section>
+
+<style>
+  .blade-type {
+    margin-bottom: 80px;
+  }
+
+  .blade-type h1 {
+    background: #000;
+    color: #fff;
+    padding: 30px 0;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  .display-wrap {
+    margin: 60px 0;
+  }
+
+  .sec-title {
+    padding: 5px 15px;
+    font-style: italic;
+    font-size: 15px;
+    margin-bottom: 15px;
+    display: inline-block;
+    background: #000;
+    color: #fff;
+  }
+
+  .descriptor {
+    padding-bottom: 15px;
+  }
+
+</style>

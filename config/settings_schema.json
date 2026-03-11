@@ -1,0 +1,95 @@
+[
+  {
+    "name": "theme_info",
+    "theme_name": "Sleepify Theme",
+    "theme_version": "1.0.1",
+    "theme_author": "Sleepless Media",
+    "theme_documentation_url": "https:\/\/github.com\/Shopify\/skeleton-theme",
+    "theme_support_url": "https:\/\/github.com\/Shopify\/skeleton-theme\/issues"
+  },
+  {
+    "name": "Favicon Image",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "favicon",
+        "label": "Favicon Image",
+        "info": "Image should be in PNG format at minimum of 256 x 256 pixels"
+      }
+    ]
+  },
+  {
+    "name": "Social Links",
+    "settings": [
+      {
+        "type": "text",
+        "id": "facebook",
+        "label": "Facebook"
+      },
+      {
+        "type": "text",
+        "id": "x",
+        "label": "X"
+      },
+      {
+        "type": "text",
+        "id": "instagram",
+        "label": "Instagram"
+      },
+      {
+        "type": "text",
+        "id": "tiktok",
+        "label": "Tiktok"
+      },
+      {
+        "type": "text",
+        "id": "youtube",
+        "label": "YouTube"
+      },
+      {
+        "type": "text",
+        "id": "linkedin",
+        "label": "LinkedIn"
+      }
+    ]
+  },
+  {
+    "name": "Free Shipping",
+    "settings": [
+      {
+        "id": "free_ship",
+        "type": "number",
+        "label": "Free Shipping Threshold"
+      }
+    ]
+  },
+  {
+    "name": "Mini Cart",
+    "settings": [
+      {
+        "id": "upsell_products",
+        "type": "product_list",
+        "label": "Upsell Products",
+        "info": "products that will show up in the minicart"
+      }
+    ]
+  },
+  {
+    "name": "Search",
+    "settings": [
+      {
+        "id": "popular_searches",
+        "type": "text",
+        "label": "Popular Searches",
+        "info": "Seperate search terms with a comma followed by a space eg: Dark Chocolate, Lemencello"
+      },
+      {
+        "id": "trending_products",
+        "type": "product_list",
+        "label": "Trending Products",
+        "limit": 4,
+        "info": "choose 4 to display in the search by default"
+      }
+    ]
+  }
+]

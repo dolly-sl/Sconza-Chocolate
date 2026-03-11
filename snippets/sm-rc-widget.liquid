@@ -1,0 +1,484 @@
+{% comment %}
+Edit this next function as the success function on new item added to cart
+{% endcomment %}
+<script>
+  function successState(){
+    var prodID = $( 'select[sm-rc-variant-selector]' ).val();
+    var prodQty = $( 'input[sm-rc-quantity-selector]' ).val();
+    var prodPlan = $( 'select[sm-rc-plan-selector]' ).val();
+
+    setTimeout( function( ) {
+      jQuery.getJSON('/cart.js', function(cart) {
+        refreshMiniCart(cart, prodID, prodQty, prodPlan);
+      });
+    }, 200 );
+  }
+</script>
+{% comment %}
+----------------------- How To Use: -----------------------
+
+Outside of this snippet assign a liquid variable _product to whatever product you want to set recharge up on
+If you leave it blank it will use the current product object if you are on a product page
+
+Edit the above function successState() with any and all js you need for when the product is finished adding to the cart (open minicart, go to cart page, etc.)
+
+Either create your own controllers elsewhere and have them change the selectors in here, or use the following properties to bind the js to your own selectors:
+
+sm-rc-option1-selector - option selector for the first variant options
+sm-rc-option2-selector - option selector for the second variant options
+sm-rc-option3-selector - option selector for the third variant options
+sm-rc-variant-selector - variant selector, needs all of the data attributes in place if you are going to make your own
+sm-rc-plan-selector - subscription plan selector, needs all of the data attributes in place if you are going to make your own
+sm-rc-quantity-selector - can go on any number input to use as quantity selector
+sm-rc-add-to-cart - can go on any button to use as a buy button
+
+There are also some display properties that will let you display relevant info as you change variants and plans:
+
+sm-rc-current-price - displays the current price for the variant and plan selected
+sm-rc-compare-price - displays the compare at price for the variant and plan selected
+sm-rc-current-plan-title - displays the plan title ex: "Deliver every 30 days"
+sm-rc-current-variant-title - displays the title of the selected variant
+sm-rc-variant-subscribe-price - displays the price if you were to subscribe with the selected variant
+sm-rc-variant-one-time-price - displays the price if you were to make a one time purchase with the selected variant
+sm-rc-discount-ammount - shows the discount amount text that you can add to a span after the word Subscribe on a button, ex: "& and save 10%"
+{% endcomment %}
+
+{% if product.selling_plan_groups[0].selling_plans %}
+
+{% unless _product %}
+  {% assign _product = product %}
+{% endunless %}
+
+<div class="sm-rc-widget">
+
+  {% for option in _product.options_with_values %}
+  <select class="sm-rc-widget__testSelector" sm-rc-option{{ forloop.index }}-selector>
+    {% for value in option.values %}
+    <option value="{{ value }}">
+      {{ value }}
+    </option>
+    {% endfor %}
+  </select>
+  {% endfor %}
+
+
+  <select class="sm-rc-widget__testSelector" sm-rc-variant-selector>
+  {% for _variant in _product.variants %}
+    <option value="{{ _variant.id }}"
+            data-available="{{ _variant.available }}"
+            data-price="{{ _variant.price | money }}"
+            data-compare-price="{{ _variant.compare_at_price | money }}"
+            data-option-1="{{ _variant.option1 }}"
+            data-option-2="{{ _variant.option2 }}"
+            data-option-3="{{ _variant.option3 }}"
+            data-title="{{ _variant.title }}"
+            data-image="{{ _variant.image | img_url: '150x150'  }}">
+      {{ _variant.title }}
+    </option>
+  {% endfor %}
+  </select>
+  <select class="sm-rc-widget__testSelector" sm-rc-plan-selector>
+  {% unless _product.requires_selling_plan %}
+    <option value="false"
+            data-name="One Time Purchase"
+            data-discount="0">
+      One Time Purchase
+    </option>
+  {% endunless %}
+  {% for selling_plan in _product.selling_plan_groups[0].selling_plans %}
+    <option value="{{ selling_plan.id }}"
+            data-name="{{ selling_plan.name }}"
+            data-discount="{{ selling_plan.price_adjustments[0].value }}">
+      {{ selling_plan.name }}
+    </option>
+  {% endfor %}
+  </select>
+  <!-- <input class="sm-rc-widget_testInput" sm-rc-quantity-selector value="1" type="number" min="1"> -->
+  <!-- <button class="sm-rc-widget__testButton" sm-rc-add-to-cart>Add To Cart</button> -->
+
+
+  <div class="sm-rc-testText" sm-rc-current-price></div>
+  <div class="sm-rc-testText" sm-rc-current-plan-title></div>
+  <div class="sm-rc-testText" sm-rc-current-variant-title></div>
+  <div class="sm-rc-testText" sm-rc-variant-subscribe-price></div>
+  <div class="sm-rc-testText" sm-rc-variant-one-time-price></div>
+  <div class="sm-rc-testText" sm-rc-discount-ammount></div>
+
+</div>
+
+<script>
+  (function ($) {
+    $(window).ready(function () {
+
+       // Go to variant specific image in slider when selected
+       function setVarImg ( imgUrl ) {
+        if ( imgUrl != '' || imgUrl != undefined ) {
+
+          $( '.pdp__slider--thumb .slick-slide' ).each( function(){
+            var slideSrc = $( this ).find( 'img' ).attr( 'src' );
+            if ( slideSrc == imgUrl ) {
+
+              $( this ).click();
+
+              return;
+            }
+          } );
+        }
+      }
+
+      var matchString = false;
+
+      function getMatchString() {
+        var matchStringArray = [];
+        if ($('[sm-rc-option1-selector]').length){
+          matchStringArray.push($('[sm-rc-option1-selector]').val());
+        }
+        if ($('[sm-rc-option2-selector]').length){
+          matchStringArray.push($('[sm-rc-option2-selector]').val());
+        }
+        if ($('[sm-rc-option3-selector]').length){
+          matchStringArray.push($('[sm-rc-option3-selector]').val());
+        }
+        if (matchStringArray.length){
+          matchString = matchStringArray.join(' / ');
+        }
+        else{
+          matchString = false;
+        }
+      }
+      getMatchString();
+
+      function setCurrentVariant(){
+        getMatchString();
+        if (matchString){
+          var newVal = $('[sm-rc-variant-selector]').find('[data-title="'+matchString+'"]').val();
+          $('[sm-rc-variant-selector]').val(newVal).trigger('change');
+        }
+      }
+
+      $('[sm-rc-option1-selector], [sm-rc-option2-selector], [sm-rc-option3-selector]').on('change', function(){
+        setCurrentVariant();
+      });
+
+			/* function setVariantParam( varId ){
+				var searchParams = new URLSearchParams(window.location.search)
+				searchParams.set("variant", varId);
+				var newRelativePathQuery = window.location.pathname + '?' + searchParams.toString();
+				history.replaceState(null, '', newRelativePathQuery);
+			} */
+
+      var currentVariant = {
+        "title":"",
+        "id":"",
+        "available":"",
+        "price":"",
+        "compare_price":"",
+        "image":""
+      };
+
+      function getCurrentVariant(){
+        var value = $('[sm-rc-variant-selector]').val();
+        var target = $('[sm-rc-variant-selector]').find('[value="'+value+'"]');
+        currentVariant.title = target.attr('data-title');
+        currentVariant.id = target.attr('value');
+        currentVariant.available = target.attr('data-available');
+        currentVariant.price = target.attr('data-price');
+        currentVariant.compare_price = target.attr('data-compare-price');
+        currentVariant.img_url = target.attr( 'data-image' );
+
+				// setVariantParam( value );
+
+      }
+      getCurrentVariant();
+
+      var currentPlan = {
+        "title":"",
+        "id":"",
+        "discount":""
+      }
+      function getCurrentPlan(){
+        var value = $('[sm-rc-plan-selector]').val();
+        var target = $('[sm-rc-plan-selector]').find('[value="'+value+'"]');
+        currentPlan.title = target.attr('data-title');
+        currentPlan.id = target.attr('value');
+        currentPlan.discount = target.attr('data-discount');
+      }
+      getCurrentPlan();
+
+      function renderVariables(){
+        getCurrentVariant();
+        getCurrentPlan();
+
+        var lastPlan = $('[sm-rc-plan-selector]').find('option').last();
+
+        var currentPlanTitle = currentPlan.title;
+        var currentVariantTitle = currentVariant.title;
+
+        var oneTimePrice = currentVariant.price;
+        var comparePrice = currentVariant.compare_price;
+        var discountAmmount = lastPlan.attr('data-discount') * 1;
+        var discountAmmountDisplay = '';
+        if (discountAmmount > 0){
+        	discountAmmountDisplay = 'Save '+lastPlan.attr('data-discount')+'%';
+        }
+        var oneTimePriceMath = oneTimePrice.substring(1) * 1;
+        var discountAmmountMath = discountAmmount / 100
+        var subscribePrice = Math.round( (oneTimePriceMath - (oneTimePriceMath * discountAmmountMath)) * 100) / 100;
+
+        var currentPrice = oneTimePrice;
+        if (currentPlan.id != "false"){
+          currentPrice = '$'+subscribePrice.toFixed(2);
+        }
+
+        var image = currentVariant.img_url;
+        setVarImg( image );
+
+        $('[sm-rc-current-price]').text(currentPrice);
+        $('[sm-rc-compare-price]').text(comparePrice);
+        $('[sm-rc-current-plan-title]').text(currentPlanTitle);
+        $('[sm-rc-current-variant-title]').text(currentVariantTitle);
+        $('[sm-rc-variant-subscribe-price]').text('$'+subscribePrice.toFixed(2));
+        $('[sm-rc-variant-one-time-price]').text(oneTimePrice);
+        $('[sm-rc-discount-ammount]').text(discountAmmountDisplay);
+
+        if (currentVariant.available == 'false'){
+          $('[sm-rc-add-to-cart]').prop('disabled', true);
+          $( '.oos-text' ).show();
+          $( '.is-text' ).hide();
+        }
+        else{
+          $('[sm-rc-add-to-cart]').prop('disabled', false);
+          $( '.oos-text' ).hide();
+          $( '.is-text' ).show();
+        }
+
+
+      }
+      renderVariables();
+
+      $('[sm-rc-variant-selector], [sm-rc-plan-selector]').on('change', function(){
+        renderVariables();
+      });
+
+      $('[sm-rc-add-to-cart]').on('click', function(){
+
+        var qty = $('[sm-rc-quantity-selector]').val();
+
+        if (currentPlan.id == "false"){
+          CartJS.addItem(parseInt(currentVariant.id), qty, {},
+          {
+            "success": function(data, textStatus, jqXHR) {
+              //success state
+              successState();
+            },
+            "error": function(jqXHR, textStatus, errorThrown) {
+              //error state
+              console.log('Error: ' + errorThrown + '!');
+            }
+          });
+        }
+        else{
+          CartJS.addItem(parseInt(currentVariant.id), qty, {
+            "selling_plan": parseInt(currentPlan.id)
+          }, {
+            "success": function(data, textStatus, jqXHR) {
+              //success state
+              successState();
+            },
+            "error": function(jqXHR, textStatus, errorThrown) {
+              //error state
+              console.log('Error: ' + errorThrown + '!');
+            }
+          });
+        }
+      });
+
+    });
+  })(jQuery);
+
+</script>
+
+{% else %}
+
+{% unless _product %}
+  {% assign _product = product %}
+{% endunless %}
+
+<div class="sm-rc-widget">
+
+  {% for option in _product.options_with_values %}
+  <select class="sm-rc-widget__testSelector" sm-rc-option{{ forloop.index }}-selector>
+    {% for value in option.values %}
+    <option value="{{ value }}">
+      {{ value }}
+    </option>
+    {% endfor %}
+  </select>
+  {% endfor %}
+
+
+  <select class="sm-rc-widget__testSelector" sm-rc-variant-selector>
+  {% for _variant in _product.variants %}
+    <option value="{{ _variant.id }}"
+            data-available="{{ _variant.available }}"
+            data-price="{{ _variant.price | money }}"
+            data-compare-price="{{ _variant.compare_at_price | money }}"
+            data-option-1="{{ _variant.option1 }}"
+            data-option-2="{{ _variant.option2 }}"
+            data-option-3="{{ _variant.option3 }}"
+            data-title="{{ _variant.title }}"
+            data-image="{{ _variant.image | img_url: '150x150'  }}">
+      {{ _variant.title }}
+    </option>
+  {% endfor %}
+  </select>
+
+  <!-- <input class="sm-rc-widget_testInput" sm-rc-quantity-selector value="1" type="number" min="1"> -->
+  <!-- <button class="sm-rc-widget__testButton" sm-rc-add-to-cart>Add To Cart</button> -->
+
+
+  <div class="sm-rc-testText" sm-rc-current-price></div>
+  <div class="sm-rc-testText" sm-rc-current-variant-title></div>
+
+</div>
+
+<script>
+  (function ($) {
+    $(window).ready(function () {
+
+      var matchString = false;
+
+      function getMatchString() {
+        var matchStringArray = [];
+        if ($('[sm-rc-option1-selector]').length){
+          matchStringArray.push($('[sm-rc-option1-selector]').val());
+        }
+        if ($('[sm-rc-option2-selector]').length){
+          matchStringArray.push($('[sm-rc-option2-selector]').val());
+        }
+        if ($('[sm-rc-option3-selector]').length){
+          matchStringArray.push($('[sm-rc-option3-selector]').val());
+        }
+        if (matchStringArray.length){
+          matchString = matchStringArray.join(' / ');
+        }
+        else{
+          matchString = false;
+        }
+      }
+      getMatchString();
+
+      function setCurrentVariant(){
+        getMatchString();
+        if (matchString){
+          var newVal = $('[sm-rc-variant-selector]').find('[data-title="'+matchString+'"]').val();
+          $('[sm-rc-variant-selector]').val(newVal).trigger('change');
+        }
+      }
+
+      $('[sm-rc-option1-selector], [sm-rc-option2-selector], [sm-rc-option3-selector]').on('change', function(){
+        setCurrentVariant();
+      });
+
+			/* function setVariantParam( varId ){
+				var searchParams = new URLSearchParams(window.location.search)
+				searchParams.set("variant", varId);
+				var newRelativePathQuery = window.location.pathname + '?' + searchParams.toString();
+				history.replaceState(null, '', newRelativePathQuery);
+			} */
+
+			//updateVariantFromParam();
+
+			/* function updateVariantFromParam() {
+				var url = new URL(window.location.href);
+
+				if ( url.searchParams.get( 'variant' ) ) {
+					var varId = url.searchParams.get( 'variant' );
+
+					console.log( varId );
+				}
+
+			}; */
+
+      var currentVariant = {
+        "title":"",
+        "id":"",
+        "available":"",
+        "price":"",
+        "compare_price":""
+      };
+
+
+      function getCurrentVariant(){
+        var value = $('[sm-rc-variant-selector]').val();
+        var target = $('[sm-rc-variant-selector]').find('[value="'+value+'"]');
+        currentVariant.title = target.attr('data-title');
+        currentVariant.id = target.attr('value');
+        currentVariant.available = target.attr('data-available');
+        currentVariant.price = target.attr('data-price');
+        currentVariant.compare_price = target.attr('data-compare-price');
+        currentVariant.img_url = target.attr( 'data-image' );
+
+				//setVariantParam( value );
+      }
+      getCurrentVariant();
+
+      function renderVariables(){
+        getCurrentVariant();
+
+        var currentVariantTitle = currentVariant.title;
+
+        var oneTimePrice = currentVariant.price;
+        var currentPrice = oneTimePrice;
+        var comparePrice = currentVariant.compare_price;
+
+        var image = currentVariant.img_url;
+
+        {% comment %} setVarImg( image ); {% endcomment %}
+
+        $('[sm-rc-current-price]').text(currentPrice);
+        $('[sm-rc-compare-price]').text(comparePrice);
+        $('[sm-rc-current-variant-title]').text(currentVariantTitle);
+
+        if (currentVariant.available == 'false'){
+          $('[sm-rc-add-to-cart]').prop('disabled', true);
+          $( '.oos-text' ).show();
+          $( '.is-text' ).hide();
+        }
+        else{
+          $('[sm-rc-add-to-cart]').prop('disabled', false);
+          $( '.oos-text' ).hide();
+          $( '.is-text' ).show();
+        }
+      }
+      renderVariables();
+
+      $('[sm-rc-variant-selector], [sm-rc-plan-selector]').on('change', function(){
+        renderVariables();
+      });
+
+      $('[sm-rc-add-to-cart]').on('click', function(){
+
+        var qty = $('[sm-rc-quantity-selector]').val();
+
+        CartJS.addItem(parseInt(currentVariant.id), qty, {},
+        {
+          "success": function(data, textStatus, jqXHR) {
+            //success state
+            successState();
+            // console.log( 'here-suc' )
+          },
+          "error": function(jqXHR, textStatus, errorThrown) {
+            //error state
+            console.log('Error: ' + errorThrown + '! - here');
+          }
+        });
+
+      });
+
+    });
+
+  })(jQuery);
+</script>
+
+{% endif %}

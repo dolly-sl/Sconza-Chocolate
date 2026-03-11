@@ -1,0 +1,250 @@
+{% if cart.empty? == false %}
+  <section
+    class="cart tw-bg-backgroundDark"
+    {% if settings.free_ship != blank %}
+    data-freeship="{{ settings.free_ship | times: 100 }}"
+    {% endif %}>
+    <div class="tw-container">
+      <div class="inner">
+        <div class="cart__heading d-flex align-center justify-between">
+          <h1 class="tw-text-mainBlack tw-text-[35px] tw-leading-normal tw-uppercase tw-tracking-[0.263px] tw-font-osc">
+            {{ section.settings.header }} ({{ cart.item_count }})
+          </h1>
+        </div>
+
+        <div class="cart__table">
+          <table class="cart-table">
+            <thead>
+              <tr class="cart-row desktop-only">
+                <th
+                  scope="col"
+                  class="text-left"
+                  width="40%">
+                  <span class="eyebrow eyebrow--sm">Product</span>
+                </th>
+                <th scope="col">
+                  <span class="eyebrow eyebrow--sm">Price</span>
+                </th>
+                <th scope="col">
+                  <span class="eyebrow eyebrow--sm">Quantity</span>
+                </th>
+                <th scope="col" class="text-right">
+                  <span class="eyebrow eyebrow--sm">Total</span>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for line_item in cart.items %}
+                <tr
+                  class="cart-row"
+                  data-varid="{{ line_item.variant_id }}"
+                  data-lineid="{{ line_item.id }}"
+                  data-linenum="{{ forloop.index }}">
+                  <td class="col col__product" width="40%">
+                    <div class="d-flex">
+                      <div class="product__image">
+                        <a href="{{ line_item.url | within: collection }}">
+                          <img
+                            src="{{ line_item.image.src | img_url: '80x' }}"
+                            srcset="{{ line_item.image.src | img_url: '160x' }} 2x"
+                            alt="{{ line_item.title | escape }}">
+                        </a>
+                      </div>
+                      <div class="title">
+                        <h3 class="heading--five">
+                          <a class="no-dec trans" href="{{ line_item.url | within: collection }}">
+                            {{ line_item.product.title }}
+                          </a>
+                        </h3>
+                        {% if line_item.options_with_values[0].name != 'Title' %}
+                          {% for option in line_item.options_with_values %}
+                            <div class="var">
+                              <span>
+                                {{ option.name }}: {{ option.value }}
+                              </span>
+                            </div>
+                          {% endfor %}
+                        {% endif %}
+                        {% comment %} {% if line_item.variant != blank and line_item.variant.title != 'Default Title' %}<span class="var">{{ line_item.variant.title }} </span>{% endif %} {% endcomment %}
+
+                        {% for component in line_item.item_components %}
+                          <div class="var">
+                            <span>
+                              {{ component.product.title }}
+                            </span>
+                          </div>
+                        {% endfor %}
+
+                        {% if line_item.selling_plan_allocation.selling_plan.name != blank %}
+                          <span class="delivery">{{ line_item.selling_plan_allocation.selling_plan.name }}</span>
+                        {% endif %}
+                        <div class="actions">
+                          <a href="#" class="remove-product trans">Remove</a>
+                        </div>
+                      </div>
+                      <div class="mobile-stuff">
+                        <div class="section d-flex align-center">
+                          <span class="label">Qty:</span>
+                          <div class="qty d-flex align-center">
+                            <button class="js-qty js-qty--cart js-qty--minus trans">
+                              <span class="sr-only">Decrease</span>
+                            </button>
+                            <input
+                              sm-rc-quantity-selector
+                              type="text"
+                              value="{{ line_item.quantity }}"
+                              min="1"
+                              type="number"
+                              class="qty-val">
+                            <button class="js-qty js-qty--cart js-qty--plus trans">
+                              <span class="sr-only">Increase</span>
+                            </button>
+                          </div>
+                        </div>
+                        <div class="section d-flex">
+                          <span class="label">Price:</span>
+                          <span class="data">{{ line_item.price | money }}</span>
+                        </div>
+                        <div class="section section--total d-flex">
+                          <span class="label">Total:</span>
+                          <span class="data">{{ line_item.final_line_price | money }}</span>
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="col col__price text-center">
+                    {{ line_item.price | money }}
+                  </td>
+                  <td class="col col__qty  text-center">
+                    <div class="qty d-flex align-center">
+                      <button class="js-qty js-qty--cart js-qty--minus trans">
+                        <span class="sr-only">Decrease</span>
+                      </button>
+                      <input
+                        sm-rc-quantity-selector
+                        type="text"
+                        value="{{ line_item.quantity }}"
+                        min="1"
+                        type="number"
+                        class="qty-val">
+                      <button class="js-qty js-qty--cart js-qty--plus trans">
+                        <span class="sr-only">Increase</span>
+                      </button>
+                    </div>
+                  </td>
+                  <td class="col col__total text-right">
+                    {{ line_item.final_line_price | money }}
+                  </td>
+                </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+
+        <div class="cart__footer d-flex justify-between">
+          <div class="shop-label">
+            <a href="/" class="trans no-dec">
+              <span class="eyebrow eyebrow--sm eyebrow--border">
+                Continue Shopping
+              </span>
+            </a>
+          </div>
+          <div class="totals">
+            <div class="total d-flex justify-between">
+              <h3 class="heading--five">Order Total</h3>
+              <h3 class="heading--five total-money">
+                {{ cart.total_price | money }}
+              </h3>
+            </div>
+            <div class="disclaimer">Taxes, shipping and discount codes are entered and calculated at checkout.</div>
+            <div class="checkout">
+              <a href="/checkout" class="btn-primary tw-flex tw-w-full"><img
+                  src="{{ "icon_lock.svg" | asset_url }}"
+                  alt="Lock Icon"
+                  class="tw-mr-2"> Checkout</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="upsells pdp__product-slider product-slider product-slider--lg tw-bg-backgroundDark tw-pb-16">
+    <div class="tw-container tw-pt-12">
+      <div class="tw-flex tw-justify-between tw-mb-8">
+        <h2 class="tw-text-mainBlack tw-text-[35px] tw-leading-normal tw-uppercase tw-tracking-[0.263px] tw-font-osc tw-mb-5">
+          {% if section.settings.related_heading != blank %}
+            {{ section.settings.related_heading }}
+          {% else %}
+            You Might Also Enjoy
+          {% endif %}
+        </h2>
+      </div>
+      <div class="swiper cartRelatedSwiper">
+        <div class="swiper-wrapper">
+          {% for productItem in section.settings.products %}
+            <div class="slick-protect">
+              <div class=" tw-mr-5">
+                {% render 'default-product'
+                  , data: productItem
+                  , img_size: '300x350'
+                  , img_size_2x: '600x700' %}
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </section>
+
+{% else %}
+  <section class="cart cart--empty tw-flex tw-items-center tw-justify-center tw-text-center tw-bg-backgroundDark">
+    <div class="tw-container">
+      <h1 class="tw-text-mainBlack tw-text-[35px] tw-leading-normal tw-uppercase tw-tracking-[0.263px] tw-font-osc tw-mb-5 tw-text-center">
+        {{ section.settings.headerEmpty }}
+      </h1>
+      <a href="{{ section.settings.btn_url }}" class="btn-primary tw-mx-auto">
+        Continue Shopping
+      </a>
+    </div>
+  </section>
+{% endif %}
+
+{% schema %}
+  {
+    "name": "Cart Section",
+    "settings": [
+      {
+        "type": "text",
+        "id": "header",
+        "label": "header",
+        "default": "YOUR CART"
+      },
+      {
+        "type": "text",
+        "id": "headerEmpty",
+        "label": "headerEmpty",
+        "default": "YOUR CART IS CURRENTLY EMPTY"
+      },
+      {
+        "type": "text",
+        "id": "taxes",
+        "label": "Taxes Message"
+      },
+      {
+        "type": "text",
+        "id": "related_heading",
+        "label": "Related Products Heading"
+      }, {
+        "type": "text",
+        "id": "btn_url",
+        "label": "Button URL",
+        "default": "/"
+      }, {
+        "id": "products",
+        "type": "product_list",
+        "label": "Products"
+      }
+    ]
+  }
+{% endschema %}

@@ -1,0 +1,44 @@
+<div class="article article--default">
+  <div class="inner">
+    <div class="article__image">
+      <a href="{{ data.url }}">
+        <img
+          src="{{ data.image | img_url: '420x420', crop: 'center' }}"
+          srcset="{{ data.image | img_url: '840x840', crop: 'center' }} 2x"
+          alt="{{ data.image.alt }}"
+          class="tw-object-fit tw-w-full tw-h-auto tw-object-cover"
+          style="aspect-ratio: 1 / 1;">
+      </a>
+    </div>
+    {% comment %}
+      <div class="article__tags">
+      {% for tag in data.tags %}
+      <a href="/blogs/news/tagged/{{ tag | handleize }}">
+      {{- tag -}}
+      </a>
+      {%- if forloop.last != true %}, {% endif %}
+      {% endfor %}
+      </div>
+    {% endcomment %}
+    <div class="tw-mt-5">
+      <p class="tw-text-sm tw-text-mainBlack tw-font-os tw-italic">{{ data.created_at | date: '%B %d, %Y' }}</p>
+    </div>
+    <div class="article__heading">
+      <h2 class="tw-text-mainBlack2 tw-text-[25px] tw-font-bold tw-font-osc tw-uppercase tw-leading-[1.13]">
+        <a class="animate" href="{{ data.url }}">
+          {{ data.title }}
+        </a>
+      </h2>
+    </div>
+    <div class="article__excerpt tw-mt-2">
+      <p class="tw-base tw-text-black tw-font-os">
+        {{ data.excerpt_or_content | strip_html | truncatewords: 17, '...' }}
+      </p>
+    </div>
+    <div class="article__link tw-mt-3">
+      <a href="{{ data.url }}" class="tw-text-mainBlack2 tw-text-base tw-font-bold tw-font-osc tw-border-b-2 tw-border-mainGold animate hover:tw-border-mainGold tw-uppercase">
+        Read More
+      </a>
+    </div>
+  </div>
+</div>

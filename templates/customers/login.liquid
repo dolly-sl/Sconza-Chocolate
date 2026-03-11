@@ -1,0 +1,69 @@
+<section class="customer customer--login">
+  <div class="container" id="login">
+    <div class="customer__heading">
+      <h1>Sign In</h1>
+    </div>
+    <div class="customer__content">
+      <div class="customer__form">
+        {% form 'customer_login' %}
+          {{ form_errors | default_errors }}
+        
+          <div class="form__group">
+            <label class="sr-only" for="email">Email</label>
+            <input type="email" placeholder="Email" name="customer[email]">
+          </div>
+        
+          <div class="form__group">
+            <label class="sr-only" for="password">Password</label>
+            <input type="password" placeholder="Password" name="customer[password]">
+          </div>
+
+          <div class="actions d-flex justify-center">
+            <span><a href="#" onclick="showRecoverPasswordForm();return false;">Forgot Password?</a>  </span>           
+            <button type="submit" class="btn btn--solid">
+              Sign In
+            </button>
+            <span>Or <a href="/account/register">Create Account</a></span>
+          </div>
+        {% endform %}
+      </div>
+    </div>
+  </div>
+  <div class="container" id="reset" style="display: none;">
+    <div class="customer__heading">
+      <h1>Forgot Password?</h1>
+    </div>
+    <div class="customer__content">
+      <div class="customer__form"> 
+        {% form 'recover_customer_password' %}
+          {{ form.errors | default_errors }}
+          <div class="form__group">
+            <label for="email" class="large sr-only">Email</label>
+            <input type="email" value="" size="30" name="email" placeholder="Email" id="recover-email" class="large" />
+          </div>
+          <p class="text-center">We’ll send you an email to reset your password</p>
+          <div class="actions d-flex justify-center">
+            <button type="submit" class="btn btn--solid">
+              Send Email
+            </button>
+            <span>or <a href="#" onclick="hideRecoverPasswordForm();return false;">Cancel</a></span>
+          </div>
+        {% endform %}
+      </div>
+    </div>
+  </div>
+</section>
+
+<script type="text/javascript">
+  function showRecoverPasswordForm() {
+    document.getElementById('reset').style.display = 'block';
+    document.getElementById('login').style.display='none';
+  }
+
+  function hideRecoverPasswordForm() {
+    document.getElementById('reset').style.display = 'none';
+    document.getElementById('login').style.display = 'block';
+  }
+
+  if (window.location.hash == '#recover') { showRecoverPasswordForm() }
+</script>

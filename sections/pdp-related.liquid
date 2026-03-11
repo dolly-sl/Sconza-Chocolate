@@ -1,0 +1,129 @@
+<section class="pdp__related arrows--solid tw-bg-backgroundLight">
+  <div class="tw-container tw-pt-12">
+    <div class="tw-flex tw-justify-between tw-mb-8">
+      <h2 class="tw-text-mainBlack tw-text-[35px] tw-leading-normal tw-uppercase tw-tracking-[0.263px] tw-font-osc tw-mb-5">
+        You May Also Like
+      </h2>
+      <a href="/collections/all" class="btn-primary">Shop All</a>
+    </div>
+    <div class="swiper pdpRelatedSwiper">
+      {% if product.metafields.custom.recommended_products != blank %}
+        <div class="swiper-wrapper">
+          {% for product_item in product.metafields.custom.recommended_products.value %}
+            <div class="swiper-slide">
+              {% render 'default-product'
+                , data: product_item
+                , img_size: '300x350'
+                , img_size_2x: '600x700' %}
+            </div>
+          {% endfor %}
+        </div>
+
+      {% else %}
+        <div
+          id="observeThis"
+          class="swiper"
+          data-url="{{ routes.product_recommendations_url }}?section_id={{ section.id }}&product_id={{ product.id }}&limit=8">
+          {%- if recommendations.performed and recommendations.products_count > 0 -%}
+            <div class="swiper-wrapper">
+              {%- for product in recommendations.products limit: 4 -%}
+                <div class="swiper-slide">
+                  {% render 'default-product'
+                    , data: product
+                    , img_size: '300x350'
+                    , img_size_2x: '600x700' %}
+                </div>
+              {%- endfor -%}
+            </div>
+          {%- endif -%}
+        </div>
+        <script>
+          const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
+
+          const handleIntersection = (entries, observer) => {
+            if (!entries[0].isIntersecting) return;
+
+            observer.unobserve(productRecommendationsSection);
+
+            const url = productRecommendationsSection.dataset.url;
+
+            fetch(url)
+              .then((response) => response.text())
+              .then((text) => {
+                const html = document.createElement('div');
+                html.innerHTML = text;
+                const recommendations = html.querySelector('#observeThis');
+
+                if (recommendations && recommendations.innerHTML.trim().length) {
+                  productRecommendationsSection.innerHTML = recommendations.innerHTML;
+
+                  setTimeout(() => {
+                    var pdpRecsAPI = new Swiper('#observeThis', {
+                      slidesPerView: 4,
+                      spaceBetween: 20,
+                      loop: false,
+                      navigation: {
+                        nextEl: '.button-next-2',
+                        prevEl: '.button-prev-2',
+                      },
+                      breakpoints: {
+                        300: {
+                          slidesPerView: 1,
+                        },
+                        640: {
+                          slidesPerView: 2,
+                        },
+                        768: {
+                          slidesPerView: 3,
+                        },
+                        1024: {
+                          slidesPerView: 4,
+                        },
+                      },
+                    });
+                  }, 250);
+                }
+              })
+              .catch((e) => {
+                console.error(e);
+              });
+          };
+
+          const productRecommendationsSection = document.querySelector('#observeThis');
+          const observer = new IntersectionObserver(handleIntersection, { rootMargin: '0px 0px 200px 0px' });
+
+          observer.observe(productRecommendationsSection);
+        </script>
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+{% if product.metafields.sleepless.products != blank %}
+  <script>
+    // PDP Related Slider
+    var pdpRelatedSwiper = new Swiper('.pdpRelatedSwiper', {
+      slidesPerView: 4,
+      spaceBetween: 20,
+      loop: false,
+      navigation: {
+        nextEl: '.button-next-2',
+        prevEl: '.button-prev-2',
+      },
+      breakpoints: {
+        300: {
+          slidesPerView: 1,
+        },
+        640: {
+          slidesPerView: 2,
+        },
+        768: {
+          slidesPerView: 3,
+        },
+        1024: {
+          slidesPerView: 4,
+        },
+      },
+    });
+  </script>
+{% endif %}

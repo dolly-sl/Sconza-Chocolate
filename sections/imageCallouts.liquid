@@ -1,0 +1,173 @@
+<section class="{% if template.name == "index" %}tw-bg-backgroundDark {% else %} tw-bg-backgroundLight {% endif %} tw-bg-no-repeat tw-bg-cover tw-py-24 md:tw-py-[70px] lg:tw-pt-[100px] lg:tw-pb-[200px] tw-relative tw-overflow-hidden">
+  <img
+    src="{{ 'shape-2.png' | asset_url }}"
+    alt="shape"
+    class="tw-absolute tw-top-44 md:tw-top-10 tw--left-5">
+  <div class="tw-relative tw-z-0 wrapper">
+    {% if template.suffix != "about" %}
+      <img
+        src="{{ 'choc-7.png' | asset_url }}"
+        alt="choc"
+        class="tw-absolute tw-w-24 md:tw-w-auto tw--top-14 md:tw--left-5 md:tw-top-10 tw--z-10">
+      <img
+        src="{{ 'vanilla-1.png' | asset_url }}"
+        alt="vanilla"
+        class="tw-absolute tw-right-0 md:tw--right-5 tw--top-14 md:tw--top-10 tw--z-10">
+      <img
+        src="{{ 'almond-4.png' | asset_url }}"
+        alt="almond"
+        class="tw-absolute tw-w-20 md:tw-w-auto tw--right-0 md:tw--right-24 tw-top-40 md:tw-top-20 tw--z-10">
+      <img
+        src="{{ 'choc-8.png' | asset_url }}"
+        alt="choc"
+        class="tw-absolute tw--left-10 tw--bottom-24 tw--z-10">
+      <img
+        src="{{ 'almond-3.png' | asset_url }}"
+        alt="almond"
+        class="tw-absolute tw-hidden tw--right-20 tw--bottom-28 md:tw-block">
+    {% endif %}
+    {% if section.settings.subheading != blank or section.settings.heading != blank or section.settings.button_link != blank or section.settings.button_text != blank
+    %}
+      <!-- Section Heading -->
+      <div class="tw-flex tw-flex-col tw-items-center tw-justify-center tw-text-center">
+        {% if section.settings.subheading != blank %}
+          <h4 class="tw-text-xl md:tw-text-[35px] tw-leading-normal tw-font-script tw-text-mainGold tw-mb-2.5 lg:tw-mb-5">
+            {{ section.settings.subheading }}
+          </h4>
+        {% endif %}
+        {% if section.settings.heading != blank %}
+          <h2 class="tw-text-mainBlack tw-text-4xl md:tw-text-[45px] md:tw-leading-[104.4%] tw-uppercase tw-font-extrabold tw-font-osc tw-mb-4 md:tw-mb-5">
+            {{ section.settings.heading }}
+          </h2>
+        {% endif %}
+        {% if section.settings.button_link != blank and section.settings.button_text != blank %}
+          <a href="{{ section.settings.button_link }}" class="btn-primary">
+            {{ section.settings.button_text }}
+          </a>
+        {% endif %}
+      </div>
+    {% endif %}
+
+    {%- assign image = section.settings.image -%}
+    {{
+      image | image_url: width: image.width | image_tag: class: 'tw-block tw-mx-auto md:tw-hidden tw-mt-11', loading: 'lazy'
+    }}
+
+    <div class="tw-relative tw-z-0 tw-flex tw-flex-col tw-items-start tw-justify-between tw-mt-10 md:tw-flex-row md:tw-mt-28 lg:tw-mt-32 tw-gap-7 lg:tw-gap-0">
+      {%- assign image = section.settings.image -%}
+      {{
+        image | image_url: width: image.width | image_tag: class: 'tw-pointer-events-none tw-absolute tw-hidden tw--translate-x-1/2 tw--translate-y-1/2 tw-left-1/2 tw-top-1/2 tw--z-10 md:tw-block lg:tw-w-auto md:tw-w-[400px] tw-max-w-[600px]', loading: 'lazy'
+      }}
+
+      <div class="tw-w-full md:tw-w-[404px] tw-space-y-7 lg:tw-space-y-28 tw-flex tw-flex-col tw-justify-start">
+        {%- for block in section.blocks -%}
+          {%- case block.type -%}
+            {%- when 'callout_left' -%}
+              <div>
+                <h5 class="tw-pb-2.5 lg:tw-pb-4 tw-text-base tw-font-extrabold tw-uppercase tw-border-b tw-text-mainBlack md:tw-text-xl tw-font-osc mb:tw-pb-5 tw-border-mainBlack">
+                  {{ block.settings.heading }}
+                </h5>
+                <p class="tw-text-base tw-font-semibold tw-text-mainBlack tw-max-w-80 tw-mt-2.5 md:tw-mt-3">
+                  {{ block.settings.content }}
+                </p>
+              </div>
+          {%- endcase -%}
+        {%- endfor -%}
+      </div>
+      <div class="tw-w-full md:tw-w-[404px] tw-space-y-7 lg:tw-space-y-28 tw-flex tw-flex-col md:tw-justify-end md:tw-text-right">
+        {%- for block in section.blocks -%}
+          {%- case block.type -%}
+            {%- when 'callout_right' -%}
+              <div>
+                <h5 class="tw-pb-2.5 lg:tw-pb-4 tw-text-base tw-font-extrabold tw-uppercase tw-border-b tw-text-mainBlack md:tw-text-xl tw-font-osc mb:tw-pb-5 tw-border-mainBlack">
+                  {{ block.settings.heading }}
+                </h5>
+                <p class="tw-text-base tw-font-semibold tw-text-mainBlack tw-max-w-80 tw-mt-2.5 md:tw-mt-3 md:tw-text-right md:tw-ml-auto">
+                  {{ block.settings.content }}
+                </p>
+              </div>
+          {%- endcase -%}
+        {%- endfor -%}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+  {
+    "name": "Image with Callouts",
+    "max_blocks": 6,
+    "settings": [
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "Heading"
+      },
+      {
+        "type": "text",
+        "id": "subheading",
+        "label": "Subheading"
+      },
+      {
+        "type": "text",
+        "id": "button_text",
+        "label": "Button Text"
+      },
+      {
+        "type": "url",
+        "id": "button_link",
+        "label": "Button Link"
+      }, {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Image",
+        "info": "PNG 1000x1000px"
+      }
+    ],
+    "blocks": [
+      {
+        "name": "Callout Left",
+        "type": "callout_left",
+        "settings": [
+          {
+            "type": "text",
+            "id": "heading",
+            "label": "Heading"
+          }, {
+            "type": "textarea",
+            "id": "content",
+            "label": "Content"
+          }
+        ]
+      }, {
+        "name": "Callout Right",
+        "type": "callout_right",
+        "settings": [
+          {
+            "type": "text",
+            "id": "heading",
+            "label": "Heading"
+          }, {
+            "type": "textarea",
+            "id": "content",
+            "label": "Content"
+          }, {
+            "type": "range",
+            "id": "line_length",
+            "label": "Line Length",
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "default": 80,
+            "unit": "%"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Image with Callouts"
+      }
+    ]
+  }
+{% endschema %}

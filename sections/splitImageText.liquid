@@ -1,0 +1,228 @@
+<section class="{% if template.suffix != "about" %} tw-bg-backgroundDark {% else %} tw-bg-backgroundLight {% endif %} tw-py-20 md:tw-py-[76px] tw-relative tw-overflow-hidden">
+  <img
+    src="{{ 'vanilla-1.png' | asset_url }}"
+    alt="vanilla"
+    class="tw-absolute tw-top-0 tw-left-0 tw-block md:tw-hidden">
+  <img
+    src="{{ 'almond-3.png' | asset_url }}"
+    alt="almond"
+    class="tw-absolute tw-top-0 tw-right-0 tw-block md:tw-hidden">
+  <img
+    src="{{ 'choc-7.png' | asset_url }}"
+    alt="almond"
+    class="tw-absolute tw-block tw--left-[80px] tw-top-1/2 md:tw-hidden tw-z-10">
+  <img
+    src="{{ 'shape-2.png' | asset_url }}"
+    alt="almond"
+    class="tw-absolute tw-right-0 tw-block tw-bottom-10 md:tw-hidden">
+
+  <div class="tw-relative wrapper">
+    {%- for block in section.blocks -%}
+      {%- if block.type == 'block' -%}
+        {% if block.settings.alignment == 'left' %}
+            {% assign justify = 'start' %}
+        {% elsif block.settings.alignment == 'right' %}
+            {% assign justify = 'end' %}
+        {% else %}
+            {% assign justify = 'center' %}
+        {% endif %}
+        {% assign mod = forloop.index |  modulo: 2 %}
+        <div class="tw-flex tw-items-center tw-justify-evenly {% if mod == 0 %} tw-flex-row-reverse{% endif %}">
+          <div class="tw-flex tw-flex-col tw-items-{{ justify }} tw-justify-{{ justify }} tw-w-full tw-text-{{ block.settings.alignment }} md:tw-w-auto">
+            <h4 class="tw-text-xl md:tw-text-[30px] tw-leading-normal tw-font-script tw-text-mainGold tw-mb-2.5 lg:tw-mb-4">
+              {{ block.settings.subheading }}
+            </h4>
+            <h2 class="tw-text-mainBlack tw-text-4xl md:tw-text-[45px] md:tw-leading-[104.4%] tw-uppercase tw-text-{{ block.settings.alignment }} tw-font-extrabold tw-font-osc tw-max-w-[400px]">
+              {{ block.settings.heading }}
+            </h2>
+
+            {%- assign image = block.settings.image -%}
+            {{
+              image | image_url: width: image.width | image_tag: class: 'tw-block md:tw-hidden tw-my-7', loading: 'lazy'
+            }}
+
+            <div class="tw-text-base tw-text-mainBlack tw-mt-4 tw-mb-7 md:tw-mb-6 tw-max-w-[432px] tw-text-{{ block.settings.alignment }} richtext-content">
+              {{ block.settings.content | raw }}
+            </div>
+            {% if block.settings.button_link != blank and block.settings.button_text != blank %}
+              <a href="{{ block.settings.button_link }}" class="btn-primary">
+                {{ block.settings.button_text }}
+              </a>
+            {% endif %}
+          </div>
+          <div class="tw-hidden md:tw-block">
+            {{ image | image_url: width: image.width | image_tag: class: 'tw-w-[500px]', loading: 'lazy' }}
+          </div>
+        </div>
+      {%- endif -%}
+    {%- endfor -%}
+
+    {% if section.settings.heading != blank %}
+        {% if section.settings.alignment == 'left' %}
+            {% assign justify = 'start' %}
+        {% elsif section.settings.alignment == 'right' %}
+            {% assign justify = 'end' %}
+        {% else %}
+            {% assign justify = 'center' %}
+        {% endif %}
+
+      <div class="tw-flex tw-items-center tw-justify-evenly">
+        <div class="tw-flex tw-flex-col tw-items-{{ justify }} tw-justify-{{ justify }} tw-w-full tw-text-{{ section.settings.alignment }} md:tw-w-auto">
+          <h4 class="tw-text-xl md:tw-text-[30px] tw-leading-normal tw-font-script tw-text-mainGold tw-mb-2.5 lg:tw-mb-4">
+            {{ section.settings.subheading }}
+          </h4>
+          <h2 class="tw-text-mainBlack tw-text-4xl md:tw-text-[35px] tw-mb-5 md:tw-leading-[104.4%] tw-uppercase tw-text-{{ section.settings.alignment }} tw-font-extrabold tw-font-osc tw-max-w-[400px]">
+            {{ section.settings.heading }}
+          </h2>
+
+          <div class="swiper splitImagesSwiper">
+            <div class="swiper-wrapper">
+              {%- for block in section.blocks -%}
+                {%- if block.type == 'images' -%}
+                  <div class="swiper-slide">
+                    <div class="">
+                      {%- assign image = block.settings.image -%}
+                      {{
+                        image | image_url: width: image.width | image_tag: class: 'tw-block md:tw-hidden tw-my-7', loading: 'lazy'
+                      }}
+                    </div>
+                  </div>
+                {%- endif -%}
+              {%- endfor -%}
+            </div>
+          </div>
+
+          <p class="tw-text-base tw-text-mainBlack tw-mb-5 md:tw-mb-6 tw-max-w-[432px] tw-text-{{ section.settings.alignment }}">
+            {{ section.settings.content }}
+          </p>
+          {% if section.settings.button_link != blank and section.settings.button_text != blank %}
+            <a href="{{ section.settings.button_link }}" class="btn-primary">
+              {{ section.settings.button_text }}
+            </a>
+          {% endif %}
+        </div>
+        <div class="tw-hidden md:tw-block tw-w-2/5">
+          <div class="swiper splitImagesSwiper">
+            <div class="swiper-wrapper">
+              {%- for block in section.blocks -%}
+                <div class="swiper-slide">
+                  {%- if block.type == 'images' -%}
+                    <div class="tw-hidden md:tw-block">
+                      {%- assign image = block.settings.image -%}
+                      {{ image | image_url: width: image.width | image_tag: class: 'tw-w-[650px]', loading: 'lazy' }}
+                    </div>
+                  {%- endif -%}
+                </div>
+              {%- endfor -%}
+            </div>
+          </div>
+        </div>
+      </div>
+    {% endif %}
+
+    <img
+      src="{{ 'choc-6.png' | asset_url }}"
+      alt="choc"
+      class="tw-absolute tw-left-0 tw-hidden tw--bottom-10 lg:tw-block">
+  </div>
+</section>
+
+<div class="tw-hidden tw-text-left tw-text-right tw-text-center"></div>
+
+{% schema %}
+  {
+    "name": "Split Image and Text",
+    "settings": [
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "Heading for Images"
+      },
+      {
+        "type": "text",
+        "id": "subheading",
+        "label": "Subheading for Images"
+      },
+      {
+        "type": "textarea",
+        "id": "content",
+        "label": "Content for Images"
+      },
+      {
+        "type": "text",
+        "id": "button_text",
+        "label": "Button Text for Images"
+      },
+      {
+        "type": "url",
+        "id": "button_link",
+        "label": "Button Link for Images"
+      },
+      {
+  "type": "text_alignment",
+  "id": "alignment",
+  "label": "Text alignment",
+  "default": "center"
+}
+
+    ],
+    "blocks": [
+      {
+        "name": "Block",
+        "type": "block",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image",
+            "info": "PNG 1300x1200px"
+          },
+          {
+            "type": "text",
+            "id": "heading",
+            "label": "Heading"
+          },
+          {
+            "type": "text",
+            "id": "subheading",
+            "label": "Subheading"
+          },
+          {
+            "type": "richtext",
+            "id": "content",
+            "label": "Content"
+          }, {
+            "type": "text",
+            "id": "button_text",
+            "label": "Button Text"
+          }, {
+            "type": "url",
+            "id": "button_link",
+            "label": "Button Link"
+          },
+          {
+  "type": "text_alignment",
+  "id": "alignment",
+  "label": "Text alignment",
+  "default": "center"
+}
+        ]
+      }, {
+        "name": "Images",
+        "type": "images",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Split Image and Text"
+      }
+    ]
+  }
+{% endschema %}

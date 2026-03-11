@@ -1,0 +1,39 @@
+<div class="">
+  {%- for block in section.blocks -%}
+    {%- case block.type -%}
+      {%- when 'icon' -%}
+        {{ block.settings.heading }}
+    {%- endcase -%}
+  {%- endfor -%}
+</div>
+
+{% schema %}
+{
+  "name": "PDP Icons",
+  "settings": [],
+  "blocks": [
+    {
+      "name": "Icon",
+      "type": "icon",
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading"
+        },
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Icon",
+          "info": "SVG"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "PDP Icons"
+    }
+  ]
+}
+{% endschema %}

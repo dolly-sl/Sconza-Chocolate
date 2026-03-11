@@ -1,0 +1,74 @@
+{%- assign image = section.settings.image -%}
+
+  <section class="tw-relative tw-z-0 !tw-bg-no-repeat !tw-bg-cover !tw-bg-center" style="background-image:url({{ image | image_url: width: image.width }});">
+  {% comment %} Overlay styles: before:tw-absolute before:tw-left-0 before:tw-top-0 before:tw-size-full before:tw--z-10 before:tw-bg-menuOverlay before:tw-mix-blend-multiply {% endcomment %}
+  <div class="wrapper">
+    <div class="tw-h-[500px] md:tw-h-[600px] lg:tw-h-[654px] tw-flex tw-items-center lg:tw-text-{{ section.settings.alignment }} tw-text-center lg:tw-items-start tw-justify-center tw-flex-col" data-align="{{ section.settings.alignment }}">
+      <p class="tw-text-mainGold tw-text-xl md:tw-text-3xl lg:tw-text-4xl tw-font-script">
+        {{ section.settings.heading }}
+      </p>
+      <h1 class="tw-text-white tw-text-[35px] md:tw-text-[55px] tw-leading-normal tw-uppercase tw-tracking-[0.413px] tw-font-osc tw-mb-5 tw-w-full">
+        {{ section.settings.subtitle }}
+      </h1>
+      {% if section.settings.button_link != blank and section.settings.button_text != blank %}
+        <a href="{{ section.settings.button_link }}" class="btn-primary-white {% if section.settings.alignment == 'center' %} tw-mx-auto {% elsif section.settings.alignment == "right" %} tw-ml-auto {% endif %}">
+          {{- section.settings.button_text -}}
+        </a>
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+  {
+    "name": "Image Hero Banner",
+    "settings": [
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "Heading"
+      },
+      {
+        "type": "text",
+        "id": "subtitle",
+        "label": "Subtitle"
+      },
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Image"
+      },
+      {
+        "type": "text",
+        "id": "button_text",
+        "label": "Button Text"
+      }, {
+        "type": "url",
+        "id": "button_link",
+        "label": "Button Link"
+      }, {
+        "type": "select",
+        "id": "alignment",
+        "label": "Alignment",
+        "options": [
+          {
+            "value": "left",
+            "label": "Left"
+          }, {
+            "value": "center",
+            "label": "Center"
+          }, {
+            "value": "right",
+            "label": "Right"
+          }
+        ],
+        "default": "left"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Image Hero Banner"
+      }
+    ]
+  }
+{% endschema %}

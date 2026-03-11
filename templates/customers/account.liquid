@@ -1,0 +1,73 @@
+<section class="customer customer--account">
+  <div class="container">
+    <div class="customer__heading">
+      <h1>Account Details</h1>
+      <a href="/account/logout">Logout</a>
+    </div>
+    <div class="customer__content d-flex justify-between">
+      <div class="customer__orders">
+        {% paginate customer.orders by 20 %}
+          {% if customer.orders.size != 0 %}
+          {% assign orderready = true %}
+          {% for line_item in order.line_items %}
+            {% assign status = line_item.product.metafields.production.production_status %}
+            {% if status != 'In-Hand' and status != blank %} {% assign orderready = false %} {% endif %}
+          {% endfor %}
+          <table  class="responsive-table">
+            <thead>
+              <tr>
+                <th class="order_number">Order</th>
+                <th class="date">Date</th>
+                <th class="payment_status">Payment Status</th>
+                <th class="fulfillment_status">Fulfillment Status</th>
+                <th class="total">Total</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for order in customer.orders %}
+              <tr class="{% cycle 'odd', 'even' %} {% if order.cancelled %}cancelled_order{% endif %}">
+                <td><span class="mobile-head">Order: </span>{{ order.name | link_to: order.customer_url }}</td>
+                <td><span class="mobile-head">Date: </span><span class="note">{{ order.created_at | date: "%b %d, %Y" }}</span></td>
+                <td><span class="mobile-head">Payment: </span><span class="status_{{ order.financial_status }}">{{ order.financial_status }}</span></td>
+                <td><span class="mobile-head">Fulfillment: </span><span class="status_{{ order.fulfillment_status }}">{{ order.fulfillment_status }}</span></td>
+                <td><span class="total money"><span class="mobile-head">Total: </span>{{ order.total_price | money }}</span></td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+          {% else %}
+            <p>You haven't placed any orders yet.</p>
+          {% endif %}
+          <div class="order-pagination d-flex">
+            {{ paginate | default_pagination }}
+          </div>
+        {% endpaginate %}
+      </div>
+      <div class="customer__sidebar">
+        <h2 class="heading--four">{{ customer.name }}</h2>
+<!-- Begin ReCharge code -->
+<p id="rc_link_container">
+    <a href="/tools/recurring/login">Manage Subscriptions</a>
+</p>
+<!-- End ReCharge code -->
+
+        {% if customer.default_address != blank %}
+          <div class="address">
+            <span>{{ customer.default_address.address1 }}</span>
+            {% if customer.default_address.address2 != "" %}
+              <span>{{ customer.default_address.address2 }}</span>
+            {% endif %}
+            <span>{{ customer.default_address.city}}, {{customer.default_address.province}} {% if address.province_code %}{{customer.default_address.province_code}}, {% endif %} {{ customer.default_address.zip}} 
+              {% if customer.default_address.country != 'United States' %}{{customer.default_address.country}}{% endif %}</span>
+            <span>{{ customer.default_address.phone }}</span>
+          </div>
+
+          <a href="/account/addresses">Addresses</a>
+        {% endif %}
+      </div>
+    </div>
+    <div class="mobile-action">
+      <a href="/account/logout">Logout</a>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,15 @@
+{% comment %}
+  Renders a development screen size indicator that matches the current screen size.
+
+  Usage:
+  {% render 'development-screen-indicator' %}
+{% endcomment %}
+
+<ul class="tw-fixed tw-list-none tw-bottom-2 tw-left-2 tw-z-50 tw-flex tw-h-8 tw-w-8 tw-items-center tw-justify-center tw-rounded-full tw-bg-black tw-p-3 tw-font-mono tw-text-sm tw-text-white">
+  <li class="tw-block sm:tw-hidden">xs</li>
+  <li class="tw-hidden sm:tw-block md:tw-hidden">sm</li>
+  <li class="tw-hidden md:tw-block lg:tw-hidden">md</li>
+  <li class="tw-hidden lg:tw-block xl:tw-hidden">lg</li>
+  <li class="tw-hidden xl:tw-block 2xl:tw-hidden">xl</li>
+  <li class="tw-hidden 2xl:tw-block">2xl</li>
+</ul>

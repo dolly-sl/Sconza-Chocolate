@@ -1,0 +1,88 @@
+{% if template.name == 'index' or template.suffix == 'about' or template.suffix == 'careers' %}
+  <section class="tw-bg-mainGold2 tw-py-4">
+    <div class="tw-w-full swiper marqueeSwiper">
+      <div class="swiper-wrapper">
+        {%- for block in section.blocks -%}
+          {%- case block.type -%}
+            {%- when 'item' -%}
+              <div class="swiper-slide">
+                <div class="tw-flex tw-items-center tw-gap-2 md:tw-gap-2.5">
+                  {%- assign image = block.settings.image -%}
+                  {% if image != blank %}
+                    {{ image | image_url: width: image.width | image_tag: class: '', loading: 'lazy' }}
+                  {% endif %}
+                  <p class="tw-text-sm tw-font-bold tw-uppercase md:tw-text-lg tw-text-mainBlack tw-font-osc text-nowrap">
+                    {{ block.settings.heading }}
+                  </p>
+                </div>
+              </div>
+          {%- endcase -%}
+        {%- endfor -%}
+
+        {%- for block in section.blocks -%}
+          {%- case block.type -%}
+            {%- when 'item' -%}
+              <div class="swiper-slide">
+                <div class="tw-flex tw-items-center tw-gap-2 md:tw-gap-2.5">
+                  {%- assign image = block.settings.image -%}
+                  {% if image != blank %}
+                    {{ image | image_url: width: image.width | image_tag: class: '', loading: 'lazy' }}
+                  {% endif %}
+                  <p class="tw-text-sm tw-font-bold tw-uppercase md:tw-text-lg tw-text-mainBlack tw-font-osc text-nowrap">
+                    {{ block.settings.heading }}
+                  </p>
+                </div>
+              </div>
+          {%- endcase -%}
+        {%- endfor -%}
+
+        {%- for block in section.blocks -%}
+          {%- case block.type -%}
+            {%- when 'item' -%}
+              <div class="swiper-slide">
+                <div class="tw-flex tw-items-center tw-gap-2 md:tw-gap-2.5">
+                  {%- assign image = block.settings.image -%}
+                  {% if image != blank %}
+                    {{ image | image_url: width: image.width | image_tag: class: '', loading: 'lazy' }}
+                  {% endif %}
+                  <p class="tw-text-sm tw-font-bold tw-uppercase md:tw-text-lg tw-text-mainBlack tw-font-osc text-nowrap">
+                    {{ block.settings.heading }}
+                  </p>
+                </div>
+              </div>
+          {%- endcase -%}
+        {%- endfor -%}
+      </div>
+    </div>
+  </section>
+{% endif %}
+
+{% schema %}
+  {
+    "name": "Footer Ribbon",
+    "settings": [],
+    "blocks": [
+      {
+        "name": "Item",
+        "type": "item",
+        "settings": [
+          {
+            "type": "text",
+            "id": "heading",
+            "label": "Heading"
+          }, {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image",
+            "info": "JPG 1920x800px"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Footer Ribbon"
+      }
+    ]
+  }
+{% endschema %}

@@ -1,0 +1,212 @@
+<section class="mini-cart" data-freeship="{{ settings.free_ship | times: 100 }}">
+  <div class="mini-cart__bg"></div>
+  <div class="mini-cart__content tw-bg-backgroundDark">
+    <div class="mini-cart__header tw-bg-white tw-p-5 tw-m-5 tw-flex tw-justify-between tw-top-5">
+      <h3 class="tw-text-xl tw-uppercase tw-text-mainBlack tw-font-osc">My Cart</h3>
+      <div class="intro tw-flex">
+        <button class="close animate">
+          <span class="sr-only">Close Mini-Cart</span>
+          <img src="{{ 'icon-close.svg' | asset_url }}" alt="Close Icon">
+        </button>
+      </div>
+      <div class="minicart__freeShippingMessage">
+        FREE SHIPPING on all orders over ${{- settings.free_ship -}}
+      </div>
+    </div>
+      <div class="mini-cart__ship text-center">
+      <span class="title title--unfill"
+      >You are <span class="free-count">{{ settings.free_ship | times: 75 | money }}</span> away from free shipping</span
+      >
+      <span class="title title--fill">Congratulations, you've got free shipping!</span>
+      <div class="shipping-bar">
+      <div class="shipping-bar--progress"></div>
+      </div>
+      </div>
+    <div class="mini-cart__list">
+      {% if cart.empty? == true %}
+        <h3 class="text-center tw-text-3xl tw-text-mainBlack tw-uppercase tw-font-osc tw-mb-5">Cart is empty</h3>
+        <a href="#" class="btn-primary tw-mx-auto">Continue Shopping</a>
+      {% else %}
+        {% for line_item in cart.items %}
+          <div
+            class="product product--cart d-flex justify-between"
+            data-lineid="{{ forloop.index }}"
+            style="order:{{ forloop.index0 }};"
+            data-varid="{{ line_item.id }}">
+            <div class="product__image">
+              <a href="{{ line_item.url | within: collection }}">
+                <img
+                  src="{{ line_item.image.src | img_url: '80x' }}"
+                  srcset="{{ line_item.image.src | img_url: '160x' }} 2x"
+                  alt="{{ line_item.title | escape }}">
+              </a>
+            </div>
+            <div class="product__info">
+              <div class="title d-flex">
+                <h3 class="tw-text-base tw-uppercase tw-text-mainBlack tw-font-osc tw-flex tw-justify-between">
+                  <a class="no-dec trans" href="{{ line_item.url | within: collection }}">
+                    {% if line_item.product.metafields.sleepless.subtitle != blank %}
+                      {{ line_item.product.metafields.sleepless.subtitle }}
+                      <br>
+                    {% endif %}
+                    {{ line_item.product.title }}
+                  </a>
+                  <button class="remove-product trans animate">
+                    <span class="sr-only">Remove</span>
+                    <img src="{{ 'icon-trash.svg' | asset_url }}" alt="Trash Icon">
+                  </button>
+                </h3>
+                {% if line_item.options_with_values[0].name != 'Title' %}
+                  {% for option in line_item.options_with_values %}
+                    <div class="var tw-font-os tw-text-xs tw-font-normal tw-text-mainBlack">
+                      <span>{{ option.value }}</span>
+                    </div>
+                  {% endfor %}
+                {% endif %}
+                {% comment %} {% if line_item.variant != blank and line_item.variant.title != 'Default Title' %}<span class="var">{{ line_item.variant.title }} </span>{% endif %} {% endcomment %}
+
+                {% for component in line_item.item_components %}
+                  <div class="var tw-font-os tw-text-xs tw-font-normal tw-text-mainBlack">
+                    <span>
+                      {{ component.product.title }}
+                    </span>
+                  </div>
+                {% endfor %}
+
+                {% if line_item.selling_plan_allocation.selling_plan.name != blank %}
+                  <span class="delivery">{{ line_item.selling_plan_allocation.selling_plan.name }}</span>
+                {% endif %}
+              {% comment %}
+                <span class="unit-price">
+                {{ line_item.price | money }}
+                </span>
+              {% endcomment %}
+              </div>
+              <div class="actions d-flex align-center justify-between">
+                <div class="action action--qty">
+                  <div class="qty d-flex align-center">
+                    <button class="js-qty js-qty--mini js-qty--minus trans">
+                      <span class="sr-only">Decrease</span>
+                    </button>
+                    <input
+                      sm-rc-quantity-selector
+                      type="text"
+                      value="{{ line_item.quantity }}"
+                      min="1"
+                      type="number"
+                      class="qty-val">
+                    <button class="js-qty js-qty--mini js-qty--plus trans">
+                      <span class="sr-only">Increase</span>
+                    </button>
+                  </div>
+                </div>
+                <div class="price tw-text-base tw-uppercase tw-text-mainBlack tw-font-osc">
+                  {{ line_item.final_line_price | money }}
+                </div>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      {% endif %}
+
+      <div class="mini-cart__upsell" style="order:75;">
+        <div class="mini-cart__upsellInner">
+          <div class="mini-cart__upsellTitle">
+            You Might Also Like
+          </div>
+          <div class="mini-cart__upsellList">
+            <div class="mini-cart__upsellSlider swiper-wrapper">
+
+              {% for upsellProd in settings.upsell_products %}
+
+                <div class="miniUpsellCard swiper-slide"
+                data-slide-index="{{ forloop.index0 }}"
+                data-prod-id="{{ upsellProd.variants[0].id }}">
+                  <div class="miniUpsellCard__inner">
+                    <div class="miniUpsellCard__info">
+                      <div class="miniUpsellCard__imageWrapper">
+                        <img class="miniUpsellCard__image"
+                        src="{{ upsellProd.featured_image | img_url: '124x' }}"
+                        alt="{{ upsellProd.featured_image.alt }}">
+                      </div>
+                      <div class="miniUpsellCard__textWrapper">
+                        <div class="miniUpsellCard__title">
+                          {{ upsellProd.title }}
+                        </div>
+                        <div class="miniUpsellCard__variant">
+                          {% if upsellProd.variants[0].title != "Default Title" %}
+                          {{ upsellProd.variants[0].title }}
+                          {% endif %}
+                        </div>
+                        <div class="miniUpsellCard__price">
+                          {{ upsellProd.variants[0].price | money }}
+                        </div>
+                      </div>
+                    </div>
+                    <div class="miniUpsellCard__buttonWrapper">
+                      <button class="miniUpsellCard__buyButton">
+                        Add
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+              {% endfor %}
+
+            </div>
+          </div>
+          <div class="mini-cart__upsellSliderNav">
+
+          </div>
+        </div>
+      </div>
+
+      <div class="mini-cart__note tw-px-5 tw-block tw-mb-5 tw-pt-5 tw-bg-backgroundDark" style="order:101;">
+        <label for="cart-note" class="tw-text-sm tw-font-bold tw-text-mainBlack tw-font-os">Gift Note</label>
+        <textarea
+          id="cart-note"
+          class="mini-cart__note-input tw-w-full tw-border-none tw-resize-none tw-mt-2 tw-h-[125px]"
+          placeholder=""></textarea>
+        <p class="tw-text-xs tw-text-mainBlack tw-italic tw-font-os">
+          We cannot ship to PO or APO Boxes. <br>
+          PO Boxes cannot be used as a billing address.
+        </p>
+      </div>
+    </div>
+    <div class="mini-cart-footerWrapper tw-sticky tw-bottom-0 tw-left-0 tw-w-full tw-bg-backgroundDark">
+      <div class="mini-cart__footer">
+        <div class="inner">
+          <div class="sub-total d-flex justify-between">
+            <span class="label">Subtotal</span>
+            <span class="total tw-text-sm tw-uppercase tw-text-mainBlack tw-font-os">
+              {{- cart.total_price | money -}}
+            </span>
+          </div>
+          <div class="disclaimer tw-text-xs tw-text-mainBlack tw-italic tw-font-os">
+            Taxes and shipping calculated at checkout
+          </div>
+          <form
+            action="/checkout"
+            method="post"
+            class="tw-bg-white tw-w-full tw-p-5">
+            <div class="terms-checkbox tw-text-center tw-mb-4">
+              <input
+                class="tw-rounded tw-mr-2"
+                type="checkbox"
+                id="agreeTerms"
+                name="agreeTerms"
+                required>
+              <label class="tw-text-sm tw-text-mainBlack tw-font-os tw-font-bold" for="agreeTerms">I agree with the
+                <a
+                  href="#"
+                  target="_blank"
+                  class="tw-underline">terms & conditions</a>.</label>
+            </div>
+
+            <button type="submit" class="btn-primary tw-w-full tw-mb-3">Checkout Now</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

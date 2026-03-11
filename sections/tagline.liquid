@@ -1,0 +1,27 @@
+<section class="tw-bg-mainGold2 tw-py-28 md:tw-py-16 lg:tw-py-20">
+  <div class="wrapper">
+    <div class="tw-max-w-5xl tw-mx-auto">
+      <h2 class="tw-text-mainOffWhite2 tw-text-3xl tw-font-osc tw-uppercase tw-text-center">
+        {{ section.settings.tagline }}
+      </h2>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Tagline",
+  "settings": [
+    {
+      "type": "text",
+      "id": "tagline",
+      "label": "Tagline"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Tagline"
+    }
+  ]
+}
+{% endschema %}

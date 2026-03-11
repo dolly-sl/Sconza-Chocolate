@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="{{ shop.locale }}">
+  <head>
+    {% include 'head' %}
+
+    {{ content_for_header }}
+
+    {% if shop.metafields['sg-cc']['sg-metafield'] != blank %}
+      <script id="sg-js-global-vars">
+        sgGlobalVars = {{ shop.metafields['sg-cc']['sg-metafield'] }};
+        if(sgGlobalVars) {
+        sgGlobalVars.cart = {{ cart | json }};
+        sgGlobalVars.currentProduct = {{ product | json }};
+        sgGlobalVars.isAdmin = {% if content_for_header contains 'adminBarInjector' or content_for_header contains 'previewBarInjector' %}true{% else %}false{% endif %};
+        }
+      </script>
+    {% endif %}
+
+    <style>
+      @media only screen and (min-width: 768px){
+        .template__index #main [id*="collections_carousel"] > section {
+          padding-bottom:0px!important;
+        }
+        .template__index #main [id*="image_callouts"] > section {
+          padding-top:20px!important;
+        }
+        
+      }
+      .template__index #main [id*="slide_carousel"] > section {
+        padding-bottom:50px!important;
+      }
+      .template__index #main [id*="social_carousel"] {
+          padding-top:20px!important;
+          background-color:rgb(255 252 244);
+        }
+
+    </style>
+  </head>
+  <body class="template__{{ template.name }}{% if template.suffix != blank %} template__{{ template.name }}--{{ template.suffix }}{% endif %}">
+    {% render 'skip-to-link' %}
+
+    {% if template.suffix != 'resources' %}
+      <div class="fixed-wrap">
+        {% sections 'header-group' %}
+
+        {% render 'desktop-search' %}
+      </div>
+    {% endif %}
+
+    <main id="main" class="tw-mt-[102px] md:tw-mt-[105px] lg:tw-mt-32">
+      {% comment %} {% render 'elements' %} {% endcomment %}
+      {{ content_for_layout }}
+    </main>
+
+    {% sections 'footer-group' %}
+
+    {% section 'mini-cart' %}
+
+
+  </body>
+</html>

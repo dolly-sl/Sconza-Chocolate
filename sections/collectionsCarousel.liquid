@@ -1,0 +1,102 @@
+{%- assign collections = section.settings.collections -%}
+
+<section class="tw-bg-backgroundDark tw-bg-no-repeat tw-bg-cover tw-py-16 md:tw-py-[76px]">
+  <div class="tw-relative wrapper">
+    <img
+      src="{{ 'choc-7.png' | asset_url }}"
+      alt="choc"
+      class="tw-z-10 tw-absolute tw-left-0 tw--top-[100px] lg:tw--top-[130px] tw-w-[150px] lg:tw-w-auto lg:tw-block tw-hidden">
+    <img
+      src="{{ 'choc-2.png' | asset_url }}"
+      alt="choc"
+      class="tw-absolute tw-left-0 tw-block tw-w-24 tw--top-10 lg:tw-hidden">
+    <img
+      src="{{ 'vanilla-1.png' | asset_url }}"
+      alt="vanilla"
+      class="tw-absolute tw-left-0 lg:tw-left-[200px] tw-top-full lg:tw--top-[80px] tw-w-9 lg:tw-w-auto">
+    <img
+      src="{{ 'almond.png' | asset_url }}"
+      alt="almond"
+      class="tw-absolute lg:tw-right-auto tw-right-0 lg:tw-left-[100px] tw--top-10 lg:tw-top-[80px]">
+    <img
+      src="{{ 'shape.png' | asset_url }}"
+      alt="shape"
+      class="tw-absolute tw-right-0 tw-w-10 lg:tw-right-28 tw-top-20 lg:tw-w-auto">
+    <!-- Section Heading -->
+    <div class="tw-text-center">
+      <h4 class="tw-text-xl md:tw-text-[35px] tw-leading-normal tw-font-script tw-text-mainGold tw-mb-2.5 lg:tw-mb-5">
+        {{ section.settings.subheading }}
+      </h4>
+      <h2 class="text-mainBlack tw-text-4xl md:tw-text-[45px] md:tw-leading-[104.4%] tw-uppercase tw-font-extrabold tw-font-osc">
+        {{ section.settings.heading }}
+      </h2>
+    </div>
+    <!-- Tabs -->
+    <div class="tw-flex tw-items-center tw-justify-center tw-gap-12 tw-mt-5">
+      {%- for collection in collections -%}
+        <button
+          type="button"
+          id="tab-{{ forloop.index }}"
+          class="tw-text-base tw-font-bold tw-capitalize tw-border-b-2 {% if forloop.first %} tw-border-mainGold {% else %} tw-border-transparent {% endif %} tw-text-mainBlack tw-font-osc animate">
+          {{ collection.title }}
+        </button>
+      {%- endfor -%}
+      <a href="{{ section.settings.shop_all_link }}" class="tw-text-base tw-font-bold tw-capitalize tw-border-b-2 tw-border-transparent tw-text-mainBlack tw-font-osc animate">
+        Shop All
+      </a>
+    </div>
+    <div class="tw-px-5 md:tw-px-12 tw-mt-9 md:tw-mt-10 lg:tw-mt-[60px] tw-relative tw-z-0">
+      {%- for collection in collections -%}
+        <!-- Flavors Slider -->
+        <div id="slider-{{ forloop.index }}" class="tw-w-full swiper flavorsSwiper {% if forloop.first != true %}tw-hidden{% endif %}">
+          <!-- Swiper Wrapper -->
+          <div class="swiper-wrapper">
+            {%- for product in collection.products -%}
+              <div class="swiper-slide">
+                {% render 'default-product'
+                  , data: product %}
+              </div>
+            {%- endfor -%}
+          </div>
+        </div>
+      {%- endfor -%}
+      <!-- Navigation Button -->
+      <button type="button" class="tw-absolute tw-left-0 tw--translate-y-1/2 button-prev-2 tw-top-1/2 tw-z-10 animate">
+        <img src="{{ 'carousel-button-prev-2.svg' | asset_url }}" alt="button prev">
+      </button>
+      <button type="button" class="tw-absolute tw-right-0 tw--translate-y-1/2 button-next-2 tw-top-1/2 tw-z-10 animate">
+        <img src="{{ 'carousel-button-next-2.svg' | asset_url }}" alt="button next">
+      </button>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+  {
+    "name": "Collections Carousel",
+    "settings": [
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "Heading"
+      }, {
+        "type": "text",
+        "id": "subheading",
+        "label": "Subheading"
+      }, {
+        "type": "collection_list",
+        "id": "collections",
+        "label": "Collections"
+      }, {
+        "type": "url",
+        "id": "shop_all_link",
+        "label": "Shop All Link"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Collections Carousel"
+      }
+    ]
+  }
+{% endschema %}

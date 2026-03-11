@@ -1,0 +1,64 @@
+{% for block in section.blocks %}
+  {% case block.type %}
+    {% when '@app' %}
+      {% render block %}
+  {% endcase %}
+  {% for product_option in product.options_with_values %}
+    {% if block.settings.title == product_option.name %}
+      {% if block.settings.display_type == 'select' %}
+        <div class="option__wrap option__wrap--select" data-option="sm-rc-option{{ forloop.index }}-selector">
+          <label>
+            {{- product_option.name -}}
+          </label>
+          <div class="form__group">
+            <select>
+              {% for value in product_option.values %}
+                <option
+                  value="{{- value -}}"
+                  {% if forloop.first == true %}
+                    selected
+                  {% endif %}
+                >
+                  {{- value -}}
+                </option>
+              {% endfor %}
+            </select>
+          </div>
+        </div>
+      {% elsif block.settings.display_type == 'swatch' %}
+        <div class="option__wrap option__wrap--swatches" data-option="sm-rc-option{{ forloop.index }}-selector">
+          <label>
+            {{- product_option.name -}}
+          </label>
+          <div class="swatch__wrap d-flex">
+            {% for value in product_option.values %}
+              <button
+                data-val="{{- value -}}"
+                class="swatch swatch--{{- value | handleize -}}{% if forloop.first == true %} active{% endif %}"
+              >
+                <span class="sr-only">{{- value -}}</span>
+              </button>
+            {% endfor %}
+          </div>
+        </div>
+      {% elsif block.settings.display_type == 'button' %}
+        <div class="option__wrap option__wrap--buttons" data-option="sm-rc-option{{ forloop.index }}-selector">
+          <label class="tw-text-sm tw-font-bold tw-text-mainBlack tw-font-os tw-mb-2 tw-capitalize">
+            Select &nbsp;
+            {{- product_option.name -}}
+          </label>
+          <div class="btn__wrap tw-flex tw-gap-3">
+            {% for value in product_option.values %}
+              <button
+                data-val="{{- value -}}"
+                class="btn-inverse tw-capitalize {% if forloop.first == true %} active{% endif %}"
+              >
+                <span>{{ value | split: '(' | first | join: '' }}</span>
+              </button>
+            {% endfor %}
+          </div>
+        </div>
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+{% endfor %}

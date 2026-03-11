@@ -1,0 +1,91 @@
+  <section class="hero hero--split-flip dots--outline arrows--circle">
+    <div class="hero__slider">
+      {% for block in section.blocks %}
+      <div class="slick-protect">
+        <div class="hero__slide hero__slide--{{ forloop.index }} d-flex">
+          <img width="720" height="680" src="{{ block.settings.image | img_url: 'master' }}" class="slide__img" />
+          {% if block.settings.mobile_image != blank %}
+          <img width="450" height="600" src="{{ block.settings.mobile_image | img_url: 'master' }}" class="slide__img slide__img--mobile" />
+        {% endif %}
+          <div class="slide__content">
+            <div class="content-wrap">
+              <div class="container d-flex align-center">
+                <div class="inner">
+                  <h2 class="heading--hero">
+                    {{ block.settings.heading }}
+                  </h2>
+                  <p>{{ block.settings.copy }}</p>
+                  <a href="{{ block.settings.button_url }}" class="btn btn--solid">{{ block.settings.button_text }}</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {% if block.settings.mobile_image != blank %}
+          <style>
+            .hero--split-flip .hero__slide--{{ forloop.index }} .slide__background--mobile {
+              display: none; 
+            }
+
+            @media( max-width: 576px ) {
+              .hero--split-flip .hero__slide--{{ forloop.index }} .slide__background {
+                display: none;
+              }
+
+              .hero--split-flip .hero__slide--{{ forloop.index }} .slide__background--mobile {
+                display: block !important;
+              }
+            }
+          </style>
+        {% endif %}
+
+      </div>
+    {% endfor %}
+    </div>
+    <div class="split--dots"></div>
+  </section>
+
+{% schema %}
+{
+	"name": "Hero Split - Right",
+  "blocks": [
+		{
+			"type": "text",
+			"name": "Slide",
+			"settings": [
+        {
+          "id": "image",
+          "type": "image_picker",
+          "label": "Image"
+        },
+        {
+          "id": "mobile_image",
+          "type": "image_picker",
+          "label": "Mobile Image"
+        },
+        {
+          "id": "heading",
+          "type": "text",
+          "label": "Heading"
+        },
+        {
+          "id": "copy",
+          "type": "richtext",
+          "label": "Copy"
+        },
+        {
+          "id": "button_text",
+          "type": "text",
+          "label": "Button Text"
+        },
+        {
+          "id": "button_url",
+          "type": "url",
+          "label": "Button URL"
+        }
+			]
+		}
+	]
+}
+{% endschema %}

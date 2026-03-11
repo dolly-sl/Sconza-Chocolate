@@ -1,0 +1,49 @@
+<div class="{% if template.suffix != "careers" %} tw-bg-mainOffWhite {% else %} tw-bg-backgroundDark {% endif %}">
+  <div class="tw-container">
+    <div class="tw-grid tw-gap-5 tw-py-10 lg:tw-py-20 tw-grid-cols-2 lg:tw-grid-cols-[repeat(auto-fit,minmax(0,1fr))] tw-items-start">
+      {%- for block in section.blocks -%}
+        {%- case block.type -%}
+          {%- when 'icon' -%}
+            <div class="tw-flex tw-justify-center tw-items-center tw-gap-2 md:tw-gap-4 tw-flex-col tw-text-center tw-w-full">
+              {%- assign icon = block.settings.icon -%}
+              {{ icon | image_url: width: '80px' | image_tag: class: 'tw-w-[80px] tw-h-auto', loading: 'lazy' }}
+
+              <h3 class="tw-text-mainBlack tw-text-sm tw-uppercase tw-font-bold tw-font-osc">
+                {{ block.settings.title }}
+              </h3>
+            </div>
+        {%- endcase -%}
+      {%- endfor -%}
+    </div>
+  </div>
+</div>
+
+
+{% schema %}
+  {
+    "name": "Icons",
+    "settings": [],
+    "blocks": [
+      {
+        "name": "Icon",
+        "type": "icon",
+        "settings": [
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Title"
+          }, {
+            "type": "image_picker",
+            "id": "icon",
+            "label": "Icon"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Icons"
+      }
+    ]
+  }
+{% endschema %}

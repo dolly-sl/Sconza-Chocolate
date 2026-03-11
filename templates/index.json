@@ -1,0 +1,963 @@
+{
+  "sections": {
+    "hero_slider_GUyiGi": {
+      "type": "heroSlider",
+      "blocks": {
+        "slide_HbJn9m": {
+          "type": "slide",
+          "settings": {
+            "heading": "Bright Citrus,<br>Pure Indulgence",
+            "subheading": "White chocolate almonds with bright lemon flavor",
+            "content": "",
+            "button_text": "Learn More",
+            "button_link": "shopify:\/\/pages\/lemoncello-24oz-at-costco",
+            "background_color": "",
+            "text_black": true,
+            "text_position": "middle_right",
+            "text_position_mobile": "top_center",
+            "image": "shopify:\/\/shop_images\/Homepage-Lemoncello2_dbe4a461-ad00-443c-8998-eff44397fef7.png",
+            "mobile_image": "shopify:\/\/shop_images\/Homepage-Lemoncello-Mobile.png"
+          }
+        },
+        "slide_Y3zHHG": {
+          "type": "slide",
+          "disabled": true,
+          "settings": {
+            "heading": "Love at First Bite",
+            "subheading": "Strawberries, blueberries & raspberries — dipped and dreamy",
+            "content": "",
+            "button_text": "Learn More",
+            "button_link": "shopify:\/\/pages\/triple-berry-bites",
+            "background_color": "",
+            "text_black": true,
+            "text_position": "middle_left",
+            "text_position_mobile": "top_center",
+            "image": "shopify:\/\/shop_images\/Homepage-TripleBerryValentine.png",
+            "mobile_image": "shopify:\/\/shop_images\/Homepage-TripleBerryValentine-Mobile.png"
+          }
+        },
+        "slide_7wXF4D": {
+          "type": "slide",
+          "settings": {
+            "heading": "Ouf Bestselling<br>Berry Bite",
+            "subheading": "Strawberries, blueberries & raspberries — dipped and dreamy",
+            "content": "",
+            "button_text": "Learn More",
+            "button_link": "shopify:\/\/pages\/triple-berry-bites",
+            "background_color": "",
+            "text_black": true,
+            "text_position": "top_right",
+            "text_position_mobile": "top_center",
+            "image": "shopify:\/\/shop_images\/TripleBerry-Homepage-Spring_a0aef29a-6b5e-457a-b1f3-4bd2a1d1abec.jpg",
+            "mobile_image": "shopify:\/\/shop_images\/TripleBerry-Homepage-Spring-Mobile.jpg"
+          }
+        },
+        "slide_4fPfRL": {
+          "type": "slide",
+          "settings": {
+            "heading": "Chocolate Worth Craving",
+            "subheading": "Fan favorites, perfected for every craving.",
+            "content": "",
+            "button_text": "Shop Bestsellers",
+            "button_link": "shopify:\/\/collections\/shop-all",
+            "background_color": "",
+            "text_black": true,
+            "text_position": "top_center",
+            "text_position_mobile": "top_center",
+            "image": "shopify:\/\/shop_images\/BitesofJoySpring.jpg",
+            "mobile_image": "shopify:\/\/shop_images\/BitesofJoySpring-Mobile.jpg"
+          }
+        },
+        "slide_9fddRN": {
+          "type": "slide",
+          "settings": {
+            "heading": "Up to 40% Off<br>Select Favorites",
+            "subheading": "",
+            "content": "",
+            "button_text": "Shop the Sale",
+            "button_link": "shopify:\/\/collections\/sale",
+            "background_color": "",
+            "text_black": true,
+            "text_position": "middle_left",
+            "text_position_mobile": "top_center",
+            "image": "shopify:\/\/shop_images\/HolidaySale.jpg",
+            "mobile_image": "shopify:\/\/shop_images\/HolidaySaleMobile.jpg"
+          }
+        },
+        "slide_zhmiXG": {
+          "type": "slide",
+          "disabled": true,
+          "settings": {
+            "heading": "DELIGHT IN EVERY COLORFUL BAG",
+            "subheading": "Our Most-Loved Chocolate Bites",
+            "content": "",
+            "button_text": "Shop Bestsellers",
+            "button_link": "shopify:\/\/collections\/shop-all",
+            "background_color": "",
+            "text_black": true,
+            "text_position": "top_center",
+            "text_position_mobile": "top_center",
+            "image": "shopify:\/\/shop_images\/2026BitesofJoyWinter.png",
+            "mobile_image": "shopify:\/\/shop_images\/2026BitesofJoyWinter-Mobile.png"
+          }
+        },
+        "slide_dRAPxd": {
+          "type": "slide",
+          "disabled": true,
+          "settings": {
+            "heading": "Cozy Comfort<br>in Every Crunch",
+            "subheading": "Winter Favorite",
+            "content": "",
+            "button_text": "Shop Hot Cocoa",
+            "button_link": "shopify:\/\/products\/hot-cocoa-almonds-1",
+            "background_color": "",
+            "text_black": true,
+            "text_position": "middle_left",
+            "text_position_mobile": "top_center",
+            "image": "shopify:\/\/shop_images\/HotCocoaWinter_0a35da5e-2d43-4e07-ad27-65c813d4b1ae.png",
+            "mobile_image": "shopify:\/\/shop_images\/HotCocoaWinter-Mobile3.png"
+          }
+        },
+        "slide_7iHEyb": {
+          "type": "slide",
+          "disabled": true,
+          "settings": {
+            "heading": "A Refreshing Twist<br>on Winter Sweets",
+            "subheading": "Made for Cold Days",
+            "content": "",
+            "button_text": "Shop Candy Cane",
+            "button_link": "shopify:\/\/products\/candy-cane-almonds-4-5oz",
+            "background_color": "",
+            "text_black": true,
+            "text_position": "middle_right",
+            "text_position_mobile": "top_center",
+            "image": "shopify:\/\/shop_images\/CandyCaneWinter.png",
+            "mobile_image": "shopify:\/\/shop_images\/CandyCaneMobile.png"
+          }
+        },
+        "slide_UjXcTM": {
+          "type": "slide",
+          "disabled": true,
+          "settings": {
+            "heading": "Get Pumpkin<br>Spice Free",
+            "subheading": "Buy Any Gift Box",
+            "content": "",
+            "button_text": "Shop Gift Boxes",
+            "button_link": "shopify:\/\/collections\/gifts-1",
+            "background_color": "",
+            "text_black": true,
+            "text_position": "middle_left",
+            "text_position_mobile": "top_center",
+            "image": "shopify:\/\/shop_images\/B1GiftBoxG1PumpkinSpice_2.png",
+            "mobile_image": "shopify:\/\/shop_images\/B1GiftG1Pumpkin.png"
+          }
+        },
+        "slide_Px48qe": {
+          "type": "slide",
+          "disabled": true,
+          "settings": {
+            "heading": "30% offHoliday faves",
+            "subheading": "Cyber WEEK is Here!",
+            "content": "",
+            "button_text": "Shop Holiday Flavors",
+            "button_link": "shopify:\/\/collections\/seasonal-1",
+            "background_color": "",
+            "text_black": true,
+            "text_position": "middle_left",
+            "text_position_mobile": "top_center",
+            "image": "shopify:\/\/shop_images\/Holiday_2025_734db2c4-50ce-410d-a2d3-a31a2c4c66c9.png",
+            "mobile_image": "shopify:\/\/shop_images\/Holiday_2025_Mobile.png"
+          }
+        },
+        "slide_E8HM68": {
+          "type": "slide",
+          "disabled": true,
+          "settings": {
+            "heading": "Share the JoyThis Season",
+            "subheading": "Sweet Moments Start with Sconza",
+            "content": "",
+            "button_text": "Shop Holiday Flavors",
+            "button_link": "shopify:\/\/collections\/seasonal-1",
+            "background_color": "",
+            "text_black": true,
+            "text_position": "middle_left",
+            "text_position_mobile": "top_center",
+            "image": "shopify:\/\/shop_images\/HolidayGifts2025_fe3a9445-c7b4-41f4-9cf5-037ed2eeee71.png",
+            "mobile_image": "shopify:\/\/shop_images\/HolidayGifts2025-Mobile.png"
+          }
+        },
+        "slide_AUXcMt": {
+          "type": "slide",
+          "disabled": true,
+          "settings": {
+            "heading": "A Taste of Luxury",
+            "subheading": "Crème Brûlée Almonds — a decadent fall treat",
+            "content": "",
+            "button_text": "Try Crème Brûlée",
+            "button_link": "shopify:\/\/products\/creme-brulee-almonds",
+            "background_color": "",
+            "text_black": true,
+            "text_position": "middle_left",
+            "text_position_mobile": "top_center",
+            "image": "shopify:\/\/shop_images\/Creme_Brulee_2.png",
+            "mobile_image": "shopify:\/\/shop_images\/Creme_Brulee_1.png"
+          }
+        },
+        "slide_RD9xEM": {
+          "type": "slide",
+          "disabled": true,
+          "settings": {
+            "heading": "COZY UP WITH <br>SNICKERDOODLES",
+            "subheading": "Cinnamon sugar comfort in every bite",
+            "content": "",
+            "button_text": "Shop the Sale",
+            "button_link": "shopify:\/\/products\/snickerdoodle-almonds-24-oz",
+            "background_color": "",
+            "text_black": true,
+            "text_position": "middle_left",
+            "text_position_mobile": "top_center",
+            "image": "shopify:\/\/shop_images\/Fall_Snickerdoodle_e7b36fcb-00d2-4922-9307-341f41b3fdb3.png",
+            "mobile_image": "shopify:\/\/shop_images\/Fall_Snickerdoodle_1.png"
+          }
+        },
+        "slide_bQkjJq": {
+          "type": "slide",
+          "disabled": true,
+          "settings": {
+            "heading": "",
+            "subheading": "",
+            "content": "",
+            "button_text": "",
+            "button_link": "shopify:\/\/collections\/seasonal-1",
+            "background_color": "",
+            "text_black": true,
+            "text_position": "middle_left",
+            "text_position_mobile": "top_center",
+            "image": "shopify:\/\/shop_images\/Black_Friday.png",
+            "mobile_image": "shopify:\/\/shop_images\/Black_Friday_1.png"
+          }
+        },
+        "slide_TbmRhc": {
+          "type": "slide",
+          "disabled": true,
+          "settings": {
+            "heading": "Sweet Crunch,<br>Warm Spice",
+            "subheading": "New! Cinnamon Apple Bites",
+            "content": "",
+            "button_text": "Shop Apple Bites",
+            "button_link": "shopify:\/\/products\/cinnamon-apple-bites-18-oz",
+            "background_color": "",
+            "text_black": true,
+            "text_position": "middle_left",
+            "text_position_mobile": "top_center",
+            "image": "shopify:\/\/shop_images\/Apple-Bites.png",
+            "mobile_image": "shopify:\/\/shop_images\/Apple_Bites_2.png"
+          }
+        },
+        "slide_6TiWBb": {
+          "type": "slide",
+          "disabled": true,
+          "settings": {
+            "heading": "A Decadent<br>Bite of Bliss",
+            "subheading": "Chocolate. Toffee. Macadamias.",
+            "content": "",
+            "button_text": "Shop Toffee Macs",
+            "button_link": "shopify:\/\/products\/crunchy-toffee-milk-chocolate-macadamias-20oz",
+            "background_color": "",
+            "text_black": true,
+            "text_position": "middle_left",
+            "text_position_mobile": "top_center",
+            "image": "shopify:\/\/shop_images\/Toffee_Macs.png",
+            "mobile_image": "shopify:\/\/shop_images\/Toffee_Macs_1.png"
+          }
+        },
+        "slide_mPxfpq": {
+          "type": "slide",
+          "disabled": true,
+          "settings": {
+            "heading": "Bites of Joy,Spiced for Fall",
+            "subheading": "Limited Edition Pumpkin Spiced Almonds",
+            "content": "",
+            "button_text": "Shop Pumpkin Spice",
+            "button_link": "shopify:\/\/collections\/pumpkin-spice",
+            "background_color": "",
+            "text_black": true,
+            "text_position": "middle_left",
+            "text_position_mobile": "top_center",
+            "image": "shopify:\/\/shop_images\/Pumpkin_Spice_1.png",
+            "mobile_image": "shopify:\/\/shop_images\/Pumpkin_Spice_4_6e095df8-a158-4c65-8031-ab52cc28f34b.png"
+          }
+        },
+        "slide_KPyh3D": {
+          "type": "slide",
+          "disabled": true,
+          "settings": {
+            "heading": "Share the Warmth<br>This Thanksgiving",
+            "subheading": "Limited Edition Pumpkin Spiced Almonds",
+            "content": "",
+            "button_text": "Shop Pumpkin Spice",
+            "button_link": "shopify:\/\/collections\/pumpkin-spice",
+            "background_color": "",
+            "text_black": true,
+            "text_position": "middle_left",
+            "text_position_mobile": "top_center",
+            "image": "shopify:\/\/shop_images\/Thanksgiving.png",
+            "mobile_image": "shopify:\/\/shop_images\/Thanksgiving-Mobile.png"
+          }
+        },
+        "slide_YdnNq8": {
+          "type": "slide",
+          "disabled": true,
+          "settings": {
+            "heading": "National Candy Month!",
+            "subheading": "Celebrate",
+            "content": "",
+            "button_text": "Shop Now",
+            "button_link": "shopify:\/\/collections\/shop-all",
+            "background_color": "",
+            "text_black": true,
+            "text_position": "top_left",
+            "text_position_mobile": "top_left",
+            "image": "shopify:\/\/shop_images\/Bites_of_Joy_Big_4.png",
+            "mobile_image": "shopify:\/\/shop_images\/Bites_of_Joy_Big_4_1.png"
+          }
+        },
+        "slide_h4Qxaw": {
+          "type": "slide",
+          "disabled": true,
+          "settings": {
+            "heading": "Taste the Sunshine",
+            "subheading": "Lemon Blueberries",
+            "content": "",
+            "button_text": "Shop Now",
+            "button_link": "shopify:\/\/products\/lemon-blueberries",
+            "background_color": "",
+            "text_black": true,
+            "text_position": "middle_left",
+            "text_position_mobile": "top_center",
+            "image": "shopify:\/\/shop_images\/Banners_1920_x_800_px_12.png",
+            "mobile_image": "shopify:\/\/shop_images\/Mobile_Banners_16.png"
+          }
+        },
+        "slide_rB7Qpw": {
+          "type": "slide",
+          "disabled": true,
+          "settings": {
+            "heading": "Lemoncello Season!",
+            "subheading": "Squeeze the Day",
+            "content": "",
+            "button_text": "Shop Now",
+            "button_link": "shopify:\/\/products\/lemoncello-almonds-24-oz",
+            "background_color": "",
+            "text_black": false,
+            "text_position": "middle_left",
+            "text_position_mobile": "top_center",
+            "image": "shopify:\/\/shop_images\/Banners_1920_x_800_px_3_ac4b37dc-2616-4f95-85d4-6c983e180995.png",
+            "mobile_image": "shopify:\/\/shop_images\/Mobile_Banners_6.png"
+          }
+        },
+        "slide_YCFdKt": {
+          "type": "slide",
+          "disabled": true,
+          "settings": {
+            "heading": "Worthwhile",
+            "subheading": "Make satisfying your sweet tooth",
+            "content": "",
+            "button_text": "Shop Now",
+            "button_link": "shopify:\/\/products\/strawberry-thins-22oz",
+            "background_color": "",
+            "text_black": true,
+            "text_position": "middle_left",
+            "text_position_mobile": "top_center",
+            "image": "shopify:\/\/shop_images\/Strawberry-Thins.jpg",
+            "mobile_image": "shopify:\/\/shop_images\/Strawberry-Thins-mobile.jpg"
+          }
+        },
+        "slide_bewDdp": {
+          "type": "slide",
+          "disabled": true,
+          "settings": {
+            "heading": "Pure Bliss",
+            "subheading": "Crème Brulée Almonds",
+            "content": "",
+            "button_text": "Treat Yourself",
+            "button_link": "shopify:\/\/collections\/white-chocolate",
+            "background_color": "",
+            "text_black": true,
+            "text_position": "middle_right",
+            "text_position_mobile": "bottom_center",
+            "image": "shopify:\/\/shop_images\/Banners_1920_x_800_px_2.png",
+            "mobile_image": "shopify:\/\/shop_images\/Valentine_s_Banner_-_Mobile.png"
+          }
+        },
+        "slide_wrhC9X": {
+          "type": "slide",
+          "disabled": true,
+          "settings": {
+            "heading": "Bites of Joy",
+            "subheading": "Holiday",
+            "content": "",
+            "button_text": "Shop Seasonal",
+            "button_link": "shopify:\/\/collections\/seasonal-flavors",
+            "background_color": "",
+            "text_black": false,
+            "text_position": "middle_left",
+            "text_position_mobile": "top_center",
+            "image": "shopify:\/\/shop_images\/November_1st_Update.png",
+            "mobile_image": "shopify:\/\/shop_images\/November_1st_Update_3.png"
+          }
+        },
+        "slide_4erUUR": {
+          "type": "slide",
+          "disabled": true,
+          "settings": {
+            "heading": "Cozy Up with  Hot Cocoa",
+            "subheading": "This Holiday Season",
+            "content": "",
+            "button_text": "Shop Now",
+            "button_link": "shopify:\/\/collections\/seasonal-1",
+            "background_color": "",
+            "text_black": true,
+            "text_position": "middle_left",
+            "text_position_mobile": "top_center",
+            "image": "shopify:\/\/shop_images\/November_1st_Update_2.png",
+            "mobile_image": "shopify:\/\/shop_images\/November_1st_Update_5.png"
+          }
+        },
+        "slide_8Hat34": {
+          "type": "slide",
+          "disabled": true,
+          "settings": {
+            "heading": "True Love",
+            "subheading": "Chocolate + Cherries",
+            "content": "",
+            "button_text": "Shop Now",
+            "button_link": "shopify:\/\/products\/double-chocolate-milk-and-white-chocolate-dried-cherries",
+            "background_color": "",
+            "text_black": true,
+            "text_position": "middle_left",
+            "text_position_mobile": "top_center",
+            "image": "shopify:\/\/shop_images\/Banners_1920_x_800_px.png",
+            "mobile_image": "shopify:\/\/shop_images\/Mobile_Banner_-_Cherries.png"
+          }
+        },
+        "slide_KVA3rC": {
+          "type": "slide",
+          "disabled": true,
+          "settings": {
+            "heading": "Snickerdoodle Almonds!",
+            "subheading": "Limited Time Only",
+            "content": "",
+            "button_text": "Shop Now",
+            "button_link": "shopify:\/\/products\/snickerdoodle-almonds-24-oz",
+            "background_color": "",
+            "text_black": true,
+            "text_position": "middle_left",
+            "text_position_mobile": "top_center",
+            "image": "shopify:\/\/shop_images\/Banners_1920_x_800_px_6.png",
+            "mobile_image": "shopify:\/\/shop_images\/Mobile_Banners_8.png"
+          }
+        },
+        "slide_y37Uaz": {
+          "type": "slide",
+          "disabled": true,
+          "settings": {
+            "heading": "Thinly Dipped",
+            "subheading": "Big Flavor",
+            "content": "",
+            "button_text": "Shop THINS",
+            "button_link": "shopify:\/\/collections\/thins",
+            "background_color": "",
+            "text_black": true,
+            "text_position": "middle_left",
+            "text_position_mobile": "top_center",
+            "image": "shopify:\/\/shop_images\/Banners_1920_x_800_px_1.png",
+            "mobile_image": "shopify:\/\/shop_images\/Mobile_Banner_-_DK_Coconut_THINS.png"
+          }
+        },
+        "slide_M7GhPF": {
+          "type": "slide",
+          "disabled": true,
+          "settings": {
+            "heading": "Minty Goodness",
+            "subheading": "Bites of Joy",
+            "content": "",
+            "button_text": "Shop Now",
+            "button_link": "shopify:\/\/products\/mint-crisp",
+            "background_color": "",
+            "text_black": true,
+            "text_position": "middle_left",
+            "text_position_mobile": "top_center",
+            "image": "shopify:\/\/shop_images\/Mint-Crisp_c3f8fff7-0c07-4462-be81-8978da131193.jpg",
+            "mobile_image": "shopify:\/\/shop_images\/mint-mobile.jpg"
+          }
+        },
+        "slide_eG7Xep": {
+          "type": "slide",
+          "disabled": true,
+          "settings": {
+            "heading": "Holiday Cheer is Here",
+            "subheading": "Taste the Season",
+            "content": "",
+            "button_text": "Shop Seasonal",
+            "button_link": "shopify:\/\/collections\/seasonal-1",
+            "background_color": "",
+            "text_black": true,
+            "text_position": "middle_right",
+            "text_position_mobile": "top_center",
+            "image": "shopify:\/\/shop_images\/November_1st_Update_1.png",
+            "mobile_image": "shopify:\/\/shop_images\/November_1st_Update_4.png"
+          }
+        },
+        "slide_xCwB7c": {
+          "type": "slide",
+          "disabled": true,
+          "settings": {
+            "heading": "Dark Chocolate  Pistachios",
+            "subheading": "Enjoy the Unmatched Flavor of",
+            "content": "",
+            "button_text": "Shop Now",
+            "button_link": "shopify:\/\/products\/dark-chocolate-sea-salt-pistachios",
+            "background_color": "",
+            "text_black": true,
+            "text_position": "bottom_right",
+            "text_position_mobile": "top_center",
+            "image": "shopify:\/\/shop_images\/Banners_1920_x_1080_px_1920_x_800_px_f498fc59-d90e-4b4d-ae6b-9013bc0d73fb.png",
+            "mobile_image": "shopify:\/\/shop_images\/Pistachio_-_Mobile_1.png"
+          }
+        },
+        "slide_KUNniz": {
+          "type": "slide",
+          "disabled": true,
+          "settings": {
+            "heading": "Worthwhile",
+            "subheading": "Make satisfying your sweet tooth",
+            "content": "Thinly dipped California roasted almonds with nothing artificial.",
+            "button_text": "Shop Now",
+            "button_link": "shopify:\/\/collections\/thins",
+            "background_color": "#d6aaab",
+            "text_black": false,
+            "text_position": "middle_left",
+            "text_position_mobile": "top_left",
+            "image": "shopify:\/\/shop_images\/hero-img_dc265e5a-2e40-4043-a70d-11ad5d8ec9e8.jpg",
+            "mobile_image": "shopify:\/\/shop_images\/hero-mobile_1.jpg"
+          }
+        },
+        "slide_YB4XhE": {
+          "type": "slide",
+          "disabled": true,
+          "settings": {
+            "heading": "Everything Delicious",
+            "subheading": "Nothing Artificial",
+            "content": "",
+            "button_text": "Shop Now",
+            "button_link": "shopify:\/\/products\/dark-chocolate-coconut-thins",
+            "background_color": "#9ed4fd",
+            "text_black": true,
+            "text_position": "middle_left",
+            "text_position_mobile": "top_center",
+            "image": "shopify:\/\/shop_images\/Dark-Choc-Coconut.jpg",
+            "mobile_image": "shopify:\/\/shop_images\/hero-mobile-coconut.jpg"
+          }
+        },
+        "slide_iAch3r": {
+          "type": "slide",
+          "disabled": true,
+          "settings": {
+            "heading": "Lemon Thins",
+            "subheading": "The Perfect Anytime Snack",
+            "content": "",
+            "button_text": "Shop Now",
+            "button_link": "shopify:\/\/products\/lemoncello-almonds-club-bag",
+            "background_color": "",
+            "text_black": true,
+            "text_position": "middle_left",
+            "text_position_mobile": "top_left",
+            "image": "shopify:\/\/shop_images\/Lemoncello-Thins.jpg",
+            "mobile_image": "shopify:\/\/shop_images\/lemoncello-mobile.png"
+          }
+        },
+        "slide_jAAwDd": {
+          "type": "slide",
+          "disabled": true,
+          "settings": {
+            "heading": "Buy 2, Get 1 Free",
+            "subheading": "All Sale Items!",
+            "content": "",
+            "button_text": "Shop Now",
+            "button_link": "shopify:\/\/collections\/sale",
+            "background_color": "",
+            "text_black": true,
+            "text_position": "middle_left",
+            "text_position_mobile": "top_center",
+            "image": "shopify:\/\/shop_images\/Banners_1920_x_800_px_7.png",
+            "mobile_image": "shopify:\/\/shop_images\/Mobile_Banners_11.png"
+          }
+        },
+        "slide_R4iijE": {
+          "type": "slide",
+          "disabled": true,
+          "settings": {
+            "heading": "Sweeten Your Day",
+            "subheading": "On Sale Now",
+            "content": "",
+            "button_text": "Shop Now",
+            "button_link": "shopify:\/\/collections\/shop-all",
+            "background_color": "",
+            "text_black": false,
+            "text_position": "middle_right",
+            "text_position_mobile": "middle_center",
+            "image": "shopify:\/\/shop_images\/Banners_1920_x_800_px_9.png",
+            "mobile_image": "shopify:\/\/shop_images\/Mobile_Banners_12.png"
+          }
+        }
+      },
+      "block_order": [
+        "slide_HbJn9m",
+        "slide_Y3zHHG",
+        "slide_7wXF4D",
+        "slide_4fPfRL",
+        "slide_9fddRN",
+        "slide_zhmiXG",
+        "slide_dRAPxd",
+        "slide_7iHEyb",
+        "slide_UjXcTM",
+        "slide_Px48qe",
+        "slide_E8HM68",
+        "slide_AUXcMt",
+        "slide_RD9xEM",
+        "slide_bQkjJq",
+        "slide_TbmRhc",
+        "slide_6TiWBb",
+        "slide_mPxfpq",
+        "slide_KPyh3D",
+        "slide_YdnNq8",
+        "slide_h4Qxaw",
+        "slide_rB7Qpw",
+        "slide_YCFdKt",
+        "slide_bewDdp",
+        "slide_wrhC9X",
+        "slide_4erUUR",
+        "slide_8Hat34",
+        "slide_KVA3rC",
+        "slide_y37Uaz",
+        "slide_M7GhPF",
+        "slide_eG7Xep",
+        "slide_xCwB7c",
+        "slide_KUNniz",
+        "slide_YB4XhE",
+        "slide_iAch3r",
+        "slide_jAAwDd",
+        "slide_R4iijE"
+      ],
+      "settings": {}
+    },
+    "collections_carousel_E3wrzT": {
+      "type": "collectionsCarousel",
+      "settings": {
+        "heading": "Flavors that Will delight  your taste buds",
+        "subheading": "Bites of Joy",
+        "collections": [
+          "white-chocolate"
+        ],
+        "shop_all_link": "shopify:\/\/collections\/shop-all"
+      }
+    },
+    "image_callouts_MQcMxf": {
+      "type": "imageCallouts",
+      "blocks": {
+        "callout_left_CBghQC": {
+          "type": "callout_left",
+          "settings": {
+            "heading": "No high fructose corn syrup",
+            "content": "Free from additives that offer no essential nutrients"
+          }
+        },
+        "callout_left_BFLkCc": {
+          "type": "callout_left",
+          "settings": {
+            "heading": "No artificial FLAVORS",
+            "content": "Real, clean taste that you and your family can enjoy anytime"
+          }
+        },
+        "callout_right_j7JzW3": {
+          "type": "callout_right",
+          "settings": {
+            "heading": "No artificial colors",
+            "content": "No added chemicals or dyes \njust pure ingredients",
+            "line_length": 80
+          }
+        },
+        "callout_right_64fTAP": {
+          "type": "callout_right",
+          "settings": {
+            "heading": "Real, premium ingredients",
+            "content": "All natural snacks to keep you healthy and happy",
+            "line_length": 80
+          }
+        }
+      },
+      "block_order": [
+        "callout_left_CBghQC",
+        "callout_left_BFLkCc",
+        "callout_right_j7JzW3",
+        "callout_right_64fTAP"
+      ],
+      "settings": {
+        "heading": "Our Ingredients make us different",
+        "subheading": "Nothing Artificial",
+        "button_text": "Learn More",
+        "button_link": "shopify:\/\/pages\/about",
+        "image": "shopify:\/\/shop_images\/Crunchy_Toffee_Individual_Pieces_-_Transparent.png"
+      }
+    },
+    "testimonials_YMfLfk": {
+      "type": "testimonials",
+      "blocks": {
+        "testimonial_qBYGWV": {
+          "type": "testimonial",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/stacked2_aeaa206a-27ca-4424-b5a2-c64563efc503.png",
+            "quote": "\"These are my favorite almonds of all time. I have looked for them everywhere! So now I just order online when every I want. Really, really, good! All my friends think so too, now they're ordering also. Just a suggestion, you need to make them in a larger size, maybe 10 to 12 Oz. Those little bags don't last to long around our house!!!\"",
+            "content": "Review of Crunchy Toffee Chocolate Almonds, 5oz",
+            "author": "Rebecca R."
+          }
+        },
+        "testimonial_hnhtgC": {
+          "type": "testimonial",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/stacked1_18aa1d77-4ec9-4413-aa66-d8195210632f.png",
+            "quote": "\"Delicious! They [Lemon THINS] were so delicious we are taking them and Strawberry THINS on vacation with us as a gift to our host!\"",
+            "content": "Review of Lemon THINS, 5oz",
+            "author": "Valerie P."
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_qBYGWV",
+        "testimonial_hnhtgC"
+      ],
+      "settings": {
+        "heading": "What our customers ARE SAYING",
+        "subheading": "Love to Make You Smile"
+      }
+    },
+    "logo_carousel_9DnGaz": {
+      "type": "logoCarousel",
+      "blocks": {
+        "logo_EMEJXb": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/costco_527c715a-bf0f-4eab-aae1-79bdb7471519.png",
+            "override_link": "shopify:\/\/pages\/find-in-store"
+          }
+        },
+        "logo_AhV8jR": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/marshalls_c40471f4-b60b-4804-85d8-a3b8f45046bd.png",
+            "override_link": "shopify:\/\/pages\/find-in-store"
+          }
+        },
+        "logo_BHiBRY": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/tjmaxx_ea773ee2-20b0-43ec-914e-5cdf1bc85ae7.png",
+            "override_link": "shopify:\/\/pages\/find-in-store"
+          }
+        },
+        "logo_dGTpcx": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/homegoods_beb788b1-ad37-44d1-a3ad-be479bcf9a9b.png",
+            "override_link": "shopify:\/\/pages\/find-in-store"
+          }
+        },
+        "logo_Dy4gAV": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/albertsons_7ecc13a9-6f63-4d5b-9028-8038c14e2a74.png",
+            "override_link": "shopify:\/\/pages\/find-in-store"
+          }
+        },
+        "logo_8V3zLL": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/giant-eagle.png",
+            "override_link": "shopify:\/\/pages\/find-in-store"
+          }
+        },
+        "logo_W7nt8n": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/raleys.png",
+            "override_link": "shopify:\/\/pages\/find-in-store"
+          }
+        },
+        "logo_9cUinc": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/worldmarket.png",
+            "override_link": "shopify:\/\/pages\/find-in-store"
+          }
+        },
+        "logo_z7CyNw": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/safeway_7713d381-8591-4f6a-a3e1-92514e7d1b64.png",
+            "override_link": "shopify:\/\/pages\/find-in-store"
+          }
+        },
+        "logo_mpXx6V": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/HyVee_logo_300x300_bc984e1a-2ffa-42ff-a961-6826e90c33a1.png",
+            "override_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "logo_EMEJXb",
+        "logo_AhV8jR",
+        "logo_BHiBRY",
+        "logo_dGTpcx",
+        "logo_Dy4gAV",
+        "logo_8V3zLL",
+        "logo_W7nt8n",
+        "logo_9cUinc",
+        "logo_z7CyNw",
+        "logo_mpXx6V"
+      ],
+      "settings": {
+        "heading": "FiND SCONZA IN A STORE NEAR YOU",
+        "content": "Contact one of these major retailers near you to find Sconza Chocolates in store.",
+        "master_link": "#"
+      }
+    },
+    "split_image_text_iGqqx6": {
+      "type": "splitImageText",
+      "blocks": {
+        "block_c49VYg": {
+          "type": "block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Gifts.jpg",
+            "heading": "Perfect gifts for  any occasion",
+            "subheading": "Spread Joy",
+            "content": "<p>Looking for the perfect gift for any occasion? Sconza has you covered! From our delectable THINS 4-pack to a collection of Sconza favorites, we offer a variety of delicious treats that are sure to delight everyone.<\/p>",
+            "button_text": "Shop Gifting",
+            "button_link": "shopify:\/\/collections\/gifts",
+            "alignment": "center"
+          }
+        }
+      },
+      "block_order": [
+        "block_c49VYg"
+      ],
+      "settings": {
+        "heading": "",
+        "subheading": "",
+        "content": "",
+        "button_text": "",
+        "button_link": "",
+        "alignment": "center"
+      }
+    },
+    "slide_carousel_YwccTV": {
+      "type": "slideCarousel",
+      "blocks": {
+        "slide_hW9dBB": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/milk-chocolate.png",
+            "heading": "Milk Chocolate",
+            "link": "shopify:\/\/collections\/milk-chocolate"
+          }
+        },
+        "slide_h73R7Y": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/dark-chocolate.png",
+            "heading": "Dark Chocolate",
+            "link": "shopify:\/\/collections\/dark-chocolate-2"
+          }
+        },
+        "slide_zhMbje": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/white-chocolate.png",
+            "heading": "White Chocolate",
+            "link": "shopify:\/\/collections\/white-chocolate"
+          }
+        }
+      },
+      "block_order": [
+        "slide_hW9dBB",
+        "slide_h73R7Y",
+        "slide_zhMbje"
+      ],
+      "settings": {}
+    },
+    "social_carousel_KhRhab": {
+      "type": "socialCarousel",
+      "blocks": {
+        "image_h3dKpF": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/16.jpg",
+            "link": "https:\/\/www.instagram.com\/p\/DEz6OWEt_D2\/"
+          }
+        },
+        "image_UEHNEq": {
+          "type": "image",
+          "disabled": true,
+          "settings": {
+            "image": "shopify:\/\/shop_images\/3.jpg",
+            "link": "https:\/\/www.instagram.com\/p\/DA_MFb7sVUN\/"
+          }
+        },
+        "image_pqiEw9": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/AP2A9550_1.jpg",
+            "link": "https:\/\/www.instagram.com\/p\/C3-9swSBguI\/"
+          }
+        },
+        "image_MwWY4z": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/AP2A6945_1.jpg",
+            "link": "https:\/\/www.instagram.com\/p\/C7CFvRYRbdn\/"
+          }
+        },
+        "image_ByF7XL": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Untitled-4_1.jpg",
+            "link": "https:\/\/www.instagram.com\/p\/C8pDUWpNr0K\/"
+          }
+        }
+      },
+      "block_order": [
+        "image_h3dKpF",
+        "image_UEHNEq",
+        "image_pqiEw9",
+        "image_MwWY4z",
+        "image_ByF7XL"
+      ],
+      "settings": {
+        "heading": "Perfect AT any occasion",
+        "subheading": "TAG US @SconzaChocolates"
+      }
+    }
+  },
+  "order": [
+    "hero_slider_GUyiGi",
+    "collections_carousel_E3wrzT",
+    "image_callouts_MQcMxf",
+    "testimonials_YMfLfk",
+    "logo_carousel_9DnGaz",
+    "split_image_text_iGqqx6",
+    "slide_carousel_YwccTV",
+    "social_carousel_KhRhab"
+  ]
+}

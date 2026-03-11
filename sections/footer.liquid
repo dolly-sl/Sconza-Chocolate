@@ -1,0 +1,319 @@
+<footer class="tw-bg-mainBlack">
+  <div class="wrapper">
+    <div class="tw-flex tw-items-start tw-justify-between tw-pt-10 md:tw-pt-16 tw-pb-10 md:tw-pb-16 lg:tw-pb-[140px] tw-gap-16 lg:tw-gap-32 lg:tw-flex-row tw-flex-col">
+      <div class="tw-w-full lg:tw-w-[348px]">
+        <img
+          src="{{ 'Sconza-Chocolate-white.svg' | asset_url }}"
+          alt="Sconza-Chocolate"
+          class="tw-hidden lg:tw-block">
+        <div class="tw-text-center lg:tw-mt-12 lg:tw-text-left">
+          <h3 class="tw-mb-1 tw-text-base tw-font-extrabold tw-uppercase tw-text-mainOffWhite2 tw-font-osc">
+            {{ section.settings.newsletter_heading }}
+          </h3>
+          <p class="tw-text-sm tw-text-mainOffWhite2">{{ section.settings.newsletter_description }}</p>
+          <div class="">
+            <script
+              charset="utf-8"
+              type="text/javascript"
+              src="//js.hsforms.net/forms/embed/v2.js"></script>
+            <script>
+                hbspt.forms.create({
+                  region: "na1",
+                  portalId: "20159127",
+                  formId: "51c22755-30a9-49fb-b98c-a17e1a07b897"
+                });
+            </script>
+          {% comment %} <input
+                                                                                                                                                  type="text"
+                                                                                                                                                  name=""
+                                                                                                                                                  id="{{ section.settings.form_code }}"
+                                                                                                                                                  placeholder="Email Address"
+                                                                                                                                                  class="tw-w-full tw-px-6 tw-py-3 tw-border-0 tw-text-sm tw-bg-transparent tw-text-mainOffWhite2 focus:tw-outline-none placeholder:tw-text-mainOffWhite2 focus-visible:tw-ring-0 focus-visible:tw-border-0">
+                                                                                                                                                <button type="submit" class="tw-hidden tw-px-6 tw-py-3 tw-text-base tw-uppercase tw-text-mainOffWhite2 tw-font-osc md:tw-block">
+                                                                                                                                                  Submit
+                                                                                                                          </button> {% endcomment %}
+          </div>
+        </div>
+      </div>
+      <!-- Desktop Menu -->
+      <div class="tw-flex-col tw-items-start tw-justify-between tw-hidden tw-w-full md:tw-flex lg:tw-flex-1 lg:tw-w-auto md:tw-flex-row">
+        <div class="tw-w-full md:tw-w-auto">
+          {%- assign footer_1_menu = section.settings.footer_1_menu.links -%}
+          <h3 class="tw-text-base tw-uppercase tw-text-mainOffWhite2 tw-font-osc md:tw-py-0">
+            {{ section.settings.footer_1_menu.title }}
+          </h3>
+          <ul class="tw-flex-col tw-hidden tw-gap-4 tw-mt-5 tw-list-none md:tw-flex">
+            {%- for link in footer_1_menu -%}
+              <li>
+                <a href="{{  link.url }}" class="tw-text-sm tw-capitalize tw-text-mainOffWhite2 animate">
+                  {{- link.title -}}
+                </a>
+              </li>
+            {%- endfor -%}
+          </ul>
+        </div>
+        <div class="tw-w-full md:tw-w-auto">
+          {%- assign footer_2_menu = section.settings.footer_2_menu.links -%}
+          <h3 class="tw-text-base tw-uppercase tw-text-mainOffWhite2 tw-font-osc">
+            {{ section.settings.footer_2_menu.title }}
+          </h3>
+          <ul class="tw-flex tw-flex-col tw-gap-4 tw-mt-5 tw-list-none">
+            {%- for link in footer_2_menu -%}
+              <li>
+                <a href="{{  link.url }}" class="tw-text-sm tw-capitalize tw-text-mainOffWhite2 animate">
+                  {{- link.title -}}
+                </a>
+              </li>
+            {%- endfor -%}
+          </ul>
+        </div>
+        <div class="tw-w-full md:tw-w-auto">
+          {%- assign footer_3_menu = section.settings.footer_3_menu.links -%}
+          <h3 class="tw-text-base tw-uppercase tw-text-mainOffWhite2 tw-font-osc">
+            {{ section.settings.footer_3_menu.title }}
+          </h3>
+          <ul class="tw-flex tw-flex-col tw-gap-4 tw-mt-5 tw-list-none">
+            {%- for link in footer_3_menu -%}
+              <li>
+                <a
+                  href="{{  link.url }}"
+                  {% if link.url contains 'https://wholesale.sconza.com/' %}
+                  target="_blank"
+                  {% endif %}
+                  class="tw-text-sm tw-capitalize tw-text-mainOffWhite2 animate">
+                  {{- link.title -}}
+                </a>
+              </li>
+            {%- endfor -%}
+          </ul>
+        </div>
+      </div>
+      <!-- Mobile Menu -->
+      <div class="tw-flex tw-flex-col tw-items-start tw-justify-between tw-w-full tw-border-b md:tw-hidden tw-border-mainChoco">
+        <!-- Item -->
+        <div class="tw-w-full tw-py-5 tw-border-t tw-border-mainChoco">
+          <button type="button" class="tw-flex tw-items-center tw-justify-between tw-w-full tw-text-base tw-uppercase tw-text-mainOffWhite2 tw-font-osc footer-accordion-btn">
+            {{ section.settings.footer_1_menu.title }}
+            <span class="plus-icon">
+              <img
+                src="{{ 'plus-icon.svg' | asset_url }}"
+                alt="plus"
+                width="24"
+                height="24">
+            </span>
+            <span class="tw-hidden minus-icon">
+              <img
+                src="{{ 'minus-icon.svg' | asset_url }}"
+                alt="minus"
+                width="24"
+                height="24">
+            </span>
+          </button>
+          <ul class="tw-flex-col tw-hidden tw-flex tw-gap-6 tw-pl-6 tw-mt-5 tw-list-none footer-accordion-content">
+            {%- for link in footer_1_menu -%}
+              <li>
+                <a href="{{ link.url }}" class="tw-text-sm tw-capitalize tw-text-mainOffWhite2 animate">
+                  {{- link.title -}}
+                </a>
+              </li>
+            {%- endfor -%}
+          </ul>
+        </div>
+        <!-- Item -->
+        <div class="tw-w-full tw-py-5 tw-border-t tw-border-mainChoco">
+          <button type="button" class="tw-flex tw-items-center tw-justify-between tw-w-full tw-text-base tw-uppercase tw-text-mainOffWhite2 tw-font-osc footer-accordion-btn">
+            {{ section.settings.footer_2_menu.title }}
+            <span class="plus-icon">
+              <img
+                src="{{ 'plus-icon.svg' | asset_url }}"
+                alt="plus"
+                width="24"
+                height="24">
+            </span>
+            <span class="tw-hidden minus-icon">
+              <img
+                src="{{ 'minus-icon.svg' | asset_url }}"
+                alt="minus"
+                width="24"
+                height="24">
+            </span>
+          </button>
+          <ul class="tw-flex-col tw-hidden tw-gap-6 tw-flex tw-pl-6 tw-mt-5 tw-list-none footer-accordion-content">
+            {%- for link in footer_2_menu -%}
+              <li>
+                <a href="{{ link.url }}" class="tw-text-sm tw-capitalize tw-text-mainOffWhite2 animate">
+                  {{- link.title -}}
+                </a>
+              </li>
+            {%- endfor -%}
+          </ul>
+        </div>
+        <!-- Item -->
+        <div class="tw-w-full tw-py-5 tw-border-t tw-border-mainChoco">
+          <button type="button" class="tw-flex tw-items-center tw-justify-between tw-w-full tw-text-base tw-uppercase tw-text-mainOffWhite2 tw-font-osc footer-accordion-btn">
+            {{ section.settings.footer_3_menu.title }}
+            <span class="plus-icon">
+              <img
+                src="{{ 'plus-icon.svg' | asset_url }}"
+                alt="plus"
+                width="24"
+                height="24">
+            </span>
+            <span class="tw-hidden minus-icon">
+              <img
+                src="{{ 'minus-icon.svg' | asset_url }}"
+                alt="minus"
+                width="24"
+                height="24">
+            </span>
+          </button>
+          <ul class="tw-flex-col tw-hidden tw-gap-6 tw-flex tw-pl-6 tw-mt-5 tw-list-none footer-accordion-content">
+            {%- for link in footer_3_menu -%}
+              <li>
+                <a
+                  href="{{ link.url }}"
+                  {% if link.url contains 'https://wholesale.sconza.com/' %}
+                  target="_blank"
+                  {% endif %}
+                  class="tw-text-sm tw-capitalize tw-text-mainOffWhite2 animate">
+                  {{- link.title -}}
+                </a>
+              </li>
+            {%- endfor -%}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="tw-pb-14 md:tw-py-6 md:tw-border-t tw-border-mainChoco2">
+    <div class="wrapper">
+      <div class="tw-flex tw-flex-col-reverse tw-items-center tw-justify-between tw-gap-5 md:tw-flex-row">
+        <div class="tw-flex tw-items-center tw-gap-2 md:tw-gap-4">
+          <p class="tw-text-xs tw-text-mainOffWhite2">
+            &copy; {{ 'now' | date: '%Y' }}
+            <a href="#" class="tw-underline animate">Sconza Chocolate</a>
+          </p>
+          <div class="tw-items-center tw-hidden tw-gap-2 md:tw-flex">
+            {%- assign policy_menu = section.settings.policy_menu.links -%}
+            {%- for link in policy_menu -%}
+              <a href="{{ link.url }}" class="tw-text-xs animate tw-text-mainOffWhite2 tw-text-nowrap">
+                {{- link.title -}}
+              </a>
+              {% unless forloop.last %}
+                <p class="tw-text-xs tw-text-mainOffWhite2">|</p>
+              {% endunless %}
+            {%- endfor -%}
+          </div>
+        </div>
+
+        <ul class="tw-flex tw-items-center tw-gap-2 md:tw-gap-2.5">
+          {% if settings.facebook != blank %}
+            <li>
+              <a
+                href="{{ settings.facebook }}"
+                target="_blank"
+                class="tw-transition-all tw-duration-300 tw-ease-in-out hover:tw-opacity-40">
+                <img src="{{ 'fb.svg' | asset_url }}" alt="fb">
+              </a>
+            </li>
+          {% endif %}
+          {% if settings.x != blank %}
+            <li>
+              <a
+                href="{{ settings.x }}"
+                target="_blank"
+                class="tw-transition-all tw-duration-300 tw-ease-in-out hover:tw-opacity-40">
+                <img src="{{ 'x.svg' | asset_url }}" alt="x">
+              </a>
+            </li>
+          {% endif %}
+          {% if settings.instagram != blank %}
+            <li>
+              <a
+                href="{{ settings.instagram }}"
+                target="_blank"
+                class="tw-transition-all tw-duration-300 tw-ease-in-out hover:tw-opacity-40">
+                <img src="{{ 'insta.svg' | asset_url }}" alt="insta">
+              </a>
+            </li>
+          {% endif %}
+          {% if settings.tiktok != blank %}
+            <li>
+              <a
+                href="{{ settings.tiktok }}"
+                target="_blank"
+                class="tw-transition-all tw-duration-300 tw-ease-in-out hover:tw-opacity-40">
+                <img src="{{ 'tiktok.svg' | asset_url }}" alt="tiktok">
+              </a>
+            </li>
+          {% endif %}
+          {% if settings.youtube != blank %}
+            <li>
+              <a
+                href="{{ settings.youtube }}"
+                target="_blank"
+                class="tw-transition-all tw-duration-300 tw-ease-in-out hover:tw-opacity-40">
+                <img src="{{ 'youtube.svg' | asset_url }}" alt="youtube">
+              </a>
+            </li>
+          {% endif %}
+          {% if settings.linkedin != blank %}
+            <li>
+              <a
+                href="{{ settings.linkedin }}"
+                target="_blank"
+                class="tw-transition-all tw-duration-300 tw-ease-in-out hover:tw-opacity-40">
+                <img src="{{ 'linkedin.svg' | asset_url }}" alt="linkedin">
+              </a>
+            </li>
+          {% endif %}
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+
+{% schema %}
+  {
+    "name": "Footer",
+    "settings": [
+      {
+        "type": "text",
+        "id": "newsletter_heading",
+        "label": "Newsletter Heading"
+      },
+      {
+        "type": "textarea",
+        "id": "newsletter_description",
+        "label": "Newsletter Description"
+      },
+      {
+        "type": "text",
+        "id": "form_code",
+        "label": "Form Code"
+      },
+      {
+        "type": "link_list",
+        "id": "footer_1_menu",
+        "label": "Footer 1 Menu"
+      }, {
+        "type": "link_list",
+        "id": "footer_2_menu",
+        "label": "Footer 2 Menu"
+      }, {
+        "type": "link_list",
+        "id": "footer_3_menu",
+        "label": "Footer 3 Menu"
+      }, {
+        "type": "link_list",
+        "id": "policy_menu",
+        "label": "Policy Menu"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Footer"
+      }
+    ]
+  }
+{% endschema %}

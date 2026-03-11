@@ -1,0 +1,130 @@
+<section class="tw-bg-no-repeat tw-relative tw-z-0 before:tw--z-10 before:tw-absolute before:tw-left-0 before:tw-top-0 before:tw-size-full before:tw-bg-menuOverlay tw-bg-cover before:tw-mix-blend-multiply" style="background-image: url({{ section.settings.image | image_url }});">
+  <div class="wrapper">
+    <div class="tw-h-[600px] md:tw-h-[370px] tw-text-center tw-flex tw-justify-center tw-items-center tw-flex-col tw-gap-4">
+      <p class="tw-text-mainGold tw-text-xl md:tw-text-3xl lg:tw-text-4xl tw-font-script">
+        {{ section.settings.subheading }}
+      </p>
+      <h1 class="tw-text-mainOffWhite2 tw-text-4xl md:tw-text-[45px] tw-leading-[1.2] tw-uppercase tw-tracking-[0.338px] tw-font-osc tw-mx-auto tw-max-w-4xl">
+        {{ section.settings.heading }}
+      </h1>
+    </div>
+  </div>
+</section>
+
+<section class="blog__hero">
+  {% if section.settings.featured_article != blank %}
+    <a href="{{ section.settings.featured_article.url }}" class="md:tw-w-1/2 tw-w-full">
+      <img
+        width="620"
+        height="500"
+        src="{{ section.settings.featured_article.image | img_url: '1240' }}"
+        alt="{{ section.settings.featured_article.image.alt }}"
+        class="tw-w-full">
+    </a>
+
+    <div class="hero__copy">
+      <div class="inner text-center">
+        <a href="{{ section.settings.featured_article.url }}" class="">
+          <h1>{{ section.settings.featured_article.title }}</h1>
+        </a>
+        <p>{{ section.settings.featured_article.content | strip_html | truncatewords: 20, '...' }}</p>
+        <a href="{{ section.settings.featured_article.url }}" class="btn-primary-">Read More</a>
+      </div>
+    </div>
+
+    {% if section.settings.featured_article.metafields.global.featured_image_mobile != blank %}
+      <style>
+        .hero__image--mobile {
+          display: none;
+        }
+
+        @media (max-width: 576px) {
+          .hero__image--desktop {
+            display: none;
+          }
+
+          .hero__image--mobile {
+            display: block;
+          }
+        }
+      </style>
+    {% endif %}
+
+  {% else %}
+    {% for article in blog.articles limit: 1 %}
+      <div class="tw-container tw-mt-16 tw-max-w-7xl">
+        <div class="tw-flex tw-flex-wrap md:tw-flex-nowrap tw-justify-between tw-bg-white tw-items-center">
+          <a href="{{ article.url }}" class="md:tw-w-1/2 tw-w-full">
+            <img
+              width="620"
+              height="500"
+              src="{{ article.image | image_url }}"
+              alt="{{ article.image.alt }}"
+              class="tw-w-full">
+          </a>
+
+          <div class="md:tw-w-1/2 tw-w-full tw-p-10">
+            <div class="inner tw-text-left">
+              <p class="tw-text-mainGold tw-text-xl md:tw-text-3xl lg:tw-text-[35px] tw-font-script">Featured Post</p>
+              <a href="{{ article.url }}" class="">
+                <h2 class="tw-text-mainBlack2 tw-text-[35px] tw-font-bold tw-font-osc tw-uppercase tw-text-left">
+                  {{ article.title }}
+                </h2>
+              </a>
+              <p class="tw-text-base tw-font-os tw-text-mainBlack tw-mt-2">
+                {{ article.content | strip_html | truncatewords: 20, '...' }}
+              </p>
+              <p class="tw-text-sm tw-text-mainBlack tw-font-os tw-italic tw-opacity-60 tw-mt-1">
+                {{ article.created_at | date: '%B %d, %Y' }}
+              </p>
+              <a href="{{ article.url }}" class="btn-primary tw-mt-10">Read More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {% if article.metafields.global.featured_image_mobile != blank %}
+        <style>
+          .hero__image--mobile {
+            display: none;
+          }
+
+          @media (max-width: 576px) {
+            .hero__image--desktop {
+              display: none;
+            }
+
+            .hero__image--mobile {
+              display: block;
+            }
+          }
+        </style>
+      {% endif %}
+    {% endfor %}
+  {% endif %}
+</section>
+
+{% schema %}
+  {
+    "name": "Blog Hero",
+    "settings": [
+      {
+        "id": "featured_article",
+        "type": "article",
+        "label": "Choose Featured Article"
+      }, {
+        "id": "heading",
+        "type": "text",
+        "label": "Heading"
+      }, {
+        "id": "subheading",
+        "type": "text",
+        "label": "SubHeading"
+      }, {
+        "id": "image",
+        "type": "image_picker",
+        "label": "Hero Image"
+      }
+    ]
+  }
+{% endschema %}

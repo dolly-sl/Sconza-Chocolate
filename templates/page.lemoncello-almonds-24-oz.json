@@ -1,0 +1,355 @@
+{
+  "wrapper": "div.tw-bg-backgroundDark",
+  "sections": {
+    "hero_slider_rL3jqW": {
+      "type": "heroSlider",
+      "blocks": {
+        "slide_N6z9gG": {
+          "type": "slide",
+          "settings": {
+            "heading": "Lemoncello Almonds<br>— Now at Costco",
+            "subheading": "<i>From Sorrento with Love<\/i>",
+            "content": "Bright lemon flavor, smooth white chocolate, and perfectly roasted almonds.",
+            "button_text": "Find It at Costco",
+            "button_link": "https:\/\/www.costco.com\/w\/-\/locations",
+            "background_color": "",
+            "text_black": true,
+            "text_position": "middle_left",
+            "text_position_mobile": "top_center",
+            "image": "shopify:\/\/shop_images\/LemoncelloLanding2.png",
+            "mobile_image": "shopify:\/\/shop_images\/LemoncelloLanding2-mobile.png"
+          }
+        }
+      },
+      "block_order": [
+        "slide_N6z9gG"
+      ],
+      "name": "Hero Slider",
+      "settings": {}
+    },
+    "image_callouts_xQRnbd": {
+      "type": "imageCallouts",
+      "blocks": {
+        "callout_left_3gRXCj": {
+          "type": "callout_left",
+          "settings": {
+            "heading": "Smooth White Chocolate",
+            "content": "Creamy white chocolate that balances sweetness with a bright citrus finish."
+          }
+        },
+        "callout_left_wQEzgE": {
+          "type": "callout_left",
+          "settings": {
+            "heading": "Roasted Almonds",
+            "content": "Perfectly roasted for a satisfying crunch in every bite."
+          }
+        },
+        "callout_right_wnqwhp": {
+          "type": "callout_right",
+          "settings": {
+            "heading": "Limoncello-Inspired Flavor",
+            "content": "Bright, citrusy lemon flavor inspired by Southern Italy.",
+            "line_length": 80
+          }
+        },
+        "callout_right_LX6njm": {
+          "type": "callout_right",
+          "settings": {
+            "heading": "Premium Ingredients",
+            "content": "Crafted with quality ingredients and nothing artificial.",
+            "line_length": 80
+          }
+        }
+      },
+      "block_order": [
+        "callout_left_3gRXCj",
+        "callout_left_wQEzgE",
+        "callout_right_wnqwhp",
+        "callout_right_LX6njm"
+      ],
+      "settings": {
+        "heading": "The Perfect Balance of Flavor",
+        "subheading": "Simply Irresistable",
+        "button_text": "",
+        "button_link": "",
+        "image": "shopify:\/\/shop_images\/Lemoncello_with_Splash.png"
+      }
+    },
+    "split_image_text_P76Bkc": {
+      "type": "splitImageText",
+      "blocks": {
+        "block_k6fJwJ": {
+          "type": "block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Lemoncello-at-Costco-Entrance.png",
+            "heading": "AVAILABLE AT COSTCO — NATIONWIDE",
+            "subheading": "",
+            "content": "Lemoncello Almonds arrive at Costco warehouses beginning January 2026.<br><br><i>\nAvailability may vary by warehouse and timing.<\/i>",
+            "button_text": "Find A Costco Near You",
+            "button_link": "https:\/\/www.costco.com\/w\/-\/locations",
+            "alignment": "center"
+          }
+        }
+      },
+      "block_order": [
+        "block_k6fJwJ"
+      ],
+      "name": "Split Image and Text",
+      "settings": {
+        "heading": "",
+        "subheading": "",
+        "content": "",
+        "button_text": "",
+        "button_link": "",
+        "alignment": "center"
+      }
+    },
+    "testimonials_irQtjw": {
+      "type": "testimonials",
+      "blocks": {
+        "testimonial_gzNbB8": {
+          "type": "testimonial",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/LemoncelloforPartiles.png",
+            "quote": "Perfect for Sharing",
+            "content": "For dessert boards, gatherings, celebrations, holidays.",
+            "author": ""
+          }
+        },
+        "testimonial_WMqnqG": {
+          "type": "testimonial",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/LemoncelloTeaTime.png",
+            "quote": "A Bright Sweet Treat",
+            "content": "An afternoon pick-me-up or a sweet finish to the day.",
+            "author": ""
+          }
+        },
+        "testimonial_kU8wiQ": {
+          "type": "testimonial",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Lemoncello-Easter.png",
+            "quote": "A Seasonal Ritual",
+            "content": "The bag you wait for every year. Enjoy it while it lasts.",
+            "author": ""
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_gzNbB8",
+        "testimonial_WMqnqG",
+        "testimonial_kU8wiQ"
+      ],
+      "name": "Testimonials",
+      "settings": {
+        "heading": "How to  Enjoy Lemoncello®",
+        "subheading": "Moments Worth Savoring"
+      }
+    },
+    "split_image_text_DfbHJB": {
+      "type": "splitImageText",
+      "blocks": {
+        "images_7LNQak": {
+          "type": "images",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/LemoncelloStory.png"
+          }
+        }
+      },
+      "block_order": [
+        "images_7LNQak"
+      ],
+      "settings": {
+        "heading": "The Story Behind Lemoncello",
+        "subheading": "From Sorrento with Love",
+        "content": "Inspired by the fragrant lemon groves of Sorrento, Italy, Lemoncello Chocolate Almonds were lovingly imagined and crafted to celebrate a very special milestone — the 50th wedding anniversary of our parents, Jim & Carolyn Sconza.<br><br>\nWhat began as a tribute to family and tradition became a flavor worth sharing. Bright, citrusy lemon meets smooth white chocolate and perfectly roasted almonds, creating a taste that’s joyful, nostalgic, and unmistakably Sconza.<br><br>\nEvery bite is a celebration — of love, legacy, and the simple pleasures that bring people together.",
+        "button_text": "",
+        "button_link": "",
+        "alignment": "left"
+      }
+    },
+    "imageHeroBanner": {
+      "type": "imageHeroBanner",
+      "disabled": true,
+      "settings": {
+        "heading": "Lemoncello Season Starts January 2026",
+        "subtitle": "COMING TO COSTCONATIONWIDE",
+        "image": "shopify:\/\/shop_images\/Banners_1920_x_800_px_3_ac4b37dc-2616-4f95-85d4-6c983e180995.png",
+        "button_text": "Find at Costco (Jan 2026)",
+        "button_link": "",
+        "alignment": "left"
+      }
+    },
+    "tagline_4CefMg": {
+      "type": "tagline",
+      "disabled": true,
+      "settings": {
+        "tagline": "Crafting Bites of Joy for 85 Years"
+      }
+    },
+    "timeline_cJbqqa": {
+      "type": "timeline",
+      "blocks": {
+        "slide_F9Ubtf": {
+          "type": "slide",
+          "settings": {
+            "date": "1922",
+            "title": "From Italy With A Dream",
+            "content": "Vincenzo Sconza lands at Ellis Island with $20 in his pocket and boatloads of ambition. The 17-Year Old Vincenzo settles in Oakland and begins work at a pasta factory with the dream of becoming a candy maker.",
+            "image": "shopify:\/\/shop_images\/VincenzotoUSA-800x600.jpg"
+          }
+        },
+        "slide_cAyxGM": {
+          "type": "slide",
+          "settings": {
+            "date": "1939",
+            "title": "Chasing The Dream",
+            "content": "Vincenzo commandeers the family kitchen \nat night to try out his candy recipes. \nHis heavenly peanut brittle becomes incredibly popular, and his candies are soon featured in local dime stores. Vincenzo quits his day job: Sconza Candy is born!",
+            "image": "shopify:\/\/shop_images\/sparkjoy-2.png"
+          }
+        },
+        "slide_3w8TAb": {
+          "type": "slide",
+          "settings": {
+            "date": "1948",
+            "title": "The Dream Expands",
+            "content": "Sconza Candy thrives, adored by countless fans throughout the East Bay. Vincenzo dreams up and perfects new recipes in his kitchen, including Jordan Almonds, Jawbreakers and French Burnt Peanuts.",
+            "image": "shopify:\/\/shop_images\/jawbreaker.png"
+          }
+        },
+        "slide_iei9jw": {
+          "type": "slide",
+          "settings": {
+            "date": "1960",
+            "title": "New Generation, New Goodies",
+            "content": "Son Jim joins the family business, adding his inventive sweet tooth to the mix. Sconza acquires a local candy company. Vincenzo and Jim create nut and fruit-filled confections, after-dinner mints, and popular Christmas hard candies sold in decorative tins.",
+            "image": "shopify:\/\/shop_images\/newmints_2-800x600.jpg"
+          }
+        },
+        "slide_e44nTc": {
+          "type": "slide",
+          "settings": {
+            "date": "2008",
+            "title": "Moving to Oakdale",
+            "content": "By now, grandchildren Ron and Janet are deep in the family business: a third generation of candymakers with exacting standards and distinct flavor ideas. Sconza moves to a bigger home in California’s orchard country, close to many prized local ingredients.",
+            "image": "shopify:\/\/shop_images\/2000_2.jpg"
+          }
+        },
+        "slide_eTNcNG": {
+          "type": "slide",
+          "settings": {
+            "date": "2021",
+            "title": "Growing and Expanding",
+            "content": "Ron Sconza, CEO targets growth!  Expanding delicious confection selections to delight our customers and introducing new flavor-infused line of caramels and chocolate buttons.",
+            "image": "shopify:\/\/shop_images\/DSC_6106-1-800x564.jpg"
+          }
+        },
+        "slide_QNKVnj": {
+          "type": "slide",
+          "settings": {
+            "date": "2024",
+            "title": "Celebrating 85 Years",
+            "content": "Our THINS platform launches and our packaged line rebrands to Bites of Joy. Sconza celebrates 85 years and the 4th generation starts to learn the business.",
+            "image": "shopify:\/\/shop_images\/lemon_screen_shot.png"
+          }
+        }
+      },
+      "block_order": [
+        "slide_F9Ubtf",
+        "slide_cAyxGM",
+        "slide_3w8TAb",
+        "slide_iei9jw",
+        "slide_e44nTc",
+        "slide_eTNcNG",
+        "slide_QNKVnj"
+      ],
+      "disabled": true,
+      "settings": {
+        "heading": "Bites of Joy",
+        "subheading": "Crafting unique & classic confections since 1939"
+      }
+    },
+    "collections_carousel_Dz6iMa": {
+      "type": "collectionsCarousel",
+      "settings": {
+        "heading": "Shop Lemoncello",
+        "subheading": "",
+        "collections": [
+          "lemoncello-1"
+        ],
+        "shop_all_link": "shopify:\/\/collections\/shop-all"
+      }
+    },
+    "video_cta_kPaXff": {
+      "type": "videoCTA",
+      "settings": {
+        "heading": "THE STORY BEHIND LEMONCELLO®",
+        "subheading": "",
+        "button_text": "Watch the Story",
+        "video_link": "https:\/\/www.youtube.com\/watch?v=yJaAJ3FUuQA",
+        "image": "shopify:\/\/shop_images\/Banners_1920_x_800_px_3.png"
+      }
+    },
+    "split_image_text_cRMdBV": {
+      "type": "splitImageText",
+      "blocks": {
+        "block_hDRGYP": {
+          "type": "block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/About-Ingredients.png",
+            "heading": "Minimizing our impact on precious Natural Resources",
+            "subheading": "Sustainable Practices",
+            "content": "In everything we do, we try to minimize our impact on the Earth. We locally source ingredients and our clean water discharge program contributes recycled water for local crop irrigation, crucial in drought-prone California. We recycle plastics and corrugated materials, follow clean air emissions standards, and are committed to continuous improvement of our sustainability practices. Many of our suppliers are neighbors, creating a community of food lovers dedicated to high-quality produce and land stewardship.",
+            "button_text": "",
+            "button_link": "",
+            "alignment": "left"
+          }
+        },
+        "block_HRa8iw": {
+          "type": "block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/about-guardian-house.png",
+            "heading": "Children’s Guardian House",
+            "subheading": "Give Back",
+            "content": "Sconza Chocolates is honored to support the Children's Guardian House, which protects abused and neglected chilren in our local communities. Our company and team donate time, funds, and supplies to maintain and improve the Guardian House, established in 2022 to help at-risk kids heal and overcome traumatic family events. At Guardian House, children receive nurturing care, fun learning activities, delicious meals, fresh clothing, and individualized attention.",
+            "button_text": "",
+            "button_link": "",
+            "alignment": "left"
+          }
+        }
+      },
+      "block_order": [
+        "block_hDRGYP",
+        "block_HRa8iw"
+      ],
+      "disabled": true,
+      "settings": {
+        "heading": "",
+        "subheading": "",
+        "content": "",
+        "button_text": "",
+        "button_link": "",
+        "alignment": "center"
+      }
+    },
+    "pdp_image_carousel_QP78D9": {
+      "type": "pdpImageCarousel",
+      "disabled": true,
+      "settings": {}
+    }
+  },
+  "order": [
+    "hero_slider_rL3jqW",
+    "image_callouts_xQRnbd",
+    "split_image_text_P76Bkc",
+    "testimonials_irQtjw",
+    "split_image_text_DfbHJB",
+    "imageHeroBanner",
+    "tagline_4CefMg",
+    "timeline_cJbqqa",
+    "collections_carousel_Dz6iMa",
+    "video_cta_kPaXff",
+    "split_image_text_cRMdBV",
+    "pdp_image_carousel_QP78D9"
+  ]
+}

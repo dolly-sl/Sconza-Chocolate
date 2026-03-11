@@ -1,0 +1,88 @@
+<!-- Mobile Menu -->
+<div class="tw-absolute tw-left-0 tw-z-10 tw-hidden tw-w-full tw-bg-mainOffWhite mobile-menu tw-top-[134px] tw-overflow-scroll tw-max-h-[calc(100vh-134px)]">
+  <ul class="tw-list-none tw-divide-y tw-divide-borderGary">
+    {% for link in linklists[nav].links %}
+      <li class="{% if link.links != blank %}dropdown-mobile-toggle{% endif %}">
+        <a
+          href="{% if link.links == blank %}{{ link.url }}{% else %}#{% endif %}"
+          class="tw-flex tw-items-center tw-justify-between tw-py-5 tw-text-lg tw-font-bold tw-px-7 tw-text-mainBlack"
+          {% if link.links != blank %}
+          onclick="return false;"
+          {% endif %}>
+          {{ link.title }}
+          {% if link.links != blank %}
+            <img
+              src="{{ 'menu-arrow.svg' | asset_url }}"
+              alt="arrow"
+              class="tw-transition-all tw-duration-300 tw-ease-in-out tw-rotate-0 arrow-icon">
+          {% endif %}
+        </a>
+
+        {% if link.links != blank %}
+          <!-- Dropdown Menu Mobile -->
+          <div class="tw-hidden tw-px-12 tw-divide-y tw-divide-borderLightGolden dropdown-menu-mobile">
+            {% for child_link in link.links %}
+              <div class="tw-py-5">
+                <p class="tw-text-base tw-font-bold tw-text-mainBlack tw-pt-2.5">{{ child_link.title }}</p>
+                {% if child_link.links != blank %}
+                  <ul class="tw-flex tw-flex-col tw-gap-4 tw-mt-5 tw-pb-2.5">
+                    {% for grandchild_link in child_link.links %}
+                      <li>
+                        <a href="{{ grandchild_link.url }}" class="tw-text-base tw-text-mainBlack animate">
+                          {{ grandchild_link.title }}
+                        </a>
+                      </li>
+                    {% endfor %}
+                  </ul>
+                {% endif %}
+              </div>
+            {% endfor %}
+          </div>
+        {% endif %}
+      </li>
+    {% endfor %}
+  </ul>
+
+  <div class="tw-py-8 tw-bg-mainBlack">
+    <ul class="tw-flex tw-flex-col tw-gap-5 tw-list-none">
+      <li>
+        <a
+          href="https://shopify.com/79332639026/account"
+          class="tw-text-sm tw-font-bold tw-text-white tw-px-7"
+          target="_blank">
+          Account Login
+        </a>
+      </li>
+      <li>
+        <a href="/pages/contact" class="tw-text-sm tw-font-bold tw-text-white tw-px-7">
+          Contact Us
+        </a>
+      </li>
+      <li>
+        <a href="/pages/faqs" class="tw-text-sm tw-font-bold tw-text-white tw-px-7">
+          FAQs
+        </a>
+      </li>
+      <li>
+        <a href="/pages/shipping-policy" class="tw-text-sm tw-font-bold tw-text-white tw-px-7">
+          Shipping
+        </a>
+      </li>
+      <li>
+        <a href="/pages/wholesale" class="tw-text-sm tw-font-bold tw-text-white tw-px-7">
+          Wholesale
+        </a>
+      </li>
+      <li>
+        <a href="/pages/contract-manufacturing" class="tw-text-sm tw-font-bold tw-text-white tw-px-7">
+          Contract Manufacturing
+        </a>
+      </li>
+      <li>
+        <a href="/pages/private-label" class="tw-text-sm tw-font-bold tw-text-white tw-px-7">
+          Private Label
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>

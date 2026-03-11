@@ -1,0 +1,40 @@
+<section class="customer customer--login">
+  <div class="container">
+    <div class="customer__heading">
+      <h1>Register</h1>
+    </div>
+    <div class="customer__content">
+      <div class="customer__form">
+        {% form 'create_customer' %}
+          {{ form_errors | default_errors }}
+          <div class="form__group">
+            <label class="sr-only" for="first-name">First name</label>
+            <input type="text" placeholder="First name" name="customer[first_name]">
+          </div>
+        
+          <div class="form__group">
+            <label class="sr-only" for="last-name">Last name</label>
+            <input type="text" placeholder="Last name" name="customer[last_name]">
+          </div>
+        
+          <div class="form__group">
+            <label class="sr-only" for="email">Email</label>
+            <input type="email" placeholder="Email" name="customer[email]">
+          </div>
+        
+          <div class="form__group">
+            <label class="sr-only" for="password">Password</label>
+            <input type="password" placeholder="Password" name="customer[password]">
+          </div>
+        
+          <div class="actions d-flex justify-center">
+            <button type="submit" class="btn btn--solid">
+              Create
+            </button>
+            <span>Already have an account? <a href="/account/login">Login</a></span>
+          </div>
+        {% endform %}
+      </div>
+    </div>
+  </div>
+</section>

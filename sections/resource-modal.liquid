@@ -1,0 +1,49 @@
+<a href="#" data-modal="demo-modal" role="button" class="btn btn--solid btn--modal">
+  Show Modal
+</a>
+<br /><br />
+{% assign videoID = 'https://vimeo.com/253989945' | split: '.com/' %}
+<a href="#" data-modal="demo-modal-vimeo" data-video-vimeo="{{ videoID[1] }}" role="button" class="btn btn--solid btn--modal">
+  Show Modal - VIMEO
+</a>
+<br /><br />
+{% assign videoID = 'https://www.youtube.com/watch?v=EngW7tLk6R8' | split: 'v=' %}
+<a href="#" data-modal="demo-modal-youtube" data-video-yt="{{ videoID[1] }}" role="button" class="btn btn--solid btn--modal">
+  Show Modal - YOUTUBE
+</a>
+
+<div class="modal" id="demo-modal">
+  <div class="modal__bg"></div>
+  <div class="modal__wrap">
+    <div class="modal__inner">
+      <button class="modal--close">
+        <span class="sr-only">Close Modal</span>
+        <img src="{{ 'icon-close.svg' | asset_url }}" alt="" />
+      </button>
+    </div>
+  </div>
+</div>
+
+<div class="modal modal--video" id="demo-modal-vimeo">
+  <div class="modal__bg"></div>
+  <div class="modal__wrap">
+    <div class="modal__inner">
+      <button class="modal--close">
+        <span class="sr-only">Close Modal</span>
+        <img src="{{ 'icon-close.svg' | asset_url }}" alt="" />
+      </button>
+    </div>
+  </div>
+</div>
+
+<div class="modal modal--video" id="demo-modal-youtube">
+  <div class="modal__bg"></div>
+  <div class="modal__wrap">
+    <div class="modal__inner">
+      <button class="modal--close">
+        <span class="sr-only">Close Modal</span>
+        <img src="{{ 'icon-close.svg' | asset_url }}" alt="" />
+      </button>
+    </div>
+  </div>
+</div>

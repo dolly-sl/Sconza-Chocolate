@@ -1,0 +1,371 @@
+<section class="pdp pdp--default tw-pt-16" style="background-color:{{ product.metafields.sleepless.background_color }};">
+  <div class="tw-container tw-flex tw-justify-between tw-items-center">
+
+    <div class="pdp__images pdp__images--desktop">
+      <div class="swiper pdpSwiper">
+				<div class="swiper-wrapper">
+        {% for media in product.media %}
+
+          <div class="swiper-slide {% if image.attached_to_variant? == false %} no-var{% endif %}">
+            {% case media.media_type %}
+              {% when 'image' %}
+                <img src="{{ media | img_url: '620x620' }}" srcset="{{ media | img_url: '1240x1240' }} 2x" alt="{{ media.alt }}" />
+
+              {% when 'external_video' %}
+                <div class="iframe-wrap">
+                  {{ media | external_video_tag }}
+                </div>
+
+              {% when 'video' %}
+                <div class="iframe-wrap">
+                  {{ media | video_tag: controls: true }}
+                </div>
+
+              {% when 'model' %}
+                {{ media | model_viewer_tag }}
+            {% endcase %}
+          </div>
+
+        {% endfor %}
+      </div>
+    </div>
+    <div class="tw-container tw-absolute tw-top-1/2 tw-left-1/2 tw--translate-x-1/2 tw-z-10">
+      <button
+        type="button"
+        class="tw-absolute tw-left-0 tw-z-10 tw--translate-y-1/2 button-prev tw-top-1/2 animate"
+      >
+        <img
+          src="{{ 'carousel-button-prev.svg' | asset_url }}"
+          alt="button prev"
+        >
+      </button>
+      <button
+        type="button"
+        class="tw-absolute tw-right-0 tw-z-10 tw--translate-y-1/2 button-next tw-top-1/2 animate"
+      >
+        <img
+          src="{{ 'carousel-button-next.svg' | asset_url }}"
+          alt="button next"
+        >
+      </button>
+    </div>
+    <div
+      class="pdp-pagination tw-absolute tw-right-0 tw-z-10 button-next !tw-bottom-[-30px] tw-flex tw-justify-center tw-items-center tw-gap-2"
+    ></div>
+    </div>
+
+    <div class="pdp__info tw-bg-white tw-p-10 tw-h-fit">
+      {% comment %} {% if product.price != product.compare_at_price %}
+        <div class="pdp__tag">
+          <span>Sale</span>
+        </div>
+      {% endif %} {% endcomment %}
+
+      <div class="pdp__heading">
+        <h4 class="tw-text-mainBlack tw-text-base tw-opacity-50 tw-leading-normal tw-uppercase tw-tracking-[0.263px] tw-font-osc">
+          {{ product.metafields.sleepless.subtitle }}
+        </h4>
+        <h1 class="tw-text-mainBlack tw-mt-0 tw-text-[35px] md:tw-leading-normal tw-leading-[1] tw-uppercase tw-tracking-[0.263px] tw-font-osc tw-mb-0">{{ product.title }}</h1>
+      </div>
+
+      <div class="pdp__reviews">
+				      <!-- Stamped - Begin Star Rating Badge -->
+              <span
+                class="stamped-product-reviews-badge stamped-main-badge tw-text-xs tw-font-bold tw-capitalize tw-text-mainBlack"
+                data-id="{{ product.id }}"
+                data-product-sku="{{ product.handle }}"
+                data-product-title="{{product.title}}"
+                data-product-type="{{product.type}}"
+                style="display: block;"
+              >
+              </span>
+              <!-- Stamped - End Star Rating Badge -->
+      </div>
+
+      <div class="pdp__price tw-font-os tw-text-xl">
+        <span sm-rc-current-price></span>
+        {% if product.price != product.compare_at_price %}
+          <span class="price__discount" sm-rc-compare-price>{{ product.compare_at_price | money }}</span>
+        {% endif %}
+      </div>
+
+      {% if product.metafields.sleepless.short_description != blank %}
+      <div class="pdp__description tw-pb-5 tw-max-w-md">
+        <p class="tw-text-base">{{ product.metafields.sleepless.short_description }}</p>
+      </div>
+    {% endif %}
+
+			<div class="pdp__images pdp__images--mobile">
+        <div class="swiper pdpSwiperMobile">
+				<div class="swiper-wrapper">
+					{% for media in product.media %}
+
+						<div class="swiper-slide {% if image.attached_to_variant? == false %} no-var{% endif %}">
+							{% case media.media_type %}
+								{% when 'image' %}
+									<img src="{{ media | img_url: '620x620' }}" srcset="{{ media | img_url: '1240x1240' }} 2x" alt="{{ media.alt }}" />
+
+								{% when 'external_video' %}
+									<div class="iframe-wrap">
+										{{ media | external_video_tag }}
+									</div>
+
+								{% when 'video' %}
+									<div class="iframe-wrap">
+										{{ media | video_tag: controls: true }}
+									</div>
+
+								{% when 'model' %}
+									{{ media | model_viewer_tag }}
+							{% endcase %}
+						</div>
+
+					{% endfor %}
+				</div>
+      </div>
+				{% comment %} <div class="pdp__slider--thumb">
+					{% for media in product.media %}
+						<div class="slick-protect">
+							<img src="{{ media.preview_image | img_url: '150x150' }}" srcset="{{ media.preview_image | img_url: '300x300' }} 2x" alt="{{ media.preview_image.alt }}" />
+						</div>
+					{% endfor %}
+				</div> {% endcomment %}
+			</div>
+
+      {% if product.template_suffix == "simple-bundles" %}
+      {% form 'product', product, data-product-form: '', data-product-handle: product.handle %}
+      <div class="pdp__options">
+        <!-- Variant selector -->
+<select name="id" class="tw-hidden">
+  {% for variant in product.variants %}
+    <option value="{{ variant.id }}"
+      {% if variant == current_variant %}selected="selected"{% endif %}
+    >
+      {{ variant.title }} - {{ variant.price | money }}
+    </option>
+  {% endfor %}
+</select>
+      </div>
+        
+              
+  <div class="pdp__options">
+    {% render 'pdp-options' %}
+  </div>
+
+      {% if product.available and product.selling_plan_groups[0].selling_plans %}
+        <div class="pdp__recharge">
+          <span class="eyebrow">Would You Like to Set Up Auto Delivery?</span>
+
+          <div class="variant form__group form__group--radio">
+            <label class="d-flex align-center pdp-option__select active" data-plan_id="false">
+              <input checked name="recharge" type="radio">
+              <span class="checkmark"></span>
+              <span class="variant__info d-flex justify-between">
+                <span>No, Just a One Time Purchase</span>
+                <div sm-rc-variant-one-time-price></div>
+              </span>
+            </label>
+          </div>
+          <div class="variant form__group form__group--radio">
+            <label class="d-flex align-center pdp-option__select">
+              <input value="rc-yes" name="recharge" type="radio">
+              <span class="checkmark"></span>
+              <span class="variant__info d-flex justify-between">
+                <span>Yes, Subscribe & Save</span>
+                <div><span sm-rc-variant-subscribe-price></span> (<span sm-rc-discount-ammount></span>)</div>
+              </span>
+            </label>
+          </div>
+
+          <div class="form__group form__group--rc">
+            <select class="frequency-select">
+              {% for plan in product.selling_plan_groups[0].selling_plans %}
+                <option value="{{ plan.id }}">{{ plan.name }}</option>
+              {% endfor %}
+            </select>
+          </div>
+          <div class="note__action">
+            <a href="/pages/recurring-delivery-benefits" class="no-dec">Learn More</a>
+          </div>
+        </div>
+      {% endif %}
+      <div id='aph_embed_wrapper_161036'></div>
+      <div class="pdp__actions pdp__actions--flex d-flex justify-between tw-mt-5">
+        <div class="action action--qty">
+          <span class="eyebrow tw-sr-only">
+            Qty
+          </span>
+          <div class="qty d-flex align-center">
+            <button class="js-qty js-qty--minus">
+              <span class="sr-only">Decrease</span>
+            </button>
+            <input value="1" min="1" name="quantity" type="text" class="qty-val" />
+            <button class="js-qty js-qty--plus">
+              <span class="sr-only">Increase</span>
+            </button>
+          </div>
+        </div>
+        <div class="action action--atc">
+          <button type="submit" class="btn-primary btn--atc tw-w-full">
+            <span class="oos-text">
+              Out Of Stock
+            </span>
+            <span class="is-text">Add To Cart
+          </button>
+        </div>
+        <a href="/pages/store-locator" class="tw-text-sm tw-font-bold tw-text-mainBlack tw-font-os tw-flex tw-items-center animate">
+        <img src="{{ "store.svg" | asset_url }}" alt="Store Icon" class="tw-mr-2">
+        Find Sconza in Store
+        </a>
+      </div>
+    {% endform %}
+  {% else %}
+
+  {% if product.available and product.selling_plan_groups[0].selling_plans %}
+    <div class="pdp__recharge">
+      <span class="eyebrow">Would You Like to Set Up Auto Delivery?</span>
+
+      <div class="variant form__group form__group--radio">
+        <label class="d-flex align-center pdp-option__select active" data-plan_id="false">
+          <input checked name="recharge" type="radio">
+          <span class="checkmark"></span>
+          <span class="variant__info d-flex justify-between">
+            <span>No, Just a One Time Purchase</span>
+            <div sm-rc-variant-one-time-price></div>
+          </span>
+        </label>
+      </div>
+      <div class="variant form__group form__group--radio">
+        <label class="d-flex align-center pdp-option__select">
+          <input value="rc-yes" name="recharge" type="radio">
+          <span class="checkmark"></span>
+          <span class="variant__info d-flex justify-between">
+            <span>Yes, Subscribe & Save</span>
+            <div><span sm-rc-variant-subscribe-price></span> (<span sm-rc-discount-ammount></span>)</div>
+          </span>
+        </label>
+      </div>
+
+      <div class="form__group form__group--rc">
+        <select class="frequency-select">
+          {% for plan in product.selling_plan_groups[0].selling_plans %}
+            <option value="{{ plan.id }}">{{ plan.name }}</option>
+          {% endfor %}
+        </select>
+      </div>
+      <div class="note__action">
+        <a href="/pages/recurring-delivery-benefits" class="no-dec">Learn More</a>
+      </div>
+    </div>
+  {% endif %}
+  <div id='aph_embed_wrapper_161036'></div>
+  <div class="pdp__actions pdp__actions--flex d-flex justify-between tw-mt-5">
+    <div class="action action--qty">
+      <span class="eyebrow tw-sr-only">
+        Qty
+      </span>
+      <div class="qty d-flex align-center">
+        <button class="js-qty js-qty--minus">
+          <span class="sr-only">Decrease</span>
+        </button>
+        <input sm-rc-quantity-selector type="text" value="1" min="1"  type="number" class="qty-val" />
+        <button class="js-qty js-qty--plus">
+          <span class="sr-only">Increase</span>
+        </button>
+      </div>
+    </div>
+    <div class="action action--atc">
+      <button type="submit" sm-rc-add-to-cart class="btn-primary btn--atc tw-w-full">
+        <span class="oos-text">
+          Out Of Stock
+        </span>
+        <span class="is-text">Add To Cart
+      </button>
+    </div>
+    <a href="/pages/store-locator" class="tw-text-sm tw-font-bold tw-text-mainBlack tw-font-os tw-flex tw-items-center animate">
+    <img src="{{ "store.svg" | asset_url }}" alt="Store Icon" class="tw-mr-2">
+    Find Sconza in Store
+    </a>
+  </div>
+{% endif %}
+
+      {% render 'sm-rc-widget' %}
+
+
+      {% comment %} <div class="pdp__links">
+        <div class="link">
+          <a href="#">Link Example #1</a>
+        </div>
+        <div class="link">
+          <a href="#">Link Example #2</a>
+        </div>
+      </div> {% endcomment %}
+
+      {% comment %} <div class="pdp__accordions">
+        <div class="accordion__list">
+          <div class="accordion__group active">
+            <button class="accordion__heading d-flex justify-between align-center">
+              <h3 class="eyebrow">Details</h3>
+            </button>
+            <div class="accordion__copy" style="display: block;">
+              <p>Description - Lorem ipsum dolor sit amet, mauris velit, volutpat risus egestas morbi tempor enim, sed montes est elit semper, phasellus sed velit. Dolor magna, luctus vitae tempus ante quisque, mus diam nisl arcu phasellus.</p>
+            </div>
+          </div>
+          <div class="accordion__group">
+            <button class="accordion__heading d-flex justify-between align-center">
+              <h3 class="eyebrow">Shipping</h3>
+            </button>
+            <div class="accordion__copy">
+              <p>Description - Lorem ipsum dolor sit amet, mauris velit, volutpat risus egestas morbi tempor enim, sed montes est elit semper, phasellus sed velit. Dolor magna, luctus vitae tempus ante quisque, mus diam nisl arcu phasellus.</p>
+            </div>
+          </div>
+        </div>
+      </div> {% endcomment %}
+
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+	"name": "PDP",
+  "settings": [
+  ],
+  "blocks": [
+      {
+        "type": "@app"
+      },
+		{
+			"type": "text",
+			"name": "Option Display",
+			"settings": [
+        {
+          "id": "title",
+          "type": "text",
+          "label": "Option Name"
+        },
+        {
+          "id": "display_type",
+          "type": "select",
+          "label": "Display Type",
+          "options": [
+            {
+              "value": "select",
+              "label": "Select"
+            },
+            {
+              "value": "swatch",
+              "label": "Swatch"
+            },
+            {
+              "value": "button",
+              "label": "Button"
+            }
+          ],
+          "default": "select"
+        }
+			]
+		}
+	]
+}
+{% endschema %}

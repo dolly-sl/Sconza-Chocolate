@@ -1,0 +1,47 @@
+<section class="header header--four header--shadow">
+  <div class="container d-flex align-center">
+    <div class="header__mobile-trigger">
+      <button class="hamburger hamburger--collapse" type="button">
+        <span class="hamburger-box">
+          <span class="hamburger-inner"></span>
+        </span>
+      </button>
+    </div>
+    {% render 'header-nav' nav: section.settings.menu_main %}
+    <div class="header__logo d-flex justify-center">
+      <a href="/">
+        <img src="{{ 'default-logo.svg' | asset_url }}" alt="Default Logo" />
+      </a>
+    </div>
+    <div class="header__icons d-flex justify-right">
+      <a href="#" class="icon icon--search">
+        <span class="sr-only">Search</span>
+        <img src="{{ 'icon-search.svg' | asset_url }}" alt="" />
+      </a>
+      <a href="/account" class="icon icon--account">
+        <span class="sr-only">Account</span>
+        <img src="{{ 'icon-account.svg' | asset_url }}" alt="" />
+      </a>
+      <a href="#" class="icon icon--cart">
+        <span class="cart-count">
+          <span>{{ cart.item_count }}</span>
+        </span>
+        <span class="sr-only">Cart</span>
+        <img src="{{ 'icon-cart.svg' | asset_url }}" alt="" />
+      </a>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+	"name": "Header",
+  "settings": [
+    {
+      "id": "menu_main", 
+      "type": "link_list",
+      "label": "Main Menu"
+    }
+  ]
+}
+{% endschema %}

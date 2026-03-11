@@ -1,0 +1,35 @@
+<div class="tw-container">
+  <div class="tw-bg-white tw-p-10 tw-my-20 tw-mx-auto tw-max-w-6xl">
+    <h5
+      class="tw-text-xl md:tw-text-[30px] tw-leading-normal tw-font-script tw-text-mainGold tw-text-center"
+    >
+      Love to Make You Smile
+    </h5>
+    <h4 class="tw-text-mainBlack tw-text-[35px] tw-leading-normal tw-uppercase tw-tracking-[0.263px] tw-font-osc tw-text-center">
+      What our CustomerS Are SAYING
+    </h4>
+    <div
+      id="stamped-main-widget"
+      data-widget-type="standard"
+      data-product-id="{{ product.id }}"
+      data-name="{{ product.title | escape }}"
+      data-url="{{ shop.url }}{{ product.url }}"
+      data-image-url="{{ product.featured_image | product_img_url: "large" |replace: '?', '%3F' | replace: '&','%26'}}"
+      data-description="{{ product.description | escape }}"
+      data-product-sku="{{product.handle}}"
+      data-widget-language="{{ language }}"
+    ></div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "PDP Reviews",
+  "settings": [],
+  "presets": [
+    {
+      "name": "PDP Reviews"
+    }
+  ]
+}
+{% endschema %}

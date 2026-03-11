@@ -1,0 +1,88 @@
+<section class="logo-list">
+  <div class="container text-center">
+    <h2>{{ section.settings.heading }}</h2>
+    <div class="logo-wrap">
+      {% for block in section.blocks %}
+        <div class="logo">
+          {% if block.settings.logo_url != blank %}
+            <a href="{{ block.settings.logo_url }}" target="_blank">
+          {% endif %}
+              <img src="{{ block.settings.logo | img_url: '120x120' }}" srcset="{{ block.settings.logo | img_url: '240x240' }} 2x" alt="{{ block.settings.logo.alt }}" />
+          {% if block.settings.logo_url != blank %}
+            </a>
+          {% endif %}
+        </div>
+      {% endfor %}
+    </div>
+  </div> 
+</section>
+
+<script>
+  jQuery( document ).ready( function( $ ) {
+    $( '.logo-list .logo-wrap' ).slick({
+      {% if section.settings.scroll == true %}
+        infinite: true,
+        autoplay: true,
+      {% else %}
+        infinite: false,
+      {% endif %}
+      slidesToShow: {{ section.settings.slides }},
+      slidesToScroll: 1,
+      // centerMode: false,
+      arrows: false,
+      dots: false,
+      responsive: [
+        {
+          breakpoint: 576,
+          settings: {
+            arrows: false
+          }
+        }
+      ]
+    } );
+  } );
+</script>
+
+
+{% schema %}
+{
+	"name": "Logo List",
+  "settings": [
+    {
+      "id": "heading",
+      "type": "text",
+      "label": "Heading"
+    },
+    {
+      "type": "checkbox",
+      "id": "scroll",
+      "label": "Auto Scroll?",
+      "default": false
+    },
+    {
+      "id": "slides",
+      "type": "number",
+      "label": "Slides To Show",
+      "default": 5
+    }
+  ],
+  "blocks": [
+		{
+			"type": "text",
+			"name": "Logo",
+			"settings": [
+        {
+          "id": "logo",
+          "type": "image_picker",
+          "label": "Logo"
+        },
+        {
+          "id": "logo_url",
+          "type": "url",
+          "label": "Logo URL"
+        }
+			]
+		}
+	]
+}
+{% endschema %}

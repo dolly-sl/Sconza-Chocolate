@@ -1,0 +1,277 @@
+{
+  "wrapper": "div.tw-bg-backgroundDark",
+  "sections": {
+    "imageHeroBanner": {
+      "type": "imageHeroBanner",
+      "disabled": true,
+      "settings": {
+        "heading": "Love comes through in all we do.",
+        "subtitle": "About US",
+        "image": "shopify:\/\/shop_images\/About.jpg",
+        "button_text": "",
+        "button_link": "",
+        "alignment": "left"
+      }
+    },
+    "tagline_4CefMg": {
+      "type": "tagline",
+      "disabled": true,
+      "settings": {
+        "tagline": "Crafting Bites of Joy for 85 Years"
+      }
+    },
+    "split_image_text_DfbHJB": {
+      "type": "splitImageText",
+      "blocks": {
+        "images_7LNQak": {
+          "type": "images",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Sweets_Snacks_2024_71ea5424-fc84-4c89-aeef-3ffd0330842d.png"
+          }
+        }
+      },
+      "block_order": [
+        "images_7LNQak"
+      ],
+      "settings": {
+        "heading": "We love crafting flavors.",
+        "subheading": "From our family to yours for 87 years.",
+        "content": "Now in our fourth generation, we've been pushing the boundaries of what's possible in the world of confections, one Bite of Joy at a time. Small batch crafted using premium ingredients, the care we put into our craft comes through in every bite. As a family-run organization, it's an honor to be a part of the joyous memories made around our confections for 87 years.",
+        "button_text": "",
+        "button_link": "",
+        "alignment": "left"
+      }
+    },
+    "timeline_cJbqqa": {
+      "type": "timeline",
+      "blocks": {
+        "slide_F9Ubtf": {
+          "type": "slide",
+          "settings": {
+            "date": "1922",
+            "title": "From Italy With A Dream",
+            "content": "In 1922, 17-year-old Vincenzo Sconza arrives at Ellis Island from Italy with just $20 and a dream. He settles in Oakland and begins working in a pasta factory—determined to one day become a candy maker.",
+            "image": "shopify:\/\/shop_images\/Sconza1922.png"
+          }
+        },
+        "slide_cAyxGM": {
+          "type": "slide",
+          "settings": {
+            "date": "1939",
+            "title": "The Candy Kitchen Begins",
+            "content": "Vincenzo and his wife Maria begin making candy in their family kitchen at night. Their homemade peanut brittle quickly becomes popular in local dime stores, giving Vincenzo the confidence to leave his day job and launch Sconza Candy.",
+            "image": "shopify:\/\/shop_images\/Sconza1939.png"
+          }
+        },
+        "slide_3w8TAb": {
+          "type": "slide",
+          "settings": {
+            "date": "1948",
+            "title": "The Dream Expands",
+            "content": "As demand for Sconza candies grows, the small kitchen operation expands into a thriving family business. Vincenzo continues developing new recipes, building a loyal following throughout the Bay Area.",
+            "image": "shopify:\/\/shop_images\/Sconza1948.png"
+          }
+        },
+        "slide_iei9jw": {
+          "type": "slide",
+          "settings": {
+            "date": "1960",
+            "title": "A New Generation of Innovation",
+            "content": "Vincenzo’s son Jim joins the family business in Oakland, helping grow Sconza Candy beyond its early roots. His ideas and energy expand the company’s offerings and lay the foundation for decades of innovation.",
+            "image": "shopify:\/\/shop_images\/Sconza1960.png"
+          }
+        },
+        "slide_Thg637": {
+          "type": "slide",
+          "settings": {
+            "date": "1990",
+            "title": "Expanding the Brand",
+            "content": "Sconza Candy begins expanding beyond its Bay Area roots, introducing new products and building relationships with retailers across the country. Trade shows and new packaging help bring Sconza confections to a wider audience.",
+            "image": "shopify:\/\/shop_images\/Sconza1990.png"
+          }
+        },
+        "slide_e44nTc": {
+          "type": "slide",
+          "settings": {
+            "date": "2008",
+            "title": "Moving to Oakdale",
+            "content": "As the company grows, Sconza moves operations to a larger facility in Oakdale, California. With the third generation — Ron and Janet — now deeply involved in the business alongside Jim and Carolyn, the move marks an exciting new chapter for the family company.",
+            "image": "shopify:\/\/shop_images\/Sconza2008-2.png"
+          }
+        },
+        "slide_XbGAyn": {
+          "type": "slide",
+          "settings": {
+            "date": "2010",
+            "title": "The Birth of a Fan Favorite",
+            "content": "Inspired by the lemon groves of Sorrento, Italy, Sconza creates Lemoncello Chocolate Almonds to celebrate the 50th wedding anniversary of Jim and Carolyn Sconza. The bright citrus flavor quickly becomes one of the company’s most beloved confections.",
+            "image": "shopify:\/\/shop_images\/Sconza2010.png"
+          }
+        },
+        "slide_eTNcNG": {
+          "type": "slide",
+          "settings": {
+            "date": "2021",
+            "title": "A New Chapter of Leadership",
+            "content": "In 2021, Ron Sconza becomes CEO, continuing the family legacy while guiding the company into its next era of innovation and growth.",
+            "image": "shopify:\/\/shop_images\/Sconza2021.png"
+          }
+        },
+        "slide_QNKVnj": {
+          "type": "slide",
+          "settings": {
+            "date": "2024",
+            "title": "85 Years of Bites of Joy",
+            "content": "Sconza celebrates 85 years of confectionery craftsmanship and introduces a refreshed brand identity, honoring its heritage while looking ahead to the future.",
+            "image": "shopify:\/\/shop_images\/Sconza2024.png"
+          }
+        },
+        "slide_G3niEy": {
+          "type": "slide",
+          "settings": {
+            "date": "2025",
+            "title": "The Fourth Generation",
+            "content": "Max Sconza joins the family business, continuing a tradition of confectionery craftsmanship that began with Vincenzo more than eight decades earlier.",
+            "image": "shopify:\/\/shop_images\/Sconza2025.png"
+          }
+        }
+      },
+      "block_order": [
+        "slide_F9Ubtf",
+        "slide_cAyxGM",
+        "slide_3w8TAb",
+        "slide_iei9jw",
+        "slide_Thg637",
+        "slide_e44nTc",
+        "slide_XbGAyn",
+        "slide_eTNcNG",
+        "slide_QNKVnj",
+        "slide_G3niEy"
+      ],
+      "settings": {
+        "heading": "Bites of Joy",
+        "subheading": "Four Generations of Confectionery Craftsmanship Since 1939"
+      }
+    },
+    "video_cta_kPaXff": {
+      "type": "videoCTA",
+      "settings": {
+        "heading": "A Life's Passion",
+        "subheading": "The Sconza Story",
+        "button_text": "Play Video",
+        "video_link": "https:\/\/www.youtube.com\/watch?v=8xNTkgoDRKk&t=5s",
+        "video_file": "shopify:\/\/files\/videos\/Evolution of Sconza final video.mp4",
+        "image": "shopify:\/\/shop_images\/choc-bg.jpg"
+      }
+    },
+    "image_callouts_xQRnbd": {
+      "type": "imageCallouts",
+      "blocks": {
+        "callout_left_3gRXCj": {
+          "type": "callout_left",
+          "settings": {
+            "heading": "No high fructose corn syrup",
+            "content": "Free from additives that offer no essential nutrients"
+          }
+        },
+        "callout_left_wQEzgE": {
+          "type": "callout_left",
+          "settings": {
+            "heading": "No artificial FLAVORS",
+            "content": "Real, clean taste that you and your family can enjoy anytime"
+          }
+        },
+        "callout_right_wnqwhp": {
+          "type": "callout_right",
+          "settings": {
+            "heading": "No artificial colors",
+            "content": "No added chemicals or dyes just pure ingredients",
+            "line_length": 80
+          }
+        },
+        "callout_right_LX6njm": {
+          "type": "callout_right",
+          "settings": {
+            "heading": "Real, premium ingredients",
+            "content": "All natural snacks to keep you healthy and happy",
+            "line_length": 80
+          }
+        }
+      },
+      "block_order": [
+        "callout_left_3gRXCj",
+        "callout_left_wQEzgE",
+        "callout_right_wnqwhp",
+        "callout_right_LX6njm"
+      ],
+      "settings": {
+        "heading": "",
+        "subheading": "",
+        "button_text": "",
+        "button_link": "",
+        "image": "shopify:\/\/shop_images\/Crunchy_Toffee_Individual_Pieces_-_Transparent_de58a549-cc83-4715-bb58-e86feeb10a95.png"
+      }
+    },
+    "split_image_text_cRMdBV": {
+      "type": "splitImageText",
+      "blocks": {
+        "block_hDRGYP": {
+          "type": "block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/About-Ingredients.png",
+            "heading": "Minimizing our impact on precious Natural Resources",
+            "subheading": "Sustainable Practices",
+            "content": "<p>In everything we do, we try to minimize our impact on the Earth. We locally source ingredients and our clean water discharge program contributes recycled water for local crop irrigation, crucial in drought-prone California. We recycle plastics and corrugated materials, follow clean air emissions standards, and are committed to continuous improvement of our sustainability practices. Many of our suppliers are neighbors, creating a community of food lovers dedicated to high-quality produce and land stewardship.<\/p>",
+            "button_text": "",
+            "button_link": "",
+            "alignment": "left"
+          }
+        },
+        "block_HRa8iw": {
+          "type": "block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/about-guardian-house.png",
+            "heading": "Children’s Guardian House",
+            "subheading": "Give Back",
+            "content": "<p>Sconza Chocolates is honored to support the Children's Guardian House, which protects abused and neglected chilren in our local communities. Our company and team donate time, funds, and supplies to maintain and improve the Guardian House, established in 2022 to help at-risk kids heal and overcome traumatic family events. At Guardian House, children receive nurturing care, fun learning activities, delicious meals, fresh clothing, and individualized attention.<\/p>",
+            "button_text": "",
+            "button_link": "",
+            "alignment": "left"
+          }
+        }
+      },
+      "block_order": [
+        "block_hDRGYP",
+        "block_HRa8iw"
+      ],
+      "settings": {
+        "heading": "",
+        "subheading": "",
+        "content": "",
+        "button_text": "",
+        "button_link": "",
+        "alignment": "center"
+      }
+    },
+    "collections_carousel_Dz6iMa": {
+      "type": "collectionsCarousel",
+      "disabled": true,
+      "settings": {
+        "heading": "Shop Sweet Finds",
+        "subheading": "",
+        "collections": [],
+        "shop_all_link": ""
+      }
+    }
+  },
+  "order": [
+    "imageHeroBanner",
+    "tagline_4CefMg",
+    "split_image_text_DfbHJB",
+    "timeline_cJbqqa",
+    "video_cta_kPaXff",
+    "image_callouts_xQRnbd",
+    "split_image_text_cRMdBV",
+    "collections_carousel_Dz6iMa"
+  ]
+}

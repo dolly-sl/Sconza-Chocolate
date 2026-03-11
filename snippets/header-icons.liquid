@@ -1,0 +1,17 @@
+<div class="header__icons d-flex justify-between">
+  <button> class="icon icon--search">
+    <span class="sr-only">Search</span>
+    <img src="{{ 'icon-search.svg' | asset_url }}" alt="" />
+  </button>
+  <a href="/account" class="icon icon--account">
+    <span class="sr-only">Account</span>
+    <img src="{{ 'icon-account.svg' | asset_url }}" alt="" />
+  </a>
+  <button class="icon icon--cart">
+    <span class="cart-count">
+      <span>{{ cart.item_count }}</span>
+    </span>
+    <span class="sr-only">Cart</span>
+    <img src="{{ 'icon-cart.svg' | asset_url }}" alt="" />
+  </button>
+</div>

@@ -1,0 +1,42 @@
+{% schema %}
+{
+  "name": "Color Swatches",
+  "blocks": [
+    {
+      "name": "Color",
+      "type": "color",
+      "settings": [
+        {
+          "id": "color_name",
+          "type": "text",
+          "label": "Color Name"
+        },
+        {
+          "id": "color",
+          "type": "color",
+          "label": "Color"
+        },
+        {
+          "id": "image",
+          "type": "image_picker",
+          "label": "Background Image"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
+
+<style>
+  {% for block in section.blocks %}
+  .swatch--{{ block.settings.color_name | strip | downcase }} {
+
+    {% if block.settings.image != blank %}
+      background: url( '{{ block.settings.image | img_url: '50x' }}' ) center center/cover no-repeat;
+    {% else %}
+      background: {{ block.settings.color }};
+    {% endif %}
+    
+  }
+  {% endfor %}
+</style>

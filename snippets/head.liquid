@@ -1,0 +1,17 @@
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="facebook-domain-verification" content="b1pam2ynjxy609wtl5c09rqqgyxz73" />
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#000005">
+<meta name="description" content="{{ shop.description }}">
+<link rel="canonical" href="{{ canonical_url }}">
+<link rel="shortcut icon" href="{{ settings.favicon | img_url: 'master' }}" type="image/png" />
+
+{% if template.name == 'index' %}
+  <title>{{ shop.name }} | {{ shop.description }}</title>
+{% else %}
+  <title>{{page_title}} | {{ shop.name }}</title>
+{% endif %}
+
+{% render 'style-tags', layout: 'theme' %} 
+{% render 'script-tags', layout: 'theme' %} 

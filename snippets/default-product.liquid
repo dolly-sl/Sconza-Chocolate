@@ -1,0 +1,65 @@
+<div class="tw-group">
+  <a href="{{ data.url }}" class="tw-w-full h-[287px] tw-relative">
+    <img
+      src="{{ data.featured_image.src | img_url: '280x280' }}"
+      srcset="{{ data.featured_image.src | img_url: '560x560' }} 2x"
+      alt="{{ data.featured_image.alt }}"
+      class="tw-object-cover tw-w-full {% if data.images[1] != blank %}md:group-hover:tw-opacity-0 tw-transition-opacity{% endif %}">
+    {% if data.images[1] != blank %}
+      <img
+        src="{{ data.images[1].src | img_url: '280x280' }}"
+        srcset="{{data.images[1].src | img_url: '560x560' }} 2x"
+        alt="{{ data.images[1].alt }}"
+        class="md:group-hover:tw-opacity-100 tw-opacity-0 tw-absolute tw-top-0 tw-left-0 tw-h-full tw-w-full tw-transition-opacity tw-object-cover">
+    {% endif %}
+  </a>
+  <div class="tw-px-0 tw-mt-4 tw-text-center md:tw-mt-5 md:tw-px-10">
+    <p class="tw-text-xs tw-font-bold tw-uppercase tw-text-overlayText">
+      {{ data.metafields.sleepless.subtitle.value }}
+    </p>
+    <a href="{{ data.url }}">
+      <h4 class="tw-text-base tw-font-bold tw-capitalize tw-text-mainBlack">
+        {{ data.title }}
+      </h4>
+    </a>
+    <p class="tw-text-base tw-font-medium tw-uppercase tw-text-mainBlack tw-mt-2.5">
+      {% if data.variants.size > 1 %}
+        {% assign min_price = data.variants | map: 'price' | sort | first %}
+        {% assign max_price = data.variants | map: 'price' | sort | last %}
+
+        {% if min_price != max_price %}
+          <span>{{ min_price | money }} - {{ max_price | money }}</span>
+        {% else %}
+          <span>{{ min_price | money }}</span>
+        {% endif %}
+
+        {% assign min_compare_at_price = data.variants | map: 'compare_at_price' | sort | first %}
+        {% if min_compare_at_price > min_price %}
+          <span class="tw-line-through">{{ min_compare_at_price | money }}</span>
+        {% endif %}
+
+      {% else %}
+        {{ data.price | money }}
+
+        {% if data.price < data.compare_at_price %}
+          <span class="tw-line-through">{{ data.compare_at_price | money }}</span>
+        {% endif %}
+      {% endif %}
+    </p>
+    <div class="tw-flex tw-items-center tw-justify-center tw-gap-2 tw-mt-5 tw-w-fit tw-mx-auto">
+      <!-- Stamped - Begin Star Rating Badge -->
+      <span
+        class="stamped-product-reviews-badge stamped-main-badge tw-text-xs tw-font-bold tw-capitalize tw-text-mainBlack"
+        data-id="{{ data.id }}"
+        data-product-sku="{{ data.handle }}"
+        data-product-title="{{data.title}}"
+        data-product-type="{{data.type}}"
+        style="display: block;"></span>
+      <!-- Stamped - End Star Rating Badge -->
+      <br>
+    </div>
+    <div class="tw-flex tw-justify-center tw-mt-6 tw-transition-all tw-duration-200 tw-ease-in-out lg:tw-opacity-0 group-hover:tw-opacity-100">
+      <a href="{{ data.url }}" class="btn-primary">Shop Now</a>
+    </div>
+  </div>
+</div>

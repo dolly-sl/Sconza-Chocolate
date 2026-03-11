@@ -1,0 +1,81 @@
+<div class="tw-bg-backgroundDark">
+  {% render 'search-hero' %}
+
+  <section id="searchResultsList" class="tw-pt-14 tw-pb-20">
+    <div class="tw-container tw-px-4 tw-mx-auto">
+      {% paginate search.results by 12 %}
+      <div class="tw-gap-14 xl:tw-grid-cols-4 lg:tw-grid-cols-3 sm:tw-grid-cols-2 tw-grid tw-grid-cols-1">
+        {% for item in search.results %}
+          {% if item.object_type == 'product' %}
+            {% render 'default-product', data: item, img_size: '290x290', img_size_2x: '580x580' %}
+          {% endif %}
+        {% endfor %}
+      </div>
+
+     {% assign product_results = search.results | where: "object_type", "product" %}
+{% assign total_product_count = product_results.size %}
+
+<div class="tw-container tw-mt-10">
+  <div class="tw-bg-white tw-p-10">
+    <div class="tw-flex">
+        {%- assign current_page_minus_one = paginate.current_page | minus: 1 -%}
+      {%- assign items_before_current_page = current_page_minus_one | times: paginate.page_size -%}
+      {%- assign first_item_index = items_before_current_page | plus: 1 -%}
+
+      {%- assign potential_last_item_index = paginate.current_page | times: paginate.page_size -%}
+      {%- if potential_last_item_index > total_product_count -%}
+        {%- assign last_item_index = total_product_count -%}
+      {%- else -%}
+        {%- assign last_item_index = potential_last_item_index -%}
+      {%- endif -%}
+
+        {% if total_product_count == 0 %}
+          {%- assign first_item_index = 0 -%}
+          {% endif %}
+
+      <p>Showing items {{ first_item_index }} - {{ last_item_index }} of {{ total_product_count }}</p>
+    
+            {%- if paginate.pages > 1 -%}
+              <nav role="navigation">
+                <ol class="pagination tw-flex tw-space-x-4">
+                  {%- for part in paginate.parts -%}
+                    {%- if part.is_link -%}
+                      <li>
+                        <a href="{{ part.url }}" class="animate">
+                          <span class="sr-only">page</span> {{ part.title }}
+                        </a>
+                      </li>
+                    {%- else -%}
+                      {%- if part.title == paginate.current_page -%}
+                        <li class="active" aria-current="page">
+                          <span class="sr-only">page</span> {{ part.title }}
+                        </li>
+                      {%- else -%}
+                        <li>
+                          <span class="sr-only">page</span> {{ part.title }}
+                        </li>
+                      {%- endif -%}
+                    {%- endif -%}
+                  {%- endfor -%}
+                </ol>
+              </nav>
+            {%- endif -%}
+
+          {% endpaginate %}
+        </div>
+      </div>
+
+      {%- if search.terms != blank -%}
+        <div class="tw-mt-10 tw-mb-7 tw-pt-12 tw-border-t tw-border-mainCream">
+          <div class="tw-mx-auto tw-max-w-5xl">
+            <h3 class="tw-text-mainBlack tw-text-[25px] tw-leading-normal tw-uppercase tw-tracking-[0.263px] tw-font-osc tw-mb-4">
+              
+        {% if total_product_count == 0 %}No{% endif %} Search Results for "{{ search.terms }}"
+            </h3>
+          </div>
+        </div>
+      {%- endif -%}
+
+    </div>
+  </section>
+</div>

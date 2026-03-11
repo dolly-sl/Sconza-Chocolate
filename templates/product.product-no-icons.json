@@ -1,0 +1,114 @@
+{
+  "wrapper": "div.tw-bg-backgroundDark",
+  "sections": {
+    "pdp": {
+      "type": "pdp",
+      "blocks": {
+        "text_FJhmWQ": {
+          "type": "text",
+          "settings": {
+            "title": "Size",
+            "display_type": "button"
+          }
+        }
+      },
+      "block_order": [
+        "text_FJhmWQ"
+      ],
+      "settings": {}
+    },
+    "pdp_about": {
+      "type": "pdp_about",
+      "settings": {}
+    },
+    "icons": {
+      "type": "icons",
+      "blocks": {
+        "icon_NidkT7": {
+          "type": "icon",
+          "settings": {
+            "title": "No Artificial Flavors",
+            "icon": "shopify:\/\/shop_images\/Sconza-Icon-ArtFlavors.svg"
+          }
+        },
+        "icon_Ux4m3y": {
+          "type": "icon",
+          "settings": {
+            "title": "No High Fructose corn syrup",
+            "icon": "shopify:\/\/shop_images\/Sconza-Icon-NoCornSyrup.svg"
+          }
+        },
+        "icon_UYFCG8": {
+          "type": "icon",
+          "settings": {
+            "title": "No Artificial Colors",
+            "icon": "shopify:\/\/shop_images\/Sconza-Icon-ArtColors.svg"
+          }
+        },
+        "icon_4EMMgh": {
+          "type": "icon",
+          "settings": {
+            "title": "Real, Premium Ingredients",
+            "icon": "shopify:\/\/shop_images\/Sconza-Icon-Ingredients.svg"
+          }
+        }
+      },
+      "block_order": [
+        "icon_NidkT7",
+        "icon_Ux4m3y",
+        "icon_UYFCG8",
+        "icon_4EMMgh"
+      ],
+      "disabled": true,
+      "settings": {}
+    },
+    "1711486614f2ff2f7c": {
+      "type": "apps",
+      "blocks": {
+        "stamped_product_reviews_ugc_main_widget_J89Qgd": {
+          "type": "shopify:\/\/apps\/stamped-reviews\/blocks\/main-widget\/a103faaf-2125-4b0e-89fa-de5149736723",
+          "settings": {
+            "animation": true,
+            "tags_exclude": "",
+            "tags_include": "",
+            "search": "",
+            "linkify": true,
+            "use_metafields": false,
+            "sku_tagtype": "sku"
+          }
+        }
+      },
+      "block_order": [
+        "stamped_product_reviews_ugc_main_widget_J89Qgd"
+      ],
+      "disabled": true,
+      "settings": {}
+    },
+    "pdp_reviews": {
+      "type": "pdp_reviews",
+      "settings": {}
+    },
+    "pdp_image_carousel_jcDKDq": {
+      "type": "pdpImageCarousel",
+      "settings": {}
+    },
+    "pdp-related": {
+      "type": "pdp-related",
+      "settings": {}
+    },
+    "product-swatches": {
+      "type": "product-swatches",
+      "settings": {}
+    }
+  },
+  "order": [
+    "pdp",
+    "pdp_about",
+    "icons",
+    "1711486614f2ff2f7c",
+    "pdp_reviews",
+    "pdp_image_carousel_jcDKDq",
+    "pdp-related",
+    "product-swatches"
+  ]
+}

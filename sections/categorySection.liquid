@@ -1,0 +1,107 @@
+<section
+  class="tw-container categorySection"
+>
+  <div class="tw-px-5 md:tw-px-12 tw-mt-9 md:tw-mt-10 lg:tw-mt-[60px] tw-relative tw-z-0">
+    <div class="swiper categorySwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide tw-hidden md:tw-block">
+          <div class="tw-bg-mainOffWhite tw-px-8 tw-pb-8 tw-pt-10">
+            <h4 class="text-mainBlack tw-text-[25px] tw-leading-[104.4%] tw-uppercase tw-font-extrabold tw-font-osc tw-text-left tw-mb-3">
+              {{ section.settings.heading }}
+            </h4>
+
+            {% if section.settings.content != blank %}
+              <p class="tw-mb-7">{{ section.settings.content }}</p>
+            {% endif %}
+
+            {% if section.settings.button_link != blank and section.settings.button_text != blank %}
+              <a
+                href="{{ section.settings.button_link }}"
+                class="btn-primary"
+              >
+                {{ section.settings.button_text }}
+              </a>
+            {% endif %}
+          </div>
+        </div>
+        {%- assign categories = section.settings.categories -%}
+        {%- for collection in categories -%}
+          {% if collection.metafields.sleepless.category_image != blank %}
+            <div class="swiper-slide">
+              <a href="{{ collection.url }}" class="tw-w-full h-[287px] tw-relative">
+                {{
+                  collection.metafields.sleepless.category_image
+                  | image_url: width: '560'
+                  | image_tag: width: '280', class: 'tw-object-cover tw-w-full tw-mix-blend-multiply', loading: 'lazy'
+                }}
+              </a>
+              <div class="tw-px-0 tw-mt-4 tw-text-center md:tw-mt-5 md:tw-px-10">
+                <a href="{{ collection.url }}">
+                  <h4 class="tw-text-base tw-font-bold tw-capitalize tw-text-mainBlack">
+                    {{ collection.title }}
+                  </h4>
+                </a>
+              </div>
+            </div>
+          {% endif %}
+        {%- endfor -%}
+      </div>
+    </div>
+    <button
+      type="button"
+      class="tw-absolute tw-left-0 tw--translate-y-1/2 button-prev-2 tw-top-1/2 tw-z-10 animate"
+    >
+      <img
+        src="{{ 'carousel-button-prev-2.svg' | asset_url }}"
+        alt="button prev"
+      >
+    </button>
+    <button
+      type="button"
+      class="tw-absolute tw-right-0 tw--translate-y-1/2 button-next-2 tw-top-1/2 tw-z-10 animate"
+    >
+      <img
+        src="{{ 'carousel-button-next-2.svg' | asset_url }}"
+        alt="button next"
+      >
+    </button>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Category Section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading"
+    },
+    {
+      "type": "textarea",
+      "id": "content",
+      "label": "Content"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link"
+    },
+    {
+      "type": "collection_list",
+      "id": "categories",
+      "label": "Categories"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Category Section"
+    }
+  ]
+}
+{% endschema %}

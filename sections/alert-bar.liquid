@@ -1,0 +1,41 @@
+<section class="alert-bar" style="background-color:#FFC90B!important; color:#2A2A2A!important;">
+    <div class="container">
+      <div class="alert-bar__slider">
+        <div class="js-alertSlider swiper">
+          <div class="swiper-wrapper">
+            {% for block in section.blocks %}
+              <div class="swiper-slide">
+                <div class="alert text-upper text-center">
+                  {{ block.settings.alert }}
+                </div>
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+{% schema %}
+{
+  "name": "Alert Bar",
+  "blocks": [
+    {
+      "type": "text",
+      "name": "Alert",
+      "settings": [
+        {
+          "id": "alert",
+          "type": "richtext",
+          "label": "Alert Copy"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Alert Bar"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,420 @@
+{
+  "wrapper": "div.tw-bg-backgroundDark",
+  "sections": {
+    "hero_slider_6LgVxa": {
+      "type": "heroSlider",
+      "blocks": {
+        "slide_PUmmjn": {
+          "type": "slide",
+          "settings": {
+            "heading": "WHOLESALE CHOCOLATE & CANDY SUPPLIER",
+            "subheading": "",
+            "content": "Bulk candy programs, seasonal assortments, and best-selling products available for wholesale distribution.",
+            "button_text": "View Our Wholesale Catalog",
+            "button_link": "https:\/\/wholesale.sconza.com\/",
+            "background_color": "",
+            "text_black": false,
+            "text_position": "middle_left",
+            "text_position_mobile": "middle_center",
+            "image": "shopify:\/\/shop_images\/Wholesale-2.png",
+            "mobile_image": "shopify:\/\/shop_images\/Wholesale-mobile-2.png"
+          }
+        }
+      },
+      "block_order": [
+        "slide_PUmmjn"
+      ],
+      "name": "Hero Slider",
+      "settings": {}
+    },
+    "imageHeroBanner": {
+      "type": "imageHeroBanner",
+      "disabled": true,
+      "settings": {
+        "heading": "",
+        "subtitle": "Wholesale Confections",
+        "image": "shopify:\/\/shop_images\/Firefly_Now-put-them-all-as-group-shot-on-countertop-for-wholesale-342579.jpg",
+        "button_text": "Wholesale Login",
+        "button_link": "shopify:\/\/pages\/contact",
+        "alignment": "left"
+      }
+    },
+    "plain_text_MHxaTc": {
+      "type": "richText",
+      "name": "Rich Text",
+      "settings": {
+        "heading": "TRUSTED WHOLESALE CANDY MANUFACTURER SINCE 1939",
+        "content": "<p>Sconza is a trusted <strong>wholesale chocolate and candy supplier <\/strong>providing premium confectionery products to grocery retailers, club stores, and specialty food distributors. With four generations of confectionery expertise, we combine high-quality ingredients with scalable manufacturing and dependable nationwide distribution.<\/p>",
+        "button_text": "",
+        "button_url": ""
+      }
+    },
+    "rich_text_7jdrVG": {
+      "type": "richText",
+      "disabled": true,
+      "name": "Rich Text",
+      "settings": {
+        "heading": "Trusted Since 1939 Four Generations of Candy Makers",
+        "content": "<p><strong>Sconza Candy Company<\/strong> is a <strong>leading confectionery manufacturer and wholesale candy supplier<\/strong>, trusted by retailers, brands, and partners nationwide. Founded in <strong>1939<\/strong> and proudly family-owned for<strong> four generations<\/strong>, Sconza delivers premium confections through <strong>wholesale distribution, contract manufacturing, and private label candy programs<\/strong>.<\/p><p>With decades of category expertise and modern manufacturing capabilities, we help partners scale with confidence—from branded candy distribution to fully custom confectionery solutions.<\/p>",
+        "button_text": "",
+        "button_url": ""
+      }
+    },
+    "tagline_4CefMg": {
+      "type": "tagline",
+      "disabled": true,
+      "settings": {
+        "tagline": "Trusted Since 1939 | Four Generations of Candy Makers"
+      }
+    },
+    "split_image_text_cRMdBV": {
+      "type": "splitImageText",
+      "blocks": {
+        "block_qnbHRN": {
+          "type": "block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/SconzaJordanAlmonds.png",
+            "heading": "CANDY PROGRAMS BUILT FOR RETAIL",
+            "subheading": "Wholesale",
+            "content": "<p>Sconza is a leading <strong>wholesale chocolate and candy supplier for retail programs<\/strong>, offering:<\/p><ul><li>Bulk wholesale chocolate-covered nuts, fruits, caramels, cookie bites, gel fruit centers, and specialty confections<\/li><li>Includes seasonal and everyday candy assortments<\/li><li>Sconza branded packages - <em>Bites of Joy<\/em><\/li><li>Nationwide distribution<\/li><\/ul><p>From order placement through fulfillment, we make wholesale purchasing simple and scalable.<br\/><br\/><\/p>",
+            "button_text": "",
+            "button_link": "shopify:\/\/pages\/contact",
+            "alignment": "left"
+          }
+        },
+        "block_iafFNk": {
+          "type": "block",
+          "disabled": true,
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Sconza_070.jpg",
+            "heading": "Wholesale",
+            "subheading": "Premium Quality Confections",
+            "content": "<p>Sconza is a trusted <strong>wholesale candy manufacturer <\/strong>creating high-quality, innovative branded and bulk confections crafted with premium ingredients and quality manufacturing standards.   <\/p><p><strong>From product quality to fulfillment, we make it easy to grow with confidence:<\/strong><\/p><ul><li>Proven, best-selling quality confectionery products<\/li><li>Reliable supply chain and scalable production<\/li><li>Dedicated wholesale support and fulfillment<\/li><li>Easy ordering through our customer service department or self service online wholesale customer portal.<\/li><\/ul><p><\/p><p><\/p><p><\/p>",
+            "button_text": "",
+            "button_link": "shopify:\/\/pages\/contact",
+            "alignment": "left"
+          }
+        },
+        "block_hDRGYP": {
+          "type": "block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/FactoryFloor-002.jpg",
+            "heading": "PRODUCTION CAPABILITIES",
+            "subheading": "Wholesale",
+            "content": "<ul><li>190 coating pans supporting high-volume confectionery production<\/li><li>High-volume roasting and chocolate panning for wholesale candy programs<\/li><li>Mogul and deposited confection lines<\/li><li>On-site liquid chocolate system<\/li><li>Multi-shift, large-scale wholesale confectionery production<\/li><\/ul>",
+            "button_text": "",
+            "button_link": "shopify:\/\/pages\/contact",
+            "alignment": "left"
+          }
+        },
+        "block_3hCqYA": {
+          "type": "block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/NEWTop4.png",
+            "heading": "GROCERY, SPECIALTY, RETAILERS & Distributors",
+            "subheading": "Wholesale Candy Supplier",
+            "content": "<p>Sconza supplies premium wholesale chocolate and confectionery products to grocery retailers, specialty retailers, and distributors. Our wholesale programs are designed to support consistent inventory, strong shelf performance, and scalable distribution.<\/p>",
+            "button_text": "",
+            "button_link": "shopify:\/\/pages\/contact",
+            "alignment": "left"
+          }
+        },
+        "block_JrqUDm": {
+          "type": "block",
+          "disabled": true,
+          "settings": {
+            "image": "shopify:\/\/shop_images\/696-DCR03443_758c9bc3-175c-4fe3-9e4a-2c0e92a3ef77.jpg",
+            "heading": "Capabilities",
+            "subheading": "",
+            "content": "<ul><li><strong>Panning - <\/strong>190 Coating Pans \/ 9 isolated rooms  <br\/>Sugar panning, sugar shelling & dextrose panning <\/li><li><strong>Hot Panning<\/strong> - Fire cookers <\/li><li><strong>Roasting <\/strong>- Continuous high-volume dry roaster <\/li><li><strong>Deposited Confections (Mogul Line<\/strong>) - Carmel, Pectin, marshmallow, mallow-cremes.   Gelatin & starch-based products <\/li><li><strong>Chocolate Buttons<\/strong> - Milk & Dark Chocolate, minis <\/li><li><strong>Liquid Chocolate System - 2<\/strong>4+ lbs of on-site chocolate storage <\/li><\/ul><p><\/p>",
+            "button_text": "",
+            "button_link": "shopify:\/\/pages\/contact",
+            "alignment": "left"
+          }
+        }
+      },
+      "block_order": [
+        "block_qnbHRN",
+        "block_iafFNk",
+        "block_hDRGYP",
+        "block_3hCqYA",
+        "block_JrqUDm"
+      ],
+      "settings": {
+        "heading": "",
+        "subheading": "",
+        "content": "",
+        "button_text": "",
+        "button_link": "",
+        "alignment": "center"
+      }
+    },
+    "rich_text_3zeVUn": {
+      "type": "richText",
+      "name": "Rich Text",
+      "settings": {
+        "heading": "REAL-TIME WHOLESALE ORDERING & INVENTORY",
+        "content": "<p>Approved wholesale partners can access live inventory, pricing, and ordering through our secure online portal.<\/p>",
+        "button_text": "Access Wholesale Portal",
+        "button_url": "https:\/\/wholesale.sconza.com\/user\/login\/"
+      }
+    },
+    "rich_text_g99CDT": {
+      "type": "richText",
+      "disabled": true,
+      "name": "Rich Text",
+      "settings": {
+        "heading": "👉 Wholesale customers can access our real time catalog",
+        "content": "<p>Interested in becoming a wholesale partner? <a href=\"https:\/\/wholesale.sconza.com\/user\/login\/\" target=\"_blank\" title=\"https:\/\/wholesale.sconza.com\/user\/login\/\"><strong>Register<\/strong><\/a><\/p>",
+        "button_text": "Wholesale Portal",
+        "button_url": "https:\/\/wholesale.sconza.com\/user\/login\/"
+      }
+    },
+    "17695424902076f797": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_a8579f7_zhYCCD": {
+          "type": "ai_gen_block_a8579f7",
+          "settings": {
+            "title": "Why Choose Sconza Candy Company",
+            "description": "<p>A confectionery partner built for long-term growth. Our legacy is built on craftsmanship, innovation, and trust—values that continue to guide everything we make today.<\/p>",
+            "content_width": 800,
+            "text_alignment": "center",
+            "spacing": 20,
+            "background_color": "#fffdf8",
+            "title_color": "#1e1c1c",
+            "description_color": "#1e1c1c",
+            "link_color": "#1e1c1c",
+            "title_size": 32,
+            "description_size": 16,
+            "padding_top": 40,
+            "padding_bottom": 0,
+            "padding_horizontal": 20
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_a8579f7_zhYCCD"
+      ],
+      "settings": {}
+    },
+    "icons_Xti7Dy": {
+      "type": "icons",
+      "blocks": {
+        "icon_jp7iT8": {
+          "type": "icon",
+          "settings": {
+            "title": "Proven Best-Selling Programs",
+            "icon": "shopify:\/\/shop_images\/Growth_1_1736731c-c108-419c-b311-e5c580dbe78d.png"
+          }
+        },
+        "icon_ATMt7R": {
+          "type": "icon",
+          "settings": {
+            "title": "Reliable Supply Chain",
+            "icon": "shopify:\/\/shop_images\/supply_chain.png"
+          }
+        },
+        "icon_46zM8e": {
+          "type": "icon",
+          "settings": {
+            "title": "National Distribution",
+            "icon": "shopify:\/\/shop_images\/distribution.png"
+          }
+        },
+        "icon_LJVwqn": {
+          "type": "icon",
+          "settings": {
+            "title": "Retail & Club Expertise",
+            "icon": "shopify:\/\/shop_images\/Storefront_1.png"
+          }
+        },
+        "icon_y3kqQH": {
+          "type": "icon",
+          "settings": {
+            "title": "Certified & Compliant Facility",
+            "icon": "shopify:\/\/shop_images\/certified_2.png"
+          }
+        }
+      },
+      "block_order": [
+        "icon_jp7iT8",
+        "icon_ATMt7R",
+        "icon_46zM8e",
+        "icon_LJVwqn",
+        "icon_y3kqQH"
+      ],
+      "name": "Icons",
+      "settings": {}
+    },
+    "blocks_6x4DkC": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_a8579f7_kbbQPR": {
+          "type": "ai_gen_block_a8579f7",
+          "settings": {
+            "title": "Certified. Audited. Retail-Ready.",
+            "description": "<p>Operating in an AA+ BRCGS certified facility in California with third-party audited food safety systems. Additional certifications include Kosher, Organic (when applicable), and Fair Trade sourcing.<\/p>",
+            "content_width": 800,
+            "text_alignment": "center",
+            "spacing": 20,
+            "background_color": "#fffdf8",
+            "title_color": "#1e1c1c",
+            "description_color": "#1e1c1c",
+            "link_color": "#1e1c1c",
+            "title_size": 32,
+            "description_size": 16,
+            "padding_top": 40,
+            "padding_bottom": 40,
+            "padding_horizontal": 20
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_a8579f7_kbbQPR"
+      ],
+      "name": "Title and text",
+      "settings": {}
+    },
+    "logo_carousel_wjdKd3": {
+      "type": "logoCarousel",
+      "blocks": {
+        "logo_PfBAFq": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/BRC_FOOD.png",
+            "override_link": ""
+          }
+        },
+        "logo_jUix6z": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/OU_KOSHER.png",
+            "override_link": ""
+          }
+        },
+        "logo_7h9qQg": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/QAI_ORGANIC.png",
+            "override_link": ""
+          }
+        },
+        "logo_mPqhka": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/FAIR_TRADE.png",
+            "override_link": ""
+          }
+        },
+        "logo_F4QyNc": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/RSPO.png",
+            "override_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "logo_PfBAFq",
+        "logo_jUix6z",
+        "logo_7h9qQg",
+        "logo_mPqhka",
+        "logo_F4QyNc"
+      ],
+      "name": "Logo Carousel",
+      "settings": {
+        "heading": "",
+        "content": "",
+        "master_link": ""
+      }
+    },
+    "1772822000d509c6d6": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_a1f4ec0_LWwDpM": {
+          "type": "ai_gen_block_a1f4ec0",
+          "settings": {
+            "section_title": "Explore Other Partnership Options",
+            "title_size": 36,
+            "title_color": "#1e1c1c",
+            "title_alignment": "center",
+            "title_spacing": 40,
+            "column_1_icon": "factory",
+            "column_1_heading": "Contract Manufacturing",
+            "column_1_description": "Full-scale chocolate and confectionery manufacturing for national brands and product developers.",
+            "column_1_button_text": "Learn More",
+            "column_1_link": "shopify:\/\/pages\/contract-manufacturing",
+            "column_2_icon": "tag",
+            "column_2_heading": "Private Label Programs",
+            "column_2_description": "Retail-ready chocolate and confectionery assortments developed for private label brands.",
+            "column_2_button_text": "Learn More",
+            "column_2_link": "shopify:\/\/pages\/private-label",
+            "desktop_width_percent": 100,
+            "section_padding": 60,
+            "column_gap": 30,
+            "content_alignment": "center",
+            "background_color": "#ffffff",
+            "card_background": "#fefaef",
+            "card_border_color": "#e5e5e5",
+            "card_padding": 40,
+            "card_border_width": 1,
+            "card_border_radius": 8,
+            "icon_size": 50,
+            "icon_color": "#1e1c1c",
+            "icon_spacing": 20,
+            "heading_size": 24,
+            "heading_color": "#1e1c1c",
+            "heading_spacing": 15,
+            "description_size": 16,
+            "description_color": "#666666",
+            "description_spacing": 25,
+            "button_font_size": 16,
+            "button_padding_vertical": 12,
+            "button_padding_horizontal": 30,
+            "button_border_radius": 4,
+            "button_background": "#1e1c1c",
+            "button_text_color": "#ffffff",
+            "button_hover_background": "#000000",
+            "button_hover_text_color": "#ffffff"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_a1f4ec0_LWwDpM"
+      ],
+      "settings": {}
+    },
+    "image_hero_banner_DWGdza": {
+      "type": "imageHeroBanner",
+      "name": "Image Hero Banner",
+      "settings": {
+        "heading": "Confectionery Wholesale",
+        "subtitle": "BECOME A WHOLESALE PARTNER",
+        "image": "shopify:\/\/shop_images\/choc-bg.jpg",
+        "button_text": "Apply for Wholesale Account",
+        "button_link": "https:\/\/info.sconza.com\/wholesale-customer-application",
+        "alignment": "center"
+      }
+    }
+  },
+  "order": [
+    "hero_slider_6LgVxa",
+    "imageHeroBanner",
+    "plain_text_MHxaTc",
+    "rich_text_7jdrVG",
+    "tagline_4CefMg",
+    "split_image_text_cRMdBV",
+    "rich_text_3zeVUn",
+    "rich_text_g99CDT",
+    "17695424902076f797",
+    "icons_Xti7Dy",
+    "blocks_6x4DkC",
+    "logo_carousel_wjdKd3",
+    "1772822000d509c6d6",
+    "image_hero_banner_DWGdza"
+  ]
+}

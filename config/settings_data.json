@@ -1,0 +1,747 @@
+{
+  "current": {
+    "favicon": "shopify:\/\/shop_images\/Sconza_favicon_32x32_3bd9a72f-9ccb-4b5d-8aca-5df5fdbfbb90.png",
+    "facebook": "https:\/\/www.facebook.com\/SconzaChocolates\/",
+    "x": "https:\/\/twitter.com\/i\/flow\/login?redirect_after_login=%2Fsconzachocolate",
+    "instagram": "https:\/\/www.instagram.com\/sconzachocolates\/",
+    "youtube": "https:\/\/www.youtube.com\/channel\/UCvOCr1s5b-M6y8l-PEaHjXQ",
+    "linkedin": "https:\/\/www.linkedin.com\/company\/sconza-candy-co.\/",
+    "free_ship": 75,
+    "upsell_products": [
+      "double-chocolate-milk-and-white-chocolate-dried-cherries",
+      "snickerdoodle-almonds-24-oz",
+      "jordan-almonds",
+      "chocolate-candy-cane-almonds"
+    ],
+    "popular_searches": "Dark Chocolate, Lemoncello, Milk Chocolate, Almonds",
+    "trending_products": [
+      "crunchy-toffee-milk-chocolate-roasted-almonds",
+      "lemoncello",
+      "lemon-blueberries",
+      "double-chocolate-milk-and-white-chocolate-dried-cherries"
+    ],
+    "checkout_logo_image": "shopify:\/\/shop_images\/Sconza-logo.png",
+    "checkout_logo_position": "left",
+    "checkout_logo_size": "medium",
+    "checkout_body_background_color": "#ffffff",
+    "checkout_input_background_color_mode": "white",
+    "checkout_sidebar_background_color": "#fefaef",
+    "checkout_heading_font": "Open Sans",
+    "checkout_body_font": "Open Sans",
+    "checkout_accent_color": "#1e1c1c",
+    "checkout_button_color": "#1e1c1c",
+    "sections": {
+      "resource-hero-full": {
+        "type": "resource-hero-full",
+        "blocks": {
+          "96cce018-0bd5-417e-8994-1d2d9328c9fc": {
+            "type": "text",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/hero-sample-one.jpg",
+              "mobile_image": "shopify:\/\/shop_images\/hero-sample-split.jpg",
+              "align": "left",
+              "heading": "This is what a banner header looks like",
+              "copy": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<\/p>",
+              "button_text": "Button 1",
+              "button_url": ""
+            }
+          },
+          "202d474e-ebf1-4d50-b339-383353873a9d": {
+            "type": "text",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/hero-sample-one.jpg",
+              "align": "center",
+              "heading": "This is what a banner header looks like",
+              "copy": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<\/p>",
+              "button_text": "Button 1",
+              "button_url": "https:\/\/sleeplessmedia.com"
+            }
+          },
+          "53e6b394-c063-449f-a5c2-72e04cf3e5c1": {
+            "type": "text",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/hero-sample-one.jpg",
+              "align": "right",
+              "heading": "This is what a banner header looks like",
+              "copy": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<\/p>",
+              "button_text": "Button 1",
+              "button_url": "#"
+            }
+          }
+        },
+        "block_order": [
+          "96cce018-0bd5-417e-8994-1d2d9328c9fc",
+          "202d474e-ebf1-4d50-b339-383353873a9d",
+          "53e6b394-c063-449f-a5c2-72e04cf3e5c1"
+        ],
+        "settings": {}
+      },
+      "resource-hero-split": {
+        "type": "resource-hero-split",
+        "blocks": {
+          "7741c07b-3030-42e8-8e9b-3a4ce19adf6b": {
+            "type": "text",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/hero-sample-split.jpg",
+              "heading": "This is what a banner header looks like",
+              "copy": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<\/p>",
+              "button_text": "Button 1",
+              "button_url": "https:\/\/sleeplessmedia.com"
+            }
+          },
+          "59d4a2aa-a487-421e-8291-fe7da81bc22d": {
+            "type": "text",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/hero-sample-split.jpg",
+              "heading": "This is what a banner header looks like",
+              "copy": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<\/p>",
+              "button_text": "Button 1",
+              "button_url": "#"
+            }
+          }
+        },
+        "block_order": [
+          "7741c07b-3030-42e8-8e9b-3a4ce19adf6b",
+          "59d4a2aa-a487-421e-8291-fe7da81bc22d"
+        ],
+        "settings": {}
+      },
+      "footer": {
+        "type": "footer",
+        "settings": {}
+      },
+      "resource-logo-list": {
+        "type": "resource-logo-list",
+        "blocks": {
+          "42299053-1d04-4c68-9418-f9323d2e61d2": {
+            "type": "text",
+            "settings": {
+              "logo": "shopify:\/\/shop_images\/logo-fedex.png",
+              "logo_url": "https:\/\/fedex.com"
+            }
+          },
+          "4a7a7ec6-406a-476a-ab81-bfe01991989b": {
+            "type": "text",
+            "settings": {
+              "logo": "shopify:\/\/shop_images\/logo-abc.png",
+              "logo_url": ""
+            }
+          },
+          "6ee24c92-5ad8-423c-abf3-356265d448a6": {
+            "type": "text",
+            "settings": {
+              "logo": "shopify:\/\/shop_images\/logo-ibm.png",
+              "logo_url": "https:\/\/ibm.com"
+            }
+          },
+          "1ddb2e35-3a37-4afc-b609-6553d3778ec2": {
+            "type": "text",
+            "settings": {
+              "logo": "shopify:\/\/shop_images\/logo-fedex.png",
+              "logo_url": ""
+            }
+          },
+          "9b888b4b-8611-4d93-bbe1-78044d8cd57b": {
+            "type": "text",
+            "settings": {
+              "logo": "shopify:\/\/shop_images\/logo-abc.png",
+              "logo_url": ""
+            }
+          },
+          "52b85943-7435-47ea-ac25-7fc8dab8e101": {
+            "type": "text",
+            "settings": {
+              "logo": "shopify:\/\/shop_images\/logo-ibm.png",
+              "logo_url": ""
+            }
+          }
+        },
+        "block_order": [
+          "42299053-1d04-4c68-9418-f9323d2e61d2",
+          "4a7a7ec6-406a-476a-ab81-bfe01991989b",
+          "6ee24c92-5ad8-423c-abf3-356265d448a6",
+          "1ddb2e35-3a37-4afc-b609-6553d3778ec2",
+          "9b888b4b-8611-4d93-bbe1-78044d8cd57b",
+          "52b85943-7435-47ea-ac25-7fc8dab8e101"
+        ],
+        "settings": {
+          "heading": "As Featured On",
+          "scroll": true,
+          "slides": 5
+        }
+      },
+      "resource-header-one": {
+        "type": "resource-header-one",
+        "settings": {
+          "menu_main": "main-menu"
+        }
+      },
+      "resource-header-two": {
+        "type": "resource-header-two",
+        "settings": {
+          "menu_main": "main-menu"
+        }
+      },
+      "resource-header-three": {
+        "type": "resource-header-three",
+        "settings": {
+          "menu_main": "main-menu"
+        }
+      },
+      "resource-header-four": {
+        "type": "resource-header-four",
+        "settings": {
+          "menu_main": "main-menu"
+        }
+      },
+      "resource-hero-split-alt": {
+        "type": "resource-hero-split-alt",
+        "blocks": {
+          "1390a521-6bd4-4771-a57c-6e2e29ba9795": {
+            "type": "text",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/hero-sample-split.jpg",
+              "heading": "This is what a banner header looks like",
+              "copy": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<\/p>",
+              "button_text": "Button 1",
+              "button_url": "#"
+            }
+          },
+          "26e421a9-8603-486e-aedf-5e9cb442763c": {
+            "type": "text",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/hero-sample-split.jpg",
+              "heading": "This is what a banner header looks like",
+              "copy": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<\/p>",
+              "button_text": "Button 1",
+              "button_url": "#"
+            }
+          }
+        },
+        "block_order": [
+          "1390a521-6bd4-4771-a57c-6e2e29ba9795",
+          "26e421a9-8603-486e-aedf-5e9cb442763c"
+        ],
+        "settings": {}
+      },
+      "resource-faqs": {
+        "type": "resource-faqs",
+        "blocks": {
+          "705d17ba-6122-4f38-b164-ed4811fc0a8f": {
+            "type": "text",
+            "settings": {
+              "question": "Question",
+              "answer": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc id eros non risus congue pulvinar in eu velit. Curabitur id congue eros. Proin vestibulum bibendum erat, nec consectetur tortor tristique sed. Phasellus purus eros, facilisis ac tincidunt ac, sollicitudin eu odio. Cras maximus nulla nec est efficitur viverra. Nam eget est id felis pulvinar condimentum. Nam egestas pulvinar massa sit amet consectetur. Suspendisse volutpat at purus at volutpat.<\/p>"
+            }
+          },
+          "fd2a74ce-2df8-404f-9004-98303516493b": {
+            "type": "text",
+            "settings": {
+              "question": "Question Again",
+              "answer": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc id eros non risus congue pulvinar in eu velit. Curabitur id congue eros. Proin vestibulum bibendum erat, nec consectetur tortor tristique sed. Phasellus purus eros, facilisis ac tincidunt ac, sollicitudin eu odio. Cras maximus nulla nec est efficitur viverra. Nam eget est id felis pulvinar condimentum. Nam egestas pulvinar massa sit amet consectetur. Suspendisse volutpat at purus at volutpat.<\/p>"
+            }
+          },
+          "59d5a5be-3c2e-4603-b566-2eb8b08cfe5d": {
+            "type": "text",
+            "settings": {
+              "question": "Simple Question",
+              "answer": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc id eros non risus congue pulvinar in eu velit. Curabitur id congue eros. Proin vestibulum bibendum erat, nec consectetur tortor tristique sed. Phasellus purus eros, facilisis ac tincidunt ac, sollicitudin eu odio. Cras maximus nulla nec est efficitur viverra. Nam eget est id felis pulvinar condimentum. Nam egestas pulvinar massa sit amet consectetur. Suspendisse volutpat at purus at volutpat.<\/p>"
+            }
+          },
+          "8d81c18c-14ed-4de5-83ee-701737e04c5a": {
+            "type": "text",
+            "settings": {
+              "question": "Complex Question",
+              "answer": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc id eros non risus congue pulvinar in eu velit. Curabitur id congue eros. Proin vestibulum bibendum erat, nec consectetur tortor tristique sed. Phasellus purus eros, facilisis ac tincidunt ac, sollicitudin eu odio. Cras maximus nulla nec est efficitur viverra. Nam eget est id felis pulvinar condimentum. Nam egestas pulvinar massa sit amet consectetur. Suspendisse volutpat at purus at volutpat.<\/p>"
+            }
+          }
+        },
+        "block_order": [
+          "705d17ba-6122-4f38-b164-ed4811fc0a8f",
+          "fd2a74ce-2df8-404f-9004-98303516493b",
+          "59d5a5be-3c2e-4603-b566-2eb8b08cfe5d",
+          "8d81c18c-14ed-4de5-83ee-701737e04c5a"
+        ],
+        "settings": {
+          "heading": "Frequently Asked Questions"
+        }
+      },
+      "resource-product-carousel-standard": {
+        "type": "resource-product-carousel-standard",
+        "blocks": {
+          "c3e11bc7-0616-45a0-8bdc-b30706a5c99d": {
+            "type": "text",
+            "settings": {
+              "product": "demo-product"
+            }
+          },
+          "7db85855-06e6-41b0-b55f-3d8cc512bf0d": {
+            "type": "text",
+            "settings": {
+              "product": "demo-product-2"
+            }
+          },
+          "fb70cedf-31f0-433b-8862-495c0e10b4b3": {
+            "type": "text",
+            "settings": {
+              "product": "demo-product-3"
+            }
+          },
+          "f63986f4-bbb6-44f1-b64c-84f427d27979": {
+            "type": "text",
+            "settings": {
+              "product": "demo-product-4"
+            }
+          },
+          "0d0d4443-3968-41ce-8486-c96a9783d390": {
+            "type": "text",
+            "settings": {
+              "product": "demo-product-5"
+            }
+          },
+          "391328d6-fbd5-41d5-a2e8-6fa2cb15d100": {
+            "type": "text",
+            "settings": {
+              "product": "demo-product-6"
+            }
+          }
+        },
+        "block_order": [
+          "c3e11bc7-0616-45a0-8bdc-b30706a5c99d",
+          "7db85855-06e6-41b0-b55f-3d8cc512bf0d",
+          "fb70cedf-31f0-433b-8862-495c0e10b4b3",
+          "f63986f4-bbb6-44f1-b64c-84f427d27979",
+          "0d0d4443-3968-41ce-8486-c96a9783d390",
+          "391328d6-fbd5-41d5-a2e8-6fa2cb15d100"
+        ],
+        "settings": {
+          "heading": "Headline for Product Carousel",
+          "scroll": true,
+          "arrows-top": false,
+          "slides": 4
+        }
+      },
+      "resource-product-carousel-fixed": {
+        "type": "resource-product-carousel-fixed",
+        "blocks": {
+          "1b4b0568-54d9-4f97-b82d-b6a0021adf14": {
+            "type": "text",
+            "settings": {
+              "product": "demo-product"
+            }
+          },
+          "6ac28506-495a-4a1a-9fb8-9d67772b0572": {
+            "type": "text",
+            "settings": {
+              "product": "demo-product-2"
+            }
+          },
+          "f1484f0c-b5e1-4e51-a6c5-8b41111329dc": {
+            "type": "text",
+            "settings": {
+              "product": "demo-product-3"
+            }
+          },
+          "b0bbbdf9-bcd2-4f34-8a2a-d4f8a006d981": {
+            "type": "text",
+            "settings": {
+              "product": "demo-product-4"
+            }
+          },
+          "87a37b26-8be7-498f-b700-4f64cd2c8d45": {
+            "type": "text",
+            "settings": {
+              "product": "demo-product-5"
+            }
+          },
+          "068b293c-bd62-45b0-be05-9b1653329286": {
+            "type": "text",
+            "settings": {
+              "product": "demo-product-6"
+            }
+          }
+        },
+        "block_order": [
+          "1b4b0568-54d9-4f97-b82d-b6a0021adf14",
+          "6ac28506-495a-4a1a-9fb8-9d67772b0572",
+          "f1484f0c-b5e1-4e51-a6c5-8b41111329dc",
+          "b0bbbdf9-bcd2-4f34-8a2a-d4f8a006d981",
+          "87a37b26-8be7-498f-b700-4f64cd2c8d45",
+          "068b293c-bd62-45b0-be05-9b1653329286"
+        ],
+        "settings": {
+          "pre_heading": "Pre-Heading",
+          "heading": "Headline that stays fixed",
+          "btn_text": "Shop All",
+          "btn_url": "#",
+          "scroll": true,
+          "slides": 4
+        }
+      },
+      "blog-hero": {
+        "type": "blog-hero",
+        "settings": {
+          "featured_article": "news\/blog-title-lorem-ipsum-dolor",
+          "heading": "Delicious Insights from the heart of Sconza",
+          "subheading": "Our Blog",
+          "image": "shopify:\/\/shop_images\/Untitled_design_79.png"
+        }
+      },
+      "resource-product-carousel-fixed-overflow": {
+        "type": "resource-product-carousel-fixed-overflow",
+        "blocks": {
+          "34ea9c30-c0e1-459f-9fa6-088770527e78": {
+            "type": "text",
+            "settings": {
+              "product": "demo-product"
+            }
+          },
+          "a4177a26-b5fb-45c9-b378-aad9c3f18076": {
+            "type": "text",
+            "settings": {
+              "product": "demo-product-2"
+            }
+          },
+          "798a6bef-2848-45ec-93ae-00a5f61bb3eb": {
+            "type": "text",
+            "settings": {
+              "product": "demo-product-3"
+            }
+          },
+          "49372373-3a86-44c5-99fd-e4d77ab87781": {
+            "type": "text",
+            "settings": {
+              "product": "demo-product-4"
+            }
+          },
+          "ddbe6c6c-6346-4269-a83a-96d0892ea049": {
+            "type": "text",
+            "settings": {
+              "product": "demo-product-5"
+            }
+          },
+          "8a90f26e-1eb7-4bc7-87a3-1bd831d0dab2": {
+            "type": "text",
+            "settings": {
+              "product": "demo-product-6"
+            }
+          },
+          "b6a7373a-3ff4-4e5a-8be6-85c0d74e29b8": {
+            "type": "text",
+            "settings": {
+              "product": "demo-product-2"
+            }
+          },
+          "59814cd3-0b29-45ed-823d-8f80a3aec22a": {
+            "type": "text",
+            "settings": {
+              "product": "demo-product-5"
+            }
+          },
+          "761dd70f-059a-46f6-9794-75a410a0d8ab": {
+            "type": "text",
+            "settings": {
+              "product": "demo-product-3"
+            }
+          },
+          "c2209a97-a5a0-42fe-906d-a3fae5eb3ccc": {
+            "type": "text",
+            "settings": {
+              "product": "demo-product"
+            }
+          }
+        },
+        "block_order": [
+          "34ea9c30-c0e1-459f-9fa6-088770527e78",
+          "a4177a26-b5fb-45c9-b378-aad9c3f18076",
+          "798a6bef-2848-45ec-93ae-00a5f61bb3eb",
+          "49372373-3a86-44c5-99fd-e4d77ab87781",
+          "ddbe6c6c-6346-4269-a83a-96d0892ea049",
+          "8a90f26e-1eb7-4bc7-87a3-1bd831d0dab2",
+          "b6a7373a-3ff4-4e5a-8be6-85c0d74e29b8",
+          "59814cd3-0b29-45ed-823d-8f80a3aec22a",
+          "761dd70f-059a-46f6-9794-75a410a0d8ab",
+          "c2209a97-a5a0-42fe-906d-a3fae5eb3ccc"
+        ],
+        "settings": {
+          "pre_heading": "Eyebrow Heading",
+          "heading": "Headline that stays fixed with Overflow Slider",
+          "btn_text": "Button 1",
+          "btn_url": "#",
+          "scroll": false,
+          "slides": 3
+        }
+      },
+      "header": {
+        "type": "header",
+        "settings": {
+          "menu_main": "sleepify-main-menu"
+        }
+      },
+      "resource-header-five": {
+        "type": "resource-header-five",
+        "settings": {
+          "menu_left": "header-left",
+          "menu_right": "header-right"
+        }
+      },
+      "alert-bar": {
+        "type": "alert-bar",
+        "blocks": {
+          "c95b7bc6-7635-4cf5-9fba-8d08c42b9862": {
+            "type": "text",
+            "settings": {
+              "alert": "<p>During the warmer months, we use 2-day shipping to prevent melting.<\/p>"
+            }
+          },
+          "0c505ac8-9a1a-45d5-8d55-aea75ef5fec3": {
+            "type": "text",
+            "settings": {
+              "alert": "<p>Alert Message a bit Longer <a href=\"#\" title=\"#\">Learn More<\/a><\/p>"
+            }
+          }
+        },
+        "block_order": [
+          "c95b7bc6-7635-4cf5-9fba-8d08c42b9862",
+          "0c505ac8-9a1a-45d5-8d55-aea75ef5fec3"
+        ],
+        "settings": {}
+      },
+      "pdp": {
+        "type": "pdp",
+        "blocks": {
+          "c037d2fa-7c1a-45e1-8b97-d501cda6e108": {
+            "type": "text",
+            "settings": {
+              "title": "Size",
+              "display_type": "button"
+            }
+          },
+          "a9ee47b4-0198-4b0d-b7ed-f70ba7caaf30": {
+            "type": "text",
+            "settings": {
+              "title": "Color",
+              "display_type": "swatch"
+            }
+          },
+          "1bd244a9-1912-4342-92fb-3eb896e43379": {
+            "type": "text",
+            "settings": {
+              "title": "Material",
+              "display_type": "button"
+            }
+          }
+        },
+        "block_order": [
+          "c037d2fa-7c1a-45e1-8b97-d501cda6e108",
+          "a9ee47b4-0198-4b0d-b7ed-f70ba7caaf30",
+          "1bd244a9-1912-4342-92fb-3eb896e43379"
+        ],
+        "settings": {}
+      },
+      "mini-cart": {
+        "type": "mini-cart",
+        "settings": {}
+      },
+      "product-swatches": {
+        "type": "product-swatches",
+        "blocks": {
+          "3c5d289a-1426-43a3-b84b-75cb7207ce2a": {
+            "type": "color",
+            "settings": {
+              "color_name": "Black",
+              "color": "#000000"
+            }
+          },
+          "8240a917-29b6-4bab-a7a6-f11ca924afaf": {
+            "type": "color",
+            "settings": {
+              "color_name": "Red",
+              "color": "#ff0000"
+            }
+          },
+          "45696d02-5575-4197-bf36-72cf347388ad": {
+            "type": "color",
+            "settings": {
+              "color_name": "Orange",
+              "color": "#ffa500"
+            }
+          },
+          "34f6ea37-1bf0-468f-b92f-bab1dbb5deae": {
+            "type": "color",
+            "settings": {
+              "color_name": "Green",
+              "color": "#008000"
+            }
+          },
+          "89bf35b2-e21f-4456-85d1-2bbef510f6f0": {
+            "type": "color",
+            "settings": {
+              "color_name": "White",
+              "color": "#f9f9f9"
+            }
+          },
+          "b4404afc-f925-4f19-9d55-2b5124e1b45b": {
+            "type": "color",
+            "settings": {
+              "color_name": "Yellow",
+              "color": "#ffff00"
+            }
+          }
+        },
+        "block_order": [
+          "3c5d289a-1426-43a3-b84b-75cb7207ce2a",
+          "8240a917-29b6-4bab-a7a6-f11ca924afaf",
+          "45696d02-5575-4197-bf36-72cf347388ad",
+          "34f6ea37-1bf0-468f-b92f-bab1dbb5deae",
+          "89bf35b2-e21f-4456-85d1-2bbef510f6f0",
+          "b4404afc-f925-4f19-9d55-2b5124e1b45b"
+        ],
+        "settings": {}
+      },
+      "pdp-related": {
+        "type": "pdp-related",
+        "settings": {}
+      },
+      "404": {
+        "type": "404",
+        "settings": {
+          "heading": "404 - Error",
+          "copy": "Oops! Looks likes <br>There is nothing<br> here"
+        }
+      },
+      "cart": {
+        "type": "cart",
+        "settings": {
+          "header": "MY BASKET",
+          "headerEmpty": "YOUR CART IS CURRENTLY EMPTY",
+          "taxes": "",
+          "related_heading": "You May Also Like",
+          "btn_url": "\/",
+          "products": [
+            "caramel-collection-gift-box-1",
+            "chocolate-coconut-cashews",
+            "chocolate-mint-cookie-bites",
+            "chocolate-toffee-almonds-cp",
+            "dark-chocolate-blood-orange-caramels"
+          ]
+        }
+      },
+      "blog-list": {
+        "type": "blog-list",
+        "settings": {
+          "posts_per_page": 12
+        }
+      },
+      "contact": {
+        "type": "contact",
+        "blocks": {
+          "faq_WH9AM4": {
+            "type": "faq",
+            "disabled": true,
+            "settings": {
+              "title": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+              "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+            }
+          },
+          "faq_wfTGCn": {
+            "type": "faq",
+            "disabled": true,
+            "settings": {
+              "title": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+              "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+            }
+          },
+          "faq_AnQKrn": {
+            "type": "faq",
+            "disabled": true,
+            "settings": {
+              "title": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+              "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+            }
+          },
+          "faq_eK7ccQ": {
+            "type": "faq",
+            "disabled": true,
+            "settings": {
+              "title": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+              "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+            }
+          }
+        },
+        "block_order": [
+          "faq_WH9AM4",
+          "faq_wfTGCn",
+          "faq_AnQKrn",
+          "faq_eK7ccQ"
+        ],
+        "settings": {
+          "heading": "Get in Touch WITH US",
+          "subheading": "Here For You",
+          "sidebarheading": "Customer Service",
+          "wheretobuy": "<p><a href=\"https:\/\/sconza.com\/pages\/store-locator\" title=\"https:\/\/sconza.com\/pages\/store-locator\">Find our products in a store near you<\/a><\/p>",
+          "location": "<p><a href=\"https:\/\/maps.app.goo.gl\/eeCcToXbLheoUSXY7\" target=\"_blank\" title=\"https:\/\/maps.app.goo.gl\/eeCcToXbLheoUSXY7\">One Sconza Candy Lane<\/a><\/p><p><a href=\"https:\/\/maps.app.goo.gl\/eeCcToXbLheoUSXY7\" target=\"_blank\" title=\"https:\/\/maps.app.goo.gl\/eeCcToXbLheoUSXY7\">Oakdale, CA 95361-7899T<\/a><\/p>",
+          "reachus": "<p><a href=\"tel:(209) 845-3700\">(209) 845-3700<\/a><\/p><p><a href=\"tel:(888) SCONZA-1\">(888) SCONZA-1<\/a><\/p><p><a href=\"mailto:Info@sconza.com\">Info@sconza.com<\/a><\/p>",
+          "faqs": "",
+          "faqbuttontext": "",
+          "faqbuttonurl": ""
+        }
+      },
+      "faq": {
+        "type": "faq",
+        "settings": {
+          "heading": "FREQUENTLY ASKED QUESTIONs",
+          "subheading": "We Have Answers"
+        }
+      },
+      "page": {
+        "type": "page",
+        "settings": {}
+      }
+    },
+    "content_for_index": [],
+    "blocks": {
+      "9377937747802625048": {
+        "type": "shopify:\/\/apps\/biscuits-bundles\/blocks\/biscuits-app-embed\/9e9ff1bd-2cba-468f-b59f-a1ff63f6efe9",
+        "disabled": false,
+        "settings": {
+          "quickadd_action": "off",
+          "quick_add_button_classes": "",
+          "quickview_action": "off",
+          "quick_add_selector": "",
+          "quick_view_selector": "",
+          "grid_item_selector": "",
+          "product_form_selector": "",
+          "custom_css": ""
+        }
+      },
+      "2102808784413787648": {
+        "type": "shopify:\/\/apps\/kbite\/blocks\/main-app-embed\/147a6f7f-6771-4f9b-8dc6-c14e6b24f32c",
+        "disabled": false,
+        "settings": {}
+      },
+      "7435366110862872537": {
+        "type": "shopify:\/\/apps\/popup-wizard\/blocks\/top-announcement-bar\/ee55591f-fe64-45b5-bfe6-228dd455386d",
+        "disabled": true,
+        "settings": {
+          "announcement_id": ""
+        }
+      },
+      "558674346261830418": {
+        "type": "shopify:\/\/apps\/popup-wizard\/blocks\/app-embed\/ee55591f-fe64-45b5-bfe6-228dd455386d",
+        "disabled": true,
+        "settings": {}
+      },
+      "13070091535480640111": {
+        "type": "shopify:\/\/apps\/attrac\/blocks\/app-embed\/b783956d-47a9-4434-91ad-4ec960bd74b0",
+        "disabled": true,
+        "settings": {}
+      },
+      "7194384644902525832": {
+        "type": "shopify:\/\/apps\/fokkio-automatic-gift\/blocks\/widget\/866ae171-054c-4fa5-8677-5f391a13902b",
+        "disabled": true,
+        "settings": {}
+      }
+    }
+  }
+}

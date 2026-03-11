@@ -1,0 +1,75 @@
+{
+  "wrapper": "div.tw-bg-backgroundDark.tw-pb-12",
+  "sections": {
+    "heroBanner": {
+      "type": "heroBanner",
+      "settings": {
+        "heading": "Shop By Category",
+        "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam. Ut enim ad minim veniam,"
+      }
+    },
+    "category_section_7xpCDB": {
+      "type": "categorySection",
+      "settings": {
+        "heading": "Shop Chocolates",
+        "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam. Ut enim ad minim veniam.",
+        "button_text": "Shop All",
+        "button_link": "#",
+        "categories": [
+          "white-chocolate",
+          "dark-chocolate",
+          "milk-chocolate",
+          "white-chocolate-1"
+        ]
+      }
+    },
+    "category_section_qpzk8V": {
+      "type": "categorySection",
+      "settings": {
+        "heading": "Shop Flavors",
+        "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam. Ut enim ad minim veniam,",
+        "button_text": "Shop All",
+        "button_link": "#",
+        "categories": [
+          "caramel",
+          "caramel-1",
+          "cashews",
+          "lemon"
+        ]
+      }
+    },
+    "category_section_NkrKRf": {
+      "type": "categorySection",
+      "settings": {
+        "heading": "Shop Ingredient",
+        "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam. Ut enim ad minim veniam,",
+        "button_text": "",
+        "button_link": "",
+        "categories": [
+          "nuts-2",
+          "fruit",
+          "fruit-1"
+        ]
+      }
+    },
+    "category_section_LHTat4": {
+      "type": "categorySection",
+      "settings": {
+        "heading": "Shop Type",
+        "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam. Ut enim ad minim veniam,",
+        "button_text": "",
+        "button_link": "",
+        "categories": [
+          "gifts"
+        ]
+      }
+    }
+  },
+  "order": [
+    "heroBanner",
+    "category_section_7xpCDB",
+    "category_section_qpzk8V",
+    "category_section_NkrKRf",
+    "category_section_LHTat4"
+  ]
+}

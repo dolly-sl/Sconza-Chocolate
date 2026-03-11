@@ -1,0 +1,30 @@
+<link rel="preconnect" href="https://use.typekit.net/">
+<link rel="stylesheet" href="https://use.typekit.net/zns3zin.css">
+
+{{ '_sleepify.vendor.bundle.css' | asset_url | | stylesheet_tag }}
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+>
+
+{{ '_sleepify.authored.bundle.css' | asset_url | stylesheet_tag }}
+
+{{ 'custom.css' | asset_url | stylesheet_tag}}
+
+{% if settings.favicon != blank %}
+  <link rel="apple-touch-icon" sizes="57x57" href="{{ settings.favicon | img_url: '57x' }}">
+  <link rel="apple-touch-icon" sizes="60x60" href="{{ settings.favicon | img_url: '60x' }}">
+  <link rel="apple-touch-icon" sizes="72x72" href="{{ settings.favicon | img_url: '72x' }}">
+  <link rel="apple-touch-icon" sizes="76x76" href="{{ settings.favicon | img_url: '76x' }}">
+  <link rel="apple-touch-icon" sizes="114x114" href="{{ settings.favicon | img_url: '114x' }}">
+  <link rel="apple-touch-icon" sizes="120x120" href="{{ settings.favicon | img_url: '120x' }}">
+  <link rel="apple-touch-icon" sizes="144x144" href="{{ settings.favicon | img_url: '144x' }}">
+  <link rel="apple-touch-icon" sizes="152x152" href="{{ settings.favicon | img_url: '152x' }}">
+  <link rel="apple-touch-icon" sizes="180x180" href="{{ settings.favicon | img_url: '180x' }}">
+  <link rel="icon" type="image/png" sizes="192x192" href="{{ settings.favicon | img_url: '192x' }}">
+  <link rel="icon" type="image/png" sizes="32x32" href="{{ settings.favicon | img_url: '32x' }}">
+  <link rel="icon" type="image/png" sizes="96x96" href="{{ settings.favicon | img_url: '96x' }}">
+  <link rel="icon" type="image/png" sizes="16x16" href="{{ settings.favicon | img_url: '16x' }}">
+  <link rel="shortcut icon" href="{{ settings.favicon | img_url: '32x' }}" type="image/x-icon">
+  <link rel="icon" href="{{ settings.favicon | img_url: '32x' }}" type="image/x-icon">
+{% endif %}

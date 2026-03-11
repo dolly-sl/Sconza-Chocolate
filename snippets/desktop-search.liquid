@@ -1,0 +1,167 @@
+<section class="desktop-search">
+  <div class="absolute-wrap tw-top-[134px]">
+    <div class="container">
+      <div class="desktop-search__wrap">
+        <form action="{{ routes.search_url }}" class="d-flex justify-between">
+          <input
+            class="tw-py-2.5 tw-px-5 tw-bg-inputBg placeholder:tw-text-inputPlacehoder tw-text-sm focus-within:tw-text-mainBlack tw-rounded tw-border tw-border-inputBg focus-within:tw-border-mainBlack focus:tw-outline-none focus:tw-border-none focus:tw-shadow-none focus-within:tw-bg-white tw-h-11"
+            type="text"
+            placeholder="Search Products or Keywords"
+            name="q"
+            value="{{ search.terms | escape }}">
+          <button class="btn-primary" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+    <div class="predSearch">
+      <div class="predSearch__left">
+        <div class="predSearch__leftInner">
+          <div class="predSearch__popularContainer">
+            <div class="predSearch__popularTitle">
+              Popular Searches
+            </div>
+            <div class="predSearch__popularList">
+              {% assign searches = settings.popular_searches | split: ', ' %}
+              {% for search in searches %}
+                <a class="predSearch__popularLink"
+                href="/search?q={{- search | handleize -}}">
+                  {{ search }}
+                </a>
+              {% endfor %}
+            </div>
+          </div>
+          <div class="predSearch__sideResultsContainer"
+          style="display:none;">
+            <div class="predSearch__sideResults predSearch__sideResults--collections">
+              <div class="predSearch__popularTitle">
+                Collections
+              </div>
+              <div class="predSearch__sideResultList">
+
+              </div>
+            </div>
+            <div class="predSearch__sideResults predSearch__sideResults--pages">
+              <div class="predSearch__popularTitle">
+                Pages
+              </div>
+              <div class="predSearch__sideResultList">
+                
+              </div>
+            </div>
+            <div class="predSearch__sideResults predSearch__sideResults--articles">
+              <div class="predSearch__popularTitle">
+                Articles
+              </div>
+              <div class="predSearch__sideResultList">
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="predSearch__right">
+        <div class="predSearch__rightInner">
+          <div class="predSearch__trendingContainer">
+            <div class="predSearch__trendingTitle">
+              Trending Products
+            </div>
+            <div class="predSearch__trendingFlex">
+              {% for _prod in settings.trending_products %}
+                <div class="predSearchCard">
+                  <a class="predSearchCard__link"
+                  aria-label="go to {{- _prod.title -}} product page"
+                  href="{{ _prod.url }}">
+                    <div class="predSearchCard__upper">
+                      <div class="predSearchCard__imageWrapper">
+                        <img class="predSearchCard__image"
+                        src="{{ _prod.featured_image | img_url: '300x' }}"
+                        alt="{{ _prod.featured_image.alt }}">
+                      </div>
+                      {% if _prod.price_min < _prod.compare_at_price_min %}
+                        <div class="predSearchCard__saleTag">
+                          Sale
+                        </div>
+                      {% endif %}
+                    </div>
+                    <div class="predSearchCard__lower">
+                      <div class="predSearchCard__title">
+                        {{ _prod.title }}
+                      </div>
+                      <div class="predSearchCard__priceRow">
+                        {% if _prod.price_min < _prod.compare_at_price_min %}
+                          <div class="predSearchCard__salePrice">
+                            {{ _prod.price_min | money }}
+                          </div>
+                          <div class="predSearchCard__crossPrice">
+                            ({{- _prod.compare_at_price_min | money -}}-{{- _prod.compare_at_price_max | money -}})
+                          </div>
+                        {% else %}
+                          <div class="predSearchCard__standardPrice">
+                            {{- _prod.price_min | money -}}-{{- _prod.price_max | money -}}
+                          </div>
+                        {% endif %}
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              {% endfor %}
+            </div>
+          </div>
+          <div class="predSearch__resultsContainer"
+          style="display:none;">
+            <div class="predSearch__trendingTitle">
+              Product Results
+            </div>
+            <div class="predSearch__resultFlex">
+              {% for i in (0..3) %}
+              <div class="predSearchCard predSearchCard--result"
+              data-index="{{ forloop.index0 }}">
+                <a class="predSearchCard__link"
+                aria-label=""
+                href="">
+                  <div class="predSearchCard__upper">
+                    <div class="predSearchCard__imageWrapper">
+                      <img class="predSearchCard__image predSearchCard__image--searching"
+                      src="https://sconza.com/cdn/shop/files/LemoncelloRenderFront-Transparent_300x300.png?v=1719337590"
+                      alt="loading placeholder">
+                    </div>
+                    <div class="predSearchCard__saleTag"
+                    style="display:none;">
+                      Sale
+                    </div>
+                  </div>
+                  <div class="predSearchCard__lower">
+                    <div class="predSearchCard__title">
+                      Searching...
+                    </div>
+                    <div class="predSearchCard__priceRow">
+                        <div class="predSearchCard__salePrice"
+                        style="display:none;">
+
+                        </div>
+                        <div class="predSearchCard__crossPrice"
+                        style="display:none;">
+
+                        </div>
+                        <div class="predSearchCard__standardPrice">
+
+                        </div>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            {% endfor %}
+            </div>
+            <div class="predSearch__noneFound" style="display:none;">
+              <div class="predSearch__noneFoundInner">
+                <div class="predSearch__noneFoundText">
+                  Could not find any products for the term "<span class="predSearch__noneFoundSearchTerm"></span>"
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

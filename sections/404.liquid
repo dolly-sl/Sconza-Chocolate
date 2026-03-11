@@ -1,0 +1,34 @@
+<section class="page page--404 tw-bg-backgroundDark tw-relative">
+  <div class="tw-container tw-py-60">
+    <div class="">
+      <h1 class="tw-text-mainGold tw-text-xl md:tw-text-3xl lg:tw-text-4xl tw-font-script">
+        {{ section.settings.heading }}
+      </h1>
+      <p class="tw-text-mainBlack tw-text-[40px] md:tw-text-[55px] tw-leading-normal tw-uppercase tw-tracking-[0.413px] tw-font-osc tw-mb-5">
+        {{ section.settings.copy }}
+      </p>
+      <a href="/" class="btn-primary">Return to Home</a>
+    </div>
+  </div>
+  <img
+    src="{{ '404_image.jpg' | asset_url }}"
+    alt="Chocolate 404 Image"
+    class="tw-mix-blend-multiply tw-absolute tw-top-1/2 tw--translate-y-1/2 tw-right-0 tw-w-3/5">
+</section>
+
+{% schema %}
+  {
+    "name": "404",
+    "settings": [
+      {
+        "id": "heading",
+        "type": "text",
+        "label": "Heading"
+      }, {
+        "id": "copy",
+        "type": "textarea",
+        "label": "Copy"
+      }
+    ]
+  }
+{% endschema %}

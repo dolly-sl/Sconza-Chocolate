@@ -1,0 +1,90 @@
+{
+  "type": "header",
+  "name": "Header Group",
+  "sections": {
+    "header_qyCHPF": {
+      "type": "header",
+      "blocks": {
+        "mega_menu_cta_jYmdNc": {
+          "type": "mega_menu_cta",
+          "settings": {
+            "heading": "Mix & Match",
+            "link_text": "Shop Now",
+            "link_url": "shopify:\/\/collections\/mix-match-1",
+            "image": "shopify:\/\/shop_images\/mixmatch4pack.jpg"
+          }
+        },
+        "mega_menu_cta_7Eby87": {
+          "type": "mega_menu_cta",
+          "disabled": true,
+          "settings": {
+            "heading": "Gift Boxes",
+            "link_text": "Shop Now",
+            "link_url": "shopify:\/\/collections\/gifts",
+            "image": "shopify:\/\/shop_images\/Untitled_design_-_2025-04-30T102946.945.png"
+          }
+        },
+        "mega_menu_cta_pgtign": {
+          "type": "mega_menu_cta",
+          "settings": {
+            "heading": "Holiday Season",
+            "link_text": "Shop Now",
+            "link_url": "shopify:\/\/collections\/seasonal-1",
+            "image": "shopify:\/\/shop_images\/Shopify_Menu_Image.png"
+          }
+        },
+        "alert_bar_shipping": {
+          "type": "alert_bar",
+          "settings": {
+            "content": "Free Shipping on Orders $75+",
+            "link": ""
+          }
+        },
+        "alert_bar_galentines": {
+          "type": "alert_bar",
+          "settings": {
+            "content": "End-of-Season Savings 💝 Up to 40% Off Holiday Favorites → Shop Now",
+            "link": "shopify:\/\/collections\/seasonal-1"
+          }
+        }
+      },
+      "block_order": [
+        "mega_menu_cta_jYmdNc",
+        "mega_menu_cta_7Eby87",
+        "mega_menu_cta_pgtign",
+        "alert_bar_shipping",
+        "alert_bar_galentines"
+      ],
+      "settings": {
+        "menu_main": "sleepify-main-menu"
+      }
+    },
+    "alert_bar_37FRER": {
+      "type": "alert-bar",
+      "blocks": {
+        "text_zEabtF": {
+          "type": "text",
+          "settings": {
+            "alert": "<p><strong>Free Shipping on Orders $75+<\/strong><\/p>"
+          }
+        },
+        "text_QtCpbC": {
+          "type": "text",
+          "settings": {
+            "alert": "<p>End-of-Season Savings 💝 Up to 40% Off Holiday Favorites<br\/><\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "text_zEabtF",
+        "text_QtCpbC"
+      ],
+      "disabled": true,
+      "settings": {}
+    }
+  },
+  "order": [
+    "header_qyCHPF",
+    "alert_bar_37FRER"
+  ]
+}

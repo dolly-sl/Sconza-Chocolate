@@ -1,0 +1,47 @@
+<section class="heroBanner">
+  <nav aria-label="breadcrumb" class="tw-py-3">
+    <div class="tw-container tw-mx-auto tw-text-center tw-mt-10">
+      <ol class="tw-list-none tw-p-0 tw-inline-flex">
+        <li class="tw-flex tw-items-center">
+          <a href="/" class="tw-text-mainBlack animate tw-text-base">Home</a>
+        </li>
+        {% if collection %}
+          <li class="tw-flex tw-items-center">
+            <p class="tw-text-mainBlack tw-text-base">&nbsp;/&nbsp;</p>
+            <a href="{{ collection.url }}" class="tw-text-mainBlack animate tw-text-base tw-min-w-fit">
+              {{- collection.title -}}
+            </a>
+          </li>
+        {% elsif search.terms %}
+          <li class="tw-flex tw-items-center">
+            <p class="tw-text-mainBlack tw-text-base">&nbsp;/&nbsp;</p>
+            <span class="tw-text-mainBlack tw-text-base tw-min-w-fit">
+              Search Results
+            </span>
+          </li>
+        {% endif %}
+      </ol>
+    </div>
+  </nav>
+  <div class="tw-container">
+    {% if collection %}
+      <h1 class="text-mainBlack tw-text-4xl md:tw-text-[45px] md:tw-leading-[104.4%] tw-uppercase tw-font-extrabold tw-font-osc tw-text-center">
+        {{ collection.title }}
+      </h1>
+      {% if collection.metafields.sleepless.collection_description.value != blank %}
+        <p class="tw-text-base tw-text-mainBlack tw-mb-2.5 tw-max-w-[702px] tw-text-center tw-mx-auto tw-mt-4">
+          {{ collection.metafields.sleepless.collection_description.value }}
+        </p>
+      {% endif %}
+    {% elsif search.terms %}
+      <h1 class="text-mainBlack tw-text-4xl md:tw-text-[45px] md:tw-leading-[104.4%] tw-uppercase tw-font-extrabold tw-font-osc tw-text-center">
+        Search Results for "{{ search.terms }}"
+      </h1>
+      <p class="tw-text-base tw-text-mainBlack tw-mb-2.5 tw-max-w-[702px] tw-text-center tw-mx-auto tw-mt-4">
+  Showing results 
+  for "{{ search.terms }}"
+</p>
+
+    {% endif %}
+  </div>
+</section>
