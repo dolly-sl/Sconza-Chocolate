@@ -741,13 +741,22 @@
               "card_title": "Category 4",
               "link": "#"
             }
+          },
+          "category_card_PN9meM": {
+            "type": "category_card",
+            "settings": {
+              "image": "shopify://shop_images/category1.jpg",
+              "card_title": "Category 5",
+              "link": "#"
+            }
           }
         },
         "block_order": [
           "category_card_fJYBYn",
           "category_card_QXMypV",
           "category_card_nDANgm",
-          "category_card_k8Xftb"
+          "category_card_k8Xftb",
+          "category_card_PN9meM"
         ],
         "settings": {
           "title": "Explore our top CATEGORIES"
