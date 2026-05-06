@@ -12,17 +12,18 @@
 
               <!-- ✅ FIXED Sort By -->
               <div class="form__group blog__filter-select">
-                <select onchange="if(this.value) window.location.href = this.value;">
-                  <option disabled selected>Sort By</option>
+                <select id="sortBy">
 
-                  <option value="{{ blog.url }}">
+                  <option value="newest"
+                    {% unless request.query_string contains 'sort=oldest' %}selected{% endunless %}>
                     Newest First
                   </option>
 
-                  <option value="{{ blog.url }}?sort=oldest"
+                  <option value="oldest"
                     {% if request.query_string contains 'sort=oldest' %}selected{% endif %}>
                     Oldest First
                   </option>
+
                 </select>
               </div>
 
@@ -183,6 +184,25 @@
     border-color: #A79E89;
   }
 </style>
+
+<script>
+document.getElementById('sortBy').addEventListener('change', function () {
+
+  const sort = this.value;
+  let url = new URL(window.location.href);
+
+  // Preserve category (tag) if exists
+  let path = url.pathname;
+
+  if (sort === 'oldest') {
+    url.searchParams.set('sort', 'oldest');
+  } else {
+    url.searchParams.delete('sort');
+  }
+
+  window.location.href = url.pathname + url.search;
+});
+</script>
 
 {% schema %}
 {
