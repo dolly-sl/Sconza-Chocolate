@@ -706,6 +706,52 @@
       "page": {
         "type": "page",
         "settings": {}
+      },
+      "blog-top-categories": {
+        "type": "blog-top-categories",
+        "blocks": {
+          "category_card_fJYBYn": {
+            "type": "category_card",
+            "settings": {
+              "image": "shopify://shop_images/category1.jpg",
+              "card_title": "Category 1",
+              "link": "#"
+            }
+          },
+          "category_card_QXMypV": {
+            "type": "category_card",
+            "settings": {
+              "image": "shopify://shop_images/category2.jpg",
+              "card_title": "Category 2",
+              "link": "#"
+            }
+          },
+          "category_card_nDANgm": {
+            "type": "category_card",
+            "settings": {
+              "image": "shopify://shop_images/category3.jpg",
+              "card_title": "Category 3",
+              "link": "#"
+            }
+          },
+          "category_card_k8Xftb": {
+            "type": "category_card",
+            "settings": {
+              "image": "shopify://shop_images/category4.jpg",
+              "card_title": "Category 4",
+              "link": "#"
+            }
+          }
+        },
+        "block_order": [
+          "category_card_fJYBYn",
+          "category_card_QXMypV",
+          "category_card_nDANgm",
+          "category_card_k8Xftb"
+        ],
+        "settings": {
+          "title": "Explore our top CATEGORIES"
+        }
       }
     },
     "content_for_index": [],
