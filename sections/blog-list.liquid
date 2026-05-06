@@ -7,7 +7,23 @@
             <h2 class="tw-text-mainBlack2 tw-text-[35px] tw-font-bold tw-font-osc tw-uppercase tw-text-left">
               Recent Posts
             </h2>
+            <div class="blog__filters d-flex align-center" style="gap: 12px;">
 
+              <!-- Sort By (keep your existing logic) -->
+              <div class="form__group blog__filter-select">
+                <select onchange="if(this.value) window.location.href = this.value;">
+                  <option value="" disabled selected>Sort By</option>
+                  <option value="?sort_by=published-descending">Newest First</option>
+                  <option value="?sort_by=published-ascending">Oldest First</option>
+                  <option value="?sort_by=title-ascending">Title A–Z</option>
+                  <option value="?sort_by=title-descending">Title Z–A</option>
+                </select>
+              </div>
+
+              <!-- CATEGORY SNIPPET -->
+              {% render 'blog-category' %}
+
+            </div>
           </div>
         </div>
 
