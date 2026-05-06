@@ -12,8 +12,8 @@
     </div>
 
     {% if data.tags and data.tags.size > 0 %}
-      <div class="article__tags tw-mt-3">
-        <span class="tw-text-xs tw-text-gray-500 tw-font-os tw-uppercase tw-tracking-wide">
+      <div class="article__tags">
+        <span>
           {{ data.tags | first }}
         </span>
       </div>
@@ -47,6 +47,6 @@
     color: #DF9832;
     font-size: 12px;
     font-weight: 700;
-    text-transform: none;
+    margint-top: 20px;
   }
 </style>
