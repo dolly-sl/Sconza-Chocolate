@@ -10,16 +10,15 @@
           style="aspect-ratio: 1 / 1;">
       </a>
     </div>
-    {% comment %}
-      <div class="article__tags">
-      {% for tag in data.tags %}
-      <a href="/blogs/news/tagged/{{ tag | handleize }}">
-      {{- tag -}}
-      </a>
-      {%- if forloop.last != true %}, {% endif %}
-      {% endfor %}
+
+    {% if data.tags and data.tags.size > 0 %}
+      <div class="article__tags tw-mt-3">
+        <span class="tw-text-xs tw-text-gray-500 tw-font-os tw-uppercase tw-tracking-wide">
+          {{ data.tags | first }}
+        </span>
       </div>
-    {% endcomment %}
+    {% endif %}
+
     {% comment %} <div class="tw-mt-5">
       <p class="tw-text-sm tw-text-mainBlack tw-font-os tw-italic">{{ data.created_at | date: '%B %d, %Y' }}</p>
     </div> {% endcomment %}
