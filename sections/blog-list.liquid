@@ -19,18 +19,7 @@
                   <option value="?sort_by=title-descending" {% if request.query_string contains 'sort_by=title-descending' %}selected{% endif %}>Title Z–A</option>
                 </select>
               </div>
-              <!-- View All Articles / Filter by Tag Dropdown -->
-              <div class="form__group blog__filter-select">
-                <label class="sr-only">Filter Articles</label>
-                <select onchange="if(this.value) window.location.href = this.value;">
-                  <option value="/blogs/news" {% unless current_tags != blank %}selected{% endunless %}>View All Articles</option>
-                  {% for tag in blogs.news.all_tags %}
-                    <option value="/blogs/news/tagged/{{ tag | handleize }}" {% if current_tags contains tag %}selected{% endif %}>
-                      {{ tag }}
-                    </option>
-                  {% endfor %}
-                </select>
-              </div>
+             
             </div>
           </div>
         </div>
