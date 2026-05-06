@@ -5,7 +5,7 @@
     "header_qyCHPF": {
       "type": "header",
       "blocks": {
-        "mega_menu_cta_jYmdNc": {
+        "mega_menu_cta_mixandmatch": {
           "type": "mega_menu_cta",
           "settings": {
             "heading": "Mix & Match",
@@ -14,18 +14,18 @@
             "image": "shopify:\/\/shop_images\/mixmatch4pack.jpg"
           }
         },
-        "mega_menu_cta_7Eby87": {
+        "mega_menu_Lemoncello": {
           "type": "mega_menu_cta",
-          "disabled": true,
           "settings": {
-            "heading": "Gift Boxes",
+            "heading": "Lemoncello Season",
             "link_text": "Shop Now",
-            "link_url": "shopify:\/\/collections\/gifts",
-            "image": "shopify:\/\/shop_images\/Untitled_design_-_2025-04-30T102946.945.png"
+            "link_url": "shopify:\/\/collections\/lemoncello-1",
+            "image": "shopify:\/\/shop_images\/Lemoncello.jpg"
           }
         },
         "mega_menu_cta_pgtign": {
           "type": "mega_menu_cta",
+          "disabled": true,
           "settings": {
             "heading": "Holiday Season",
             "link_text": "Shop Now",
@@ -35,25 +35,34 @@
         },
         "alert_bar_shipping": {
           "type": "alert_bar",
+          "disabled": true,
           "settings": {
             "content": "Free Shipping on Orders $75+",
             "link": ""
           }
         },
-        "alert_bar_galentines": {
+        "alert_bar_warmweather": {
           "type": "alert_bar",
           "settings": {
-            "content": "End-of-Season Savings 💝 Up to 40% Off Holiday Favorites → Shop Now",
-            "link": "shopify:\/\/collections\/seasonal-1"
+            "content": "Warm Weather ☀️ Meltable items ship FedEx 2-Day",
+            "link": "shopify:\/\/pages\/shipping-policy"
+          }
+        },
+        "alert_bar_promo": {
+          "type": "alert_bar",
+          "settings": {
+            "content": "20% off Jordan Almonds 💛 Automatically applied at checkout",
+            "link": "shopify:\/\/collections\/jordan-almonds"
           }
         }
       },
       "block_order": [
-        "mega_menu_cta_jYmdNc",
-        "mega_menu_cta_7Eby87",
+        "mega_menu_cta_mixandmatch",
+        "mega_menu_Lemoncello",
         "mega_menu_cta_pgtign",
         "alert_bar_shipping",
-        "alert_bar_galentines"
+        "alert_bar_warmweather",
+        "alert_bar_promo"
       ],
       "settings": {
         "menu_main": "sleepify-main-menu"
@@ -64,19 +73,27 @@
       "blocks": {
         "text_zEabtF": {
           "type": "text",
+          "disabled": true,
           "settings": {
             "alert": "<p><strong>Free Shipping on Orders $75+<\/strong><\/p>"
+          }
+        },
+        "text_xKGXCG": {
+          "type": "text",
+          "settings": {
+            "alert": "<p>Warm Weather ☀️ Meltable items ship FedEx 2-Day<\/p>"
           }
         },
         "text_QtCpbC": {
           "type": "text",
           "settings": {
-            "alert": "<p>End-of-Season Savings 💝 Up to 40% Off Holiday Favorites<br\/><\/p>"
+            "alert": "<p><strong>20% off Jordan Almonds 💛 Automatically applied at checkout<\/strong><\/p>"
           }
         }
       },
       "block_order": [
         "text_zEabtF",
+        "text_xKGXCG",
         "text_QtCpbC"
       ],
       "disabled": true,

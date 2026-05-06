@@ -3,6 +3,39 @@
     "hero_slider_GUyiGi": {
       "type": "heroSlider",
       "blocks": {
+        "slide_x3AC3e": {
+          "type": "slide",
+          "settings": {
+            "heading": "A Sweet Gift<br>for Mom",
+            "subheading": "20% Off Jordan Almonds",
+            "content": "Limited time—ends Saturday",
+            "button_text": "Shop Jordan Almonds",
+            "button_link": "shopify:\/\/collections\/jordan-almonds",
+            "background_color": "",
+            "text_black": true,
+            "text_position": "middle_left",
+            "text_position_mobile": "top_center",
+            "image": "shopify:\/\/shop_images\/Jordan-Almonds-MomDay-3.jpg",
+            "mobile_image": "shopify:\/\/shop_images\/Jordan-Almonds-Evergreen-mobile.jpg"
+          }
+        },
+        "slide_nMbPKA": {
+          "type": "slide",
+          "disabled": true,
+          "settings": {
+            "heading": "The Jordan AlmondsYou Already Love",
+            "subheading": "Made with California Almonds. Nothing Artificial.",
+            "content": "",
+            "button_text": "Shop Jordan Almonds",
+            "button_link": "shopify:\/\/collections\/jordan-almonds",
+            "background_color": "",
+            "text_black": true,
+            "text_position": "top_left",
+            "text_position_mobile": "top_center",
+            "image": "shopify:\/\/shop_images\/Jordan-Almonds-Evergreen_5427872c-1ab3-4029-b0ab-67d659b132a1.jpg",
+            "mobile_image": "shopify:\/\/shop_images\/Jordan-Almonds-Evergreen-mobile.jpg"
+          }
+        },
         "slide_HbJn9m": {
           "type": "slide",
           "settings": {
@@ -39,17 +72,17 @@
         "slide_7wXF4D": {
           "type": "slide",
           "settings": {
-            "heading": "Ouf Bestselling<br>Berry Bite",
+            "heading": "Our Bestselling<br>Berry Bite",
             "subheading": "Strawberries, blueberries & raspberries — dipped and dreamy",
             "content": "",
             "button_text": "Learn More",
             "button_link": "shopify:\/\/pages\/triple-berry-bites",
             "background_color": "",
             "text_black": true,
-            "text_position": "top_right",
+            "text_position": "middle_right",
             "text_position_mobile": "top_center",
-            "image": "shopify:\/\/shop_images\/TripleBerry-Homepage-Spring_a0aef29a-6b5e-457a-b1f3-4bd2a1d1abec.jpg",
-            "mobile_image": "shopify:\/\/shop_images\/TripleBerry-Homepage-Spring-Mobile.jpg"
+            "image": "shopify:\/\/shop_images\/TripleBerry-Homepage-Spring-2.jpg",
+            "mobile_image": "shopify:\/\/shop_images\/TripleBerry-Homepage-Spring-2-Mobile.jpg"
           }
         },
         "slide_4fPfRL": {
@@ -68,8 +101,26 @@
             "mobile_image": "shopify:\/\/shop_images\/BitesofJoySpring-Mobile.jpg"
           }
         },
+        "slide_9ikn7L": {
+          "type": "slide",
+          "disabled": true,
+          "settings": {
+            "heading": "The Jordan AlmondsYou Already Know",
+            "subheading": "You’ve loved them for years. Now you know who makes them.",
+            "content": "",
+            "button_text": "Shop Jordan Almonds",
+            "button_link": "shopify:\/\/collections\/jordan-almonds",
+            "background_color": "",
+            "text_black": true,
+            "text_position": "top_left",
+            "text_position_mobile": "top_center",
+            "image": "shopify:\/\/shop_images\/Jordan-Almonds-Easter.jpg",
+            "mobile_image": "shopify:\/\/shop_images\/Jordan_Almonds_Easter-mobile.png"
+          }
+        },
         "slide_9fddRN": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "heading": "Up to 40% Off<br>Select Favorites",
             "subheading": "",
@@ -613,10 +664,13 @@
         }
       },
       "block_order": [
+        "slide_x3AC3e",
+        "slide_nMbPKA",
         "slide_HbJn9m",
         "slide_Y3zHHG",
         "slide_7wXF4D",
         "slide_4fPfRL",
+        "slide_9ikn7L",
         "slide_9fddRN",
         "slide_zhmiXG",
         "slide_dRAPxd",
@@ -651,6 +705,36 @@
         "slide_R4iijE"
       ],
       "settings": {}
+    },
+    "tagline_A6ejxC": {
+      "type": "tagline",
+      "disabled": true,
+      "name": "Tagline",
+      "settings": {
+        "tagline": "Family-owned. California-crafted. Since 1939."
+      }
+    },
+    "rich_text_qrA333": {
+      "type": "richText",
+      "disabled": true,
+      "name": "Rich Text",
+      "settings": {
+        "heading": "Family-owned.   California-crafted.   Since 1939.",
+        "content": "",
+        "button_text": "",
+        "button_url": ""
+      }
+    },
+    "rich_text_4QWQ9J": {
+      "type": "richText",
+      "disabled": true,
+      "name": "Rich Text",
+      "settings": {
+        "heading": "What's sconza?",
+        "content": "<p>Chances are, you’ve already enjoyed our confections.<\/p><p>From the Jordan almonds you’ve seen at weddings and holidays to chocolate-covered favorites, we’ve been crafting sweets in California since 1939.<\/p>",
+        "button_text": "",
+        "button_url": ""
+      }
     },
     "collections_carousel_E3wrzT": {
       "type": "collectionsCarousel",
@@ -952,6 +1036,9 @@
   },
   "order": [
     "hero_slider_GUyiGi",
+    "tagline_A6ejxC",
+    "rich_text_qrA333",
+    "rich_text_4QWQ9J",
     "collections_carousel_E3wrzT",
     "image_callouts_MQcMxf",
     "testimonials_YMfLfk",

@@ -257,7 +257,7 @@
           "type": "ai_gen_block_a8579f7",
           "settings": {
             "title": "Retail-Ready. Fully Certified. Nationally Compliant.",
-            "description": "<p>Manufactured in our AA+ BRCGS certified California facility with third-party audited food safety systems designed to support national and regional private label retail programs. Sconza produces premium private label chocolate and confectionery products for retailers across the United States.<\/p>",
+            "description": "<p>Manufactured in our AA BRCGS certified California facility with third-party audited food safety systems designed to support national and regional private label retail programs. Sconza produces premium private label chocolate and confectionery products for retailers across the United States.<\/p>",
             "content_width": 800,
             "text_alignment": "center",
             "spacing": 20,
@@ -286,7 +286,7 @@
         "logo_jnd6p6": {
           "type": "logo",
           "settings": {
-            "logo": "shopify:\/\/shop_images\/BRC_FOOD.png",
+            "logo": "shopify:\/\/shop_images\/BRCGS_FOOD.png",
             "override_link": ""
           }
         },

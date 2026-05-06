@@ -6,6 +6,7 @@
           src="{{ 'Sconza-Chocolate-white.svg' | asset_url }}"
           alt="Sconza-Chocolate"
           class="tw-hidden lg:tw-block">
+          {% if page.metafields.custom.remove_consumer_newsletter_discount != true %}
         <div class="tw-text-center lg:tw-mt-12 lg:tw-text-left">
           <h3 class="tw-mb-1 tw-text-base tw-font-extrabold tw-uppercase tw-text-mainOffWhite2 tw-font-osc">
             {{ section.settings.newsletter_heading }}
@@ -34,6 +35,8 @@
                                                                                                                           </button> {% endcomment %}
           </div>
         </div>
+        
+{% endif %}
       </div>
       <!-- Desktop Menu -->
       <div class="tw-flex-col tw-items-start tw-justify-between tw-hidden tw-w-full md:tw-flex lg:tw-flex-1 lg:tw-w-auto md:tw-flex-row">
@@ -191,7 +194,7 @@
         <div class="tw-flex tw-items-center tw-gap-2 md:tw-gap-4">
           <p class="tw-text-xs tw-text-mainOffWhite2">
             &copy; {{ 'now' | date: '%Y' }}
-            <a href="#" class="tw-underline animate">Sconza Chocolate</a>
+            <a href="#" class="tw-underline animate">Sconza Chocolates</a>
           </p>
           <div class="tw-items-center tw-hidden tw-gap-2 md:tw-flex">
             {%- assign policy_menu = section.settings.policy_menu.links -%}

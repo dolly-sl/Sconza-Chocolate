@@ -9,11 +9,17 @@
           <img src="{{ 'icon-close.svg' | asset_url }}" alt="Close Icon">
         </button>
       </div>
-      <div class="minicart__freeShippingMessage">
+      <div class="minicart__notice tw-mx-5 tw-mt-2 tw-mb-3 tw-text-sm tw-text-mainBlack tw-font-os tw-leading-5">
+  ☀️ <strong>Warm Weather Shipping:</strong> Meltable items ship FedEx 2-Day.
+</div>
+      {% comment %}
+       <div class="minicart__freeShippingMessage">
         FREE SHIPPING on all orders over ${{- settings.free_ship -}}
       </div>
+      {% endcomment %}
     </div>
-      <div class="mini-cart__ship text-center">
+      {% comment %}
+       <div class="mini-cart__ship text-center">
       <span class="title title--unfill"
       >You are <span class="free-count">{{ settings.free_ship | times: 75 | money }}</span> away from free shipping</span
       >
@@ -22,6 +28,7 @@
       <div class="shipping-bar--progress"></div>
       </div>
       </div>
+      {% endcomment %}
     <div class="mini-cart__list">
       {% if cart.empty? == true %}
         <h3 class="text-center tw-text-3xl tw-text-mainBlack tw-uppercase tw-font-osc tw-mb-5">Cart is empty</h3>

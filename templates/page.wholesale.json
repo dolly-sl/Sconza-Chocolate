@@ -43,7 +43,7 @@
       "type": "richText",
       "name": "Rich Text",
       "settings": {
-        "heading": "TRUSTED WHOLESALE CANDY MANUFACTURER SINCE 1939",
+        "heading": "TRUSTED WHOLESALE CANDY MANUFACTURER<br>SINCE 1939",
         "content": "<p>Sconza is a trusted <strong>wholesale chocolate and candy supplier <\/strong>providing premium confectionery products to grocery retailers, club stores, and specialty food distributors. With four generations of confectionery expertise, we combine high-quality ingredients with scalable manufacturing and dependable nationwide distribution.<\/p>",
         "button_text": "",
         "button_url": ""
@@ -255,7 +255,7 @@
           "type": "ai_gen_block_a8579f7",
           "settings": {
             "title": "Certified. Audited. Retail-Ready.",
-            "description": "<p>Operating in an AA+ BRCGS certified facility in California with third-party audited food safety systems. Additional certifications include Kosher, Organic (when applicable), and Fair Trade sourcing.<\/p>",
+            "description": "<p>Operating in an AA BRCGS certified facility in California with third-party audited food safety systems. Additional certifications include Kosher, Organic (when applicable), and Fair Trade sourcing.<\/p>",
             "content_width": 800,
             "text_alignment": "center",
             "spacing": 20,
@@ -284,7 +284,7 @@
         "logo_PfBAFq": {
           "type": "logo",
           "settings": {
-            "logo": "shopify:\/\/shop_images\/BRC_FOOD.png",
+            "logo": "shopify:\/\/shop_images\/BRCGS_FOOD.png",
             "override_link": ""
           }
         },
