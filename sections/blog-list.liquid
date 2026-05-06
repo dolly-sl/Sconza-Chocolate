@@ -7,16 +7,22 @@
             <h2 class="tw-text-mainBlack2 tw-text-[35px] tw-font-bold tw-font-osc tw-uppercase tw-text-left">
               Recent Posts
             </h2>
+
             <div class="blog__filters d-flex align-center" style="gap: 12px;">
 
-              <!-- Sort By (keep your existing logic) -->
+              <!-- ✅ FIXED Sort By -->
               <div class="form__group blog__filter-select">
                 <select onchange="if(this.value) window.location.href = this.value;">
-                  <option value="" disabled selected>Sort By</option>
-                  <option value="?sort_by=published-descending">Newest First</option>
-                  <option value="?sort_by=published-ascending">Oldest First</option>
-                  <option value="?sort_by=title-ascending">Title A–Z</option>
-                  <option value="?sort_by=title-descending">Title Z–A</option>
+                  <option disabled selected>Sort By</option>
+
+                  <option value="{{ blog.url }}">
+                    Newest First
+                  </option>
+
+                  <option value="{{ blog.url }}?sort=oldest"
+                    {% if request.query_string contains 'sort=oldest' %}selected{% endif %}>
+                    Oldest First
+                  </option>
                 </select>
               </div>
 
@@ -27,25 +33,23 @@
           </div>
         </div>
 
+        <!-- ✅ MOBILE (FIXED dynamic blog) -->
         <div class="mobile-wrap">
           <div class="form__group">
             <label class="sr-only">Choose Category</label>
-            <select>
+            <select onchange="if(this.value) window.location.href = this.value;">
               <option
                 {% unless current_tags != blank %}
                 selected
-                disabled
                 {% endunless %}
-                value="/blogs/news">
+                value="{{ blog.url }}">
                 View All
               </option>
-              {% for tag in blogs.news.all_tags %}
+
+              {% for tag in blog.all_tags %}
                 <option
-                  {% if current_tags contains tag %}
-                  selected
-                  disabled
-                  {% endif %}
-                  value="/blogs/news/tagged/{{ tag | handleize }}">
+                  {% if current_tags contains tag %}selected{% endif %}
+                  value="{{ blog.url }}/tagged/{{ tag | handleize }}">
                   {{ tag }}
                 </option>
               {% endfor %}
@@ -55,98 +59,82 @@
       </div>
 
       {%- paginate blog.articles by section.settings.posts_per_page -%}
-        {% assign sorted_articles = blog.articles %}
 
-        {% if request.query_string contains 'oldest' %}
-          {% assign sorted_articles = blog.articles | reverse %}
+        <!-- ✅ SORTING LOGIC -->
+        {% assign articles_to_show = blog.articles %}
+
+        {% if request.query_string contains 'sort=oldest' %}
+          {% assign articles_to_show = blog.articles | reverse %}
         {% endif %}
 
-        {% for article in sorted_articles %}
+        <!-- ✅ ARTICLE LOOP -->
+        {% for article in articles_to_show %}
           {% render 'default-article', data: article %}
         {% endfor %}
 
+        <!-- PAGINATION -->
         <div class="d-flex justify-between blog__toolbar tw-bg-white tw-p-6 md:tw-m-0 tw-mx-10">
-  <div class="page-count d-flex align-center">
-    Showing items {{ paginate.current_offset | plus: 1 }}-
-    {%- if paginate.next -%}
-      {{- paginate.current_offset | plus: paginate.page_size -}}
-    {%- else -%}
-      {{- paginate.items -}}
-    {%- endif %}
-    of {{ paginate.items }}
-  </div>
-  <div class="pagination">
-      <div class="tw-container container-1420">
-        <ul class="d-flex list-reset align-center blog__pagination-list">
-          {% for part in paginate.parts %}
-            <li class="blog__pagination-item{% if part.title == paginate.current_page %} current{% endif %}">
-              {% if part.is_link %}
-                <a href="{{ part.url }}" class="blog__pagination-link animate">{{ part.title }}</a>
-              {% elsif part.title == '&hellip;' %}
-                <span class="blog__pagination-ellipsis">&hellip;</span>
-              {% else %}
-                <span class="blog__pagination-link blog__pagination-current">{{ part.title }}</span>
-              {% endif %}
-            </li>
-          {% endfor %}
-        </ul>
-      </div>
-    </div>
-  </div>
+          <div class="page-count d-flex align-center">
+            Showing items {{ paginate.current_offset | plus: 1 }}-
+            {%- if paginate.next -%}
+              {{ paginate.current_offset | plus: paginate.page_size }}
+            {%- else -%}
+              {{ paginate.items }}
+            {%- endif %}
+            of {{ paginate.items }}
+          </div>
 
-  <style>
-    /* Pagination list spacing */
-    .blog__pagination-list {
-      gap: 4px;
-    }
+          <div class="pagination">
+            <div class="tw-container container-1420">
+              <ul class="d-flex list-reset align-center blog__pagination-list">
+                {% for part in paginate.parts %}
+                  <li class="blog__pagination-item{% if part.title == paginate.current_page %} current{% endif %}">
+                    {% if part.is_link %}
+                      <a href="{{ part.url }}" class="blog__pagination-link animate">{{ part.title }}</a>
+                    {% elsif part.title == '&hellip;' %}
+                      <span class="blog__pagination-ellipsis">&hellip;</span>
+                    {% else %}
+                      <span class="blog__pagination-link blog__pagination-current">{{ part.title }}</span>
+                    {% endif %}
+                  </li>
+                {% endfor %}
+              </ul>
+            </div>
+          </div>
+        </div>
 
-    /* Each number link/span */
-    .blog__pagination-link {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-width: 28px;
-      height: 28px;
-      padding: 0 6px;
-      font-size: 14px;
-      font-family: inherit;
-      color: #1a1a1a;
-      text-decoration: none;
-      border-radius: 3px;
-      transition: color 0.2s ease;
-    }
+        <style>
+          .blog__pagination-list { gap: 4px; }
 
-    /* Hover state for links */
-    .blog__pagination-link:hover {
-      color: #A79E89;
-    }
+          .blog__pagination-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 28px;
+            height: 28px;
+            padding: 0 6px;
+            font-size: 14px;
+            color: #1a1a1a;
+            text-decoration: none;
+            border-radius: 3px;
+          }
 
-    /* Active/current page */
-    .blog__pagination-item.current .blog__pagination-link,
-    .blog__pagination-current {
-      font-weight: 700;
-      color: #1a1a1a;
-      text-decoration: underline;
-      text-underline-offset: 3px;
-    }
+          .blog__pagination-link:hover { color: #A79E89; }
 
-    /* Ellipsis dots */
-    .blog__pagination-ellipsis {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-width: 28px;
-      height: 28px;
-      font-size: 14px;
-      color: #1a1a1a;
-    }
+          .blog__pagination-item.current .blog__pagination-link,
+          .blog__pagination-current {
+            font-weight: 700;
+            text-decoration: underline;
+          }
 
-    /* Page count text styling */
-    .page-count {
-      font-size: 14px;
-      color: #1a1a1a;
-    }
-  </style>
+          .blog__pagination-ellipsis {
+            min-width: 28px;
+            height: 28px;
+          }
+
+          .page-count { font-size: 14px; }
+        </style>
+
       {% endpaginate %}
     </div>
   </div>
@@ -157,38 +145,39 @@
     max-width: 1420px;
     padding: 0 40px;
   }
+
   .desktop-wrap {
     border-bottom: 1px solid #A79E8999;
     padding-bottom: 40px;
   }
+
   .blog__tags {
     width: 100%;
     padding: 0 15px 57px;
   }
 
-  /* New styles for filter row only */
   .blog__tags-header {
     display: flex;
     align-items: center;
     justify-content: space-between;
   }
+
   .blog__filters {
     display: flex;
     align-items: center;
     gap: 12px;
   }
+
   .blog__filter-select select {
-    appearance: auto;
     border: 1px solid #ccc;
     border-radius: 4px;
     padding: 8px 32px 8px 14px;
     font-size: 14px;
-    font-family: inherit;
-    color: #1a1a1a;
     background-color: #fff;
     cursor: pointer;
     min-width: 160px;
   }
+
   .blog__filter-select select:focus {
     outline: none;
     border-color: #A79E89;
@@ -196,15 +185,15 @@
 </style>
 
 {% schema %}
-  {
-    "name": "Blog List",
-    "settings": [
-      {
-        "id": "posts_per_page",
-        "type": "number",
-        "label": "Articles / Page",
-        "default": 12
-      }
-    ]
-  }
+{
+  "name": "Blog List",
+  "settings": [
+    {
+      "id": "posts_per_page",
+      "type": "number",
+      "label": "Articles / Page",
+      "default": 12
+    }
+  ]
+}
 {% endschema %}
