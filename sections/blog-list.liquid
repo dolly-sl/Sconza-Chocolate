@@ -13,7 +13,6 @@
               <!-- ✅ FIXED Sort By -->
               <div class="form__group blog__filter-select">
                 <select id="sortBy">
-
                   <option value="newest"
                     {% unless request.query_string contains 'sort=oldest' %}selected{% endunless %}>
                     Newest First
@@ -189,10 +188,9 @@
 document.getElementById('sortBy').addEventListener('change', function () {
 
   const sort = this.value;
-  let url = new URL(window.location.href);
 
-  // Preserve category (tag) if exists
-  let path = url.pathname;
+  // Get current URL properly
+  let url = new URL(window.location.href);
 
   if (sort === 'oldest') {
     url.searchParams.set('sort', 'oldest');
@@ -200,7 +198,8 @@ document.getElementById('sortBy').addEventListener('change', function () {
     url.searchParams.delete('sort');
   }
 
-  window.location.href = url.pathname + url.search;
+  // ✅ IMPORTANT: use full URL (not pathname only)
+  window.location.href = url.toString();
 });
 </script>
 {% schema %}
