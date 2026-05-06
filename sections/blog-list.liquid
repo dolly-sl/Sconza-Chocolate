@@ -11,7 +11,7 @@
             <div class="blog__filters d-flex align-center" style="gap: 12px;">
 
               <div class="blog__filter-select">
-                <select id="sortBy">
+                <select id="sortBy" class="custom-dropdown-select dropdown-select">
                   <option value="newest"
                     {% unless request.query_string contains 'sort=oldest' %}selected{% endunless %}>
                     Newest First
