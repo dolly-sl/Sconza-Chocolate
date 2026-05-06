@@ -73,7 +73,7 @@
         {% endfor %}
 
         <!-- PAGINATION -->
-        <div class="d-flex justify-between blog__toolbar tw-bg-white tw-p-6 md:tw-m-0 tw-mx-10">
+        <div class="d-flex justify-between blog__toolbar tw-p-6 md:tw-m-0 tw-mx-10">
           <div class="page-count d-flex align-center">
             Showing items {{ paginate.current_offset | plus: 1 }}-
             {%- if paginate.next -%}
@@ -186,6 +186,10 @@
     background: #FFFCF3;
     pading-top: 60px;
     padding-bottom: 88px;
+  }
+  .blog__toolbar {
+    border-top: 1px solid rgba(167, 158, 137, 0.60);
+    border-bottom: 1px solid rgba(167, 158, 137, 0.60);
   }
 </style>
 
