@@ -71,7 +71,7 @@
             of {{ paginate.items }} items
           </div>
           <div class="pagination">
-            <div class="tw-container">
+            <div class="tw-container container-1420">
               <ul class="d-flex list-reset align-center">
                 {% for part in paginate.parts %}
                   <li
@@ -94,6 +94,10 @@
   </div>
 </section>
 <style>
+  .container-1420 {
+    max-width: 1420px;
+    padding: 0 40px;
+  }
   .desktop-wrap {
     border-bottom: 1px solid #A79E8999;
     padding-bottom: 50px;
