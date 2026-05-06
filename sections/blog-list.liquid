@@ -10,7 +10,7 @@
 
             <div class="blog__filters d-flex align-center" style="gap: 12px;">
 
-              <div class="form__group blog__filter-select">
+              <div class="blog__filter-select">
                 <select id="sortBy">
                   <option value="newest"
                     {% unless request.query_string contains 'sort=oldest' %}selected{% endunless %}>
@@ -182,9 +182,6 @@
       border-color: #1E1C1C;
       max-width: 287px;
       height: 45px;
-  }
-  .blog__filters .form__group {
-    margin-bottom: 0;
   }
 </style>
 
