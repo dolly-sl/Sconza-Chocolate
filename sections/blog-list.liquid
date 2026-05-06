@@ -10,7 +10,6 @@
 
             <div class="blog__filters d-flex align-center" style="gap: 12px;">
 
-              <!-- ✅ FIXED Sort By -->
               <div class="form__group blog__filter-select">
                 <select id="sortBy">
                   <option value="newest"
@@ -33,7 +32,6 @@
           </div>
         </div>
 
-        <!-- ✅ MOBILE (FIXED dynamic blog) -->
         <div class="mobile-wrap">
           <div class="form__group">
             <label class="sr-only">Choose Category</label>
@@ -60,19 +58,16 @@
 
       {%- paginate blog.articles by section.settings.posts_per_page -%}
 
-        <!-- ✅ SORTING LOGIC -->
         {% assign articles_to_show = blog.articles %}
 
         {% if request.query_string contains 'sort=oldest' %}
           {% assign articles_to_show = blog.articles | reverse %}
         {% endif %}
 
-        <!-- ✅ ARTICLE LOOP -->
         {% for article in articles_to_show %}
           {% render 'default-article', data: article %}
         {% endfor %}
 
-        <!-- PAGINATION -->
         <div class="d-flex justify-between blog__toolbar  md:tw-m-0 tw-mx-10">
           <div class="page-count d-flex align-center">
             Showing items {{ paginate.current_offset | plus: 1 }}-
@@ -186,6 +181,10 @@
     border-top: 1px solid rgba(167, 158, 137, 0.60);
     border-bottom: 1px solid rgba(167, 158, 137, 0.60);
     padding: 31px 42px;
+  }
+  .custom-dropdown-select {
+      border-color: red;
+      max-width: 200px;
   }
 </style>
 
