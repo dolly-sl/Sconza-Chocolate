@@ -6,8 +6,7 @@
           src="{{ data.image | img_url: '420x420', crop: 'center' }}"
           srcset="{{ data.image | img_url: '840x840', crop: 'center' }} 2x"
           alt="{{ data.image.alt }}"
-          class="tw-object-fit tw-w-full tw-h-auto tw-object-cover"
-          style="aspect-ratio: 1 / 1;">
+          class="tw-object-fit tw-w-full tw-h-auto tw-object-cover">
       </a>
     </div>
 
@@ -48,5 +47,9 @@
     font-size: 12px;
     font-weight: 700;
     margint-top: 20px;
+  }
+  .article__image img {
+    height: 390px;
+    background-color: #D9D9D9;
   }
 </style>
