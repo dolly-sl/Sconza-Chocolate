@@ -69,34 +69,87 @@
         {% endfor %}
 
         <div class="d-flex justify-between blog__toolbar tw-bg-white tw-p-6 md:tw-m-0 tw-mx-10">
-          <div class="page-count d-flex align-center">
-            Showing {{ paginate.current_offset | plus: 1 }}-
-            {%- if paginate.next -%}
-              {{- paginate.current_offset | plus: paginate.page_size -}}
-            {%- else -%}
-              {{- paginate.items -}}
-            {%- endif %}
-            of {{ paginate.items }} items
-          </div>
-          <div class="pagination">
-            <div class="tw-container container-1420">
-              <ul class="d-flex list-reset align-center">
-                {% for part in paginate.parts %}
-                  <li
-                    {% if part.title == paginate.current_page %}
-                    class="current"
-                    {% endif %}>
-                    {% if part.is_link %}
-                      <a href="{{ part.url }}" class="animate">{{ part.title }}</a>
-                    {% else %}
-                      <span class="num">{{ part.title }}</span>
-                    {% endif %}
-                  </li>
-                {% endfor %}
-              </ul>
-            </div>
-          </div>
-        </div>
+  <div class="page-count d-flex align-center">
+    Showing items {{ paginate.current_offset | plus: 1 }}-
+    {%- if paginate.next -%}
+      {{- paginate.current_offset | plus: paginate.page_size -}}
+    {%- else -%}
+      {{- paginate.items -}}
+    {%- endif %}
+    of {{ paginate.items }}
+  </div>
+  <div class="pagination">
+      <div class="tw-container container-1420">
+        <ul class="d-flex list-reset align-center blog__pagination-list">
+          {% for part in paginate.parts %}
+            <li class="blog__pagination-item{% if part.title == paginate.current_page %} current{% endif %}">
+              {% if part.is_link %}
+                <a href="{{ part.url }}" class="blog__pagination-link animate">{{ part.title }}</a>
+              {% elsif part.title == '&hellip;' %}
+                <span class="blog__pagination-ellipsis">&hellip;</span>
+              {% else %}
+                <span class="blog__pagination-link blog__pagination-current">{{ part.title }}</span>
+              {% endif %}
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <style>
+    /* Pagination list spacing */
+    .blog__pagination-list {
+      gap: 4px;
+    }
+
+    /* Each number link/span */
+    .blog__pagination-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 28px;
+      height: 28px;
+      padding: 0 6px;
+      font-size: 14px;
+      font-family: inherit;
+      color: #1a1a1a;
+      text-decoration: none;
+      border-radius: 3px;
+      transition: color 0.2s ease;
+    }
+
+    /* Hover state for links */
+    .blog__pagination-link:hover {
+      color: #A79E89;
+    }
+
+    /* Active/current page */
+    .blog__pagination-item.current .blog__pagination-link,
+    .blog__pagination-current {
+      font-weight: 700;
+      color: #1a1a1a;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    /* Ellipsis dots */
+    .blog__pagination-ellipsis {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 28px;
+      height: 28px;
+      font-size: 14px;
+      color: #1a1a1a;
+    }
+
+    /* Page count text styling */
+    .page-count {
+      font-size: 14px;
+      color: #1a1a1a;
+    }
+  </style>
       {% endpaginate %}
     </div>
   </div>
