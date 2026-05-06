@@ -189,17 +189,19 @@ document.getElementById('sortBy').addEventListener('change', function () {
 
   const sort = this.value;
 
-  // Get current URL properly
-  let url = new URL(window.location.href);
+  // Get current path (important)
+  let path = window.location.pathname;
 
+  // Remove existing query
+  let baseUrl = path;
+
+  // Build final URL safely
   if (sort === 'oldest') {
-    url.searchParams.set('sort', 'oldest');
+    window.location.href = baseUrl + '?sort=oldest';
   } else {
-    url.searchParams.delete('sort');
+    window.location.href = baseUrl;
   }
 
-  // ✅ IMPORTANT: use full URL (not pathname only)
-  window.location.href = url.toString();
 });
 </script>
 {% schema %}
