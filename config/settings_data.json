@@ -639,7 +639,7 @@
       "blog-list": {
         "type": "blog-list",
         "settings": {
-          "posts_per_page": 6
+          "posts_per_page": 3
         }
       },
       "contact": {
