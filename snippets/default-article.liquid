@@ -30,11 +30,11 @@
         </a>
       </h2>
     </div>
-    <div class="article__excerpt tw-mt-2">
+    {% comment %} <div class="article__excerpt tw-mt-2">
       <p class="tw-base tw-text-black tw-font-os">
         {{ data.excerpt_or_content | strip_html | truncatewords: 17, '...' }}
       </p>
-    </div>
+    </div> {% endcomment %}
     <div class="article__link tw-mt-3">
       <a href="{{ data.url }}" class="tw-text-mainBlack2 tw-text-base tw-font-bold tw-font-osc tw-border-b-2 tw-border-mainGold animate hover:tw-border-mainGold tw-uppercase">
         Read More
