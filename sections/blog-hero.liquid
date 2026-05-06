@@ -54,7 +54,7 @@
 
   {% else %}
     {% for article in blog.articles limit: 1 %}
-      <div class="tw-container tw-mt-12">
+      <div class="tw-container container-1420 tw-mt-12">
         <div class="tw-flex tw-flex-wrap md:tw-flex-nowrap tw-justify-between tw-items-center">
           <a href="{{ article.url }}" class="md:tw-w-1/2 tw-w-full">
             <img
@@ -104,6 +104,10 @@
     {% endfor %}
   {% endif %}
   <style>
+    .container-1420 {
+      max-width: 1420px;
+      padding: 0 40px;
+    }
     .featured-right-content {
       padding-left: 115px;
     }
