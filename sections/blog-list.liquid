@@ -6,7 +6,7 @@
           <h2 class="tw-text-mainBlack2 tw-text-[35px] tw-font-bold tw-font-osc tw-uppercase tw-text-center">
             Recent Posts
           </h2>
-          <ul class="d-flex align-center justify-center list-reset">
+          {% comment %} <ul class="d-flex align-center justify-center list-reset">
             <li
               {% unless current_tags != blank %}
               class="active"
@@ -25,7 +25,7 @@
                 </a>
               </li>
             {% endfor %}
-          </ul>
+          </ul> {% endcomment %}
         </div>
         <div class="mobile-wrap">
           <div class="form__group">
@@ -93,7 +93,12 @@
     </div>
   </div>
 </section>
-
+<style>
+  .desktop-wrap {
+    border-bottom: 1px solid #A79E8999;
+    padding-bottom: 50px;
+  } 
+</style>
 {% schema %}
   {
     "name": "Blog List",
