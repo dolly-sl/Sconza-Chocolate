@@ -3,30 +3,38 @@
     <div class="article__wrap d-flex">
       <div class="blog__tags">
         <div class="desktop-wrap">
-          <h2 class="tw-text-mainBlack2 tw-text-[35px] tw-font-bold tw-font-osc tw-uppercase tw-text-center">
-            Recent Posts
-          </h2>
-          {% comment %} <ul class="d-flex align-center justify-center list-reset">
-            <li
-              {% unless current_tags != blank %}
-              class="active"
-              {% endunless %}>
-              <button type="button" class="tw-text-mainBlack2 tw-text-base tw-font-bold tw-capitalize tw-font-osc tw-border-b-2 tw-border-mainGold animate hover:tw-border-mainGold">
-                All Posts
-              </button>
-            </li>
-            {% for tag in blogs.news.all_tags %}
-              <li
-                {% if current_tags contains tag %}
-                class="active"
-                {% endif %}>
-                <a href="/blogs/news/tagged/{{ tag | handleize }}" class="tw-text-mainBlack2 tw-text-base tw-font-bold tw-capitalize tw-font-osc tw-border-b-2 tw-border-mainGold animate hover:tw-border-mainGold">
-                  {{ tag }}
-                </a>
-              </li>
-            {% endfor %}
-          </ul> {% endcomment %}
+          <div class="blog__tags-header d-flex align-center justify-between">
+            <h2 class="tw-text-mainBlack2 tw-text-[35px] tw-font-bold tw-font-osc tw-uppercase tw-text-left">
+              Recent Posts
+            </h2>
+            <div class="blog__filters d-flex align-center" style="gap: 12px;">
+              <!-- Sort By Dropdown -->
+              <div class="form__group blog__filter-select">
+                <label class="sr-only">Sort By</label>
+                <select onchange="if(this.value) window.location.href = this.value;">
+                  <option value="" disabled selected>Sort By</option>
+                  <option value="?sort_by=published-descending" {% if request.query_string contains 'sort_by=published-descending' %}selected{% endif %}>Newest First</option>
+                  <option value="?sort_by=published-ascending" {% if request.query_string contains 'sort_by=published-ascending' %}selected{% endif %}>Oldest First</option>
+                  <option value="?sort_by=title-ascending" {% if request.query_string contains 'sort_by=title-ascending' %}selected{% endif %}>Title A–Z</option>
+                  <option value="?sort_by=title-descending" {% if request.query_string contains 'sort_by=title-descending' %}selected{% endif %}>Title Z–A</option>
+                </select>
+              </div>
+              <!-- View All Articles / Filter by Tag Dropdown -->
+              <div class="form__group blog__filter-select">
+                <label class="sr-only">Filter Articles</label>
+                <select onchange="if(this.value) window.location.href = this.value;">
+                  <option value="/blogs/news" {% unless current_tags != blank %}selected{% endunless %}>View All Articles</option>
+                  {% for tag in blogs.news.all_tags %}
+                    <option value="/blogs/news/tagged/{{ tag | handleize }}" {% if current_tags contains tag %}selected{% endif %}>
+                      {{ tag }}
+                    </option>
+                  {% endfor %}
+                </select>
+              </div>
+            </div>
+          </div>
         </div>
+
         <div class="mobile-wrap">
           <div class="form__group">
             <label class="sr-only">Choose Category</label>
@@ -93,6 +101,7 @@
     </div>
   </div>
 </section>
+
 <style>
   .container-1420 {
     max-width: 1420px;
@@ -101,12 +110,41 @@
   .desktop-wrap {
     border-bottom: 1px solid #A79E8999;
     padding-bottom: 40px;
-  } 
+  }
   .blog__tags {
     width: 100%;
     padding: 0 15px 57px;
   }
+
+  /* New styles for filter row only */
+  .blog__tags-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .blog__filters {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .blog__filter-select select {
+    appearance: auto;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 8px 32px 8px 14px;
+    font-size: 14px;
+    font-family: inherit;
+    color: #1a1a1a;
+    background-color: #fff;
+    cursor: pointer;
+    min-width: 160px;
+  }
+  .blog__filter-select select:focus {
+    outline: none;
+    border-color: #A79E89;
+  }
 </style>
+
 {% schema %}
   {
     "name": "Blog List",
