@@ -8,29 +8,36 @@
               Recent Posts
             </h2>
             <div class="blog__filters d-flex align-center" style="gap: 12px;">
+
               <!-- Sort By Dropdown -->
               <div class="form__group blog__filter-select">
                 <label class="sr-only">Sort By</label>
-                <select onchange="if(this.value) window.location.href = this.value;">
+                <select id="blog-sort-select">
                   <option value="" disabled selected>Sort By</option>
-                  <option value="?sort_by=published-descending" {% if request.query_string contains 'sort_by=published-descending' %}selected{% endif %}>Newest First</option>
-                  <option value="?sort_by=published-ascending" {% if request.query_string contains 'sort_by=published-ascending' %}selected{% endif %}>Oldest First</option>
-                  <option value="?sort_by=title-ascending" {% if request.query_string contains 'sort_by=title-ascending' %}selected{% endif %}>Title A–Z</option>
-                  <option value="?sort_by=title-descending" {% if request.query_string contains 'sort_by=title-descending' %}selected{% endif %}>Title Z–A</option>
+                  <option value="date-desc">Newest First</option>
+                  <option value="date-asc">Oldest First</option>
+                  <option value="title-asc">Title A–Z</option>
+                  <option value="title-desc">Title Z–A</option>
                 </select>
               </div>
+
               <!-- View All Articles / Filter by Tag Dropdown -->
               <div class="form__group blog__filter-select">
                 <label class="sr-only">Filter Articles</label>
-                <select onchange="if(this.value) window.location.href = this.value;">
-                  <option value="/blogs/news" {% unless current_tags != blank %}selected{% endunless %}>View All Articles</option>
-                  {% for tag in blogs.news.all_tags %}
-                    <option value="/blogs/news/tagged/{{ tag | handleize }}" {% if current_tags contains tag %}selected{% endif %}>
+                <select id="blog-tag-select" onchange="if(this.value) window.location.href = this.value;">
+                  <option value="/blogs/news" {% unless current_tags != blank %}selected{% endunless %}>
+                    View All Articles
+                  </option>
+                  {% for tag in blog.all_tags %}
+                    <option
+                      value="/blogs/news/tagged/{{ tag | handleize }}"
+                      {% if current_tags contains tag %}selected{% endif %}>
                       {{ tag }}
                     </option>
                   {% endfor %}
                 </select>
               </div>
+
             </div>
           </div>
         </div>
@@ -38,7 +45,7 @@
         <div class="mobile-wrap">
           <div class="form__group">
             <label class="sr-only">Choose Category</label>
-            <select>
+            <select onchange="if(this.value) window.location.href = this.value;">
               <option
                 {% unless current_tags != blank %}
                 selected
@@ -63,10 +70,11 @@
       </div>
 
       {%- paginate blog.articles by section.settings.posts_per_page -%}
-        {% for article in blog.articles %}
-          {% render 'default-article'
-            , data: article %}
-        {% endfor %}
+        <div id="blog-articles-wrapper">
+          {% for article in blog.articles %}
+            {% render 'default-article', data: article %}
+          {% endfor %}
+        </div>
 
         <div class="d-flex justify-between blog__toolbar tw-bg-white tw-p-6 md:tw-m-0 tw-mx-10">
           <div class="page-count d-flex align-center">
@@ -98,6 +106,7 @@
           </div>
         </div>
       {% endpaginate %}
+
     </div>
   </div>
 </section>
@@ -116,7 +125,7 @@
     padding: 0 15px 57px;
   }
 
-  /* New styles for filter row only */
+  /* New styles — filter row only */
   .blog__tags-header {
     display: flex;
     align-items: center;
@@ -129,6 +138,7 @@
   }
   .blog__filter-select select {
     appearance: auto;
+    -webkit-appearance: auto;
     border: 1px solid #ccc;
     border-radius: 4px;
     padding: 8px 32px 8px 14px;
@@ -145,16 +155,45 @@
   }
 </style>
 
-{% schema %}
-  {
-    "name": "Blog List",
-    "settings": [
-      {
-        "id": "posts_per_page",
-        "type": "number",
-        "label": "Articles / Page",
-        "default": 12
-      }
-    ]
-  }
-{% endschema %}
+<script>
+  (function () {
+    var sortSelect = document.getElementById('blog-sort-select');
+    if (!sortSelect) return;
+
+    // Restore sort selection from sessionStorage on page load
+    var savedSort = sessionStorage.getItem('blog-sort');
+    if (savedSort) sortSelect.value = savedSort;
+
+    sortSelect.addEventListener('change', function () {
+      var sortValue = this.value;
+      sessionStorage.setItem('blog-sort', sortValue);
+
+      var wrapper = document.getElementById('blog-articles-wrapper');
+      if (!wrapper) return;
+
+      // Collect all article cards
+      var articles = Array.from(wrapper.children);
+
+      articles.sort(function (a, b) {
+        if (sortValue === 'date-desc' || sortValue === 'date-asc') {
+          var dateA = new Date(a.dataset.date || 0);
+          var dateB = new Date(b.dataset.date || 0);
+          return sortValue === 'date-desc' ? dateB - dateA : dateA - dateB;
+        }
+        if (sortValue === 'title-asc' || sortValue === 'title-desc') {
+          var titleA = (a.dataset.title || '').toLowerCase();
+          var titleB = (b.dataset.title || '').toLowerCase();
+          if (titleA < titleB) return sortValue === 'title-asc' ? -1 : 1;
+          if (titleA > titleB) return sortValue === 'title-asc' ? 1 : -1;
+          return 0;
+        }
+        return 0;
+      });
+
+      // Re-append in sorted order
+      articles.forEach(function (el) {
+        wrapper.appendChild(el);
+      });
+    });
+  })();
+</script>
