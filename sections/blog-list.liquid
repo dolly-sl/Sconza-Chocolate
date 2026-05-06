@@ -7,20 +7,7 @@
             <h2 class="tw-text-mainBlack2 tw-text-[35px] tw-font-bold tw-font-osc tw-uppercase tw-text-left">
               Recent Posts
             </h2>
-            <div class="blog__filters d-flex align-center" style="gap: 12px;">
-              <!-- Sort By Dropdown -->
-              <div class="form__group blog__filter-select">
-                <label class="sr-only">Sort By</label>
-                <select onchange="if(this.value) window.location.href = this.value;">
-                  <option value="" disabled selected>Sort By</option>
-                  <option value="?sort_by=published-descending" {% if request.query_string contains 'sort_by=published-descending' %}selected{% endif %}>Newest First</option>
-                  <option value="?sort_by=published-ascending" {% if request.query_string contains 'sort_by=published-ascending' %}selected{% endif %}>Oldest First</option>
-                  <option value="?sort_by=title-ascending" {% if request.query_string contains 'sort_by=title-ascending' %}selected{% endif %}>Title A–Z</option>
-                  <option value="?sort_by=title-descending" {% if request.query_string contains 'sort_by=title-descending' %}selected{% endif %}>Title Z–A</option>
-                </select>
-              </div>
-             
-            </div>
+
           </div>
         </div>
 
