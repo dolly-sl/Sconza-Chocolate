@@ -12,7 +12,7 @@ class="article__single tw-bg-backgroundDark">
   <div class="tw-container tw-mt-9">
     {% comment %} ARTICLE CONTENT {% endcomment %}
     <div class="inner">
-      <div class="">
+      <div class="blog-header">
         <span class="article__date eyebrow">
           {{ article.published_at | date: '%B %e, %Y' }}
         </span>
@@ -29,7 +29,7 @@ class="article__single tw-bg-backgroundDark">
 <section class="article__related tw-bg-backgroundDark">
   <div class="tw-container">
     <h2 class="tw-text-center tw-text-mainBlack2 tw-text-[25px] tw-font-bold tw-font-osc tw-uppercase tw-leading-[1.13]">
-      Recommended Articles
+      KEEP EXPLORING
     </h2>
     <div class="related__wrap d-flex">
       {% comment %} If metafields for related articles selected {% endcomment %}
@@ -63,3 +63,47 @@ class="article__single tw-bg-backgroundDark">
     </div>
   </div>
 </section>
+<style>
+  .article__single .article__content, .blog-header {
+    max-width: 950px;
+    margin: auto;
+  }
+  .blog-header {
+    border-bottom: 1px solid #A79E8999;
+    padding-bottom: 30px;
+    margint-bottom: 10px;
+  }
+  .article__content p {
+    line-height: 28px;
+    color: #1A1B1B;
+    padding-top: 20px;
+  }
+  .article__content h1, .article__content h2, .article__content h3, .article__content h4, .article__content h5, .article__content h6 {
+    color: #1E1C1C;
+    font-weight: 700;
+    letter-spacing: 0.413px;
+    text-transform: uppercase;
+    padding-top: 50px;
+  }
+  .article__content h1 {
+    font-size: 55px;
+  }
+  .article__content h2 {
+    font-size: 35px;
+  }
+  .article__content h3 {
+    font-size: 25px;
+  }
+  .article__content h4 {
+    font-size: 16px;
+  }
+  .article__content h5 {
+    font-size: 16px;
+    font-style: italic;
+  }
+  .article__content h6 {
+    font-size: 16px;
+    font-weight: 400;
+  }
+</style>
+  

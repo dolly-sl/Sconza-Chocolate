@@ -1,0 +1,28 @@
+{% if blog.tags.size > 0 %}
+
+<select
+  class="custom-dropdown-select dropdown-select"
+  name="FilterTags"
+  id="FilterTags"
+  data-select-input
+  onchange="if(this.value) window.location.href = this.value;"
+>
+
+  <!-- View All -->
+  <option value="{{ blog.url }}">
+    View All Articles
+  </option>
+
+  <!-- Tags -->
+  {% for tag in blog.all_tags %}
+    <option
+      value="{{ blog.url }}/tagged/{{ tag | handleize }}"
+      {% if current_tags contains tag %}selected{% endif %}
+    >
+      {{ tag }}
+    </option>
+  {% endfor %}
+
+</select>
+
+{% endif %}
