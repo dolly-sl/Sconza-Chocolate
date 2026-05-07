@@ -1,109 +1,570 @@
-<section
-class="article__single tw-bg-backgroundDark">
-  {% comment %} ARTICLE HERO {% endcomment %}
-  {%- assign image = article.image -%}
+<section class="article__single tw-bg-backgroundDark">
 
-  <section class="tw-relative tw-z-0 !tw-bg-no-repeat !tw-bg-cover !tw-bg-center" style="background-image:url({{ image | image_url: width: image.width }});">
+  {% comment %} ── ARTICLE HERO ── {% endcomment %}
+  {%- assign hero_image = article.image -%}
+  <section
+    class="article__hero tw-relative tw-z-0 !tw-bg-no-repeat !tw-bg-cover !tw-bg-center"
+    style="background-image:url({{ hero_image | image_url: width: hero_image.width }});"
+  >
     <div class="wrapper">
       <div class="tw-h-[500px] md:tw-h-[600px] lg:tw-h-[654px] tw-flex tw-items-center lg:tw-text-left tw-text-center lg:tw-items-start tw-justify-center tw-flex-col"></div>
     </div>
   </section>
 
+  {% comment %} ── ARTICLE CONTAINER ── {% endcomment %}
   <div class="tw-container tw-mt-9">
-    {% comment %} ARTICLE CONTENT {% endcomment %}
     <div class="inner">
-      <div class="blog-header">
-        <span class="article__date eyebrow">
-          {{ article.published_at | date: '%B %e, %Y' }}
-        </span>
-        <h1 class="tw-text-mainBlack2 tw-text-[35px] tw-font-bold tw-font-osc tw-uppercase tw-text-left ">{{ article.title }}</h1>
-      </div>
-      <div class="article__content">
-        {{ article.content }}
-      </div>
-    </div>
 
+      {% comment %} ════════════════════════════════════════
+          NEW BLOG HEADER  (matches design images)
+      ════════════════════════════════════════ {% endcomment %}
+      <div class="blog-header">
+
+        {% comment %} ROW 1 – Breadcrumb + Share {% endcomment %}
+        <div class="blog-header__top">
+
+          {% comment %} Breadcrumb {% endcomment %}
+          <nav class="blog-breadcrumb" aria-label="Breadcrumb">
+            <a href="/" class="blog-breadcrumb__link">Home</a>
+            <span class="blog-breadcrumb__sep" aria-hidden="true">/</span>
+            <a href="{{ blog.url }}" class="blog-breadcrumb__link">{{ blog.title }}</a>
+            <span class="blog-breadcrumb__sep" aria-hidden="true">/</span>
+            <span class="blog-breadcrumb__current">{{ article.title | truncate: 40 }}</span>
+          </nav>
+
+          {% comment %} Social Share Icons {% endcomment %}
+          <div class="blog-share">
+            <span class="blog-share__label">Share:</span>
+
+            {% comment %} Facebook {% endcomment %}
+            <a
+              href="https://www.facebook.com/sharer/sharer.php?u={{ shop.url }}{{ article.url }}"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="blog-share__btn blog-share__btn--facebook"
+              aria-label="Share on Facebook"
+            >
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+              </svg>
+            </a>
+
+            {% comment %} Twitter / X {% endcomment %}
+            <a
+              href="https://twitter.com/intent/tweet?url={{ shop.url }}{{ article.url }}&text={{ article.title | url_encode }}"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="blog-share__btn blog-share__btn--twitter"
+              aria-label="Share on X (Twitter)"
+            >
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+              </svg>
+            </a>
+
+            {% comment %} Pinterest {% endcomment %}
+            <a
+              href="https://pinterest.com/pin/create/button/?url={{ shop.url }}{{ article.url }}&description={{ article.title | url_encode }}"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="blog-share__btn blog-share__btn--pinterest"
+              aria-label="Share on Pinterest"
+            >
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 0C5.373 0 0 5.373 0 12c0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738a.36.36 0 0 1 .083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.632-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0z"/>
+              </svg>
+            </a>
+
+            {% comment %} Copy Link {% endcomment %}
+            <button
+              class="blog-share__btn blog-share__btn--copy"
+              aria-label="Copy link"
+              onclick="
+                navigator.clipboard.writeText('{{ shop.url }}{{ article.url }}');
+                this.classList.add('copied');
+                this.setAttribute('aria-label','Copied!');
+                setTimeout(()=>{
+                  this.classList.remove('copied');
+                  this.setAttribute('aria-label','Copy link');
+                }, 2000);
+              "
+            >
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+                <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/>
+                <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>
+              </svg>
+              <span class="blog-share__copy-tip">Copied!</span>
+            </button>
+          </div>
+        </div>
+
+        {% comment %} ROW 2 – Date + Category Tags {% endcomment %}
+        <div class="blog-header__meta">
+          <span class="article__date eyebrow">
+            {{ article.published_at | date: '%B %e, %Y' }}
+          </span>
+
+          {% comment %} Article Tags / Categories {% endcomment %}
+          {% if article.tags.size > 0 %}
+            <div class="blog-header__tags">
+              {% for tag in article.tags %}
+                <a href="{{ blog.url }}/tagged/{{ tag | handleize }}" class="blog-header__tag">
+                  {{ tag }}
+                </a>
+              {% endfor %}
+            </div>
+          {% endif %}
+        </div>
+
+        {% comment %} ROW 3 – Article Title {% endcomment %}
+        <h1 class="tw-text-mainBlack2 tw-text-[35px] tw-font-bold tw-font-osc tw-uppercase tw-text-left article__title">
+          {{ article.title }}
+        </h1>
+
+        {% comment %} ROW 4 – Author {% endcomment %}
+        {% if article.author %}
+          <p class="blog-header__author">
+            By <strong>{{ article.author }}</strong>
+          </p>
+        {% endif %}
+
+      </div>
+      {% comment %} /blog-header {% endcomment %}
+
+
+      {% comment %} ════════════════════════════════════════
+          ARTICLE CONTENT  (shortcode logic kept as-is)
+      ════════════════════════════════════════ {% endcomment %}
+      <div class="article__content">
+        {%- capture custom_design -%}
+          {% render 'article-shortcode' %}
+        {%- endcapture -%}
+
+        {% assign final_article_content = article.content | replace: '[custom_section]', custom_design %}
+
+        {{ final_article_content }}
+      </div>
+
+
+      {% comment %} ════════════════════════════════════════
+          ARTICLE FOOTER  –  Tags + Prev/Next
+      ════════════════════════════════════════ {% endcomment %}
+      <div class="article__footer">
+
+        {% comment %} Tags Row {% endcomment %}
+        {% if article.tags.size > 0 %}
+          <div class="article__footer-tags">
+            <span class="article__footer-tags__label">Tags:</span>
+            {% for tag in article.tags %}
+              <a href="{{ blog.url }}/tagged/{{ tag | handleize }}" class="article__footer-tag">
+                {{ tag }}
+              </a>
+            {% endfor %}
+          </div>
+        {% endif %}
+
+        {% comment %} Prev / Next Navigation {% endcomment %}
+        <div class="article__pagination">
+
+          {% comment %} Previous Article {% endcomment %}
+          {% if blog.previous_article %}
+            <a href="{{ blog.previous_article.url }}" class="article__pagination-btn article__pagination-btn--prev">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="15 18 9 12 15 6"/>
+              </svg>
+              <span class="article__pagination-direction">Previous</span>
+              <span class="article__pagination-title">{{ blog.previous_article.title | truncate: 50 }}</span>
+            </a>
+          {% else %}
+            <span class="article__pagination-btn article__pagination-btn--prev article__pagination-btn--disabled">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="15 18 9 12 15 6"/>
+              </svg>
+              <span class="article__pagination-direction">Previous</span>
+              <span class="article__pagination-title">No previous post</span>
+            </span>
+          {% endif %}
+
+          {% comment %} Next Article {% endcomment %}
+          {% if blog.next_article %}
+            <a href="{{ blog.next_article.url }}" class="article__pagination-btn article__pagination-btn--next">
+              <span class="article__pagination-direction">Next</span>
+              <span class="article__pagination-title">{{ blog.next_article.title | truncate: 50 }}</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="9 18 15 12 9 6"/>
+              </svg>
+            </a>
+          {% else %}
+            <span class="article__pagination-btn article__pagination-btn--next article__pagination-btn--disabled">
+              <span class="article__pagination-direction">Next</span>
+              <span class="article__pagination-title">No next post</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="9 18 15 12 9 6"/>
+              </svg>
+            </span>
+          {% endif %}
+
+        </div>
+        {% comment %} /article__pagination {% endcomment %}
+
+      </div>
+      {% comment %} /article__footer {% endcomment %}
+
+    </div>
+    {% comment %} /inner {% endcomment %}
   </div>
+  {% comment %} /tw-container {% endcomment %}
+
 </section>
-{% comment %} ARTICLE RELATED {% endcomment %}
+
+
+{% comment %} ── KEEP EXPLORING (Related Articles) ── {% endcomment %}
 <section class="article__related tw-bg-backgroundDark">
   <div class="tw-container">
     <h2 class="tw-text-center tw-text-mainBlack2 tw-text-[25px] tw-font-bold tw-font-osc tw-uppercase tw-leading-[1.13]">
       KEEP EXPLORING
     </h2>
     <div class="related__wrap d-flex">
-      {% comment %} If metafields for related articles selected {% endcomment %}
-      {% if article.metafields.sleepless.related_article_1 != blank or article.metafields.sleepless.related_article_2 != blank or article.metafields.sleepless.related_article_2 != blank
-      %}
+      {% if article.metafields.sleepless.related_article_1 != blank
+        or article.metafields.sleepless.related_article_2 != blank
+        or article.metafields.sleepless.related_article_3 != blank %}
+
         {% if article.metafields.sleepless.related_article_1 != blank %}
           {% assign article_one = articles[article.metafields.sleepless.related_article_1] %}
-          {% render 'default-article'
-            , data: article_one %}
+          {% render 'default-article', data: article_one %}
         {% endif %}
 
         {% if article.metafields.sleepless.related_article_2 != blank %}
           {% assign article_two = articles[article.metafields.sleepless.related_article_2] %}
-          {% render 'default-article'
-            , data: article_two %}
+          {% render 'default-article', data: article_two %}
         {% endif %}
 
         {% if article.metafields.sleepless.related_article_3 != blank %}
           {% assign article_three = articles[article.metafields.sleepless.related_article_3] %}
-          {% render 'default-article'
-            , data: article_three %}
+          {% render 'default-article', data: article_three %}
         {% endif %}
 
       {% else %}
-        {% comment %} Otherwise just show latest 3 articles {% endcomment %}
         {% for article in blog.articles limit: 3 %}
-          {% render 'default-article'
-            , data: article %}
+          {% render 'default-article', data: article %}
         {% endfor %}
       {% endif %}
     </div>
   </div>
 </section>
+
+
+{% comment %} ══════════════════════════════════════════════════════
+    ALL STYLES  –  New additions only. Existing styles kept below.
+══════════════════════════════════════════════════════ {% endcomment %}
 <style>
-  .article__single .article__content, .blog-header {
+
+  /* ─── Scope ─────────────────────────────────────────────── */
+  .article__single .article__content,
+  .blog-header {
     max-width: 950px;
     margin: auto;
   }
+
+  /* ─── Existing styles (unchanged) ──────────────────────── */
   .blog-header {
     border-bottom: 1px solid #A79E8999;
     padding-bottom: 30px;
-    margint-bottom: 10px;
+    margin-bottom: 10px;
   }
   .article__content p {
     line-height: 28px;
     color: #1A1B1B;
     padding-top: 20px;
   }
-  .article__content h1, .article__content h2, .article__content h3, .article__content h4, .article__content h5, .article__content h6 {
+  .article__content h1, .article__content h2, .article__content h3,
+  .article__content h4, .article__content h5, .article__content h6 {
     color: #1E1C1C;
     font-weight: 700;
     letter-spacing: 0.413px;
     text-transform: uppercase;
     padding-top: 50px;
   }
-  .article__content h1 {
-    font-size: 55px;
+  .article__content h1 { font-size: 55px; }
+  .article__content h2 { font-size: 35px; }
+  .article__content h3 { font-size: 25px; }
+  .article__content h4 { font-size: 16px; }
+  .article__content h5 { font-size: 16px; font-style: italic; }
+  .article__content h6 { font-size: 16px; font-weight: 400; }
+
+  /* ─── NEW: Blog Header Top Row ──────────────────────────── */
+  .blog-header__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 16px;
   }
-  .article__content h2 {
-    font-size: 35px;
+
+  /* Breadcrumb */
+  .blog-breadcrumb {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 4px;
+    font-size: 12px;
+    color: #6B6B6B;
   }
-  .article__content h3 {
-    font-size: 25px;
+  .blog-breadcrumb__link {
+    color: #6B6B6B;
+    text-decoration: none;
+    transition: color 0.2s;
   }
-  .article__content h4 {
-    font-size: 16px;
+  .blog-breadcrumb__link:hover {
+    color: #1A1B1B;
+    text-decoration: underline;
   }
-  .article__content h5 {
-    font-size: 16px;
-    font-style: italic;
+  .blog-breadcrumb__sep {
+    color: #A79E89;
+    margin: 0 2px;
   }
-  .article__content h6 {
-    font-size: 16px;
-    font-weight: 400;
+  .blog-breadcrumb__current {
+    color: #1A1B1B;
+    font-weight: 500;
   }
+
+  /* Share bar */
+  .blog-share {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+  }
+  .blog-share__label {
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #6B6B6B;
+    margin-right: 2px;
+  }
+  .blog-share__btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    border: 1.5px solid #A79E8966;
+    color: #1A1B1B;
+    text-decoration: none;
+    background: transparent;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s, border-color 0.2s;
+    position: relative;
+  }
+  .blog-share__btn:hover {
+    background: #1A1B1B;
+    color: #fff;
+    border-color: #1A1B1B;
+  }
+  /* Specific brand hover colours */
+  .blog-share__btn--facebook:hover  { background: #1877F2; border-color: #1877F2; }
+  .blog-share__btn--twitter:hover   { background: #000;    border-color: #000; }
+  .blog-share__btn--pinterest:hover { background: #E60023; border-color: #E60023; }
+
+  /* Copy tooltip */
+  .blog-share__copy-tip {
+    position: absolute;
+    bottom: calc(100% + 6px);
+    left: 50%;
+    transform: translateX(-50%) scale(0.85);
+    background: #1A1B1B;
+    color: #fff;
+    font-size: 10px;
+    padding: 3px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.15s, transform 0.15s;
+  }
+  .blog-share__btn--copy.copied .blog-share__copy-tip {
+    opacity: 1;
+    transform: translateX(-50%) scale(1);
+  }
+
+  /* ─── NEW: Meta row (date + tag pills) ───────────────────── */
+  .blog-header__meta {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 12px;
+  }
+  .article__date {
+    font-size: 12px;
+    color: #6B6B6B;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+  .blog-header__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .blog-header__tag {
+    display: inline-block;
+    padding: 3px 12px;
+    background: transparent;
+    border: 1px solid #A79E8999;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: #1A1B1B;
+    text-decoration: none;
+    transition: background 0.2s, color 0.2s;
+  }
+  .blog-header__tag:hover {
+    background: #1A1B1B;
+    color: #fff;
+    border-color: #1A1B1B;
+  }
+
+  /* ─── NEW: Author line ────────────────────────────────────── */
+  .blog-header__author {
+    font-size: 13px;
+    color: #6B6B6B;
+    margin-top: 8px;
+    margin-bottom: 0;
+  }
+  .blog-header__author strong {
+    color: #1A1B1B;
+  }
+
+  /* ─── NEW: Article Footer ────────────────────────────────── */
+  .article__footer {
+    max-width: 950px;
+    margin: 40px auto 60px;
+    border-top: 1px solid #A79E8966;
+    padding-top: 30px;
+  }
+
+  /* Footer Tags */
+  .article__footer-tags {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 32px;
+  }
+  .article__footer-tags__label {
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #1A1B1B;
+    margin-right: 4px;
+  }
+  .article__footer-tag {
+    display: inline-block;
+    padding: 4px 14px;
+    background: #F5F3EF;
+    border: 1px solid #A79E8966;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: #1A1B1B;
+    text-decoration: none;
+    transition: background 0.2s, color 0.2s, border-color 0.2s;
+  }
+  .article__footer-tag:hover {
+    background: #1A1B1B;
+    color: #fff;
+    border-color: #1A1B1B;
+  }
+
+  /* Prev / Next Navigation */
+  .article__pagination {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+  .article__pagination-btn {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 18px 20px;
+    border: 1.5px solid #A79E8966;
+    border-radius: 6px;
+    text-decoration: none;
+    color: #1A1B1B;
+    background: transparent;
+    transition: border-color 0.2s, background 0.2s;
+    min-width: 0; /* allow text truncation */
+  }
+  .article__pagination-btn:hover:not(.article__pagination-btn--disabled) {
+    border-color: #1A1B1B;
+    background: #F5F3EF;
+  }
+  .article__pagination-btn--disabled {
+    opacity: 0.4;
+    cursor: default;
+    pointer-events: none;
+  }
+  .article__pagination-btn--prev {
+    align-items: flex-start;
+    text-align: left;
+  }
+  .article__pagination-btn--next {
+    align-items: flex-end;
+    text-align: right;
+  }
+  /* direction label row */
+  .article__pagination-btn--prev .article__pagination-direction,
+  .article__pagination-btn--next .article__pagination-direction {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    color: #6B6B6B;
+  }
+  .article__pagination-btn--next .article__pagination-direction {
+    flex-direction: row-reverse;
+  }
+  .article__pagination-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: #1A1B1B;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+  }
+
+  /* ─── MOBILE  ≤ 767px ─────────────────────────────────── */
+  @media (max-width: 767px) {
+    .blog-header__top {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .blog-share {
+      width: 100%;
+      flex-wrap: wrap;
+    }
+    .article__pagination {
+      grid-template-columns: 1fr;
+    }
+    .article__pagination-btn--next {
+      align-items: flex-start;
+      text-align: left;
+    }
+    .article__pagination-btn--next .article__pagination-direction {
+      flex-direction: row;
+    }
+  }
+
 </style>
-  

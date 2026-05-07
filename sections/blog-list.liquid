@@ -241,16 +241,11 @@
 
 <script>
 document.getElementById('sortBy').addEventListener('change', function () {
-  const sort = this.value;
-
-  
+  const sort = this.value;  
   const url = new URL(window.location.href);
-
-  
   url.searchParams.delete('sort');
   url.searchParams.delete('page');
-
-  
+ 
   if (sort === 'oldest') {
     url.searchParams.set('sort', 'oldest');
   }
