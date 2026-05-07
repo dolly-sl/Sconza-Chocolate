@@ -1,3 +1,17 @@
+{%- comment -%}
+  Shopify Liquid does not expose query string params on the `request` object,
+  so detect ?sort=oldest by parsing the page URL out of content_for_header.
+{%- endcomment -%}
+{%- assign _ch_parts = content_for_header | split: '"pageurl":"' -%}
+{%- assign _page_url = _ch_parts[1] | default: '' | split: '"' | first | default: '' -%}
+{%- if _page_url contains 'sort=oldest' -%}
+  {%- assign is_oldest = true -%}
+  {%- assign sort_query = '?sort=oldest' -%}
+{%- else -%}
+  {%- assign is_oldest = false -%}
+  {%- assign sort_query = '' -%}
+{%- endif -%}
+
 <section class="blog__list tw-font-os">
   <div class="tw-container container-1420">
     <div class="article__wrap d-flex">
@@ -12,13 +26,11 @@
 
               <div class="blog__filter-select">
                 <select id="sortBy" class="custom-dropdown-select dropdown-select">
-                  <option value="newest"
-                    {% unless request.query_string contains 'sort=oldest' %}selected{% endunless %}>
+                  <option value="newest" {% unless is_oldest %}selected{% endunless %}>
                     Newest First
                   </option>
 
-                  <option value="oldest"
-                    {% if request.query_string contains 'sort=oldest' %}selected{% endif %}>
+                  <option value="oldest" {% if is_oldest %}selected{% endif %}>
                     Oldest First
                   </option>
 
@@ -35,11 +47,6 @@
         <div class="mobile-wrap">
           <div class="form__group">
             <label class="sr-only">Choose Category</label>
-            {%- if request.query_string contains 'sort=oldest' -%}
-              {%- assign sort_query = '?sort=oldest' -%}
-            {%- else -%}
-              {%- assign sort_query = '' -%}
-            {%- endif -%}
             <select onchange="if(this.value) window.location.href = this.value;">
               <option
                 {% unless current_tags != blank %}
