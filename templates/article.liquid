@@ -12,7 +12,7 @@ class="article__single tw-bg-backgroundDark">
   <div class="tw-container tw-mt-9">
     {% comment %} ARTICLE CONTENT {% endcomment %}
     <div class="inner">
-      <div class="">
+      <div class="blog-header">
         <span class="article__date eyebrow">
           {{ article.published_at | date: '%B %e, %Y' }}
         </span>
@@ -64,7 +64,7 @@ class="article__single tw-bg-backgroundDark">
   </div>
 </section>
 <style>
-  .article__single .article__content {
+  .article__single .article__content, .blog-header {
     max-width: 950px;
     margin: auto;
   }
