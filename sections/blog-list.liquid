@@ -245,18 +245,27 @@
 </style>
 
 <script>
-document.getElementById('sortBy').addEventListener('change', function () {
-  const sort = this.value;  
-  const url = new URL(window.location.href);
-  url.searchParams.delete('sort');
-  url.searchParams.delete('page');
- 
-  if (sort === 'oldest') {
-    url.searchParams.set('sort', 'oldest');
-  }
+(function () {
+  var sortByEl = document.getElementById('sortBy');
+  if (!sortByEl) return;
 
-  window.location.href = url.toString();
-});
+  // Stop the global `.blog__tags select` change handler (in the theme bundle)
+  // from treating our sort value ("newest"/"oldest") as a navigation URL.
+  sortByEl.addEventListener('change', function (e) {
+    e.stopImmediatePropagation();
+
+    var sort = this.value;
+    var url = new URL(window.location.href);
+    url.searchParams.delete('sort');
+    url.searchParams.delete('page');
+
+    if (sort === 'oldest') {
+      url.searchParams.set('sort', 'oldest');
+    }
+
+    window.location.href = url.toString();
+  }, true);
+})();
 </script>
 {% schema %}
 {
