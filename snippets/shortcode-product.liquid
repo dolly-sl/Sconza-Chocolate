@@ -31,12 +31,11 @@
     {% if sc_product.featured_image %}
       <div class="sc-product-card__image-wrap">
         <a href="{{ sc_product.url }}">
-          <img
-            src="{{ sc_product.featured_image | image_url: width: 300 }}"
-            alt="{{ sc_product.title | escape }}"
-            loading="lazy"
-            width="300"
-          >
+          {{
+            sc_product.featured_image
+            | image_url: width: 240
+            | image_tag: loading: 'lazy', alt: sc_product.title, class: 'sc-product-card__img', width: 240
+          }}
         </a>
       </div>
     {% endif %}
@@ -61,33 +60,6 @@
           {% endif %}
         </span>
       </div>
-
-      {% assign rating_value = sc_product.metafields.reviews.rating.value %}
-      {% assign rating_count = sc_product.metafields.reviews.rating_count.value %}
-
-      {% if rating_value %}
-        <div class="sc-product-card__stars">
-          {% assign full_stars = rating_value | floor %}
-
-          {% for i in (1..full_stars) %}
-            ★
-          {% endfor %}
-
-          <span> {{ rating_value }}/5 </span>
-
-          {% if rating_count %}
-            <span> ({{ rating_count }} Reviews) </span>
-          {% endif %}
-        </div>
-      {% endif %}
-
-      {% if sc_product.description != blank %}
-        <p class="sc-product-card__desc">
-          {{ sc_product.description | strip_html | truncate: 160 }}
-        </p>
-      {% endif %}
-
-      <a href="{{ sc_product.url }}" class="sc-product-card__btn"> Shop Now </a>
     </div>
   </div>
 
