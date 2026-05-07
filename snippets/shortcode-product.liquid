@@ -9,7 +9,11 @@
 
 {% assign sc_handle = sc_handle | strip %}
 {% assign product_handle = sc_handle %}
+<p>Handle: {{ product_handle }}</p>
+
 {% assign sc_product = all_products[product_handle] %}
+
+<p>Title: {{ sc_product.title }}</p>
 
 {% if sc_product %}
   <p>{{ sc_handle }}</p>
