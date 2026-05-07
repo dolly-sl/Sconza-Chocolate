@@ -161,7 +161,7 @@
                 <polyline points="15 18 9 12 15 6"/>
               </svg>
               <span class="article__pagination-direction">Previous</span>
-              <span class="article__pagination-title">{{ blog.previous_article.title | truncate: 50 }}</span>
+              {% comment %} <span class="article__pagination-title">{{ blog.previous_article.title | truncate: 50 }}</span> {% endcomment %}
             </a>
           {% else %}
             <span class="article__pagination-btn article__pagination-btn--prev article__pagination-btn--disabled">
