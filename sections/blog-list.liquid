@@ -258,14 +258,20 @@
 
   // 2) Reverse the article list in-place when oldest-first is requested.
   //    Articles are always rendered newest-first by Liquid; JS handles the flip.
-  //    They live as flex children of `.article__wrap` alongside `.blog__tags`,
-  //    so we only re-order the `.article--default` items, preserving the rest.
+  //    They live as flex children of `.article__wrap` alongside `.blog__tags`
+  //    and `.blog__toolbar` (pagination), so we re-insert them in reverse
+  //    order BEFORE the toolbar to keep pagination at the bottom.
   if (isOldest) {
     var wrap = document.querySelector('.blog__list .article__wrap');
     if (wrap) {
       var articles = wrap.querySelectorAll(':scope > .article--default');
+      var toolbar = wrap.querySelector(':scope > .blog__toolbar');
       for (var i = articles.length - 1; i >= 0; i--) {
-        wrap.appendChild(articles[i]);
+        if (toolbar) {
+          wrap.insertBefore(articles[i], toolbar);
+        } else {
+          wrap.appendChild(articles[i]);
+        }
       }
     }
   }
