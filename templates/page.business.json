@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "wrapper": "div.tw-bg-backgroundDark",
   "sections": {
@@ -11,13 +20,13 @@
             "subheading": "May 19 - 21, 2026 | Las Vegas",
             "content": "",
             "button_text": "Visit us at Booth 2857",
-            "button_link": "https:\/\/sse26.mapyourshow.com\/8_0\/exhibitor\/exhibitor-details.cfm?exhid=19533",
+            "button_link": "https://sse26.mapyourshow.com/8_0/exhibitor/exhibitor-details.cfm?exhid=19533",
             "background_color": "#ffffff",
             "text_black": false,
             "text_position": "middle_right",
             "text_position_mobile": "bottom_center",
-            "image": "shopify:\/\/shop_images\/2026_Sweets_Snacks_3.jpg",
-            "mobile_image": "shopify:\/\/shop_images\/2026_SSE_2.jpg"
+            "image": "shopify://shop_images/2026_Sweets_Snacks_3.jpg",
+            "mobile_image": "shopify://shop_images/2026_SSE_2.jpg"
           }
         },
         "slide_hr9NXB": {
@@ -27,13 +36,13 @@
             "subheading": "",
             "content": "From concept to shelf, Sconza partners with brands, retailers, and distributors to bring chocolate and confectionery products to market.",
             "button_text": "Talk to Our Team",
-            "button_link": "https:\/\/wholesale.sconza.com\/contact-us\/",
+            "button_link": "https://wholesale.sconza.com/contact-us/",
             "background_color": "",
             "text_black": false,
             "text_position": "middle_left",
             "text_position_mobile": "top_center",
-            "image": "shopify:\/\/shop_images\/BusinessSolutions.jpg",
-            "mobile_image": "shopify:\/\/shop_images\/BusinessSolutions-mobile.jpg"
+            "image": "shopify://shop_images/BusinessSolutions.jpg",
+            "mobile_image": "shopify://shop_images/BusinessSolutions-mobile.jpg"
           }
         }
       },
@@ -50,9 +59,9 @@
       "settings": {
         "heading": "For Business",
         "subtitle": "Where Great Candy Meets Great Partnerships",
-        "image": "shopify:\/\/shop_images\/FactoryFloor-001.jpg",
+        "image": "shopify://shop_images/FactoryFloor-001.jpg",
         "button_text": "Contact Us",
-        "button_link": "shopify:\/\/pages\/contact",
+        "button_link": "shopify://pages/contact",
         "alignment": "left"
       }
     },
@@ -80,15 +89,15 @@
             "column_1_heading": "Contract Manufacturing",
             "column_1_description": "Full-scale chocolate and confectionery manufacturing for national brands and growing product companies.",
             "column_1_button": "Explore Manufacturing",
-            "column_1_link": "shopify:\/\/pages\/contract-manufacturing",
+            "column_1_link": "shopify://pages/contract-manufacturing",
             "column_2_heading": "Private Label Programs",
             "column_2_description": "Retail-ready chocolate and confectionery assortments developed for private label brands and retailers.",
             "column_2_button": "Explore Private Label",
-            "column_2_link": "shopify:\/\/pages\/private-label",
+            "column_2_link": "shopify://pages/private-label",
             "column_3_heading": "Wholesale Distribution",
             "column_3_description": "Browse our wholesale catalog of chocolate and confectionery products, including Sconza brands and bulk assortments for retailers and distributors.",
             "column_3_button": "Browse Wholesale",
-            "column_3_link": "https:\/\/wholesale.sconza.com\/",
+            "column_3_link": "https://wholesale.sconza.com/",
             "column_gap": 30,
             "column_padding": 40,
             "column_background": "#ffffff",
@@ -130,7 +139,7 @@
       "name": "Rich Text",
       "settings": {
         "heading": "A Partner Built on 87 Years of Expertise",
-        "content": "<h3>Four generations of confectionery expertise, scaled for today’s brands and retailers.<\/h3><p><br\/>Sconza is a leading chocolate and confectionery partner, supporting national brands, retailers, and distributors across <strong>contract manufacturing<\/strong>, <strong>private label<\/strong>, and <strong>wholesale<\/strong> programs.<\/p><p>Our vertically integrated capabilities span product development, high-volume production, and distribution—delivering consistency, quality, and scale at every stage.<\/p>",
+        "content": "<h3>Four generations of confectionery expertise, scaled for today’s brands and retailers.</h3><p><br/>Sconza is a leading chocolate and confectionery partner, supporting national brands, retailers, and distributors across <strong>contract manufacturing</strong>, <strong>private label</strong>, and <strong>wholesale</strong> programs.</p><p>Our vertically integrated capabilities span product development, high-volume production, and distribution—delivering consistency, quality, and scale at every stage.</p>",
         "button_text": "",
         "button_url": ""
       }
@@ -141,7 +150,7 @@
       "name": "Rich Text",
       "settings": {
         "heading": "The Nation's Leader in Contract Manufacturing",
-        "content": "<h3>Scale, quality, and speed — backed by four generations of candy-making.<\/h3><p>Sconza Candy Company is a trusted contract manufacturer for retailers and brands nationwide. From chocolate and sugar panning to finished confections, we help you bring great-tasting products to market with reliable capacity, consistent quality, and responsive service.<\/p>",
+        "content": "<h3>Scale, quality, and speed — backed by four generations of candy-making.</h3><p>Sconza Candy Company is a trusted contract manufacturer for retailers and brands nationwide. From chocolate and sugar panning to finished confections, we help you bring great-tasting products to market with reliable capacity, consistent quality, and responsive service.</p>",
         "button_text": "",
         "button_url": ""
       }
@@ -193,7 +202,7 @@
         "subheading": "",
         "button_text": "",
         "button_link": "",
-        "image": "shopify:\/\/shop_images\/FactoryFloor-002.jpg"
+        "image": "shopify://shop_images/FactoryFloor-002.jpg"
       }
     },
     "split_image_text_cRMdBV": {
@@ -202,10 +211,10 @@
         "block_iyYi76": {
           "type": "block",
           "settings": {
-            "image": "shopify:\/\/shop_images\/DCR03249.jpg",
+            "image": "shopify://shop_images/DCR03249.jpg",
             "heading": "CONTRACT MANUFACTURING CAPABILITIES",
             "subheading": "",
-            "content": "<p>Our contract manufacturing capabilities support high-volume confectionery programs for national retailers, specialty brands, and private label partners. With advanced chocolate panning systems, automated production lines, and dedicated quality assurance processes, Sconza delivers consistent, scalable manufacturing for confectionery brands to grow.<br\/><\/p><ul><li>Chocolate, sugar, and specialty panning systems<\/li><li>High-capacity roasting and hot panning<\/li><li>Mogul and deposited confection lines<\/li><li>Nuts, dried & freeze-dried fruits and caramels<\/li><li>On-site liquid chocolate system for continuous production<\/li><\/ul>",
+            "content": "<p>Our contract manufacturing capabilities support high-volume confectionery programs for national retailers, specialty brands, and private label partners. With advanced chocolate panning systems, automated production lines, and dedicated quality assurance processes, Sconza delivers consistent, scalable manufacturing for confectionery brands to grow.<br/></p><ul><li>Chocolate, sugar, and specialty panning systems</li><li>High-capacity roasting and hot panning</li><li>Mogul and deposited confection lines</li><li>Nuts, dried & freeze-dried fruits and caramels</li><li>On-site liquid chocolate system for continuous production</li></ul>",
             "button_text": "",
             "button_link": "",
             "alignment": "left"
@@ -214,10 +223,10 @@
         "block_gwYHUJ": {
           "type": "block",
           "settings": {
-            "image": "shopify:\/\/shop_images\/DSC_1325-si.jpg",
+            "image": "shopify://shop_images/DSC_1325-si.jpg",
             "heading": "Scalable Confectionery Manufacturing",
             "subheading": "",
-            "content": "<p>Our confectionery manufacturing infrastructure is designed to support high-volume production for national retail and private label programs. From initial product launch to large-scale retail distribution, Sconza provides the capacity, quality systems, and operational flexibility required by leading brands.<\/p><ul><li>Multi-shift, high-volume capacity<\/li><li>Seasonal program execution<\/li><li>Retail, club, and specialty channel expertise<\/li><li>Toll to turnkey manufacturing models<\/li><li>National and international distribution support<\/li><\/ul>",
+            "content": "<p>Our confectionery manufacturing infrastructure is designed to support high-volume production for national retail and private label programs. From initial product launch to large-scale retail distribution, Sconza provides the capacity, quality systems, and operational flexibility required by leading brands.</p><ul><li>Multi-shift, high-volume capacity</li><li>Seasonal program execution</li><li>Retail, club, and specialty channel expertise</li><li>Toll to turnkey manufacturing models</li><li>National and international distribution support</li></ul>",
             "button_text": "",
             "button_link": "",
             "alignment": "left"
@@ -244,10 +253,10 @@
         "block_UpJmie": {
           "type": "block",
           "settings": {
-            "image": "shopify:\/\/shop_images\/SconzaAerial-001.jpg",
+            "image": "shopify://shop_images/SconzaAerial-001.jpg",
             "heading": "Contract Manufacturing",
             "subheading": "Custom Confectionery Solutions at Scale",
-            "content": "<p><strong>High-Volume Capacity<\/strong><\/p><p>Our 500,000 square-foot facility is filled with state -of-the-art equipment, including two rail spurs and 1.8 MM pounds of liquid chocolate<br\/>storage.<\/p><p><strong>Fast Turnaround Times<\/strong><\/p><p>With 200 employees working around the clock, we make sure your orders are filled quickly and with expert care.<\/p><p><strong>One-Stop Shop<\/strong><\/p><p>From <strong>chocolate panning<\/strong> and <strong>sugar panning<\/strong> to a wide range of confection formats, we support your program from concept to finished product—helping you get more candy into customers’ hands, faster.<br\/><br\/><\/p>",
+            "content": "<p><strong>High-Volume Capacity</strong></p><p>Our 500,000 square-foot facility is filled with state -of-the-art equipment, including two rail spurs and 1.8 MM pounds of liquid chocolate<br/>storage.</p><p><strong>Fast Turnaround Times</strong></p><p>With 200 employees working around the clock, we make sure your orders are filled quickly and with expert care.</p><p><strong>One-Stop Shop</strong></p><p>From <strong>chocolate panning</strong> and <strong>sugar panning</strong> to a wide range of confection formats, we support your program from concept to finished product—helping you get more candy into customers’ hands, faster.<br/><br/></p>",
             "button_text": "",
             "button_link": "",
             "alignment": "left"
@@ -256,10 +265,10 @@
         "block_eYKGWf": {
           "type": "block",
           "settings": {
-            "image": "shopify:\/\/shop_images\/FactoryFloor-002.jpg",
+            "image": "shopify://shop_images/FactoryFloor-002.jpg",
             "heading": "Confectionary Capabilities",
             "subheading": "Private Label",
-            "content": "<p><strong>Chocolate & Sugar Panned Confections<\/strong><br\/>Layered coatings, premium finishes, scalable production.<\/p><p><strong>Chocolate-Coated Fruits, Nuts & Centers<\/strong><br\/>Almonds, berries, crisped centers, and specialty inclusions.<\/p><p><strong>Seasonal & Everyday Programs<\/strong><br\/>Holiday assortments, limited-time launches, and evergreen favorites.<\/p><p><strong>Custom Formats <\/strong><br\/>Flavor development, format innovation, and retail-ready production.<\/p>",
+            "content": "<p><strong>Chocolate & Sugar Panned Confections</strong><br/>Layered coatings, premium finishes, scalable production.</p><p><strong>Chocolate-Coated Fruits, Nuts & Centers</strong><br/>Almonds, berries, crisped centers, and specialty inclusions.</p><p><strong>Seasonal & Everyday Programs</strong><br/>Holiday assortments, limited-time launches, and evergreen favorites.</p><p><strong>Custom Formats </strong><br/>Flavor development, format innovation, and retail-ready production.</p>",
             "button_text": "",
             "button_link": "",
             "alignment": "left"
@@ -287,7 +296,7 @@
           "type": "ai_gen_block_a8579f7",
           "settings": {
             "title": "Why Leading Brands Partner With Sconza",
-            "description": "<p><br\/>Built to support brands with scale, precision, and long-term partnership.<br\/><br\/><\/p>",
+            "description": "<p><br/>Built to support brands with scale, precision, and long-term partnership.<br/><br/></p>",
             "content_width": 800,
             "text_alignment": "center",
             "spacing": 20,
@@ -317,14 +326,14 @@
           "type": "icon",
           "settings": {
             "title": "500,000 sq. ft. Production Facility",
-            "icon": "shopify:\/\/shop_images\/facility_2.png"
+            "icon": "shopify://shop_images/facility_2.png"
           }
         },
         "icon_VidPMj": {
           "type": "icon",
           "settings": {
             "title": "Multi-Shift, High-Volume Production",
-            "icon": "shopify:\/\/shop_images\/shift.png"
+            "icon": "shopify://shop_images/shift.png"
           }
         },
         "icon_ATMt7R": {
@@ -332,14 +341,14 @@
           "disabled": true,
           "settings": {
             "title": "Manufacturing Since 1939",
-            "icon": "shopify:\/\/shop_images\/1939_2.png"
+            "icon": "shopify://shop_images/1939_2.png"
           }
         },
         "icon_cECXgX": {
           "type": "icon",
           "settings": {
             "title": "National & International Distribution",
-            "icon": "shopify:\/\/shop_images\/distribution.png"
+            "icon": "shopify://shop_images/distribution.png"
           }
         },
         "icon_46zM8e": {
@@ -347,14 +356,14 @@
           "disabled": true,
           "settings": {
             "title": "AA+ BRCGS Certified Manufacturing Facility",
-            "icon": "shopify:\/\/shop_images\/certified_2.png"
+            "icon": "shopify://shop_images/certified_2.png"
           }
         },
         "icon_LJVwqn": {
           "type": "icon",
           "settings": {
             "title": "Innovation & Product Development",
-            "icon": "shopify:\/\/shop_images\/turnkey_2.png"
+            "icon": "shopify://shop_images/turnkey_2.png"
           }
         },
         "icon_y3kqQH": {
@@ -362,7 +371,7 @@
           "disabled": true,
           "settings": {
             "title": "Experience across retail, club, specialty & e-commerce",
-            "icon": "shopify:\/\/shop_images\/Sconza-Icon-Vacations.svg"
+            "icon": "shopify://shop_images/Sconza-Icon-Vacations.svg"
           }
         }
       },
@@ -385,7 +394,7 @@
           "type": "ai_gen_block_a8579f7",
           "settings": {
             "title": "Certified. Audited. Trusted.",
-            "description": "<p>Operating in a BRCGS AA certified facility with rigorous third-party audited food safety and quality systems. Additional certifications include Kosher, Organic, and Fair Trade (as applicable) to support national and international distribution.<\/p>",
+            "description": "<p>Operating in a BRCGS AA certified facility with rigorous third-party audited food safety and quality systems. Additional certifications include Kosher, Organic, and Fair Trade (as applicable) to support national and international distribution.</p>",
             "content_width": 800,
             "text_alignment": "center",
             "spacing": 20,
@@ -414,35 +423,35 @@
         "logo_NxiTTJ": {
           "type": "logo",
           "settings": {
-            "logo": "shopify:\/\/shop_images\/BRCGS_FOOD.png",
+            "logo": "shopify://shop_images/BRCGS_FOOD.png",
             "override_link": ""
           }
         },
         "logo_rcbLgK": {
           "type": "logo",
           "settings": {
-            "logo": "shopify:\/\/shop_images\/OU_KOSHER.png",
+            "logo": "shopify://shop_images/OU_KOSHER.png",
             "override_link": ""
           }
         },
         "logo_kQ4Hqe": {
           "type": "logo",
           "settings": {
-            "logo": "shopify:\/\/shop_images\/QAI_ORGANIC.png",
+            "logo": "shopify://shop_images/QAI_ORGANIC.png",
             "override_link": ""
           }
         },
         "logo_gXcfXi": {
           "type": "logo",
           "settings": {
-            "logo": "shopify:\/\/shop_images\/FAIR_TRADE.png",
+            "logo": "shopify://shop_images/FAIR_TRADE.png",
             "override_link": ""
           }
         },
         "logo_ECf8tP": {
           "type": "logo",
           "settings": {
-            "logo": "shopify:\/\/shop_images\/RSPO.png",
+            "logo": "shopify://shop_images/RSPO.png",
             "override_link": ""
           }
         }
@@ -467,9 +476,9 @@
       "settings": {
         "heading": "Let’s Talk About Your Business",
         "subtitle": "Ready to Build Something Great?",
-        "image": "shopify:\/\/shop_images\/choc-bg.jpg",
+        "image": "shopify://shop_images/choc-bg.jpg",
         "button_text": "Request a Consultation",
-        "button_link": "shopify:\/\/pages\/contact",
+        "button_link": "shopify://pages/contact",
         "alignment": "center"
       }
     }
