@@ -6,7 +6,7 @@
     [product handle="your-product-handle"]
   ==============================================================
 {% endcomment %}
-<p>{{ sc_handle }}</p>
+
 {% assign sc_handle = sc_handle | strip %}
 {% assign sc_product = all_products[sc_handle] %}
 
@@ -72,7 +72,7 @@
   </div>
 
 {% else %}
-  {% comment %} <p>Product not found: {{ sc_handle }}</p> {% endcomment %}
+  <p>Product not found: {{ sc_handle }}</p>
 {% endif %}
 
 <style>
