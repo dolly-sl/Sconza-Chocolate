@@ -148,6 +148,7 @@
         {%- comment -%} 3. Replace each product shortcode {%- endcomment -%}
         {% for tag in article.tags -%}
         {%- endfor -%}
+        {% comment %}dummy loop to allow assign{% endcomment %}
 
         {% assign product_handles = parsed_content | split: '[product handle="' %}
 
@@ -162,8 +163,8 @@
             {% assign after_shortcode = handle_and_rest[1] %}
 
             {%- capture product_html -%}
-  {% render 'shortcode-product', product_handle: sc_handle %}
-{%- endcapture -%}
+        {% render 'shortcode-product', sc_handle: sc_handle %}
+      {%- endcapture -%}
 
             {% assign final_content = final_content | append: product_html | append: after_shortcode %}
           {% endunless %}

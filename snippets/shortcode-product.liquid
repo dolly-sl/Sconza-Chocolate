@@ -8,18 +8,9 @@
 {% endcomment %}
 
 {% assign sc_handle = sc_handle | strip %}
-{% assign product_handle = sc_handle %}
-<p>Handle: {{ product_handle }}</p>
-
-{% assign sc_product = all_products[product_handle] %}
-
-<p>Title: {{ sc_product.title }}</p>
+{% assign sc_product = all_products[sc_handle] %}
 
 {% if sc_product %}
-  <p>{{ sc_handle }}</p>
-  <p>Handle: {{ sc_handle }}</p>
-  <p>Handle: {{ product_handle }}</p>
-  <p>Title: {{ sc_product.title }}</p>
   <div class="sc-product-card">
     {% if sc_product.featured_image %}
       <div class="sc-product-card__image-wrap">
