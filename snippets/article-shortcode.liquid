@@ -2,7 +2,7 @@
 
 {% if section_data != blank %}
   <div class="article-custom-section">
-    {{ section_data }}
+    {{section_data | metafield_tag}}
   </div>
 {% endif %}
 
