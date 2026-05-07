@@ -243,14 +243,14 @@
 document.getElementById('sortBy').addEventListener('change', function () {
   const sort = this.value;
 
-  // Preserve the full current URL including /tagged/... segments
+  
   const url = new URL(window.location.href);
 
-  // Remove stale params
+  
   url.searchParams.delete('sort');
   url.searchParams.delete('page');
 
-  // Only append sort param for non-default option
+  
   if (sort === 'oldest') {
     url.searchParams.set('sort', 'oldest');
   }
