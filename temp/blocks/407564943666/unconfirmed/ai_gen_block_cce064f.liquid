@@ -1,6 +1,623 @@
+{% doc %}
+  @prompt
+    Create a three-column section titled “Explore Partnership Options.”
+    Each column should have an icon, heading, short description, and button link.
+    Column 1
+    Icon: Factory
+    Heading: Contract Manufacturing
+    Description: Full-scale chocolate and confectionery manufacturing for national brands and product developers.
+    Button: Explore Manufacturing
+    Link: /pages/contract-manufacturing
+    Column 2
+    Icon: Price Tag
+    Heading: Private Label Programs
+    Description: Retail-ready chocolate and confectionery assortments developed for private label brands.
+    Button: Explore Private Label
+    Link: /pages/private-label
+    Column 3
+    Icon: Shipping box
+    Heading: Wholesale Distribution
+    Description: Browse our wholesale catalog of chocolate and confectionery products, including Sconza brands and bulk assortments for retailers and distributors.
+    Button: Browse Wholesale
+    Link: /pages/wholesale
+    Use a clean three-column layout suitable for a B2B manufacturing website., Replace the briefcase icon on column 1 with a factory icon
+    
+    
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-partnership-options-{{ ai_gen_id }} {
+    display: block;
+    width: {{ block.settings.desktop_width_percent }}%;
+    max-width: 100%;
+    padding: {{ block.settings.section_padding }}px 20px;
+    background-color: {{ block.settings.background_color }};
+  }
+
+  .ai-partnership-options__container-{{ ai_gen_id }} {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .ai-partnership-options__title-{{ ai_gen_id }} {
+    text-align: {{ block.settings.title_alignment }};
+    font-size: {{ block.settings.title_size }}px;
+    color: {{ block.settings.title_color }};
+    margin: 0 0 {{ block.settings.title_spacing }}px 0;
+  }
+
+  .ai-partnership-options__grid-{{ ai_gen_id }} {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: {{ block.settings.column_gap }}px;
+  }
+
+  .ai-partnership-options__column-{{ ai_gen_id }} {
+    display: flex;
+    flex-direction: column;
+    align-items: {{ block.settings.column_alignment }};
+    text-align: {{ block.settings.column_alignment }};
+    padding: {{ block.settings.column_padding }}px;
+    background-color: {{ block.settings.column_background }};
+    border-radius: {{ block.settings.column_border_radius }}px;
+    border: {{ block.settings.column_border_width }}px solid {{ block.settings.column_border_color }};
+  }
+
+  .ai-partnership-options__icon-{{ ai_gen_id }} {
+    width: {{ block.settings.icon_size }}px;
+    height: {{ block.settings.icon_size }}px;
+    margin-bottom: {{ block.settings.icon_spacing }}px;
+    color: {{ block.settings.icon_color }};
+  }
+
+  .ai-partnership-options__icon-{{ ai_gen_id }} svg {
+    width: 100%;
+    height: 100%;
+    stroke: currentColor;
+    fill: none;
+  }
+
+  .ai-partnership-options__heading-{{ ai_gen_id }} {
+    font-size: {{ block.settings.heading_size }}px;
+    color: {{ block.settings.heading_color }};
+    margin: 0 0 {{ block.settings.heading_spacing }}px 0;
+  }
+
+  .ai-partnership-options__description-{{ ai_gen_id }} {
+    font-size: {{ block.settings.description_size }}px;
+    color: {{ block.settings.description_color }};
+    line-height: 1.6;
+    margin: 0 0 {{ block.settings.description_spacing }}px 0;
+    flex-grow: 1;
+  }
+
+  .ai-partnership-options__button-{{ ai_gen_id }} {
+    display: inline-block;
+    padding: {{ block.settings.button_padding_vertical }}px {{ block.settings.button_padding_horizontal }}px;
+    background-color: {{ block.settings.button_background }};
+    color: {{ block.settings.button_text_color }};
+    text-decoration: none;
+    border-radius: {{ block.settings.button_border_radius }}px;
+    font-size: {{ block.settings.button_font_size }}px;
+    transition: background-color 0.3s ease;
+  }
+
+  .ai-partnership-options__button-{{ ai_gen_id }}:hover {
+    background-color: {{ block.settings.button_hover_background }};
+    color: {{ block.settings.button_hover_text_color }};
+  }
+
+  @media screen and (max-width: 989px) {
+    .ai-partnership-options__grid-{{ ai_gen_id }} {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-partnership-options__grid-{{ ai_gen_id }} {
+      grid-template-columns: 1fr;
+    }
+
+    .ai-partnership-options__title-{{ ai_gen_id }} {
+      font-size: {{ block.settings.title_size | times: 0.8 }}px;
+    }
+  }
+{% endstyle %}
+
+<partnership-options-{{ ai_gen_id }} class="ai-partnership-options-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  <div class="ai-partnership-options__container-{{ ai_gen_id }}">
+    {% if block.settings.section_title != blank %}
+      <h2 class="ai-partnership-options__title-{{ ai_gen_id }}">{{ block.settings.section_title }}</h2>
+    {% endif %}
+
+    <div class="ai-partnership-options__grid-{{ ai_gen_id }}">
+      <div class="ai-partnership-options__column-{{ ai_gen_id }}">
+        <div class="ai-partnership-options__icon-{{ ai_gen_id }}">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="9" width="20" height="11" rx="2"></rect>
+            <path d="M6 9V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v4"></path>
+            <circle cx="8" cy="14" r="1"></circle>
+            <circle cx="16" cy="14" r="1"></circle>
+            <path d="M12 14v3"></path>
+          </svg>
+        </div>
+        <h3 class="ai-partnership-options__heading-{{ ai_gen_id }}">{{ block.settings.column_1_heading }}</h3>
+        <p class="ai-partnership-options__description-{{ ai_gen_id }}">{{ block.settings.column_1_description }}</p>
+        {% if block.settings.column_1_link != blank %}
+          <a href="{{ block.settings.column_1_link }}" class="ai-partnership-options__button-{{ ai_gen_id }}">
+            {{ block.settings.column_1_button_text }}
+          </a>
+        {% endif %}
+      </div>
+
+      <div class="ai-partnership-options__column-{{ ai_gen_id }}">
+        <div class="ai-partnership-options__icon-{{ ai_gen_id }}">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+          </svg>
+        </div>
+        <h3 class="ai-partnership-options__heading-{{ ai_gen_id }}">{{ block.settings.column_2_heading }}</h3>
+        <p class="ai-partnership-options__description-{{ ai_gen_id }}">{{ block.settings.column_2_description }}</p>
+        {% if block.settings.column_2_link != blank %}
+          <a href="{{ block.settings.column_2_link }}" class="ai-partnership-options__button-{{ ai_gen_id }}">
+            {{ block.settings.column_2_button_text }}
+          </a>
+        {% endif %}
+      </div>
+
+      <div class="ai-partnership-options__column-{{ ai_gen_id }}">
+        <div class="ai-partnership-options__icon-{{ ai_gen_id }}">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+            <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+            <line x1="12" y1="22.08" x2="12" y2="12"></line>
+          </svg>
+        </div>
+        <h3 class="ai-partnership-options__heading-{{ ai_gen_id }}">{{ block.settings.column_3_heading }}</h3>
+        <p class="ai-partnership-options__description-{{ ai_gen_id }}">{{ block.settings.column_3_description }}</p>
+        {% if block.settings.column_3_link != blank %}
+          <a href="{{ block.settings.column_3_link }}" class="ai-partnership-options__button-{{ ai_gen_id }}">
+            {{ block.settings.column_3_button_text }}
+          </a>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</partnership-options-{{ ai_gen_id }}>
+
+<script>
+  (function() {
+    class PartnershipOptions{{ ai_gen_id }} extends HTMLElement {
+      constructor() {
+        super();
+      }
+
+      connectedCallback() {
+        this.setupAccessibility();
+      }
+
+      setupAccessibility() {
+        const buttons = this.querySelectorAll('.ai-partnership-options__button-{{ ai_gen_id }}');
+        buttons.forEach(button => {
+          if (!button.getAttribute('aria-label')) {
+            const text = button.textContent.trim();
+            button.setAttribute('aria-label', text);
+          }
+        });
+      }
+    }
+
+    customElements.define('partnership-options-{{ ai_gen_id }}', PartnershipOptions{{ ai_gen_id }});
+  })();
+</script>
+
 {% schema %}
- {
-   "name": "AI_Block",
-   "tag": "shopify-ai-generated-block"
- }
+{
+  "name": "Partnership options",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Section"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "section_title",
+      "label": "Title",
+      "default": "Explore Partnership Options"
+    },
+    {
+      "type": "range",
+      "id": "desktop_width_percent",
+      "label": "Desktop width",
+      "min": 50,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 100
+    },
+    {
+      "type": "range",
+      "id": "section_padding",
+      "label": "Section padding",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "default": 50
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "header",
+      "content": "Title style"
+    },
+    {
+      "type": "range",
+      "id": "title_size",
+      "label": "Size",
+      "min": 16,
+      "max": 60,
+      "step": 2,
+      "unit": "px",
+      "default": 36
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Color",
+      "default": "#1e1c1c"
+    },
+    {
+      "type": "select",
+      "id": "title_alignment",
+      "label": "Alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "range",
+      "id": "title_spacing",
+      "label": "Bottom spacing",
+      "min": 10,
+      "max": 80,
+      "step": 5,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "header",
+      "content": "Column 1"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "column_1_heading",
+      "label": "Heading",
+      "default": "Contract Manufacturing"
+    },
+    {
+      "type": "text",
+      "id": "column_1_description",
+      "label": "Description",
+      "default": "Full-scale chocolate and confectionery manufacturing for national brands and product developers."
+    },
+    {
+      "type": "inline_richtext",
+      "id": "column_1_button_text",
+      "label": "Button text",
+      "default": "Explore Manufacturing"
+    },
+    {
+      "type": "url",
+      "id": "column_1_link",
+      "label": "Link"
+    },
+    {
+      "type": "header",
+      "content": "Column 2"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "column_2_heading",
+      "label": "Heading",
+      "default": "Private Label Programs"
+    },
+    {
+      "type": "text",
+      "id": "column_2_description",
+      "label": "Description",
+      "default": "Retail-ready chocolate and confectionery assortments developed for private label brands."
+    },
+    {
+      "type": "inline_richtext",
+      "id": "column_2_button_text",
+      "label": "Button text",
+      "default": "Explore Private Label"
+    },
+    {
+      "type": "url",
+      "id": "column_2_link",
+      "label": "Link"
+    },
+    {
+      "type": "header",
+      "content": "Column 3"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "column_3_heading",
+      "label": "Heading",
+      "default": "Wholesale Distribution"
+    },
+    {
+      "type": "text",
+      "id": "column_3_description",
+      "label": "Description",
+      "default": "Browse our wholesale catalog of chocolate and confectionery products, including Sconza brands and bulk assortments for retailers and distributors."
+    },
+    {
+      "type": "inline_richtext",
+      "id": "column_3_button_text",
+      "label": "Button text",
+      "default": "Browse Wholesale"
+    },
+    {
+      "type": "url",
+      "id": "column_3_link",
+      "label": "Link"
+    },
+    {
+      "type": "header",
+      "content": "Column style"
+    },
+    {
+      "type": "range",
+      "id": "column_gap",
+      "label": "Gap between columns",
+      "min": 10,
+      "max": 60,
+      "step": 5,
+      "unit": "px",
+      "default": 30
+    },
+    {
+      "type": "range",
+      "id": "column_padding",
+      "label": "Padding",
+      "min": 10,
+      "max": 60,
+      "step": 5,
+      "unit": "px",
+      "default": 30
+    },
+    {
+      "type": "color",
+      "id": "column_background",
+      "label": "Background",
+      "default": "#fefaef"
+    },
+    {
+      "type": "range",
+      "id": "column_border_radius",
+      "label": "Border radius",
+      "min": 0,
+      "max": 30,
+      "step": 2,
+      "unit": "px",
+      "default": 8
+    },
+    {
+      "type": "range",
+      "id": "column_border_width",
+      "label": "Border width",
+      "min": 0,
+      "max": 5,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "color",
+      "id": "column_border_color",
+      "label": "Border color",
+      "default": "#e0e0e0"
+    },
+    {
+      "type": "select",
+      "id": "column_alignment",
+      "label": "Content alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "header",
+      "content": "Icon style"
+    },
+    {
+      "type": "range",
+      "id": "icon_size",
+      "label": "Size",
+      "min": 30,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "default": 50
+    },
+    {
+      "type": "color",
+      "id": "icon_color",
+      "label": "Color",
+      "default": "#1e1c1c"
+    },
+    {
+      "type": "range",
+      "id": "icon_spacing",
+      "label": "Bottom spacing",
+      "min": 10,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "header",
+      "content": "Heading style"
+    },
+    {
+      "type": "range",
+      "id": "heading_size",
+      "label": "Size",
+      "min": 14,
+      "max": 36,
+      "step": 2,
+      "unit": "px",
+      "default": 22
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Color",
+      "default": "#1e1c1c"
+    },
+    {
+      "type": "range",
+      "id": "heading_spacing",
+      "label": "Bottom spacing",
+      "min": 5,
+      "max": 30,
+      "step": 1,
+      "unit": "px",
+      "default": 15
+    },
+    {
+      "type": "header",
+      "content": "Description style"
+    },
+    {
+      "type": "range",
+      "id": "description_size",
+      "label": "Size",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 15
+    },
+    {
+      "type": "color",
+      "id": "description_color",
+      "label": "Color",
+      "default": "#666666"
+    },
+    {
+      "type": "range",
+      "id": "description_spacing",
+      "label": "Bottom spacing",
+      "min": 10,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "header",
+      "content": "Button style"
+    },
+    {
+      "type": "range",
+      "id": "button_font_size",
+      "label": "Font size",
+      "min": 12,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "default": 15
+    },
+    {
+      "type": "range",
+      "id": "button_padding_vertical",
+      "label": "Vertical padding",
+      "min": 5,
+      "max": 25,
+      "step": 1,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "button_padding_horizontal",
+      "label": "Horizontal padding",
+      "min": 10,
+      "max": 50,
+      "step": 2,
+      "unit": "px",
+      "default": 24
+    },
+    {
+      "type": "color",
+      "id": "button_background",
+      "label": "Background",
+      "default": "#1e1c1c"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Text color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "button_hover_background",
+      "label": "Hover background",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "button_hover_text_color",
+      "label": "Hover text color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "button_border_radius",
+      "label": "Border radius",
+      "min": 0,
+      "max": 30,
+      "step": 2,
+      "unit": "px",
+      "default": 4
+    }
+  ],
+  "presets": [
+    {
+      "name": "Partnership options"
+    }
+  ]
+}
 {% endschema %}
