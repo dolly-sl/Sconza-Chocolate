@@ -1,10 +1,18 @@
 {% if blog.tags.size > 0 %}
 
-{%- if request.query_string contains 'sort=oldest' -%}
-  {%- assign sort_query = '?sort=oldest' -%}
-{%- else -%}
-  {%- assign sort_query = '' -%}
-{%- endif -%}
+{%- comment -%}
+  `sort_query` is set by the parent section (blog-list) based on the current URL.
+  Fall back to detecting it here in case this snippet is rendered standalone.
+{%- endcomment -%}
+{%- unless sort_query -%}
+  {%- assign _ch_parts = content_for_header | split: '"pageurl":"' -%}
+  {%- assign _page_url = _ch_parts[1] | default: '' | split: '"' | first | default: '' -%}
+  {%- if _page_url contains 'sort=oldest' -%}
+    {%- assign sort_query = '?sort=oldest' -%}
+  {%- else -%}
+    {%- assign sort_query = '' -%}
+  {%- endif -%}
+{%- endunless -%}
 
 <select
   class="custom-dropdown-select dropdown-select"
