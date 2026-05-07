@@ -9,19 +9,12 @@
 ==============================================================
 {% endcomment %}
 
-{% comment %} ── Get the product handle from shortcode variable ── {% endcomment %}
-{% assign sc_handle = '' %}
-{% if variable %}
-  {% for v in variable %}
-    {% assign sc_handle = sc_handle | strip %}
-    {% assign sc_product = all_products[sc_handle] %}
-  {% endfor %}
-{% endif %}
-
-{% comment %} ── Also support direct handle param ── {% endcomment %}
-{% if sc_handle == blank %}
+{% comment %} ── Resolve the product handle ── {% endcomment %}
+{% comment %} sc_handle is passed directly from article.liquid via: render 'shortcode-product', sc_handle: sc_handle {% endcomment %}
+{% unless sc_handle and sc_handle != blank %}
+  {% comment %} Fallback: support old 'handle' param if used elsewhere {% endcomment %}
   {% assign sc_handle = handle | strip %}
-{% endif %}
+{% endunless %}
 
 {% assign sc_product = all_products[sc_handle] %}
 
