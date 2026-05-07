@@ -145,6 +145,19 @@
         {%- comment -%} 2. Replace [custom_section] {%- endcomment -%}
         {% assign parsed_content = article.content | replace: '[custom_section]', custom_design %}
 
+        {%- comment -%}
+          Normalize quotes so shortcodes authored in the rich text editor (often stored as &quot; or smart quotes)
+          still match the parser below.
+        {%- endcomment -%}
+        {% assign parsed_content = parsed_content
+          | replace: '&quot;', '"'
+          | replace: '&#34;', '"'
+          | replace: '“', '"'
+          | replace: '”', '"'
+          | replace: '‘', "'"
+          | replace: '’', "'"
+        %}
+
         {%- comment -%} 3. Replace each product shortcode {%- endcomment -%}
         {% for tag in article.tags -%}
         {%- endfor -%}
