@@ -593,7 +593,12 @@
     text-overflow: ellipsis;
     max-width: 100%;
   }
-
+  @media (max-width: 768px) {
+    .blog-header h1 {
+      font-size: 35px;
+      line-height: 40px;
+    }
+  }
   @media (max-width: 767px) {
     .blog-header__top {
       flex-direction: column;
