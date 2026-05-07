@@ -10,58 +10,15 @@
 {
   "wrapper": "div.tw-bg-backgroundDark",
   "sections": {
-    "hero_slider_azTcXC": {
-      "type": "heroSlider",
-      "blocks": {
-        "slide_TTFcV7": {
-          "type": "slide",
-          "settings": {
-            "heading": "SWEETS & SNACKS EXPO 2026",
-            "subheading": "May 19 - 21, 2026 | Las Vegas",
-            "content": "",
-            "button_text": "Visit us at Booth 2857",
-            "button_link": "https://sse26.mapyourshow.com/8_0/exhibitor/exhibitor-details.cfm?exhid=19533",
-            "background_color": "#ffffff",
-            "text_black": false,
-            "text_position": "middle_right",
-            "text_position_mobile": "bottom_center",
-            "image": "shopify://shop_images/2026_Sweets_Snacks_3.jpg",
-            "mobile_image": "shopify://shop_images/2026_SSE_2.jpg"
-          }
-        },
-        "slide_hr9NXB": {
-          "type": "slide",
-          "settings": {
-            "heading": "Confectionery Solutions for Every Business",
-            "subheading": "",
-            "content": "From concept to shelf, Sconza partners with brands, retailers, and distributors to bring chocolate and confectionery products to market.",
-            "button_text": "Talk to Our Team",
-            "button_link": "https://wholesale.sconza.com/contact-us/",
-            "background_color": "",
-            "text_black": false,
-            "text_position": "middle_left",
-            "text_position_mobile": "top_center",
-            "image": "shopify://shop_images/BusinessSolutions.jpg",
-            "mobile_image": "shopify://shop_images/BusinessSolutions-mobile.jpg"
-          }
-        }
-      },
-      "block_order": [
-        "slide_TTFcV7",
-        "slide_hr9NXB"
-      ],
-      "name": "Hero Slider",
-      "settings": {}
-    },
     "imageHeroBanner": {
       "type": "imageHeroBanner",
       "disabled": true,
       "settings": {
-        "heading": "For Business",
-        "subtitle": "Where Great Candy Meets Great Partnerships",
-        "image": "shopify://shop_images/FactoryFloor-001.jpg",
-        "button_text": "Contact Us",
-        "button_link": "shopify://pages/contact",
+        "heading": "Love comes through in all we do.",
+        "subtitle": "About US",
+        "image": "shopify://shop_images/About.jpg",
+        "button_text": "",
+        "button_link": "",
         "alignment": "left"
       }
     },
@@ -69,164 +26,223 @@
       "type": "tagline",
       "disabled": true,
       "settings": {
-        "tagline": "Trusted Since 1939 | Four Generations of Candy Makers"
+        "tagline": "Crafting Bites of Joy for 85 Years"
       }
     },
-    "17762737296afa4820": {
-      "type": "_blocks",
+    "split_image_text_DfbHJB": {
+      "type": "splitImageText",
       "blocks": {
-        "ai_gen_block_ac52d2a_9gMyLN": {
-          "type": "ai_gen_block_ac52d2a",
+        "images_7LNQak": {
+          "type": "images",
           "settings": {
-            "section_title": "Explore Partnership Options",
-            "desktop_width_percent": 100,
-            "section_padding": 60,
-            "background_color": "#ffffff",
-            "title_size": 36,
-            "title_color": "#1e1c1c",
-            "title_alignment": "center",
-            "title_spacing": 40,
-            "column_1_heading": "Contract Manufacturing",
-            "column_1_description": "Full-scale chocolate and confectionery manufacturing for national brands and growing product companies.",
-            "column_1_button": "Explore Manufacturing",
-            "column_1_link": "shopify://pages/contract-manufacturing",
-            "column_2_heading": "Private Label Programs",
-            "column_2_description": "Retail-ready chocolate and confectionery assortments developed for private label brands and retailers.",
-            "column_2_button": "Explore Private Label",
-            "column_2_link": "shopify://pages/private-label",
-            "column_3_heading": "Wholesale Distribution",
-            "column_3_description": "Browse our wholesale catalog of chocolate and confectionery products, including Sconza brands and bulk assortments for retailers and distributors.",
-            "column_3_button": "Browse Wholesale",
-            "column_3_link": "https://wholesale.sconza.com/",
-            "column_gap": 30,
-            "column_padding": 40,
-            "column_background": "#ffffff",
-            "column_border_color": "#e5e5e5",
-            "column_border_width": 1,
-            "column_border_radius": 8,
-            "column_alignment": "center",
-            "icon_size": 50,
-            "icon_color": "#1e1c1c",
-            "icon_spacing": 20,
-            "heading_size": 22,
-            "heading_color": "#1e1c1c",
-            "heading_spacing": 15,
-            "description_size": 15,
-            "description_color": "#666666",
-            "description_spacing": 25,
-            "button_font_size": 15,
-            "button_padding_vertical": 12,
-            "button_padding_horizontal": 25,
-            "button_background": "#1e1c1c",
-            "button_text_color": "#ffffff",
-            "button_border_color": "#1e1c1c",
-            "button_border_width": 0,
-            "button_border_radius": 4,
-            "button_hover_background": "#000000",
-            "button_hover_text_color": "#ffffff",
-            "button_hover_border_color": "#000000"
-          },
-          "blocks": {}
+            "image": "shopify://shop_images/Sweets_Snacks_2024_71ea5424-fc84-4c89-aeef-3ffd0330842d.png"
+          }
         }
       },
       "block_order": [
-        "ai_gen_block_ac52d2a_9gMyLN"
+        "images_7LNQak"
       ],
-      "settings": {}
-    },
-    "plain_text_MHxaTc": {
-      "type": "richText",
-      "name": "Rich Text",
       "settings": {
-        "heading": "A Partner Built on 87 Years of Expertise",
-        "content": "<h3>Four generations of confectionery expertise, scaled for today’s brands and retailers.</h3><p><br/>Sconza is a leading chocolate and confectionery partner, supporting national brands, retailers, and distributors across <strong>contract manufacturing</strong>, <strong>private label</strong>, and <strong>wholesale</strong> programs.</p><p>Our vertically integrated capabilities span product development, high-volume production, and distribution—delivering consistency, quality, and scale at every stage.</p>",
+        "heading": "We love crafting flavors.",
+        "subheading": "From our family to yours for 87 years.",
+        "content": "Now in our fourth generation, we've been pushing the boundaries of what's possible in the world of confections, one Bite of Joy at a time. Small batch crafted using premium ingredients, the care we put into our craft comes through in every bite. As a family-run organization, it's an honor to be a part of the joyous memories made around our confections for 87 years.",
         "button_text": "",
-        "button_url": ""
+        "button_link": "",
+        "alignment": "left"
       }
     },
-    "rich_text_JPQgMA": {
-      "type": "richText",
-      "disabled": true,
-      "name": "Rich Text",
+    "timeline_cJbqqa": {
+      "type": "timeline",
+      "blocks": {
+        "slide_F9Ubtf": {
+          "type": "slide",
+          "settings": {
+            "date": "1922",
+            "title": "From Italy With A Dream",
+            "content": "In 1922, 17-year-old Vincenzo Sconza arrives at Ellis Island from Italy with just $20 and a dream. He settles in Oakland and begins working in a pasta factory—determined to one day become a candy maker.",
+            "image": "shopify://shop_images/Sconza1922.png"
+          }
+        },
+        "slide_cAyxGM": {
+          "type": "slide",
+          "settings": {
+            "date": "1939",
+            "title": "The Candy Kitchen Begins",
+            "content": "Vincenzo and his wife Maria begin making candy in their family kitchen at night. Their homemade peanut brittle quickly becomes popular in local dime stores, giving Vincenzo the confidence to leave his day job and launch Sconza Candy.",
+            "image": "shopify://shop_images/Sconza1939.png"
+          }
+        },
+        "slide_3w8TAb": {
+          "type": "slide",
+          "settings": {
+            "date": "1948",
+            "title": "The Dream Expands",
+            "content": "As demand for Sconza candies grows, the small kitchen operation expands into a thriving family business. Vincenzo continues developing new recipes, building a loyal following throughout the Bay Area.",
+            "image": "shopify://shop_images/Sconza1948.png"
+          }
+        },
+        "slide_iei9jw": {
+          "type": "slide",
+          "settings": {
+            "date": "1960",
+            "title": "A New Generation of Innovation",
+            "content": "Vincenzo’s son Jim joins the family business in Oakland, helping grow Sconza Candy beyond its early roots. His ideas and energy expand the company’s offerings and lay the foundation for decades of innovation.",
+            "image": "shopify://shop_images/Sconza1960.png"
+          }
+        },
+        "slide_Thg637": {
+          "type": "slide",
+          "settings": {
+            "date": "1990",
+            "title": "Expanding the Brand",
+            "content": "Sconza Candy begins expanding beyond its Bay Area roots, introducing new products and building relationships with retailers across the country. Trade shows and new packaging help bring Sconza confections to a wider audience.",
+            "image": "shopify://shop_images/Sconza1990.png"
+          }
+        },
+        "slide_e44nTc": {
+          "type": "slide",
+          "settings": {
+            "date": "2008",
+            "title": "Moving to Oakdale",
+            "content": "As the company grows, Sconza moves operations to a larger facility in Oakdale, California. With the third generation — Ron and Janet — now deeply involved in the business alongside Jim and Carolyn, the move marks an exciting new chapter for the family company.",
+            "image": "shopify://shop_images/Sconza2008-2.png"
+          }
+        },
+        "slide_XbGAyn": {
+          "type": "slide",
+          "settings": {
+            "date": "2010",
+            "title": "The Birth of a Fan Favorite",
+            "content": "Inspired by the lemon groves of Sorrento, Italy, Sconza creates Lemoncello Chocolate Almonds to celebrate the 50th wedding anniversary of Jim and Carolyn Sconza. The bright citrus flavor quickly becomes one of the company’s most beloved confections.",
+            "image": "shopify://shop_images/Sconza2010.png"
+          }
+        },
+        "slide_eTNcNG": {
+          "type": "slide",
+          "settings": {
+            "date": "2021",
+            "title": "A New Chapter of Growth",
+            "content": "In 2021, President & CEO Ron Sconza leads the company into a new chapter, building on its family legacy while guiding Sconza into its next phase of innovation and growth.",
+            "image": "shopify://shop_images/Sconza2021.png"
+          }
+        },
+        "slide_QNKVnj": {
+          "type": "slide",
+          "settings": {
+            "date": "2024",
+            "title": "85 Years of Bites of Joy",
+            "content": "Sconza celebrates 85 years of confectionery craftsmanship and introduces a refreshed brand identity, honoring its heritage while looking ahead to the future.",
+            "image": "shopify://shop_images/Sconza2024.png"
+          }
+        },
+        "slide_G3niEy": {
+          "type": "slide",
+          "settings": {
+            "date": "2025",
+            "title": "The Fourth Generation",
+            "content": "Max Sconza joins the family business, continuing a tradition of confectionery craftsmanship that began with Vincenzo more than eight decades earlier.",
+            "image": "shopify://shop_images/Sconza2025.png"
+          }
+        }
+      },
+      "block_order": [
+        "slide_F9Ubtf",
+        "slide_cAyxGM",
+        "slide_3w8TAb",
+        "slide_iei9jw",
+        "slide_Thg637",
+        "slide_e44nTc",
+        "slide_XbGAyn",
+        "slide_eTNcNG",
+        "slide_QNKVnj",
+        "slide_G3niEy"
+      ],
       "settings": {
-        "heading": "The Nation's Leader in Contract Manufacturing",
-        "content": "<h3>Scale, quality, and speed — backed by four generations of candy-making.</h3><p>Sconza Candy Company is a trusted contract manufacturer for retailers and brands nationwide. From chocolate and sugar panning to finished confections, we help you bring great-tasting products to market with reliable capacity, consistent quality, and responsive service.</p>",
-        "button_text": "",
-        "button_url": ""
+        "heading": "Bites of Joy",
+        "subheading": "Four Generations of Confectionery Craftsmanship Since 1939"
       }
     },
-    "image_callouts_MVMJgz": {
+    "video_cta_kPaXff": {
+      "type": "videoCTA",
+      "settings": {
+        "heading": "A Life's Passion",
+        "subheading": "The Sconza Story",
+        "button_text": "Play Video",
+        "video_link": "https://www.youtube.com/watch?v=8xNTkgoDRKk&t=5s",
+        "video_file": "shopify://files/videos/Evolution of Sconza final video.mp4",
+        "image": "shopify://shop_images/choc-bg.jpg"
+      }
+    },
+    "image_callouts_xQRnbd": {
       "type": "imageCallouts",
       "blocks": {
-        "callout_left_rwXGq8": {
+        "callout_left_3gRXCj": {
           "type": "callout_left",
           "settings": {
-            "heading": "Panning & Coating Expertise",
-            "content": "Chocolate, sugar, and specialty finishes across a broad range of centers for high-volume retail programs."
+            "heading": "No high fructose corn syrup",
+            "content": "Free from additives that offer no essential nutrients"
           }
         },
-        "callout_left_RJ4EbX": {
+        "callout_left_wQEzgE": {
           "type": "callout_left",
           "settings": {
-            "heading": "Innovative Centers",
-            "content": "Nuts, dried and freeze-dried fruits, caramels, and pretzels."
+            "heading": "No artificial FLAVORS",
+            "content": "Real, clean taste that you and your family can enjoy anytime"
           }
         },
-        "callout_right_NFXkpK": {
+        "callout_right_wnqwhp": {
           "type": "callout_right",
           "settings": {
-            "heading": "Seasonal & Everyday Programs",
-            "content": "Limited-time launches and evergreen assortments.",
+            "heading": "No artificial colors",
+            "content": "No added chemicals or dyes just pure ingredients",
             "line_length": 80
           }
         },
-        "callout_right_abp88T": {
+        "callout_right_LX6njm": {
           "type": "callout_right",
           "settings": {
-            "heading": "Flexible Production Models",
-            "content": "Toll to turnkey production models.",
+            "heading": "Real, premium ingredients",
+            "content": "All natural snacks to keep you healthy and happy",
             "line_length": 80
           }
         }
       },
       "block_order": [
-        "callout_left_rwXGq8",
-        "callout_left_RJ4EbX",
-        "callout_right_NFXkpK",
-        "callout_right_abp88T"
+        "callout_left_3gRXCj",
+        "callout_left_wQEzgE",
+        "callout_right_wnqwhp",
+        "callout_right_LX6njm"
       ],
-      "disabled": true,
-      "name": "Image with Callouts",
       "settings": {
-        "heading": "END-TO-END CONFECTIONERY MANUFACTURING",
+        "heading": "",
         "subheading": "",
         "button_text": "",
         "button_link": "",
-        "image": "shopify://shop_images/FactoryFloor-002.jpg"
+        "image": "shopify://shop_images/Crunchy_Toffee_Individual_Pieces_-_Transparent_de58a549-cc83-4715-bb58-e86feeb10a95.png"
       }
     },
     "split_image_text_cRMdBV": {
       "type": "splitImageText",
       "blocks": {
-        "block_iyYi76": {
+        "block_hDRGYP": {
           "type": "block",
           "settings": {
-            "image": "shopify://shop_images/DCR03249.jpg",
-            "heading": "CONTRACT MANUFACTURING CAPABILITIES",
-            "subheading": "",
-            "content": "<p>Our contract manufacturing capabilities support high-volume confectionery programs for national retailers, specialty brands, and private label partners. With advanced chocolate panning systems, automated production lines, and dedicated quality assurance processes, Sconza delivers consistent, scalable manufacturing for confectionery brands to grow.<br/></p><ul><li>Chocolate, sugar, and specialty panning systems</li><li>High-capacity roasting and hot panning</li><li>Mogul and deposited confection lines</li><li>Nuts, dried & freeze-dried fruits and caramels</li><li>On-site liquid chocolate system for continuous production</li></ul>",
+            "image": "shopify://shop_images/About-Ingredients.png",
+            "heading": "Minimizing our impact on precious Natural Resources",
+            "subheading": "Sustainable Practices",
+            "content": "<p>In everything we do, we try to minimize our impact on the Earth. We locally source ingredients and our clean water discharge program contributes recycled water for local crop irrigation, crucial in drought-prone California. We recycle plastics and corrugated materials, follow clean air emissions standards, and are committed to continuous improvement of our sustainability practices. Many of our suppliers are neighbors, creating a community of food lovers dedicated to high-quality produce and land stewardship.</p>",
             "button_text": "",
             "button_link": "",
             "alignment": "left"
           }
         },
-        "block_gwYHUJ": {
+        "block_HRa8iw": {
           "type": "block",
           "settings": {
-            "image": "shopify://shop_images/DSC_1325-si.jpg",
-            "heading": "Scalable Confectionery Manufacturing",
-            "subheading": "",
-            "content": "<p>Our confectionery manufacturing infrastructure is designed to support high-volume production for national retail and private label programs. From initial product launch to large-scale retail distribution, Sconza provides the capacity, quality systems, and operational flexibility required by leading brands.</p><ul><li>Multi-shift, high-volume capacity</li><li>Seasonal program execution</li><li>Retail, club, and specialty channel expertise</li><li>Toll to turnkey manufacturing models</li><li>National and international distribution support</li></ul>",
+            "image": "shopify://shop_images/about-guardian-house.png",
+            "heading": "Children’s Guardian House",
+            "subheading": "Give Back",
+            "content": "<p>Sconza Chocolates is honored to support the Children's Guardian House, which protects abused and neglected children in our local communities. Our company and team donate time, funds, and supplies to maintain and improve the Guardian House, established in 2022 to help at-risk kids heal and overcome traumatic family events. At Guardian House, children receive nurturing care, fun learning activities, delicious meals, fresh clothing, and individualized attention.</p>",
             "button_text": "",
             "button_link": "",
             "alignment": "left"
@@ -234,10 +250,9 @@
         }
       },
       "block_order": [
-        "block_iyYi76",
-        "block_gwYHUJ"
+        "block_hDRGYP",
+        "block_HRa8iw"
       ],
-      "disabled": true,
       "settings": {
         "heading": "",
         "subheading": "",
@@ -247,256 +262,25 @@
         "alignment": "center"
       }
     },
-    "split_image_text_Fa4Y8b": {
-      "type": "splitImageText",
-      "blocks": {
-        "block_UpJmie": {
-          "type": "block",
-          "settings": {
-            "image": "shopify://shop_images/SconzaAerial-001.jpg",
-            "heading": "Contract Manufacturing",
-            "subheading": "Custom Confectionery Solutions at Scale",
-            "content": "<p><strong>High-Volume Capacity</strong></p><p>Our 500,000 square-foot facility is filled with state -of-the-art equipment, including two rail spurs and 1.8 MM pounds of liquid chocolate<br/>storage.</p><p><strong>Fast Turnaround Times</strong></p><p>With 200 employees working around the clock, we make sure your orders are filled quickly and with expert care.</p><p><strong>One-Stop Shop</strong></p><p>From <strong>chocolate panning</strong> and <strong>sugar panning</strong> to a wide range of confection formats, we support your program from concept to finished product—helping you get more candy into customers’ hands, faster.<br/><br/></p>",
-            "button_text": "",
-            "button_link": "",
-            "alignment": "left"
-          }
-        },
-        "block_eYKGWf": {
-          "type": "block",
-          "settings": {
-            "image": "shopify://shop_images/FactoryFloor-002.jpg",
-            "heading": "Confectionary Capabilities",
-            "subheading": "Private Label",
-            "content": "<p><strong>Chocolate & Sugar Panned Confections</strong><br/>Layered coatings, premium finishes, scalable production.</p><p><strong>Chocolate-Coated Fruits, Nuts & Centers</strong><br/>Almonds, berries, crisped centers, and specialty inclusions.</p><p><strong>Seasonal & Everyday Programs</strong><br/>Holiday assortments, limited-time launches, and evergreen favorites.</p><p><strong>Custom Formats </strong><br/>Flavor development, format innovation, and retail-ready production.</p>",
-            "button_text": "",
-            "button_link": "",
-            "alignment": "left"
-          }
-        }
-      },
-      "block_order": [
-        "block_UpJmie",
-        "block_eYKGWf"
-      ],
+    "collections_carousel_Dz6iMa": {
+      "type": "collectionsCarousel",
       "disabled": true,
       "settings": {
-        "heading": "",
+        "heading": "Shop Sweet Finds",
         "subheading": "",
-        "content": "",
-        "button_text": "",
-        "button_link": "",
-        "alignment": "center"
-      }
-    },
-    "blocks_mdzijF": {
-      "type": "_blocks",
-      "blocks": {
-        "ai_gen_block_a8579f7_RqtBgq": {
-          "type": "ai_gen_block_a8579f7",
-          "settings": {
-            "title": "Why Leading Brands Partner With Sconza",
-            "description": "<p><br/>Built to support brands with scale, precision, and long-term partnership.<br/><br/></p>",
-            "content_width": 800,
-            "text_alignment": "center",
-            "spacing": 20,
-            "background_color": "#fffdf8",
-            "title_color": "#1e1c1c",
-            "description_color": "#1e1c1c",
-            "link_color": "#1e1c1c",
-            "title_size": 32,
-            "description_size": 16,
-            "padding_top": 70,
-            "padding_bottom": 0,
-            "padding_horizontal": 20
-          },
-          "blocks": {}
-        }
-      },
-      "block_order": [
-        "ai_gen_block_a8579f7_RqtBgq"
-      ],
-      "name": "Title and text",
-      "settings": {}
-    },
-    "icons_Xti7Dy": {
-      "type": "icons",
-      "blocks": {
-        "icon_jp7iT8": {
-          "type": "icon",
-          "settings": {
-            "title": "500,000 sq. ft. Production Facility",
-            "icon": "shopify://shop_images/facility_2.png"
-          }
-        },
-        "icon_VidPMj": {
-          "type": "icon",
-          "settings": {
-            "title": "Multi-Shift, High-Volume Production",
-            "icon": "shopify://shop_images/shift.png"
-          }
-        },
-        "icon_ATMt7R": {
-          "type": "icon",
-          "disabled": true,
-          "settings": {
-            "title": "Manufacturing Since 1939",
-            "icon": "shopify://shop_images/1939_2.png"
-          }
-        },
-        "icon_cECXgX": {
-          "type": "icon",
-          "settings": {
-            "title": "National & International Distribution",
-            "icon": "shopify://shop_images/distribution.png"
-          }
-        },
-        "icon_46zM8e": {
-          "type": "icon",
-          "disabled": true,
-          "settings": {
-            "title": "AA+ BRCGS Certified Manufacturing Facility",
-            "icon": "shopify://shop_images/certified_2.png"
-          }
-        },
-        "icon_LJVwqn": {
-          "type": "icon",
-          "settings": {
-            "title": "Innovation & Product Development",
-            "icon": "shopify://shop_images/turnkey_2.png"
-          }
-        },
-        "icon_y3kqQH": {
-          "type": "icon",
-          "disabled": true,
-          "settings": {
-            "title": "Experience across retail, club, specialty & e-commerce",
-            "icon": "shopify://shop_images/Sconza-Icon-Vacations.svg"
-          }
-        }
-      },
-      "block_order": [
-        "icon_jp7iT8",
-        "icon_VidPMj",
-        "icon_ATMt7R",
-        "icon_cECXgX",
-        "icon_46zM8e",
-        "icon_LJVwqn",
-        "icon_y3kqQH"
-      ],
-      "name": "Icons",
-      "settings": {}
-    },
-    "blocks_kG38NU": {
-      "type": "_blocks",
-      "blocks": {
-        "ai_gen_block_a8579f7_N8YWKh": {
-          "type": "ai_gen_block_a8579f7",
-          "settings": {
-            "title": "Certified. Audited. Trusted.",
-            "description": "<p>Operating in a BRCGS AA certified facility with rigorous third-party audited food safety and quality systems. Additional certifications include Kosher, Organic, and Fair Trade (as applicable) to support national and international distribution.</p>",
-            "content_width": 800,
-            "text_alignment": "center",
-            "spacing": 20,
-            "background_color": "#fffdf8",
-            "title_color": "#1e1c1c",
-            "description_color": "#1e1c1c",
-            "link_color": "#1e1c1c",
-            "title_size": 32,
-            "description_size": 16,
-            "padding_top": 40,
-            "padding_bottom": 40,
-            "padding_horizontal": 20
-          },
-          "blocks": {}
-        }
-      },
-      "block_order": [
-        "ai_gen_block_a8579f7_N8YWKh"
-      ],
-      "name": "Title and text",
-      "settings": {}
-    },
-    "logo_carousel_rtqJbf": {
-      "type": "logoCarousel",
-      "blocks": {
-        "logo_NxiTTJ": {
-          "type": "logo",
-          "settings": {
-            "logo": "shopify://shop_images/BRCGS_FOOD.png",
-            "override_link": ""
-          }
-        },
-        "logo_rcbLgK": {
-          "type": "logo",
-          "settings": {
-            "logo": "shopify://shop_images/OU_KOSHER.png",
-            "override_link": ""
-          }
-        },
-        "logo_kQ4Hqe": {
-          "type": "logo",
-          "settings": {
-            "logo": "shopify://shop_images/QAI_ORGANIC.png",
-            "override_link": ""
-          }
-        },
-        "logo_gXcfXi": {
-          "type": "logo",
-          "settings": {
-            "logo": "shopify://shop_images/FAIR_TRADE.png",
-            "override_link": ""
-          }
-        },
-        "logo_ECf8tP": {
-          "type": "logo",
-          "settings": {
-            "logo": "shopify://shop_images/RSPO.png",
-            "override_link": ""
-          }
-        }
-      },
-      "block_order": [
-        "logo_NxiTTJ",
-        "logo_rcbLgK",
-        "logo_kQ4Hqe",
-        "logo_gXcfXi",
-        "logo_ECf8tP"
-      ],
-      "name": "Logo Carousel",
-      "settings": {
-        "heading": "",
-        "content": "",
-        "master_link": ""
-      }
-    },
-    "image_hero_banner_DWGdza": {
-      "type": "imageHeroBanner",
-      "name": "Image Hero Banner",
-      "settings": {
-        "heading": "Let’s Talk About Your Business",
-        "subtitle": "Ready to Build Something Great?",
-        "image": "shopify://shop_images/choc-bg.jpg",
-        "button_text": "Request a Consultation",
-        "button_link": "shopify://pages/contact",
-        "alignment": "center"
+        "collections": [],
+        "shop_all_link": ""
       }
     }
   },
   "order": [
-    "hero_slider_azTcXC",
     "imageHeroBanner",
     "tagline_4CefMg",
-    "17762737296afa4820",
-    "plain_text_MHxaTc",
-    "rich_text_JPQgMA",
-    "image_callouts_MVMJgz",
+    "split_image_text_DfbHJB",
+    "timeline_cJbqqa",
+    "video_cta_kPaXff",
+    "image_callouts_xQRnbd",
     "split_image_text_cRMdBV",
-    "split_image_text_Fa4Y8b",
-    "blocks_mdzijF",
-    "icons_Xti7Dy",
-    "blocks_kG38NU",
-    "logo_carousel_rtqJbf",
-    "image_hero_banner_DWGdza"
+    "collections_carousel_Dz6iMa"
   ]
 }
