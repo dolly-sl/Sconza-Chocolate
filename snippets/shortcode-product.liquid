@@ -41,6 +41,9 @@
     {% endif %}
 
     <div class="sc-product-card__body">
+      <div class="sc-product-card__debug" style="display:none;">
+        handle={{ sc_handle }} | title={{ sc_product.title }} | price={{ sc_variant.price }} | url={{ sc_product.url }}
+      </div>
       <a href="{{ sc_product.url }}" class="sc-product-card__title">
         {{ sc_product.title | default: sc_handle }}
       </a>
@@ -70,6 +73,20 @@
 {% endif %}
 
 <style>
+  /* Ensure we can see text even if global styles override */
+  .sc-product-card__body,
+  .sc-product-card__title,
+  .sc-product-card__price,
+  .sc-product-card__price-current,
+  .sc-product-card__price-compare {
+    color: #1e1c1c !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+  .sc-product-card__title,
+  .sc-product-card__price {
+    display: block !important;
+  }
   /* ── Product Card ─────────────────────────────────────── */
   .sc-product-card {
     display: flex;
