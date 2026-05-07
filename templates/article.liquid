@@ -137,40 +137,23 @@
         ════════════════════════════════════════
       {% endcomment %}
       <div class="article__content">
-        {%- comment -%} 1. Capture custom_section design {%- endcomment -%}
-        {%- capture custom_design -%}
-          {% render 'article-shortcode' %}
-        {%- endcapture -%}
+        {% assign content = article.content %}
 
-        {%- comment -%} 2. Replace [custom_section] {%- endcomment -%}
-        {% assign parsed_content = article.content | replace: '[custom_section]', custom_design %}
+        {% assign parts = content | split: '[product handle="' %}
 
-        {%- comment -%} 3. Replace each product shortcode {%- endcomment -%}
-        {% for tag in article.tags -%}
-        {%- endfor -%}
-        
+        {{ parts[0] }}
 
-        {% assign product_handles = parsed_content | split: '[product handle="' %}
+        {% for part in parts offset: 1 %}
+          {% assign product_data = part | split: '"]' %}
 
-        {% assign final_content = product_handles[0] %}
+          {% assign product_handle = product_data[0] %}
 
-        {% for chunk in product_handles %}
-          {% unless forloop.first %}
-            {% assign handle_and_rest = chunk | split: '"]' %}
+          {% assign remaining_content = product_data[1] %}
 
-            {% assign sc_handle = handle_and_rest[0] | strip %}
+          {% render 'shortcode-product', product_handle: product_handle %}
 
-            {% assign after_shortcode = handle_and_rest[1] %}
-
-            {%- capture product_html -%}
-        {% render 'shortcode-product', sc_handle: sc_handle %}
-      {%- endcapture -%}
-
-            {% assign final_content = final_content | append: product_html | append: after_shortcode %}
-          {% endunless %}
+          {{ remaining_content }}
         {% endfor %}
-
-        {{ final_content }}
       </div>
 
       {% comment %}
