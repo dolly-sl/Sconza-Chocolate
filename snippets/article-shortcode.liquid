@@ -1,17 +1,15 @@
-{% assign section_data = article.metafields.custom.article_section %}
+{% assign section_data = article.metafields.custom.custom_section_data %}
 
 {% if section_data != blank %}
   <div class="article-custom-section">
-    {{ section_data }}
+    {{section_data | metafield_tag}}
   </div>
 {% endif %}
 
 <style>
   .article-custom-section {
-    background: #F5F3EF;
-    border-left: 4px solid #1A1B1B;
-    border-radius: 4px;
-    padding: 24px 28px;
+    background: #FFFCF3;
+    padding: 40px 43px;
     margin: 30px 0;
   }
   .article-custom-section h2,
