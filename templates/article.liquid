@@ -175,16 +175,16 @@
           {% endif %}
 
           {% comment %} Tags Row {% endcomment %}
-        {% if article.tags.size > 0 %}
-          <div class="article__footer-tags">
-            <span class="article__footer-tags__label">Tags:</span>
-            {% for tag in article.tags %}
-              <a href="{{ blog.url }}/tagged/{{ tag | handleize }}" class="article__footer-tag">
-                {{ tag }}
-              </a>
-            {% endfor %}
-          </div>
-        {% endif %}
+          {% if article.tags.size > 0 %}
+            <div class="article__footer-tags">
+              <span class="article__footer-tags__label">Tags:</span>
+              {% for tag in article.tags %}
+                <a href="{{ blog.url }}/tagged/{{ tag | handleize }}" class="article__footer-tag">
+                  {{ tag }}
+                </a>
+              {% endfor %}
+            </div>
+          {% endif %}
 
           {% comment %} Next Article {% endcomment %}
           {% if blog.next_article %}
