@@ -58,15 +58,15 @@
 
       {%- paginate blog.articles by section.settings.posts_per_page -%}
 
-        {% assign articles_to_show = blog.articles %}
-
         {% if request.query_string contains 'sort=oldest' %}
-          {% assign articles_to_show = blog.articles | reverse %}
+          {% for article in blog.articles reversed %}
+            {% render 'default-article', data: article %}
+          {% endfor %}
+        {% else %}
+          {% for article in blog.articles %}
+            {% render 'default-article', data: article %}
+          {% endfor %}
         {% endif %}
-
-        {% for article in articles_to_show %}
-          {% render 'default-article', data: article %}
-        {% endfor %}
 
         <div class="d-flex justify-between blog__toolbar  md:tw-m-0 tw-mx-10">
           <div class="page-count d-flex align-center">
