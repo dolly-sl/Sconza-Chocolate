@@ -249,25 +249,62 @@
 
 <script>
 (function () {
+  var url = new URL(window.location.href);
+  var isOldest = url.searchParams.get('sort') === 'oldest';
+
+  // 1) Reflect current sort in the dropdown (in case Liquid SSR detection failed).
   var sortByEl = document.getElementById('sortBy');
-  if (!sortByEl) return;
+  if (sortByEl) {
+    sortByEl.value = isOldest ? 'oldest' : 'newest';
+  }
 
-  // Stop the global `.blog__tags select` change handler (in the theme bundle)
-  // from treating our sort value ("newest"/"oldest") as a navigation URL.
-  sortByEl.addEventListener('change', function (e) {
-    e.stopImmediatePropagation();
-
-    var sort = this.value;
-    var url = new URL(window.location.href);
-    url.searchParams.delete('sort');
-    url.searchParams.delete('page');
-
-    if (sort === 'oldest') {
-      url.searchParams.set('sort', 'oldest');
+  // 2) Reverse the article list in-place when oldest-first is requested.
+  //    Articles are always rendered newest-first by Liquid; JS handles the flip.
+  if (isOldest) {
+    var list = document.getElementById('blog__articles-list');
+    if (list) {
+      var nodes = Array.prototype.slice.call(list.children);
+      for (var i = nodes.length - 1; i >= 0; i--) {
+        list.appendChild(nodes[i]);
+      }
     }
+  }
 
-    window.location.href = url.toString();
-  }, true);
+  // 3) Make every category dropdown option preserve the current sort param
+  //    so switching tag/category keeps the chosen sort.
+  var categorySelects = document.querySelectorAll('.blog__tags select');
+  Array.prototype.forEach.call(categorySelects, function (sel) {
+    if (sel.id === 'sortBy') return;
+    Array.prototype.forEach.call(sel.options, function (opt) {
+      if (!opt.value) return;
+      try {
+        var optUrl = new URL(opt.value, window.location.origin);
+        optUrl.searchParams.delete('sort');
+        if (isOldest) optUrl.searchParams.set('sort', 'oldest');
+        opt.value = optUrl.pathname + optUrl.search;
+      } catch (err) { /* ignore non-URL values */ }
+    });
+  });
+
+  // 4) Sort dropdown change handler — navigate with updated query string.
+  //    `capture: true` + stopImmediatePropagation prevents the global
+  //    `.blog__tags select` jQuery handler (theme bundle) from hijacking it.
+  if (sortByEl) {
+    sortByEl.addEventListener('change', function (e) {
+      e.stopImmediatePropagation();
+
+      var sort = this.value;
+      var nextUrl = new URL(window.location.href);
+      nextUrl.searchParams.delete('sort');
+      nextUrl.searchParams.delete('page');
+
+      if (sort === 'oldest') {
+        nextUrl.searchParams.set('sort', 'oldest');
+      }
+
+      window.location.href = nextUrl.toString();
+    }, true);
+  }
 })();
 </script>
 {% schema %}
