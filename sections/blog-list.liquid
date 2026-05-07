@@ -241,22 +241,22 @@
 
 <script>
 document.getElementById('sortBy').addEventListener('change', function () {
-
   const sort = this.value;
 
-  // Get current path (important)
-  let path = window.location.pathname;
+  // Get the full current URL and parse it
+  const url = new URL(window.location.href);
 
-  // Remove existing query
-  let baseUrl = path;
+  // Clear existing sort param to avoid duplication
+  url.searchParams.delete('sort');
+  url.searchParams.delete('page'); // Reset pagination on sort change
 
-  // Build final URL safely
+  // Set new sort param only if not default
   if (sort === 'oldest') {
-    window.location.href = baseUrl + '?sort=oldest';
-  } else {
-    window.location.href = baseUrl;
+    url.searchParams.set('sort', 'oldest');
   }
 
+  // Navigate to the updated URL
+  window.location.href = url.toString();
 });
 </script>
 {% schema %}
