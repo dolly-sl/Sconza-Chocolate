@@ -243,19 +243,18 @@
 document.getElementById('sortBy').addEventListener('change', function () {
   const sort = this.value;
 
-  // Get the full current URL and parse it
+  // Preserve the full current URL including /tagged/... segments
   const url = new URL(window.location.href);
 
-  // Clear existing sort param to avoid duplication
+  // Remove stale params
   url.searchParams.delete('sort');
-  url.searchParams.delete('page'); // Reset pagination on sort change
+  url.searchParams.delete('page');
 
-  // Set new sort param only if not default
+  // Only append sort param for non-default option
   if (sort === 'oldest') {
     url.searchParams.set('sort', 'oldest');
   }
 
-  // Navigate to the updated URL
   window.location.href = url.toString();
 });
 </script>
