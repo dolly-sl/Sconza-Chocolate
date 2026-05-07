@@ -95,11 +95,13 @@
           {{ sc_product.description | strip_html | truncate: 160 }}
         </p>
       {% endif %}
+
+      {% comment %} CTA Button {% endcomment %}
+      <a href="{{ sc_product.url }}" class="sc-product-card__btn">
+        Shop Now
+      </a>
+
     </div>
-    {% comment %} CTA Button {% endcomment %}
-    <a href="{{ sc_product.url }}" class="sc-product-card__btn">
-      Shop Now
-    </a>
   </div>
 
 {% else %}
