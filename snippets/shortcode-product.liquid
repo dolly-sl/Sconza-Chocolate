@@ -1,102 +1,135 @@
-{% comment %} ── Get the product handle from shortcode variable ── {% endcomment %}
 {% comment %}
-  ==============================================================
-    FILE: snippets/shortcode-product.liquid
-    USAGE:
+==============================================================
+  FILE: snippets/shortcode-product.liquid
+  USAGE in article body (HTML source view):
     [product handle="your-product-handle"]
-  ==============================================================
+  
+  EXAMPLE:
+    [product handle="strawberry-dipped-almonds-22oz"]
+==============================================================
 {% endcomment %}
 
-{% assign sc_handle = sc_handle | strip %}
-
-{%- comment -%}
-  Defensive cleanup: sometimes the parsed handle can accidentally carry trailing HTML or entities
-  if the shortcode is embedded in rich text.
-{%- endcomment -%}
-{% assign sc_handle = sc_handle
-  | replace: '&quot;', ''
-  | replace: '&#34;', ''
-  | split: '<' | first
-  | strip
-%}
-
-{% assign sc_product = all_products[sc_handle] %}
-{% if sc_product == blank %}
-  {% assign sc_product = all_products[sc_handle | handleize] %}
+{% comment %} ── Get the product handle from shortcode variable ── {% endcomment %}
+{% assign sc_handle = '' %}
+{% if variable %}
+  {% for v in variable %}
+    {% assign sc_handle = sc_handle | strip %}
+    {% assign sc_product = all_products[sc_handle] %}
+  {% endfor %}
 {% endif %}
 
-{% if sc_product %}
-  {% assign sc_variant = sc_product.selected_or_first_available_variant %}
+{% comment %} ── Also support direct handle param ── {% endcomment %}
+{% if sc_handle == blank %}
+  {% assign sc_handle = handle | strip %}
+{% endif %}
+
+{% assign sc_product = all_products[sc_handle] %}
+
+{% if sc_product and sc_product.available %}
   <div class="sc-product-card">
-    {% if sc_product.featured_image %}
-      <div class="sc-product-card__image-wrap">
-        <a href="{{ sc_product.url }}">
-          {{
-            sc_product.featured_image
-            | image_url: width: 240
-            | image_tag: loading: 'lazy', alt: sc_product.title, class: 'sc-product-card__img', width: 240
-          }}
+    <div class="sc-product-card__image-wrap">
+      {% if sc_product.featured_image %}
+        <a href="{{ sc_product.url }}" class="sc-product-card__img-link">
+          <img
+            src="{{ sc_product.featured_image | image_url: width: 300 }}"
+            alt="{{ sc_product.featured_image.alt | escape }}"
+            class="sc-product-card__img"
+            loading="lazy"
+            width="300"
+          >
         </a>
-      </div>
-    {% endif %}
+      {% endif %}
+    </div>
 
     <div class="sc-product-card__body">
-      <div class="sc-product-card__debug" style="display:none;">
-        handle={{ sc_handle }} | title={{ sc_product.title }} | price={{ sc_variant.price }} | url={{ sc_product.url }}
-      </div>
+
+      {% comment %} Title {% endcomment %}
       <a href="{{ sc_product.url }}" class="sc-product-card__title">
-        {{ sc_product.title | default: sc_handle }}
+        {{ sc_product.title }}
       </a>
 
+      {% comment %} Price {% endcomment %}
       <div class="sc-product-card__price">
-        {% if sc_variant and sc_variant.compare_at_price and sc_variant.compare_at_price > sc_variant.price %}
+        {% if sc_product.price_varies %}
+          <span class="sc-product-card__price-from">From</span>
+        {% endif %}
+        {% if sc_product.compare_at_price > sc_product.price %}
           <span class="sc-product-card__price-compare">
-            {{ sc_variant.compare_at_price | money }}
+            {{ sc_product.compare_at_price | money }}
           </span>
         {% endif %}
-
         <span class="sc-product-card__price-current">
-          {% if sc_variant %}
-            {{ sc_variant.price | money }}
-          {% else %}
-            {{ sc_product.price | money }}
-          {% endif %}
+          {{ sc_product.price_min | money }}
+          {% if sc_product.price_varies %} – {{ sc_product.price_max | money }}{% endif %}
         </span>
       </div>
 
-      <a href="{{ sc_product.url }}" class="sc-product-card__btn">Shop Now</a>
+      {% comment %} Star Rating via Shopify metafield (standard) {% endcomment %}
+      {% assign rating_value = sc_product.metafields.reviews.rating.value %}
+      {% assign rating_count = sc_product.metafields.reviews.rating_count.value %}
+      {% if rating_value %}
+        <div class="sc-product-card__stars" aria-label="Rating: {{ rating_value }} out of 5">
+          {% assign full_stars  = rating_value | floor %}
+          {% assign half_star   = rating_value | minus: full_stars %}
+          {% assign empty_stars = 5 | minus: full_stars | minus: 1 %}
+
+          {% for i in (1..full_stars) %}
+            <svg class="sc-star sc-star--full" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.32L10 13.27 5.23 15.71l.91-5.32L2.27 6.62l5.34-.78z"/></svg>
+          {% endfor %}
+
+          {% if half_star >= 0.5 %}
+            <svg class="sc-star sc-star--half" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="half"><stop offset="50%" stop-color="currentColor"/><stop offset="50%" stop-color="transparent"/></linearGradient></defs><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.32L10 13.27 5.23 15.71l.91-5.32L2.27 6.62l5.34-.78z" fill="url(#half)" stroke="currentColor" stroke-width="1"/></svg>
+            {% assign empty_stars = empty_stars | minus: 0 %}
+          {% else %}
+            {% assign empty_stars = empty_stars | plus: 1 %}
+          {% endif %}
+
+          {% if empty_stars > 0 %}
+            {% for i in (1..empty_stars) %}
+              <svg class="sc-star sc-star--empty" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.32L10 13.27 5.23 15.71l.91-5.32L2.27 6.62l5.34-.78z"/></svg>
+            {% endfor %}
+          {% endif %}
+
+          {% if rating_count %}
+            <span class="sc-product-card__review-count">{{ rating_count }} Reviews</span>
+          {% endif %}
+        </div>
+      {% endif %}
+
+      {% comment %} Description (first 160 chars of product description) {% endcomment %}
+      {% if sc_product.description != blank %}
+        <p class="sc-product-card__desc">
+          {{ sc_product.description | strip_html | truncate: 160 }}
+        </p>
+      {% endif %}
+
+      {% comment %} CTA Button {% endcomment %}
+      <a href="{{ sc_product.url }}" class="sc-product-card__btn">
+        Shop Now
+      </a>
+
     </div>
   </div>
 
 {% else %}
-  <p>Product not found: {{ sc_handle }}</p>
+  {% comment %} Fallback: product not found — silent in production {% endcomment %}
+  {% if sc_handle != blank %}
+    <!-- sc-product: "{{ sc_handle }}" not found -->
+  {% endif %}
 {% endif %}
 
+
 <style>
-  /* Ensure we can see text even if global styles override */
-  .sc-product-card__body,
-  .sc-product-card__title,
-  .sc-product-card__price,
-  .sc-product-card__price-current,
-  .sc-product-card__price-compare {
-    color: #1e1c1c !important;
-    opacity: 1 !important;
-    visibility: visible !important;
-  }
-  .sc-product-card__title,
-  .sc-product-card__price {
-    display: block !important;
-  }
   /* ── Product Card ─────────────────────────────────────── */
   .sc-product-card {
     display: flex;
     align-items: flex-start;
     gap: 24px;
-    border: 1px solid rgba(167, 158, 137, 0.4);
+    border: 1px solid rgba(167,158,137,0.40);
     border-radius: 4px;
     padding: 20px 24px;
     margin: 30px 0;
-    background: #fffcf4;
+    background: #FFFCF4;
   }
 
   /* Image */
@@ -104,9 +137,7 @@
     flex-shrink: 0;
     width: 120px;
   }
-  .sc-product-card__img-link {
-    display: block;
-  }
+  .sc-product-card__img-link { display: block; }
   .sc-product-card__img {
     width: 120px;
     height: 120px;
@@ -125,16 +156,14 @@
     display: block;
     font-size: 15px;
     font-weight: 700;
-    color: #1e1c1c;
+    color: #1E1C1C;
     text-decoration: none;
     text-transform: uppercase;
     letter-spacing: 0.3px;
     margin-bottom: 4px;
     line-height: 1.3;
   }
-  .sc-product-card__title:hover {
-    text-decoration: underline;
-  }
+  .sc-product-card__title:hover { text-decoration: underline; }
 
   /* Price */
   .sc-product-card__price {
@@ -146,7 +175,7 @@
   .sc-product-card__price-current {
     font-size: 14px;
     font-weight: 600;
-    color: #1e1c1c;
+    color: #1E1C1C;
   }
   .sc-product-card__price-compare {
     font-size: 13px;
@@ -155,7 +184,7 @@
   }
   .sc-product-card__price-from {
     font-size: 12px;
-    color: #6b6b6b;
+    color: #6B6B6B;
   }
 
   /* Stars */
@@ -168,22 +197,14 @@
   .sc-star {
     width: 14px;
     height: 14px;
-    color: #df9832;
+    color: #DF9832;
   }
-  .sc-star--full {
-    fill: currentColor;
-  }
-  .sc-star--half {
-    fill: none;
-  }
-  .sc-star--empty {
-    fill: none;
-    stroke: currentColor;
-    stroke-width: 1.5;
-  }
+  .sc-star--full  { fill: currentColor; }
+  .sc-star--half  { fill: none; }
+  .sc-star--empty { fill: none; stroke: currentColor; stroke-width: 1.5; }
   .sc-product-card__review-count {
     font-size: 12px;
-    color: #6b6b6b;
+    color: #6B6B6B;
     margin-left: 4px;
   }
 
@@ -191,7 +212,7 @@
   .sc-product-card__desc {
     font-size: 13px;
     line-height: 20px !important;
-    color: #4a4a4a;
+    color: #4A4A4A;
     margin-bottom: 12px;
     padding-top: 0 !important;
   }
@@ -200,7 +221,7 @@
   .sc-product-card__btn {
     display: inline-block;
     padding: 9px 22px;
-    background: #1e1c1c;
+    background: #1E1C1C;
     color: #fff;
     font-size: 12px;
     font-weight: 700;
@@ -211,10 +232,7 @@
     transition: background 0.2s;
     white-space: nowrap;
   }
-  .sc-product-card__btn:hover {
-    background: #df9832;
-    color: #fff;
-  }
+  .sc-product-card__btn:hover { background: #DF9832; color: #fff; }
 
   /* ── Mobile ───────────────────────────────────────────── */
   @media (max-width: 600px) {
@@ -223,18 +241,9 @@
       align-items: center;
       text-align: center;
     }
-    .sc-product-card__image-wrap {
-      width: 100%;
-      text-align: center;
-    }
-    .sc-product-card__img {
-      margin: 0 auto;
-      width: 160px;
-      height: 160px;
-    }
+    .sc-product-card__image-wrap { width: 100%; text-align: center; }
+    .sc-product-card__img { margin: 0 auto; width: 160px; height: 160px; }
     .sc-product-card__price,
-    .sc-product-card__stars {
-      justify-content: center;
-    }
+    .sc-product-card__stars { justify-content: center; }
   }
 </style>
