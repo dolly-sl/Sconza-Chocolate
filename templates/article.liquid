@@ -139,10 +139,8 @@
         {%- capture custom_design -%}
           {% render 'article-shortcode' %}
         {%- endcapture -%}
-
-        {% assign final_article_content = article.content | replace: '[custom_section]', custom_design %}
-
-        {{ final_article_content }}
+        {% assign parsed_content = article.content | replace: '[custom_section]', custom_design %}
+        {% render 'shortcode', load: parsed_content %}
       </div>
 
 
@@ -571,7 +569,6 @@
     max-width: 100%;
   }
 
-  /* ─── MOBILE  ≤ 767px ─────────────────────────────────── */
   @media (max-width: 767px) {
     .blog-header__top {
       flex-direction: column;
