@@ -7,13 +7,13 @@
     style="background-image:url({{ hero_image | image_url: width: hero_image.width }});"
   >
     <div class="wrapper">
-      <div class="tw-h-[500px] md:tw-h-[600px] lg:tw-h-[654px] tw-flex tw-items-center lg:tw-text-left tw-text-center lg:tw-items-start tw-justify-center tw-flex-col"></div>
+      <div class="tw-h-[550px] md:tw-h-[500px] lg:tw-h-[650px] tw-flex tw-items-center lg:tw-text-left tw-text-center lg:tw-items-start tw-justify-center tw-flex-col"></div>
     </div>
   </section>
 
   {% comment %} ── ARTICLE CONTAINER ── {% endcomment %}
   <div class="tw-container tw-mt-9">
-    <div class="inner">
+    <div class="inner blog-inner">
 
       {% comment %} ════════════════════════════════════════
           NEW BLOG HEADER  (matches design images)
@@ -24,15 +24,46 @@
         <div class="blog-header__top">
 
           {% comment %} Breadcrumb {% endcomment %}
-          <nav class="blog-breadcrumb" aria-label="Breadcrumb">
+          {% comment %} <nav class="blog-breadcrumb" aria-label="Breadcrumb">
             <a href="/" class="blog-breadcrumb__link">Home</a>
             <span class="blog-breadcrumb__sep" aria-hidden="true">/</span>
             <a href="{{ blog.url }}" class="blog-breadcrumb__link">{{ blog.title }}</a>
             <span class="blog-breadcrumb__sep" aria-hidden="true">/</span>
             <span class="blog-breadcrumb__current">{{ article.title | truncate: 40 }}</span>
-          </nav>
+          </nav> {% endcomment %}
+        </div>
 
-          {% comment %} Social Share Icons {% endcomment %}
+        {% comment %} ROW 2 – Date + Category Tags {% endcomment %}
+        <div class="blog-header__meta">
+          <span class="article__date eyebrow">
+            {{ article.published_at | date: '%B %e, %Y' }} / 
+          </span>
+
+          {% comment %} Article Tags / Categories {% endcomment %}
+          {% if article.tags.size > 0 %}
+            <div class="blog-header__tags">
+              {% for tag in article.tags %}
+                <a href="{{ blog.url }}/tagged/{{ tag | handleize }}" class="blog-header__tag">
+                  {{ tag }}
+                </a>
+                {% unless forloop.last %},{% endunless %}
+              {% endfor %}
+            </div>
+          {% endif %}
+        </div>
+
+        {% comment %} ROW 3 – Article Title {% endcomment %}
+        <h1 class="tw-text-mainBlack2 tw-text-[35px] tw-font-bold tw-font-osc tw-uppercase tw-text-left article__title">
+          {{ article.title }}
+        </h1>
+
+        {% comment %} ROW 4 – Author {% endcomment %}
+        {% comment %} {% if article.author %}
+          <p class="blog-header__author">
+            By <strong>{{ article.author }}</strong>
+          </p>
+        {% endif %} {% endcomment %}
+         {% comment %} Social Share Icons {% endcomment %}
           <div class="blog-share">
             <span class="blog-share__label">Share:</span>
 
@@ -44,21 +75,8 @@
               class="blog-share__btn blog-share__btn--facebook"
               aria-label="Share on Facebook"
             >
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
-              </svg>
-            </a>
-
-            {% comment %} Twitter / X {% endcomment %}
-            <a
-              href="https://twitter.com/intent/tweet?url={{ shop.url }}{{ article.url }}&text={{ article.title | url_encode }}"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="blog-share__btn blog-share__btn--twitter"
-              aria-label="Share on X (Twitter)"
-            >
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+              <svg xmlns="http://www.w3.org/2000/svg" width="8" height="15" viewBox="0 0 8 15" fill="none">
+                <path d="M1.81923 14.4263H4.85636V8.34446H7.5928L7.89348 5.32254H4.85636V3.79639C4.85636 3.59502 4.93635 3.40189 5.07874 3.2595C5.22114 3.11711 5.41426 3.03711 5.61563 3.03711H7.89348V0H5.61563C4.60877 0 3.64314 0.399976 2.93117 1.11194C2.21921 1.8239 1.81923 2.78952 1.81923 3.79639V5.32254H0.300675L0 8.34446H1.81923V14.4263Z" fill="#1E1C1C"/>
               </svg>
             </a>
 
@@ -70,11 +88,25 @@
               class="blog-share__btn blog-share__btn--pinterest"
               aria-label="Share on Pinterest"
             >
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 0C5.373 0 0 5.373 0 12c0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738a.36.36 0 0 1 .083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.632-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0z"/>
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="17" viewBox="0 0 14 17" fill="none">
+                <path d="M5.36182 10.6072C4.92067 12.815 4.38362 14.9321 2.78989 16.0376C2.29905 12.7008 3.51265 10.1941 4.07586 7.53356C3.11509 5.98663 4.19181 2.87251 6.21797 3.6395C8.71143 4.58386 4.05842 9.3915 7.18223 9.99245C10.4438 10.6193 11.776 4.57981 9.75328 2.61496C6.83087 -0.22054 1.24674 2.55098 1.93375 6.61107C2.10114 7.60402 3.17263 7.90531 2.36182 9.27568C0.491722 8.87801 -0.0662556 7.46715 0.00610712 5.58572C0.12119 2.50805 2.898 0.352068 5.68266 0.0540202C9.2049 -0.323399 12.51 1.29076 12.966 4.45994C13.4804 8.03652 11.3767 11.9111 7.61117 11.6317C6.59025 11.5564 6.1613 11.0729 5.36182 10.6072Z" fill="#1E1C1C"/>
               </svg>
             </a>
 
+            {% comment %} Twitter / X {% endcomment %}
+            <a
+              href="https://twitter.com/intent/tweet?url={{ shop.url }}{{ article.url }}&text={{ article.title | url_encode }}"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="blog-share__btn blog-share__btn--twitter"
+              aria-label="Share on X (Twitter)"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="13" viewBox="0 0 16 13" fill="none">
+                <path d="M15.8841 1.51856C15.2995 1.7843 14.6693 1.95894 14.0163 2.04246C14.6845 1.64004 15.2008 1.00225 15.4438 0.235376C14.8136 0.615015 14.115 0.880763 13.3785 1.03262C12.7787 0.379639 11.9359 0 10.9792 0C9.19488 0 7.73706 1.45781 7.73706 3.2573C7.73706 3.51546 7.76744 3.76602 7.82059 4.0014C5.11755 3.86473 2.71063 2.56636 1.10855 0.59983C0.827615 1.07817 0.668167 1.64004 0.668167 2.23228C0.668167 3.3636 1.23763 4.36585 2.11839 4.93531C1.5793 4.93531 1.07818 4.78345 0.637795 4.55567V4.57845C0.637795 6.15774 1.76153 7.47889 3.24972 7.77501C2.77192 7.90576 2.27032 7.92395 1.78431 7.82816C1.99053 8.47543 2.39442 9.04179 2.93919 9.44764C3.48395 9.85349 4.14221 10.0784 4.82143 10.0908C3.67008 11.0023 2.24291 11.4949 0.774466 11.4879C0.51631 11.4879 0.258155 11.4727 0 11.4423C1.44263 12.3686 3.15861 12.9077 4.99606 12.9077C10.9792 12.9077 14.2669 7.94205 14.2669 3.63694C14.2669 3.49268 14.2669 3.35601 14.2593 3.21175C14.8971 2.75618 15.4438 2.17913 15.8841 1.51856Z" fill="#1E1C1C"/>
+              </svg>
+            </a>
+
+        
             {% comment %} Copy Link {% endcomment %}
             <button
               class="blog-share__btn blog-share__btn--copy"
@@ -89,44 +121,12 @@
                 }, 2000);
               "
             >
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
-                <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/>
-                <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>
+              <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17" fill="none">
+                <path d="M15.1856 3.73846H13.4334V0H2.92031V3.73846H1.16812C0.858317 3.73846 0.561201 3.86975 0.342135 4.10345C0.12307 4.33715 0 4.65412 0 4.98462V11.2154C0 11.5459 0.12307 11.8629 0.342135 12.0965C0.561201 12.3302 0.858317 12.4615 1.16812 12.4615H2.92031V16.2H13.4334V12.4615H15.1856C15.4954 12.4615 15.7925 12.3302 16.0116 12.0965C16.2307 11.8629 16.3537 11.5459 16.3537 11.2154V4.98462C16.3537 4.65412 16.2307 4.33715 16.0116 4.10345C15.7925 3.86975 15.4954 3.73846 15.1856 3.73846ZM4.08843 1.24615H12.2653V3.73846H4.08843V1.24615ZM12.2653 14.9538H4.08843V8.72308H12.2653V14.9538ZM15.1856 11.2154H13.4334V7.47692H2.92031V11.2154H1.16812V4.98462H15.1856V11.2154Z" fill="#1E1C1C"/>
               </svg>
               <span class="blog-share__copy-tip">Copied!</span>
             </button>
           </div>
-        </div>
-
-        {% comment %} ROW 2 – Date + Category Tags {% endcomment %}
-        <div class="blog-header__meta">
-          <span class="article__date eyebrow">
-            {{ article.published_at | date: '%B %e, %Y' }}
-          </span>
-
-          {% comment %} Article Tags / Categories {% endcomment %}
-          {% if article.tags.size > 0 %}
-            <div class="blog-header__tags">
-              {% for tag in article.tags %}
-                <a href="{{ blog.url }}/tagged/{{ tag | handleize }}" class="blog-header__tag">
-                  {{ tag }}
-                </a>
-              {% endfor %}
-            </div>
-          {% endif %}
-        </div>
-
-        {% comment %} ROW 3 – Article Title {% endcomment %}
-        <h1 class="tw-text-mainBlack2 tw-text-[35px] tw-font-bold tw-font-osc tw-uppercase tw-text-left article__title">
-          {{ article.title }}
-        </h1>
-
-        {% comment %} ROW 4 – Author {% endcomment %}
-        {% if article.author %}
-          <p class="blog-header__author">
-            By <strong>{{ article.author }}</strong>
-          </p>
-        {% endif %}
 
       </div>
       {% comment %} /blog-header {% endcomment %}
@@ -136,13 +136,36 @@
           ARTICLE CONTENT  (shortcode logic kept as-is)
       ════════════════════════════════════════ {% endcomment %}
       <div class="article__content">
+
+        {%- comment -%} 1. Capture custom_section design {%- endcomment -%}
         {%- capture custom_design -%}
           {% render 'article-shortcode' %}
         {%- endcapture -%}
 
-        {% assign final_article_content = article.content | replace: '[custom_section]', custom_design %}
+        {%- comment -%} 2. Replace [custom_section] {%- endcomment -%}
+        {% assign parsed_content = article.content | replace: '[custom_section]', custom_design %}
 
-        {{ final_article_content }}
+        {%- comment -%} 3. Replace each product shortcode {%- endcomment -%}
+        {% for tag in article.tags %}{% endfor %}{% comment %}dummy loop to allow assign{% endcomment %}
+
+        {% assign product_handles = parsed_content | split: '[product handle="' %}
+
+        {% assign final_content = product_handles[0] %}
+
+        {% for chunk in product_handles %}
+          {% unless forloop.first %}
+            {% assign handle_and_rest = chunk | split: '"]' %}
+            {% assign sc_handle = handle_and_rest[0] | strip %}
+            {% assign after_shortcode = handle_and_rest[1] %}
+
+            {%- capture product_html -%}{% render 'shortcode-product', sc_handle: sc_handle %}{%- endcapture -%}
+
+            {% assign final_content = final_content | append: product_html | append: after_shortcode %}
+          {% endunless %}
+        {% endfor %}
+
+        {{ final_content }}
+
       </div>
 
 
@@ -151,17 +174,6 @@
       ════════════════════════════════════════ {% endcomment %}
       <div class="article__footer">
 
-        {% comment %} Tags Row {% endcomment %}
-        {% if article.tags.size > 0 %}
-          <div class="article__footer-tags">
-            <span class="article__footer-tags__label">Tags:</span>
-            {% for tag in article.tags %}
-              <a href="{{ blog.url }}/tagged/{{ tag | handleize }}" class="article__footer-tag">
-                {{ tag }}
-              </a>
-            {% endfor %}
-          </div>
-        {% endif %}
 
         {% comment %} Prev / Next Navigation {% endcomment %}
         <div class="article__pagination">
@@ -169,38 +181,51 @@
           {% comment %} Previous Article {% endcomment %}
           {% if blog.previous_article %}
             <a href="{{ blog.previous_article.url }}" class="article__pagination-btn article__pagination-btn--prev">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              {% comment %} <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <polyline points="15 18 9 12 15 6"/>
-              </svg>
-              <span class="article__pagination-direction">Previous</span>
-              <span class="article__pagination-title">{{ blog.previous_article.title | truncate: 50 }}</span>
+              </svg> {% endcomment %}
+              <span class="article__pagination-direction">Prev</span>
+              {% comment %} <span class="article__pagination-title">{{ blog.previous_article.title | truncate: 50 }}</span> {% endcomment %}
             </a>
           {% else %}
             <span class="article__pagination-btn article__pagination-btn--prev article__pagination-btn--disabled">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              {% comment %} <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <polyline points="15 18 9 12 15 6"/>
-              </svg>
+              </svg> {% endcomment %}
               <span class="article__pagination-direction">Previous</span>
-              <span class="article__pagination-title">No previous post</span>
+              {% comment %} <span class="article__pagination-title">No previous post</span> {% endcomment %}
             </span>
           {% endif %}
+
+          {% comment %} Tags Row {% endcomment %}
+        {% if article.tags.size > 0 %}
+          <div class="article__footer-tags">
+            <span class="article__footer-tags__label">Tags:</span>
+            {% for tag in article.tags %}
+              <a href="{{ blog.url }}/tagged/{{ tag | handleize }}" class="article__footer-tag">
+                {{ tag }}
+              </a>
+              {% unless forloop.last %},{% endunless %}
+            {% endfor %}
+          </div>
+        {% endif %}
 
           {% comment %} Next Article {% endcomment %}
           {% if blog.next_article %}
             <a href="{{ blog.next_article.url }}" class="article__pagination-btn article__pagination-btn--next">
               <span class="article__pagination-direction">Next</span>
-              <span class="article__pagination-title">{{ blog.next_article.title | truncate: 50 }}</span>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              {% comment %} <span class="article__pagination-title">{{ blog.next_article.title | truncate: 50 }}</span> {% endcomment %}
+              {% comment %} <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <polyline points="9 18 15 12 9 6"/>
-              </svg>
+              </svg> {% endcomment %}
             </a>
           {% else %}
             <span class="article__pagination-btn article__pagination-btn--next article__pagination-btn--disabled">
               <span class="article__pagination-direction">Next</span>
-              <span class="article__pagination-title">No next post</span>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              {% comment %} <span class="article__pagination-title">No next post</span> {% endcomment %}
+              {% comment %} <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <polyline points="9 18 15 12 9 6"/>
-              </svg>
+              </svg> {% endcomment %}
             </span>
           {% endif %}
 
@@ -221,7 +246,7 @@
 {% comment %} ── KEEP EXPLORING (Related Articles) ── {% endcomment %}
 <section class="article__related tw-bg-backgroundDark">
   <div class="tw-container">
-    <h2 class="tw-text-center tw-text-mainBlack2 tw-text-[25px] tw-font-bold tw-font-osc tw-uppercase tw-leading-[1.13]">
+    <h2 class="tw-text-center tw-text-mainBlack2 tw-font-bold tw-font-osc tw-uppercase related-blog-title">
       KEEP EXPLORING
     </h2>
     <div class="related__wrap d-flex">
@@ -265,32 +290,90 @@
     max-width: 950px;
     margin: auto;
   }
-
+  .blog-header h1 {
+    font-size: 55px;
+    line-height: normal;
+    font-weight: 700;
+  }
   /* ─── Existing styles (unchanged) ──────────────────────── */
   .blog-header {
     border-bottom: 1px solid #A79E8999;
     padding-bottom: 30px;
     margin-bottom: 10px;
   }
-  .article__content p {
+  .article__content p, .article__content li {
     line-height: 28px;
     color: #1A1B1B;
     padding-top: 20px;
+    font-size: 16px;
+    margin: 0;
+    list-style-type: disc;
   }
-  .article__content h1, .article__content h2, .article__content h3,
-  .article__content h4, .article__content h5, .article__content h6 {
+  .article__content ul li {
+    padding-left: 5px;
+    padding-top: 5px;
+  }
+  .article__content ul, .article__content ol {
+    padding-left:20px;
+  } 
+  .article-custom-section ol li {
+    list-style-type: auto;
+    padding-top: 5px;
+  }
+  .article__content h1 {
+    font-size: 55px;
     color: #1E1C1C;
     font-weight: 700;
     letter-spacing: 0.413px;
     text-transform: uppercase;
     padding-top: 50px;
   }
-  .article__content h1 { font-size: 55px; }
-  .article__content h2 { font-size: 35px; }
-  .article__content h3 { font-size: 25px; }
-  .article__content h4 { font-size: 16px; }
-  .article__content h5 { font-size: 16px; font-style: italic; }
-  .article__content h6 { font-size: 16px; font-weight: 400; }
+  .article__content h2 { 
+    font-size: 35px; 
+    color: #1E1C1C;
+    font-weight: 700;
+    letter-spacing: 0.413px;
+    text-transform: uppercase;
+    padding-top: 50px;
+  }
+
+  .article__content h3 { 
+    font-size: 25px;
+    color: #1E1C1C;
+    font-weight: 700;
+    letter-spacing: 0.413px;
+    text-transform: uppercase;
+    padding-top: 50px; 
+  }
+
+  .article__content h4 { 
+    font-size: 16px;
+    color: #1E1C1C;
+    font-weight: 700;
+    letter-spacing: 0.413px;
+    text-transform: uppercase;
+    padding-top: 50px;
+  }
+
+  .article__content h5 { 
+    font-size: 16px; 
+    font-style: italic;
+    color: #1E1C1C;
+    font-weight: 700;
+    letter-spacing: 0.413px;
+    text-transform: uppercase;
+    padding-top: 50px; 
+  }
+
+  .article__content h6 { 
+    font-size: 16px; 
+    font-weight: 400;
+    color: #1E1C1C;
+    font-weight: 700;
+    letter-spacing: 0.413px;
+    text-transform: uppercase;
+    padding-top: 50px; 
+  }
 
   /* ─── NEW: Blog Header Top Row ──────────────────────────── */
   .blog-header__top {
@@ -298,8 +381,6 @@
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
-    gap: 12px;
-    margin-bottom: 16px;
   }
 
   /* Breadcrumb */
@@ -333,41 +414,34 @@
   .blog-share {
     display: flex;
     align-items: center;
-    gap: 8px;
-    flex-shrink: 0;
+    margint-top: 10px;
   }
   .blog-share__label {
-    font-size: 12px;
-    font-weight: 600;
-    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 400;
     letter-spacing: 0.5px;
-    color: #6B6B6B;
-    margin-right: 2px;
+    color: #1E1C1C;
+    margin-right: 10px;
+  }
+  .blog-share svg:hover path {
+    fill: #DF9832;
   }
   .blog-share__btn {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 34px;
-    height: 34px;
-    border-radius: 50%;
-    border: 1.5px solid #A79E8966;
-    color: #1A1B1B;
-    text-decoration: none;
-    background: transparent;
+    width: 20px;
+    height: 20px;
+    color: #1E1C1C;
     cursor: pointer;
-    transition: background 0.2s, color 0.2s, border-color 0.2s;
+    transition: 0.5s all ease-in-out;
     position: relative;
-  }
-  .blog-share__btn:hover {
-    background: #1A1B1B;
-    color: #fff;
-    border-color: #1A1B1B;
+    margin-right: 8px;
   }
   /* Specific brand hover colours */
-  .blog-share__btn--facebook:hover  { background: #1877F2; border-color: #1877F2; }
-  .blog-share__btn--twitter:hover   { background: #000;    border-color: #000; }
-  .blog-share__btn--pinterest:hover { background: #E60023; border-color: #E60023; }
+  .blog-share__btn--facebook:hover  { color: #1877F2; }
+  .blog-share__btn--twitter:hover   { color: #000; }
+  .blog-share__btn--pinterest:hover { color: #E60023;}
 
   /* Copy tooltip */
   .blog-share__copy-tip {
@@ -395,33 +469,25 @@
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-    gap: 10px;
-    margin-bottom: 12px;
   }
   .article__date {
-    font-size: 12px;
-    color: #6B6B6B;
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
+    font-size: 14px;
+    color: #1E1C1C;;
+    font-weight: 600;
+    text-transform: normal;
+    letter-spacing: 0;
+    text-transform: normal;
+    margin-right: 5px;
   }
   .blog-header__tags {
     display: flex;
     flex-wrap: wrap;
-    gap: 6px;
+    color: #DF9832;
   }
   .blog-header__tag {
-    display: inline-block;
-    padding: 3px 12px;
-    background: transparent;
-    border: 1px solid #A79E8999;
-    border-radius: 20px;
-    font-size: 11px;
+    padding-left: 5px;
+    font-size: 14px;
     font-weight: 600;
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
-    color: #1A1B1B;
-    text-decoration: none;
-    transition: background 0.2s, color 0.2s;
   }
   .blog-header__tag:hover {
     background: #1A1B1B;
@@ -443,72 +509,57 @@
   /* ─── NEW: Article Footer ────────────────────────────────── */
   .article__footer {
     max-width: 950px;
-    margin: 40px auto 60px;
-    border-top: 1px solid #A79E8966;
-    padding-top: 30px;
+    margin: 0 auto !important;
+    border-top: 1px solid rgba(167, 158, 137, 0.60);
+    border-bottom: 1px solid rgba(167, 158, 137, 0.60);
+    padding: 20px 30px !important;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
   }
-
+  .article__single .article__content {
+    padding-bottom: 70px;
+  }
   /* Footer Tags */
   .article__footer-tags {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    gap: 8px;
-    margin-bottom: 32px;
+    justify-content: center;
   }
   .article__footer-tags__label {
-    font-size: 12px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    color: #1A1B1B;
-    margin-right: 4px;
+    font-size: 14px;
+    font-weight: 400;
+    color: #1E1C1C;
+    margin-right: 5px;
   }
   .article__footer-tag {
     display: inline-block;
-    padding: 4px 14px;
-    background: #F5F3EF;
-    border: 1px solid #A79E8966;
-    border-radius: 20px;
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
-    color: #1A1B1B;
+    font-size: 14px;
+    font-weight: 400;
+    text-transform: none !important;
+    padding-left: 5px !important;
+    color: #1E1C1C;
     text-decoration: none;
-    transition: background 0.2s, color 0.2s, border-color 0.2s;
-  }
-  .article__footer-tag:hover {
-    background: #1A1B1B;
-    color: #fff;
-    border-color: #1A1B1B;
   }
 
   /* Prev / Next Navigation */
   .article__pagination {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
+    width: 100% !important;
+    display: flex;
+    justify-content: space-between;
   }
   .article__pagination-btn {
     display: flex;
     flex-direction: column;
-    gap: 4px;
-    padding: 18px 20px;
-    border: 1.5px solid #A79E8966;
-    border-radius: 6px;
     text-decoration: none;
-    color: #1A1B1B;
-    background: transparent;
-    transition: border-color 0.2s, background 0.2s;
-    min-width: 0; /* allow text truncation */
-  }
-  .article__pagination-btn:hover:not(.article__pagination-btn--disabled) {
-    border-color: #1A1B1B;
-    background: #F5F3EF;
+    color: #1E1C1C;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
   }
   .article__pagination-btn--disabled {
-    opacity: 0.4;
+    opacity: 0.5;
     cursor: default;
     pointer-events: none;
   }
@@ -525,12 +576,11 @@
   .article__pagination-btn--next .article__pagination-direction {
     display: flex;
     align-items: center;
-    gap: 6px;
-    font-size: 11px;
+    font-size: 14px;
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.6px;
-    color: #6B6B6B;
+    color: #1E1C1C;
+    letter-spacing: 0;
   }
   .article__pagination-btn--next .article__pagination-direction {
     flex-direction: row-reverse;
@@ -544,8 +594,51 @@
     text-overflow: ellipsis;
     max-width: 100%;
   }
-
-  /* ─── MOBILE  ≤ 767px ─────────────────────────────────── */
+  @media (max-width: 992px) {
+    .article__single .article__footer .article__pagination {
+      display: flex;
+    }
+  }
+  @media (max-width: 768px) {
+    .blog-header h1 {
+      font-size: 35px;
+      line-height: 40px;
+    }
+    .article__content h2 { 
+      font-size: 25px; 
+      padding-top: 30px;
+      margin: 0;
+    }
+    .article__content h3 { 
+      font-size: 20px; 
+      padding-top: 30px;
+      margin: 0;
+    }
+    .article__content h4 { 
+      font-size: 18px; 
+      padding-top: 30px;
+    }
+    .article-custom-section {
+      padding: 30px 40px;
+    }
+    blockquote {
+      padding: 13px 46px;
+      margin-top: 30px;
+    }
+    .article__single .article__content {
+      padding-bottom: 50px;
+    }
+    .blog-inner {
+      padding-bottom: 80px;
+    }
+    .article__related {
+      padding: 40px 0 80px;
+    }
+    .article__related .related-blog-title {
+      font-size: 25px;
+      margin-bottom: 30px;
+    }
+  }
   @media (max-width: 767px) {
     .blog-header__top {
       flex-direction: column;
@@ -566,5 +659,40 @@
       flex-direction: row;
     }
   }
-
+  .article__related {
+    background: #FFFCF3;
+    padding: 54px 0 80px;
+  }
+  .blog-inner {
+    padding-bottom: 100px;
+  }
+  .article__related .related-blog-title {
+    font-size: 55px;
+    line-height: normal;
+    letter-spacing: 0.413px;
+    color: #1E1C1C;
+    font-weight: 700;
+    margin-bottom: 60px;
+  }
+  .article__single .article__content img, .article__single .article__content iframe {
+    display: block;
+    margin: 20px auto;
+    height: 500px;
+    object-fit: cover;
+    width: 100%;
+    object-position: center;
+  } 
+  blockquote {
+    background: #1E1C1C;
+    padding: 30px 55px;
+    margin-top: 50px;
+  }
+  blockquote p {
+    color: #FFFCF4 !important;
+    font-size: 25px !important;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 38px !important; 
+    text-transform: uppercase;
+  }
 </style>
