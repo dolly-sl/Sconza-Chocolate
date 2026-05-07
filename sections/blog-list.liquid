@@ -9,11 +9,10 @@
             </h2>
 
             <div class="blog__filters d-flex align-center">
-
               <div class="blog__filter-select">
                 <select id="sortBy" class="custom-dropdown-select dropdown-select">
                   <option value="newest"
-                    {% unless request.query_string contains 'sort=oldest' %}selected{% endunless %}>
+                    {% unless request.query_string contains 'sort=oldest' or request.query_string contains 'sort=title_az' %}selected{% endunless %}>
                     Newest First
                   </option>
 
@@ -22,6 +21,10 @@
                     Oldest First
                   </option>
 
+                  <option value="title_az"
+                    {% if request.query_string contains 'sort=title_az' %}selected{% endif %}>
+                    Title A–Z
+                  </option>
                 </select>
               </div>
 
@@ -82,10 +85,27 @@
           <div class="pagination">
             <div class="tw-container container-1420">
               <ul class="d-flex list-reset align-center blog__pagination-list">
+                {%- assign _extra_query = '' -%}
+                {%- if request.query_string != blank -%}
+                  {%- assign _qs_parts = request.query_string | split: '&' -%}
+                  {%- for _part in _qs_parts -%}
+                    {%- if _part != blank -%}
+                      {%- unless _part contains 'page=' -%}
+                        {%- if _extra_query != blank -%}
+                          {%- assign _extra_query = _extra_query | append: '&' -%}
+                        {%- endif -%}
+                        {%- assign _extra_query = _extra_query | append: _part -%}
+                      {%- endunless -%}
+                    {%- endif -%}
+                  {%- endfor -%}
+                {%- endif -%}
                 {% for part in paginate.parts %}
                   <li class="blog__pagination-item{% if part.title == paginate.current_page %} current{% endif %}">
                     {% if part.is_link %}
-                      <a href="{{ part.url }}" class="blog__pagination-link animate">{{ part.title }}</a>
+                      <a
+                        href="{{ part.url }}{% if _extra_query != blank %}{% if part.url contains '?' %}&{% else %}?{% endif %}{{ _extra_query }}{% endif %}"
+                        class="blog__pagination-link animate"
+                      >{{ part.title }}</a>
                     {% elsif part.title == '&hellip;' %}
                       <span class="blog__pagination-ellipsis">&hellip;</span>
                     {% else %}
@@ -254,9 +274,34 @@ document.getElementById('sortBy').addEventListener('change', function () {
   if (sort === 'oldest') {
     url.searchParams.set('sort', 'oldest');
   }
+  if (sort === 'title_az') {
+    url.searchParams.set('sort', 'title_az');
+  }
 
   window.location.href = url.toString();
 });
+
+function sortBlogCardsTitleAZ() {
+  const cards = Array.from(document.querySelectorAll('.article--default'));
+  if (cards.length < 2) return;
+
+  const parent = cards[0].parentElement;
+  if (!parent) return;
+
+  cards.sort((a, b) => {
+    const at = (a.getAttribute('data-article-title') || '').trim().toLowerCase();
+    const bt = (b.getAttribute('data-article-title') || '').trim().toLowerCase();
+    return at.localeCompare(bt, undefined, { numeric: true, sensitivity: 'base' });
+  });
+
+  cards.forEach((card) => parent.appendChild(card));
+}
+
+(() => {
+  const url = new URL(window.location.href);
+  const sort = url.searchParams.get('sort');
+  if (sort === 'title_az') sortBlogCardsTitleAZ();
+})();
 </script>
 {% schema %}
 {
