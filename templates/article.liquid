@@ -160,7 +160,7 @@
             {% assign sc_handle = handle_and_rest[0] | strip %}
 
             {% assign after_shortcode = handle_and_rest[1] %}
-            {% assign sc_product = all_products[product_handle] %}
+         
             {%- capture product_html -%}
        {% render 'shortcode-product', product_handle: sc_handle %}
       {%- endcapture -%}
