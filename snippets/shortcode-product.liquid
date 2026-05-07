@@ -11,7 +11,13 @@
 <p>Product object: {{ sc_product }}</p>
 <p>Title: {{ sc_product.title }}</p>
 {% assign sc_handle = sc_handle | strip %}
-{% assign sc_product = all_products[sc_handle] %}
+{% assign sc_product = null %}
+
+{% for product in collections.all.products %}
+  {% if product.handle == sc_handle %}
+    {% assign sc_product = product %}
+  {% endif %}
+{% endfor %}
 
 {% if sc_product %}
   <div class="sc-product-card">
