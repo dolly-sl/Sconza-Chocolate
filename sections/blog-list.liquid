@@ -70,11 +70,9 @@
 
       {%- paginate blog.articles by section.settings.posts_per_page -%}
 
-        <div id="blog__articles-list" class="blog__articles-list">
-          {% for article in blog.articles %}
-            {% render 'default-article', data: article %}
-          {% endfor %}
-        </div>
+        {% for article in blog.articles %}
+          {% render 'default-article', data: article %}
+        {% endfor %}
 
         <div class="d-flex justify-between blog__toolbar  md:tw-m-0 tw-mx-10">
           <div class="page-count d-flex align-center">
@@ -260,12 +258,14 @@
 
   // 2) Reverse the article list in-place when oldest-first is requested.
   //    Articles are always rendered newest-first by Liquid; JS handles the flip.
+  //    They live as flex children of `.article__wrap` alongside `.blog__tags`,
+  //    so we only re-order the `.article--default` items, preserving the rest.
   if (isOldest) {
-    var list = document.getElementById('blog__articles-list');
-    if (list) {
-      var nodes = Array.prototype.slice.call(list.children);
-      for (var i = nodes.length - 1; i >= 0; i--) {
-        list.appendChild(nodes[i]);
+    var wrap = document.querySelector('.blog__list .article__wrap');
+    if (wrap) {
+      var articles = wrap.querySelectorAll(':scope > .article--default');
+      for (var i = articles.length - 1; i >= 0; i--) {
+        wrap.appendChild(articles[i]);
       }
     }
   }
