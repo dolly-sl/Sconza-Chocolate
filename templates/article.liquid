@@ -163,11 +163,7 @@
             {% assign final_content = final_content | append: product_html | append: after_shortcode %}
           {% endunless %}
         {% endfor %}
-        <p style="background:yellow;padding:10px;">
-  DEBUG — handle found: "{{ sc_handle }}"
-  | product title: "{{ all_products[sc_handle].title }}"
-  | available: "{{ all_products[sc_handle].available }}"
-</p>
+        
         {{ final_content }}
 
       </div>
