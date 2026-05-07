@@ -70,15 +70,11 @@
 
       {%- paginate blog.articles by section.settings.posts_per_page -%}
 
-        {% if request.query_string contains 'sort=oldest' %}
-          {% for article in blog.articles reversed %}
-            {% render 'default-article', data: article %}
-          {% endfor %}
-        {% else %}
+        <div id="blog__articles-list" class="blog__articles-list">
           {% for article in blog.articles %}
             {% render 'default-article', data: article %}
           {% endfor %}
-        {% endif %}
+        </div>
 
         <div class="d-flex justify-between blog__toolbar  md:tw-m-0 tw-mx-10">
           <div class="page-count d-flex align-center">
