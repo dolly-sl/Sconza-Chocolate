@@ -17,6 +17,7 @@
 {% endunless %}
 
 {% assign sc_product = all_products[sc_handle] %}
+<!-- DEBUG: handle="{{ sc_handle }}" found={{ sc_product.title }} -->
 
 {% if sc_product and sc_product.available %}
   <div class="sc-product-card">
