@@ -1,11 +1,20 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "current": {
-    "favicon": "shopify:\/\/shop_images\/Sconza_favicon_32x32_3bd9a72f-9ccb-4b5d-8aca-5df5fdbfbb90.png",
-    "facebook": "https:\/\/www.facebook.com\/SconzaChocolates\/",
-    "x": "https:\/\/twitter.com\/i\/flow\/login?redirect_after_login=%2Fsconzachocolate",
-    "instagram": "https:\/\/www.instagram.com\/sconzachocolates\/",
-    "youtube": "https:\/\/www.youtube.com\/channel\/UCvOCr1s5b-M6y8l-PEaHjXQ",
-    "linkedin": "https:\/\/www.linkedin.com\/company\/sconza-candy-co.\/",
+    "favicon": "shopify://shop_images/Sconza_favicon_32x32_3bd9a72f-9ccb-4b5d-8aca-5df5fdbfbb90.png",
+    "facebook": "https://www.facebook.com/SconzaChocolates/",
+    "x": "https://twitter.com/i/flow/login?redirect_after_login=%2Fsconzachocolate",
+    "instagram": "https://www.instagram.com/sconzachocolates/",
+    "youtube": "https://www.youtube.com/channel/UCvOCr1s5b-M6y8l-PEaHjXQ",
+    "linkedin": "https://www.linkedin.com/company/sconza-candy-co./",
     "free_ship": 75,
     "upsell_products": [
       "double-chocolate-milk-and-white-chocolate-dried-cherries",
@@ -20,7 +29,7 @@
       "lemon-blueberries",
       "double-chocolate-milk-and-white-chocolate-dried-cherries"
     ],
-    "checkout_logo_image": "shopify:\/\/shop_images\/Sconza-logo.png",
+    "checkout_logo_image": "shopify://shop_images/Sconza-logo.png",
     "checkout_logo_position": "left",
     "checkout_logo_size": "medium",
     "checkout_body_background_color": "#ffffff",
@@ -37,11 +46,11 @@
           "96cce018-0bd5-417e-8994-1d2d9328c9fc": {
             "type": "text",
             "settings": {
-              "image": "shopify:\/\/shop_images\/hero-sample-one.jpg",
-              "mobile_image": "shopify:\/\/shop_images\/hero-sample-split.jpg",
+              "image": "shopify://shop_images/hero-sample-one.jpg",
+              "mobile_image": "shopify://shop_images/hero-sample-split.jpg",
               "align": "left",
               "heading": "This is what a banner header looks like",
-              "copy": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<\/p>",
+              "copy": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>",
               "button_text": "Button 1",
               "button_url": ""
             }
@@ -49,21 +58,21 @@
           "202d474e-ebf1-4d50-b339-383353873a9d": {
             "type": "text",
             "settings": {
-              "image": "shopify:\/\/shop_images\/hero-sample-one.jpg",
+              "image": "shopify://shop_images/hero-sample-one.jpg",
               "align": "center",
               "heading": "This is what a banner header looks like",
-              "copy": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<\/p>",
+              "copy": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>",
               "button_text": "Button 1",
-              "button_url": "https:\/\/sleeplessmedia.com"
+              "button_url": "https://sleeplessmedia.com"
             }
           },
           "53e6b394-c063-449f-a5c2-72e04cf3e5c1": {
             "type": "text",
             "settings": {
-              "image": "shopify:\/\/shop_images\/hero-sample-one.jpg",
+              "image": "shopify://shop_images/hero-sample-one.jpg",
               "align": "right",
               "heading": "This is what a banner header looks like",
-              "copy": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<\/p>",
+              "copy": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>",
               "button_text": "Button 1",
               "button_url": "#"
             }
@@ -82,19 +91,19 @@
           "7741c07b-3030-42e8-8e9b-3a4ce19adf6b": {
             "type": "text",
             "settings": {
-              "image": "shopify:\/\/shop_images\/hero-sample-split.jpg",
+              "image": "shopify://shop_images/hero-sample-split.jpg",
               "heading": "This is what a banner header looks like",
-              "copy": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<\/p>",
+              "copy": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>",
               "button_text": "Button 1",
-              "button_url": "https:\/\/sleeplessmedia.com"
+              "button_url": "https://sleeplessmedia.com"
             }
           },
           "59d4a2aa-a487-421e-8291-fe7da81bc22d": {
             "type": "text",
             "settings": {
-              "image": "shopify:\/\/shop_images\/hero-sample-split.jpg",
+              "image": "shopify://shop_images/hero-sample-split.jpg",
               "heading": "This is what a banner header looks like",
-              "copy": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<\/p>",
+              "copy": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>",
               "button_text": "Button 1",
               "button_url": "#"
             }
@@ -116,42 +125,42 @@
           "42299053-1d04-4c68-9418-f9323d2e61d2": {
             "type": "text",
             "settings": {
-              "logo": "shopify:\/\/shop_images\/logo-fedex.png",
-              "logo_url": "https:\/\/fedex.com"
+              "logo": "shopify://shop_images/logo-fedex.png",
+              "logo_url": "https://fedex.com"
             }
           },
           "4a7a7ec6-406a-476a-ab81-bfe01991989b": {
             "type": "text",
             "settings": {
-              "logo": "shopify:\/\/shop_images\/logo-abc.png",
+              "logo": "shopify://shop_images/logo-abc.png",
               "logo_url": ""
             }
           },
           "6ee24c92-5ad8-423c-abf3-356265d448a6": {
             "type": "text",
             "settings": {
-              "logo": "shopify:\/\/shop_images\/logo-ibm.png",
-              "logo_url": "https:\/\/ibm.com"
+              "logo": "shopify://shop_images/logo-ibm.png",
+              "logo_url": "https://ibm.com"
             }
           },
           "1ddb2e35-3a37-4afc-b609-6553d3778ec2": {
             "type": "text",
             "settings": {
-              "logo": "shopify:\/\/shop_images\/logo-fedex.png",
+              "logo": "shopify://shop_images/logo-fedex.png",
               "logo_url": ""
             }
           },
           "9b888b4b-8611-4d93-bbe1-78044d8cd57b": {
             "type": "text",
             "settings": {
-              "logo": "shopify:\/\/shop_images\/logo-abc.png",
+              "logo": "shopify://shop_images/logo-abc.png",
               "logo_url": ""
             }
           },
           "52b85943-7435-47ea-ac25-7fc8dab8e101": {
             "type": "text",
             "settings": {
-              "logo": "shopify:\/\/shop_images\/logo-ibm.png",
+              "logo": "shopify://shop_images/logo-ibm.png",
               "logo_url": ""
             }
           }
@@ -200,9 +209,9 @@
           "1390a521-6bd4-4771-a57c-6e2e29ba9795": {
             "type": "text",
             "settings": {
-              "image": "shopify:\/\/shop_images\/hero-sample-split.jpg",
+              "image": "shopify://shop_images/hero-sample-split.jpg",
               "heading": "This is what a banner header looks like",
-              "copy": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<\/p>",
+              "copy": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>",
               "button_text": "Button 1",
               "button_url": "#"
             }
@@ -210,9 +219,9 @@
           "26e421a9-8603-486e-aedf-5e9cb442763c": {
             "type": "text",
             "settings": {
-              "image": "shopify:\/\/shop_images\/hero-sample-split.jpg",
+              "image": "shopify://shop_images/hero-sample-split.jpg",
               "heading": "This is what a banner header looks like",
-              "copy": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<\/p>",
+              "copy": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>",
               "button_text": "Button 1",
               "button_url": "#"
             }
@@ -231,28 +240,28 @@
             "type": "text",
             "settings": {
               "question": "Question",
-              "answer": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc id eros non risus congue pulvinar in eu velit. Curabitur id congue eros. Proin vestibulum bibendum erat, nec consectetur tortor tristique sed. Phasellus purus eros, facilisis ac tincidunt ac, sollicitudin eu odio. Cras maximus nulla nec est efficitur viverra. Nam eget est id felis pulvinar condimentum. Nam egestas pulvinar massa sit amet consectetur. Suspendisse volutpat at purus at volutpat.<\/p>"
+              "answer": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc id eros non risus congue pulvinar in eu velit. Curabitur id congue eros. Proin vestibulum bibendum erat, nec consectetur tortor tristique sed. Phasellus purus eros, facilisis ac tincidunt ac, sollicitudin eu odio. Cras maximus nulla nec est efficitur viverra. Nam eget est id felis pulvinar condimentum. Nam egestas pulvinar massa sit amet consectetur. Suspendisse volutpat at purus at volutpat.</p>"
             }
           },
           "fd2a74ce-2df8-404f-9004-98303516493b": {
             "type": "text",
             "settings": {
               "question": "Question Again",
-              "answer": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc id eros non risus congue pulvinar in eu velit. Curabitur id congue eros. Proin vestibulum bibendum erat, nec consectetur tortor tristique sed. Phasellus purus eros, facilisis ac tincidunt ac, sollicitudin eu odio. Cras maximus nulla nec est efficitur viverra. Nam eget est id felis pulvinar condimentum. Nam egestas pulvinar massa sit amet consectetur. Suspendisse volutpat at purus at volutpat.<\/p>"
+              "answer": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc id eros non risus congue pulvinar in eu velit. Curabitur id congue eros. Proin vestibulum bibendum erat, nec consectetur tortor tristique sed. Phasellus purus eros, facilisis ac tincidunt ac, sollicitudin eu odio. Cras maximus nulla nec est efficitur viverra. Nam eget est id felis pulvinar condimentum. Nam egestas pulvinar massa sit amet consectetur. Suspendisse volutpat at purus at volutpat.</p>"
             }
           },
           "59d5a5be-3c2e-4603-b566-2eb8b08cfe5d": {
             "type": "text",
             "settings": {
               "question": "Simple Question",
-              "answer": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc id eros non risus congue pulvinar in eu velit. Curabitur id congue eros. Proin vestibulum bibendum erat, nec consectetur tortor tristique sed. Phasellus purus eros, facilisis ac tincidunt ac, sollicitudin eu odio. Cras maximus nulla nec est efficitur viverra. Nam eget est id felis pulvinar condimentum. Nam egestas pulvinar massa sit amet consectetur. Suspendisse volutpat at purus at volutpat.<\/p>"
+              "answer": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc id eros non risus congue pulvinar in eu velit. Curabitur id congue eros. Proin vestibulum bibendum erat, nec consectetur tortor tristique sed. Phasellus purus eros, facilisis ac tincidunt ac, sollicitudin eu odio. Cras maximus nulla nec est efficitur viverra. Nam eget est id felis pulvinar condimentum. Nam egestas pulvinar massa sit amet consectetur. Suspendisse volutpat at purus at volutpat.</p>"
             }
           },
           "8d81c18c-14ed-4de5-83ee-701737e04c5a": {
             "type": "text",
             "settings": {
               "question": "Complex Question",
-              "answer": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc id eros non risus congue pulvinar in eu velit. Curabitur id congue eros. Proin vestibulum bibendum erat, nec consectetur tortor tristique sed. Phasellus purus eros, facilisis ac tincidunt ac, sollicitudin eu odio. Cras maximus nulla nec est efficitur viverra. Nam eget est id felis pulvinar condimentum. Nam egestas pulvinar massa sit amet consectetur. Suspendisse volutpat at purus at volutpat.<\/p>"
+              "answer": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc id eros non risus congue pulvinar in eu velit. Curabitur id congue eros. Proin vestibulum bibendum erat, nec consectetur tortor tristique sed. Phasellus purus eros, facilisis ac tincidunt ac, sollicitudin eu odio. Cras maximus nulla nec est efficitur viverra. Nam eget est id felis pulvinar condimentum. Nam egestas pulvinar massa sit amet consectetur. Suspendisse volutpat at purus at volutpat.</p>"
             }
           }
         },
@@ -381,10 +390,10 @@
       "blog-hero": {
         "type": "blog-hero",
         "settings": {
-          "featured_article": "news\/blog-title-lorem-ipsum-dolor",
+          "featured_article": "news/blog-title-lorem-ipsum-dolor",
           "heading": "Delicious Insights from the heart of Sconza",
           "subheading": "Our Blog",
-          "image": "shopify:\/\/shop_images\/Untitled_design_79.png"
+          "image": "shopify://shop_images/blog-banner-bg.png"
         }
       },
       "resource-product-carousel-fixed-overflow": {
@@ -491,13 +500,13 @@
           "c95b7bc6-7635-4cf5-9fba-8d08c42b9862": {
             "type": "text",
             "settings": {
-              "alert": "<p>During the warmer months, we use 2-day shipping to prevent melting.<\/p>"
+              "alert": "<p>During the warmer months, we use 2-day shipping to prevent melting.</p>"
             }
           },
           "0c505ac8-9a1a-45d5-8d55-aea75ef5fec3": {
             "type": "text",
             "settings": {
-              "alert": "<p>Alert Message a bit Longer <a href=\"#\" title=\"#\">Learn More<\/a><\/p>"
+              "alert": "<p>Alert Message a bit Longer <a href=\"#\" title=\"#\">Learn More</a></p>"
             }
           }
         },
@@ -617,7 +626,7 @@
           "headerEmpty": "YOUR CART IS CURRENTLY EMPTY",
           "taxes": "",
           "related_heading": "You May Also Like",
-          "btn_url": "\/",
+          "btn_url": "/",
           "products": [
             "caramel-collection-gift-box-1",
             "chocolate-coconut-cashews",
@@ -630,7 +639,7 @@
       "blog-list": {
         "type": "blog-list",
         "settings": {
-          "posts_per_page": 12
+          "posts_per_page": 18
         }
       },
       "contact": {
@@ -679,9 +688,9 @@
           "heading": "Get in Touch WITH US",
           "subheading": "Here For You",
           "sidebarheading": "Customer Service",
-          "wheretobuy": "<p><a href=\"https:\/\/sconza.com\/pages\/store-locator\" title=\"https:\/\/sconza.com\/pages\/store-locator\">Find our products in a store near you<\/a><\/p>",
-          "location": "<p><a href=\"https:\/\/maps.app.goo.gl\/eeCcToXbLheoUSXY7\" target=\"_blank\" title=\"https:\/\/maps.app.goo.gl\/eeCcToXbLheoUSXY7\">One Sconza Candy Lane<\/a><\/p><p><a href=\"https:\/\/maps.app.goo.gl\/eeCcToXbLheoUSXY7\" target=\"_blank\" title=\"https:\/\/maps.app.goo.gl\/eeCcToXbLheoUSXY7\">Oakdale, CA 95361-7899T<\/a><\/p>",
-          "reachus": "<p><a href=\"tel:(209) 845-3700\">(209) 845-3700<\/a><\/p><p><a href=\"tel:(888) SCONZA-1\">(888) SCONZA-1<\/a><\/p><p><a href=\"mailto:Info@sconza.com\">Info@sconza.com<\/a><\/p>",
+          "wheretobuy": "<p><a href=\"https://sconza.com/pages/store-locator\" title=\"https://sconza.com/pages/store-locator\">Find our products in a store near you</a></p>",
+          "location": "<p><a href=\"https://maps.app.goo.gl/eeCcToXbLheoUSXY7\" target=\"_blank\" title=\"https://maps.app.goo.gl/eeCcToXbLheoUSXY7\">One Sconza Candy Lane</a></p><p><a href=\"https://maps.app.goo.gl/eeCcToXbLheoUSXY7\" target=\"_blank\" title=\"https://maps.app.goo.gl/eeCcToXbLheoUSXY7\">Oakdale, CA 95361-7899T</a></p>",
+          "reachus": "<p><a href=\"tel:(209) 845-3700\">(209) 845-3700</a></p><p><a href=\"tel:(888) SCONZA-1\">(888) SCONZA-1</a></p><p><a href=\"mailto:Info@sconza.com\">Info@sconza.com</a></p>",
           "faqs": "",
           "faqbuttontext": "",
           "faqbuttonurl": ""
@@ -697,12 +706,67 @@
       "page": {
         "type": "page",
         "settings": {}
+      },
+      "blog-top-categories": {
+        "type": "blog-top-categories",
+        "blocks": {
+          "category_card_fJYBYn": {
+            "type": "category_card",
+            "settings": {
+              "image": "shopify://shop_images/category1.jpg",
+              "card_title": "Category 1",
+              "link": "#"
+            }
+          },
+          "category_card_QXMypV": {
+            "type": "category_card",
+            "settings": {
+              "image": "shopify://shop_images/category2.jpg",
+              "card_title": "Category 2",
+              "link": "#"
+            }
+          },
+          "category_card_nDANgm": {
+            "type": "category_card",
+            "settings": {
+              "image": "shopify://shop_images/category3.jpg",
+              "card_title": "Category 3",
+              "link": "#"
+            }
+          },
+          "category_card_k8Xftb": {
+            "type": "category_card",
+            "settings": {
+              "image": "shopify://shop_images/category4.jpg",
+              "card_title": "Category 4",
+              "link": "#"
+            }
+          },
+          "category_card_PN9meM": {
+            "type": "category_card",
+            "settings": {
+              "image": "shopify://shop_images/category1.jpg",
+              "card_title": "Category 5",
+              "link": "#"
+            }
+          }
+        },
+        "block_order": [
+          "category_card_fJYBYn",
+          "category_card_QXMypV",
+          "category_card_nDANgm",
+          "category_card_k8Xftb",
+          "category_card_PN9meM"
+        ],
+        "settings": {
+          "title": "Explore our top CATEGORIES"
+        }
       }
     },
     "content_for_index": [],
     "blocks": {
       "9377937747802625048": {
-        "type": "shopify:\/\/apps\/biscuits-bundles\/blocks\/biscuits-app-embed\/9e9ff1bd-2cba-468f-b59f-a1ff63f6efe9",
+        "type": "shopify://apps/biscuits-bundles/blocks/biscuits-app-embed/9e9ff1bd-2cba-468f-b59f-a1ff63f6efe9",
         "disabled": false,
         "settings": {
           "quickadd_action": "off",
@@ -716,29 +780,29 @@
         }
       },
       "2102808784413787648": {
-        "type": "shopify:\/\/apps\/kbite\/blocks\/main-app-embed\/147a6f7f-6771-4f9b-8dc6-c14e6b24f32c",
+        "type": "shopify://apps/kbite/blocks/main-app-embed/147a6f7f-6771-4f9b-8dc6-c14e6b24f32c",
         "disabled": false,
         "settings": {}
       },
       "7435366110862872537": {
-        "type": "shopify:\/\/apps\/popup-wizard\/blocks\/top-announcement-bar\/ee55591f-fe64-45b5-bfe6-228dd455386d",
+        "type": "shopify://apps/popup-wizard/blocks/top-announcement-bar/ee55591f-fe64-45b5-bfe6-228dd455386d",
         "disabled": true,
         "settings": {
           "announcement_id": ""
         }
       },
       "558674346261830418": {
-        "type": "shopify:\/\/apps\/popup-wizard\/blocks\/app-embed\/ee55591f-fe64-45b5-bfe6-228dd455386d",
+        "type": "shopify://apps/popup-wizard/blocks/app-embed/ee55591f-fe64-45b5-bfe6-228dd455386d",
         "disabled": true,
         "settings": {}
       },
       "13070091535480640111": {
-        "type": "shopify:\/\/apps\/attrac\/blocks\/app-embed\/b783956d-47a9-4434-91ad-4ec960bd74b0",
+        "type": "shopify://apps/attrac/blocks/app-embed/b783956d-47a9-4434-91ad-4ec960bd74b0",
         "disabled": true,
         "settings": {}
       },
       "7194384644902525832": {
-        "type": "shopify:\/\/apps\/fokkio-automatic-gift\/blocks\/widget\/866ae171-054c-4fa5-8677-5f391a13902b",
+        "type": "shopify://apps/fokkio-automatic-gift/blocks/widget/866ae171-054c-4fa5-8677-5f391a13902b",
         "disabled": true,
         "settings": {}
       }
