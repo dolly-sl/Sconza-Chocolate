@@ -8,16 +8,32 @@
 {% endcomment %}
 
 {% assign sc_handle = sc_handle | strip %}
+
+{%- comment -%}
+  Defensive cleanup: sometimes the parsed handle can accidentally carry trailing HTML or entities
+  if the shortcode is embedded in rich text.
+{%- endcomment -%}
+{% assign sc_handle = sc_handle
+  | replace: '&quot;', ''
+  | replace: '&#34;', ''
+  | split: '<' | first
+  | strip
+%}
+
 {% assign sc_product = all_products[sc_handle] %}
+{% if sc_product == blank %}
+  {% assign sc_product = all_products[sc_handle | handleize] %}
+{% endif %}
 
 {% if sc_product %}
+  {% assign sc_variant = sc_product.selected_or_first_available_variant %}
   <div class="sc-product-card">
     {% if sc_product.featured_image %}
       <div class="sc-product-card__image-wrap">
         <a href="{{ sc_product.url }}">
           <img
             src="{{ sc_product.featured_image | image_url: width: 300 }}"
-            alt="{{ sc_product.title }}"
+            alt="{{ sc_product.title | escape }}"
             loading="lazy"
             width="300"
           >
@@ -27,18 +43,22 @@
 
     <div class="sc-product-card__body">
       <a href="{{ sc_product.url }}" class="sc-product-card__title">
-        {{ sc_product.title }}
+        {{ sc_product.title | default: sc_handle }}
       </a>
 
       <div class="sc-product-card__price">
-        {% if sc_product.compare_at_price > sc_product.price %}
+        {% if sc_variant and sc_variant.compare_at_price and sc_variant.compare_at_price > sc_variant.price %}
           <span class="sc-product-card__price-compare">
-            {{ sc_product.compare_at_price | money }}
+            {{ sc_variant.compare_at_price | money }}
           </span>
         {% endif %}
 
         <span class="sc-product-card__price-current">
-          {{ sc_product.price | money }}
+          {% if sc_variant %}
+            {{ sc_variant.price | money }}
+          {% else %}
+            {{ sc_product.price | money }}
+          {% endif %}
         </span>
       </div>
 
