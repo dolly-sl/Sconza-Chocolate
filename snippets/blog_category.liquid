@@ -1,5 +1,11 @@
 {% if blog.tags.size > 0 %}
 
+{%- if request.query_string contains 'sort=oldest' -%}
+  {%- assign sort_query = '?sort=oldest' -%}
+{%- else -%}
+  {%- assign sort_query = '' -%}
+{%- endif -%}
+
 <select
   class="custom-dropdown-select dropdown-select"
   name="FilterTags"
@@ -9,14 +15,14 @@
 >
 
   <!-- View All -->
-  <option value="{{ blog.url }}">
+  <option value="{{ blog.url }}{{ sort_query }}">
     View All Articles
   </option>
 
   <!-- Tags -->
   {% for tag in blog.all_tags %}
     <option
-      value="{{ blog.url }}/tagged/{{ tag | handleize }}"
+      value="{{ blog.url }}/tagged/{{ tag | handleize }}{{ sort_query }}"
       {% if current_tags contains tag %}selected{% endif %}
     >
       {{ tag }}

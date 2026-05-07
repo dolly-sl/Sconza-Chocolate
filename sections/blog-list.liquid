@@ -35,19 +35,24 @@
         <div class="mobile-wrap">
           <div class="form__group">
             <label class="sr-only">Choose Category</label>
+            {%- if request.query_string contains 'sort=oldest' -%}
+              {%- assign sort_query = '?sort=oldest' -%}
+            {%- else -%}
+              {%- assign sort_query = '' -%}
+            {%- endif -%}
             <select onchange="if(this.value) window.location.href = this.value;">
               <option
                 {% unless current_tags != blank %}
                 selected
                 {% endunless %}
-                value="{{ blog.url }}">
+                value="{{ blog.url }}{{ sort_query }}">
                 View All
               </option>
 
               {% for tag in blog.all_tags %}
                 <option
                   {% if current_tags contains tag %}selected{% endif %}
-                  value="{{ blog.url }}/tagged/{{ tag | handleize }}">
+                  value="{{ blog.url }}/tagged/{{ tag | handleize }}{{ sort_query }}">
                   {{ tag }}
                 </option>
               {% endfor %}
