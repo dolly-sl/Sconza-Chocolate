@@ -150,17 +150,6 @@
       ════════════════════════════════════════ {% endcomment %}
       <div class="article__footer">
 
-        {% comment %} Tags Row {% endcomment %}
-        {% if article.tags.size > 0 %}
-          <div class="article__footer-tags">
-            <span class="article__footer-tags__label">Tags:</span>
-            {% for tag in article.tags %}
-              <a href="{{ blog.url }}/tagged/{{ tag | handleize }}" class="article__footer-tag">
-                {{ tag }}
-              </a>
-            {% endfor %}
-          </div>
-        {% endif %}
 
         {% comment %} Prev / Next Navigation {% endcomment %}
         <div class="article__pagination">
@@ -183,6 +172,18 @@
               {% comment %} <span class="article__pagination-title">No previous post</span> {% endcomment %}
             </span>
           {% endif %}
+
+          {% comment %} Tags Row {% endcomment %}
+        {% if article.tags.size > 0 %}
+          <div class="article__footer-tags">
+            <span class="article__footer-tags__label">Tags:</span>
+            {% for tag in article.tags %}
+              <a href="{{ blog.url }}/tagged/{{ tag | handleize }}" class="article__footer-tag">
+                {{ tag }}
+              </a>
+            {% endfor %}
+          </div>
+        {% endif %}
 
           {% comment %} Next Article {% endcomment %}
           {% if blog.next_article %}
@@ -485,6 +486,9 @@
     border-top: 1px solid rgba(167, 158, 137, 0.60);
     border-bottom: 1px solid rgba(167, 158, 137, 0.60);
     padding: 20px 30px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
   }
 
   /* Footer Tags */
@@ -525,9 +529,8 @@
 
   /* Prev / Next Navigation */
   .article__pagination {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
+    width: 100%;
+    display: flex;
   }
   .article__pagination-btn {
     display: flex;
