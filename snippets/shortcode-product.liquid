@@ -13,7 +13,8 @@
 {% assign sc_handle = '' %}
 {% if variable %}
   {% for v in variable %}
-    {% assign sc_handle = v | strip %}
+    {% assign sc_handle = sc_handle | strip %}
+    {% assign sc_product = all_products[sc_handle] %}
   {% endfor %}
 {% endif %}
 
