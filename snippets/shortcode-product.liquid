@@ -7,6 +7,9 @@
   ==============================================================
 {% endcomment %}
 <p>{{ sc_handle }}</p>
+<p>Handle: {{ sc_handle }}</p>
+<p>Product object: {{ sc_product }}</p>
+<p>Title: {{ sc_product.title }}</p>
 {% assign sc_handle = sc_handle | strip %}
 {% assign sc_product = all_products[sc_handle] %}
 
