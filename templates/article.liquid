@@ -160,14 +160,14 @@
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <polyline points="15 18 9 12 15 6"/>
               </svg>
-              <span class="article__pagination-direction">Previous</span>
+              <span class="article__pagination-direction">Prev</span>
               {% comment %} <span class="article__pagination-title">{{ blog.previous_article.title | truncate: 50 }}</span> {% endcomment %}
             </a>
           {% else %}
             <span class="article__pagination-btn article__pagination-btn--prev article__pagination-btn--disabled">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              {% comment %} <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <polyline points="15 18 9 12 15 6"/>
-              </svg>
+              </svg> {% endcomment %}
               <span class="article__pagination-direction">Previous</span>
               {% comment %} <span class="article__pagination-title">No previous post</span> {% endcomment %}
             </span>
@@ -190,17 +190,17 @@
             <a href="{{ blog.next_article.url }}" class="article__pagination-btn article__pagination-btn--next">
               <span class="article__pagination-direction">Next</span>
               {% comment %} <span class="article__pagination-title">{{ blog.next_article.title | truncate: 50 }}</span> {% endcomment %}
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              {% comment %} <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <polyline points="9 18 15 12 9 6"/>
-              </svg>
+              </svg> {% endcomment %}
             </a>
           {% else %}
             <span class="article__pagination-btn article__pagination-btn--next article__pagination-btn--disabled">
               <span class="article__pagination-direction">Next</span>
-              <span class="article__pagination-title">No next post</span>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              {% comment %} <span class="article__pagination-title">No next post</span> {% endcomment %}
+              {% comment %} <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <polyline points="9 18 15 12 9 6"/>
-              </svg>
+              </svg> {% endcomment %}
             </span>
           {% endif %}
 
