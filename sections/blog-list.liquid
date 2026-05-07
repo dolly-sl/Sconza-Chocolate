@@ -9,25 +9,20 @@
             </h2>
 
             <div class="blog__filters d-flex align-center">
-
               <div class="blog__filter-select">
                 <select id="sortBy" class="custom-dropdown-select dropdown-select">
                   <option value="newest"
                     {% unless request.query_string contains 'sort=oldest' %}selected{% endunless %}>
                     Newest First
                   </option>
-
                   <option value="oldest"
                     {% if request.query_string contains 'sort=oldest' %}selected{% endif %}>
                     Oldest First
                   </option>
-
                 </select>
               </div>
 
-              <!-- CATEGORY SNIPPET -->
               {% render 'blog_category' %}
-
             </div>
           </div>
         </div>
@@ -37,13 +32,10 @@
             <label class="sr-only">Choose Category</label>
             <select onchange="if(this.value) window.location.href = this.value;">
               <option
-                {% unless current_tags != blank %}
-                selected
-                {% endunless %}
+                {% unless current_tags != blank %}selected{% endunless %}
                 value="{{ blog.url }}">
                 View All
               </option>
-
               {% for tag in blog.all_tags %}
                 <option
                   {% if current_tags contains tag %}selected{% endif %}
@@ -68,7 +60,7 @@
           {% endfor %}
         {% endif %}
 
-        <div class="d-flex justify-between blog__toolbar  md:tw-m-0 tw-mx-10">
+        <div class="d-flex justify-between blog__toolbar md:tw-m-0 tw-mx-10">
           <div class="page-count d-flex align-center">
             Showing items {{ paginate.current_offset | plus: 1 }}-
             {%- if paginate.next -%}
@@ -85,7 +77,11 @@
                 {% for part in paginate.parts %}
                   <li class="blog__pagination-item{% if part.title == paginate.current_page %} current{% endif %}">
                     {% if part.is_link %}
-                      <a href="{{ part.url }}" class="blog__pagination-link animate">{{ part.title }}</a>
+                      {% if request.query_string contains 'sort=oldest' %}
+                        <a href="{{ part.url }}&sort=oldest" class="blog__pagination-link animate">{{ part.title }}</a>
+                      {% else %}
+                        <a href="{{ part.url }}" class="blog__pagination-link animate">{{ part.title }}</a>
+                      {% endif %}
                     {% elsif part.title == '&hellip;' %}
                       <span class="blog__pagination-ellipsis">&hellip;</span>
                     {% else %}
@@ -100,7 +96,6 @@
 
         <style>
           .blog__pagination-list { gap: 4px; }
-
           .blog__pagination-link {
             display: inline-flex;
             align-items: center;
@@ -109,19 +104,12 @@
             font-size: 14px;
             color: #1E1C1C;
             text-decoration: none;
-            border-radius: 3px;  
+            border-radius: 3px;
           }
-
           .blog__pagination-link:hover { color: #A79E89; }
-
           .blog__pagination-item.current .blog__pagination-link,
-          .blog__pagination-current {
-            font-weight: 700;
-          }
-          .blog__toolbar .pagination ul li a {
-            width: auto;
-            height: auto;
-          }
+          .blog__pagination-current { font-weight: 700; }
+          .blog__toolbar .pagination ul li a { width: auto; height: auto; }
           .page-count { font-size: 14px; }
         </style>
 
@@ -130,112 +118,35 @@
   </div>
 </section>
 
+<!-- All existing styles unchanged -->
 <style>
-  .container-1420 {
-    max-width: 1400px;
-    padding: 0 30px;
-  }
-
-  .desktop-wrap {
-    border-bottom: 1px solid #A79E8999;
-    padding-bottom: 40px;
-  }
-
-  .blog__tags {
-    width: 100%;
-    padding: 0 15px 57px;
-  }
-
-  .blog__tags-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  .blog__filters {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-  }
-
-  .blog__filter-select select {
-    border: 1px solid #1E1C1C;
-    min-width: 287px;
-    height: 45px;
-  }
-
-  .blog__filter-select select:focus {
-    outline: none;
-    border-color: #A79E89;
-  }
-  .blog__list {
-    background: #FFFCF3;
-    padding-top: 60px;
-    padding-bottom: 88px;
-  }
-  .blog__toolbar {
-    border-top: 1px solid rgba(167, 158, 137, 0.60);
-    border-bottom: 1px solid rgba(167, 158, 137, 0.60);
-    padding: 31px 42px;
-  }
-  .custom-dropdown-select {
-      border-color: #1E1C1C;
-      max-width: 287px;
-      height: 45px;
-      background-color: transparent;
-  }
+  .container-1420 { max-width: 1400px; padding: 0 30px; }
+  .desktop-wrap { border-bottom: 1px solid #A79E8999; padding-bottom: 40px; }
+  .blog__tags { width: 100%; padding: 0 15px 57px; }
+  .blog__tags-header { display: flex; align-items: center; justify-content: space-between; }
+  .blog__filters { display: flex; align-items: center; gap: 12px; }
+  .blog__filter-select select { border: 1px solid #1E1C1C; min-width: 287px; height: 45px; }
+  .blog__filter-select select:focus { outline: none; border-color: #A79E89; }
+  .blog__list { background: #FFFCF3; padding-top: 60px; padding-bottom: 88px; }
+  .blog__toolbar { border-top: 1px solid rgba(167, 158, 137, 0.60); border-bottom: 1px solid rgba(167, 158, 137, 0.60); padding: 31px 42px; }
+  .custom-dropdown-select { border-color: #1E1C1C; max-width: 287px; height: 45px; background-color: transparent; }
   @media (max-width: 980px) {
-    .custom-dropdown-select {
-      max-width: 200px;
-    }
-    .blog__filter-select select {
-      min-width: 200px;
-    }
-    .blog__toolbar {
-        padding: 15px 42px;
-    }
+    .custom-dropdown-select { max-width: 200px; }
+    .blog__filter-select select { min-width: 200px; }
+    .blog__toolbar { padding: 15px 42px; }
   }
   @media (max-width: 768px) {
-    .blog__filters {
-      margin-top: 50px;
-    }
-    .blog__filter-select, .custom-dropdown-select {
-      width: 50%;
-    }
-   .blog__filter-select select {
-      min-width: 100%;
-    }
-    .custom-dropdown-select {
-      max-width: 50%;
-      width: 50%;
-    }
-    .blog__tags .desktop-wrap {
-      padding-bottom: 35px;
-      border-bottom: 0;
-    }
-    .blog__tags {
-      padding-bottom: 0;
-    }
-    {% comment %} .article__image img {
-      height: calc(42.1vw - 20px);
-    } {% endcomment %}
-    .article--default {
-        margin-bottom: 60px;
-    }
-    .blog__toolbar {
-      border-bottom: 0;
-      padding: 23px 0 0 0;
-      margin: 0 10px;
-    }
-    .blog__toolbar .page-count {
-      margin-bottom: 15px;
-    }
-    .blog__filter-select, .dropdown-select {
-      width: 48%;
-    }
-    .blog__list {
-      padding-bottom: 60px;
-    }
+    .blog__filters { margin-top: 50px; }
+    .blog__filter-select, .custom-dropdown-select { width: 50%; }
+    .blog__filter-select select { min-width: 100%; }
+    .custom-dropdown-select { max-width: 50%; width: 50%; }
+    .blog__tags .desktop-wrap { padding-bottom: 35px; border-bottom: 0; }
+    .blog__tags { padding-bottom: 0; }
+    .article--default { margin-bottom: 60px; }
+    .blog__toolbar { border-bottom: 0; padding: 23px 0 0 0; margin: 0 10px; }
+    .blog__toolbar .page-count { margin-bottom: 15px; }
+    .blog__filter-select, .dropdown-select { width: 48%; }
+    .blog__list { padding-bottom: 60px; }
   }
 </style>
 
@@ -243,14 +154,10 @@
 document.getElementById('sortBy').addEventListener('change', function () {
   const sort = this.value;
 
-  // Preserve the full current URL including /tagged/... segments
   const url = new URL(window.location.href);
-
-  // Remove stale params
   url.searchParams.delete('sort');
   url.searchParams.delete('page');
 
-  // Only append sort param for non-default option
   if (sort === 'oldest') {
     url.searchParams.set('sort', 'oldest');
   }
@@ -258,6 +165,7 @@ document.getElementById('sortBy').addEventListener('change', function () {
   window.location.href = url.toString();
 });
 </script>
+
 {% schema %}
 {
   "name": "Blog List",
