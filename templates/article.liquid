@@ -157,9 +157,9 @@
           {% comment %} Previous Article {% endcomment %}
           {% if blog.previous_article %}
             <a href="{{ blog.previous_article.url }}" class="article__pagination-btn article__pagination-btn--prev">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              {% comment %} <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <polyline points="15 18 9 12 15 6"/>
-              </svg>
+              </svg> {% endcomment %}
               <span class="article__pagination-direction">Prev</span>
               {% comment %} <span class="article__pagination-title">{{ blog.previous_article.title | truncate: 50 }}</span> {% endcomment %}
             </a>
@@ -536,22 +536,14 @@
   .article__pagination-btn {
     display: flex;
     flex-direction: column;
-    gap: 4px;
-    padding: 18px 20px;
-    border: 1.5px solid #A79E8966;
-    border-radius: 6px;
     text-decoration: none;
-    color: #1A1B1B;
-    background: transparent;
-    transition: border-color 0.2s, background 0.2s;
-    min-width: 0; /* allow text truncation */
-  }
-  .article__pagination-btn:hover:not(.article__pagination-btn--disabled) {
-    border-color: #1A1B1B;
-    background: #F5F3EF;
+    color: #1E1C1C;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
   }
   .article__pagination-btn--disabled {
-    opacity: 0.4;
+    opacity: 0.5;
     cursor: default;
     pointer-events: none;
   }
