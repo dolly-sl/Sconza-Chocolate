@@ -6,19 +6,13 @@
     [product handle="your-product-handle"]
   ==============================================================
 {% endcomment %}
-{% assign sc_handle = sc_handle | strip %}
-
-{% assign sc_product = null %}
-
-{% for product in collections.all.products %}
-  {% if product.handle == sc_handle %}
-    {% assign sc_product = product %}
-  {% endif %}
-{% endfor %}
-
+<p>{{ sc_handle }}</p>
 <p>Handle: {{ sc_handle }}</p>
 <p>Product object: {{ sc_product }}</p>
 <p>Title: {{ sc_product.title }}</p>
+{% assign sc_handle = sc_handle | strip %}
+{% assign product_handle = sc_handle %}
+{% assign sc_product = all_products[product_handle] %}
 
 {% if sc_product %}
   <div class="sc-product-card">
