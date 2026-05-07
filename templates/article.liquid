@@ -24,15 +24,45 @@
         <div class="blog-header__top">
 
           {% comment %} Breadcrumb {% endcomment %}
-          <nav class="blog-breadcrumb" aria-label="Breadcrumb">
+          {% comment %} <nav class="blog-breadcrumb" aria-label="Breadcrumb">
             <a href="/" class="blog-breadcrumb__link">Home</a>
             <span class="blog-breadcrumb__sep" aria-hidden="true">/</span>
             <a href="{{ blog.url }}" class="blog-breadcrumb__link">{{ blog.title }}</a>
             <span class="blog-breadcrumb__sep" aria-hidden="true">/</span>
             <span class="blog-breadcrumb__current">{{ article.title | truncate: 40 }}</span>
-          </nav>
+          </nav> {% endcomment %}
+        </div>
 
-          {% comment %} Social Share Icons {% endcomment %}
+        {% comment %} ROW 2 – Date + Category Tags {% endcomment %}
+        <div class="blog-header__meta">
+          <span class="article__date eyebrow">
+            {{ article.published_at | date: '%B %e, %Y' }}
+          </span>
+
+          {% comment %} Article Tags / Categories {% endcomment %}
+          {% if article.tags.size > 0 %}
+            <div class="blog-header__tags">
+              {% for tag in article.tags %}
+                <a href="{{ blog.url }}/tagged/{{ tag | handleize }}" class="blog-header__tag">
+                  {{ tag }}
+                </a>
+              {% endfor %}
+            </div>
+          {% endif %}
+        </div>
+
+        {% comment %} ROW 3 – Article Title {% endcomment %}
+        <h1 class="tw-text-mainBlack2 tw-text-[35px] tw-font-bold tw-font-osc tw-uppercase tw-text-left article__title">
+          {{ article.title }}
+        </h1>
+
+        {% comment %} ROW 4 – Author {% endcomment %}
+        {% comment %} {% if article.author %}
+          <p class="blog-header__author">
+            By <strong>{{ article.author }}</strong>
+          </p>
+        {% endif %} {% endcomment %}
+         {% comment %} Social Share Icons {% endcomment %}
           <div class="blog-share">
             <span class="blog-share__label">Share:</span>
 
@@ -96,37 +126,6 @@
               <span class="blog-share__copy-tip">Copied!</span>
             </button>
           </div>
-        </div>
-
-        {% comment %} ROW 2 – Date + Category Tags {% endcomment %}
-        <div class="blog-header__meta">
-          <span class="article__date eyebrow">
-            {{ article.published_at | date: '%B %e, %Y' }}
-          </span>
-
-          {% comment %} Article Tags / Categories {% endcomment %}
-          {% if article.tags.size > 0 %}
-            <div class="blog-header__tags">
-              {% for tag in article.tags %}
-                <a href="{{ blog.url }}/tagged/{{ tag | handleize }}" class="blog-header__tag">
-                  {{ tag }}
-                </a>
-              {% endfor %}
-            </div>
-          {% endif %}
-        </div>
-
-        {% comment %} ROW 3 – Article Title {% endcomment %}
-        <h1 class="tw-text-mainBlack2 tw-text-[35px] tw-font-bold tw-font-osc tw-uppercase tw-text-left article__title">
-          {{ article.title }}
-        </h1>
-
-        {% comment %} ROW 4 – Author {% endcomment %}
-        {% if article.author %}
-          <p class="blog-header__author">
-            By <strong>{{ article.author }}</strong>
-          </p>
-        {% endif %}
 
       </div>
       {% comment %} /blog-header {% endcomment %}
