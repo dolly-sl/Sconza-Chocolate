@@ -1,12 +1,3 @@
-{% comment %}
-==============================================================
-  FILE: snippets/article-shortcode.liquid
-  PURPOSE: Custom section rendered when [custom_section] 
-           placeholder is found in article body content.
-           Data comes from metafield: custom.article_section
-==============================================================
-{% endcomment %}
-
 {% assign section_data = article.metafields.custom.article_section %}
 
 {% if section_data != blank %}
