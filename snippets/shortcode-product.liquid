@@ -6,15 +6,16 @@
     [product handle="your-product-handle"]
   ==============================================================
 {% endcomment %}
-<p>{{ sc_handle }}</p>
-<p>Handle: {{ sc_handle }}</p>
-<p>Product object: {{ sc_product }}</p>
-<p>Title: {{ sc_product.title }}</p>
+
 {% assign sc_handle = sc_handle | strip %}
 {% assign product_handle = sc_handle %}
 {% assign sc_product = all_products[product_handle] %}
 
 {% if sc_product %}
+  <p>{{ sc_handle }}</p>
+  <p>Handle: {{ sc_handle }}</p>
+  <p>Product object: {{ sc_product }}</p>
+  <p>Title: {{ sc_product.title }}</p>
   <div class="sc-product-card">
     {% if sc_product.featured_image %}
       <div class="sc-product-card__image-wrap">
