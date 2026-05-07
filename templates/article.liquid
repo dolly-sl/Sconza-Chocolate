@@ -183,7 +183,11 @@
               | strip
             %}
 
-            {% assign after_shortcode = handle_and_tail | slice: 1, 999 | join: ']' %}
+            {%- comment -%}
+              Avoid array slicing/joining (can be inconsistent across theme engines).
+              Rebuild the tail by removing the handle segment and the first closing bracket.
+            {%- endcomment -%}
+            {% assign after_shortcode = chunk | remove_first: handle_and_tail[0] | remove_first: ']' %}
 
             {%- capture product_html -%}
               {% render 'shortcode-product', sc_handle: sc_handle %}
