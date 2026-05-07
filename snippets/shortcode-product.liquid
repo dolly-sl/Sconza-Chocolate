@@ -8,12 +8,7 @@
 {% endcomment %}
 <p>{{ sc_handle }}</p>
 {% assign sc_handle = sc_handle | strip %}
-
-{% for product in collections.all.products %}
-  {% if product.handle == sc_handle %}
-    {% assign sc_product = product %}
-  {% endif %}
-{% endfor %}
+{% assign sc_product = all_products[sc_handle] %}
 
 {% if sc_product %}
   <div class="sc-product-card">
