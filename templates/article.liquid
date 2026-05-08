@@ -155,7 +155,7 @@
         {% for chunk in product_handles %}
           {% unless forloop.first %}
             {% assign handle_and_rest = chunk | split: '"]' %}
-            {% assign sc_handle = handle_and_rest[0] | strip %}
+            {% assign sc_handle = handle_and_rest[0] | strip_html | strip %}
             {% assign after_shortcode = handle_and_rest[1] %}
 
             {%- capture product_html -%}{% render 'shortcode-product', sc_handle: sc_handle %}{%- endcapture -%}
@@ -163,7 +163,7 @@
             {% assign final_content = final_content | append: product_html | append: after_shortcode %}
           {% endunless %}
         {% endfor %}
-
+        
         {{ final_content }}
 
       </div>
@@ -308,6 +308,12 @@
     font-size: 16px;
     margin: 0;
     list-style-type: disc;
+  }
+  .article__content p strong {
+    font-weight: 700;
+  }
+  .article__content p em {
+    font-style: italic;
   }
   .article__content ul li {
     padding-left: 5px;
@@ -695,4 +701,15 @@
     line-height: 38px !important; 
     text-transform: uppercase;
   }
+  .article__single .article__hero {
+    margin-bottom: 56px;
+    height: 760px;
+  }
+  @media (max-width: 768px) {
+    .article__single .article__hero {
+      margin-bottom: 40px;
+      height: 760px;
+    }
+  }
+  
 </style>
