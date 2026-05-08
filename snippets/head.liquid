@@ -6,6 +6,9 @@
 <meta name="description" content="{{ shop.description }}">
 <link rel="canonical" href="{{ canonical_url }}">
 <link rel="shortcut icon" href="{{ settings.favicon | img_url: 'master' }}" type="image/png" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
 
 {% if template.name == 'index' %}
   <title>{{ shop.name }} | {{ shop.description }}</title>

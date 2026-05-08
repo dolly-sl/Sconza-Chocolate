@@ -4,7 +4,7 @@
       <p class="tw-text-mainGold tw-text-xl md:tw-text-3xl lg:tw-text-4xl tw-font-script">
         {{ section.settings.subheading }}
       </p>
-      <h1 class="tw-text-mainOffWhite2 tw-text-4xl md:tw-text-[55px] tw-leading-[1.2] tw-uppercase tw-tracking-[0.338px] tw-font-osc tw-mx-auto tw-max-w-4xl">
+      <h1 class="blog-main-title tw-text-mainOffWhite2 tw-text-4xl md:tw-text-[55px] tw-uppercase tw-tracking-[0.338px] tw-font-osc tw-mx-auto">
         {{ section.settings.heading }}
       </h1>
     </div>
@@ -71,7 +71,7 @@
                 </h2>
               </a>
               <p class="description tw-text-base tw-leading-6 tw-font-os tw-text-mainBlack tw-mt-2 tw-mt-[20px] ">
-                {{ article.content | strip_html | truncatewords: 20, '...' }}
+                {{ article.content | strip_html | truncatewords: 55, '...' }}
               </p>
               {% comment %} <p class="tw-text-sm tw-text-mainBlack tw-font-os tw-italic tw-opacity-60 tw-mt-1">
                 {{ article.created_at | date: '%B %d, %Y' }}
@@ -109,8 +109,9 @@
       padding-left: 115px;
     }
     .description {
-      padding: 10px 0 40px;
+      padding:20px 0 40px;
       margin: 0;
+      line-height: 26px;
     }
     .featured-right-content .btn-primary {
       min-width: 150px !important;
@@ -118,11 +119,24 @@
     }
     .blog__hero {
       padding-top: 45px;
-      padding-bottom: 56px;
+      padding-bottom: 68px;
       background-color: #FEF8E8;
     }
     .blog-hero-banner {
       background-position: center;
+    }
+    .blog-main-title {
+      max-width: 1037px;
+      line-height: 62px;
+    }
+    .featured-right-content  .tw-text-mainBlack2 {
+      line-height: 39px;
+      font-weight: 800;
+    }
+    .featured-right-content  .tw-text-mainGold {
+      font-size: 30px;
+      font-weight: 400;
+      padding-bottom: 5px;
     }
     @media (max-width: 1100px) {
       .blog__hero {
