@@ -1149,7 +1149,7 @@ h6,
   text-decoration: none;
 }
 .article--default .article__image {
-  margin-bottom: 15px;
+  margin-bottom: 20px;
 }
 .article--default .article__image a {
   display: block;
@@ -2565,6 +2565,7 @@ h6,
 .article__single .article__content h5,
 .article__single .article__content h6 {
   margin-bottom: 15px;
+  font-family: open-sans-condensed, sans-serif;
 }
 .article__single .article__footer {
   padding: 20px 0;

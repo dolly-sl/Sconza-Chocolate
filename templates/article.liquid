@@ -333,6 +333,7 @@
     letter-spacing: 0.413px;
     text-transform: uppercase;
     padding-top: 50px;
+    line-height: 58px;
   }
   .article__content h2 { 
     font-size: 35px; 
@@ -341,6 +342,7 @@
     letter-spacing: 0.413px;
     text-transform: uppercase;
     padding-top: 50px;
+    line-height: 38px;
   }
 
   .article__content h3 { 
@@ -350,6 +352,7 @@
     letter-spacing: 0.413px;
     text-transform: uppercase;
     padding-top: 50px; 
+    line-height: 28px;
   }
 
   .article__content h4 { 
@@ -359,6 +362,7 @@
     letter-spacing: 0.413px;
     text-transform: uppercase;
     padding-top: 50px;
+    line-height: 20px;
   }
 
   .article__content h5 { 
@@ -369,6 +373,7 @@
     letter-spacing: 0.413px;
     text-transform: uppercase;
     padding-top: 50px; 
+    line-height: 20px;
   }
 
   .article__content h6 { 
@@ -379,6 +384,7 @@
     letter-spacing: 0.413px;
     text-transform: uppercase;
     padding-top: 50px; 
+    line-height: 20px;
   }
 
   /* ─── NEW: Blog Header Top Row ──────────────────────────── */
@@ -530,12 +536,15 @@
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
+
   }
   .article__footer-tags__label {
     font-size: 14px;
     font-weight: 400;
     color: #1E1C1C;
     margin-right: 5px;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: rgba(167, 158, 137, 0.60);
   }
   .article__footer-tag {
     display: inline-block;
@@ -546,7 +555,13 @@
     color: #1E1C1C;
     text-decoration: none;
   }
-
+.article__single .article__footer .article__pagination a {
+  font-size: 14px;
+    letter-spacing: .8px;
+    display: block;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: rgba(167, 158, 137, 0.60);
+}
   /* Prev / Next Navigation */
   .article__pagination {
     width: 100% !important;
@@ -585,6 +600,8 @@
     text-transform: uppercase;
     color: #1E1C1C;
     letter-spacing: 0;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: rgba(167, 158, 137, 0.60);
   }
   .article__pagination-btn--next .article__pagination-direction {
     flex-direction: row-reverse;
@@ -648,20 +665,24 @@
       font-size: 35px;
       line-height: 40px;
       padding: 15px 0 20px;
+      line-height: 38px;
     }
     .article__content h2 { 
       font-size: 25px; 
       padding-top: 30px;
       margin: 0;
+      line-height: 28px;
     }
     .article__content h3 { 
       font-size: 20px; 
       padding-top: 30px;
       margin: 0;
+      line-height: 23px;
     }
     .article__content h4 { 
       font-size: 18px; 
       padding-top: 30px;
+      line-height: 22px;
     }
     .article-custom-section {
       padding: 30px 40px;
