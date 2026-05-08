@@ -600,6 +600,46 @@
     text-overflow: ellipsis;
     max-width: 100%;
   }
+  .article__related {
+    background: #FFFCF3;
+    padding: 54px 0 80px;
+  }
+  .blog-inner {
+    padding-bottom: 100px;
+  }
+  .article__related .related-blog-title {
+    font-size: 55px;
+    line-height: normal;
+    letter-spacing: 0.413px;
+    color: #1E1C1C;
+    font-weight: 700;
+    margin-bottom: 60px;
+  }
+  .article__single .article__content img, .article__single .article__content iframe {
+    display: block;
+    margin: 20px auto;
+    height: 500px;
+    object-fit: cover;
+    width: 100%;
+    object-position: center;
+  } 
+  blockquote {
+    background: #1E1C1C;
+    padding: 30px 55px;
+    margin-top: 50px;
+  }
+  blockquote p {
+    color: #FFFCF4 !important;
+    font-size: 25px !important;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 38px !important; 
+    text-transform: uppercase;
+  }
+  .article__single .article__hero {
+    margin-bottom: 56px;
+    height: 760px;
+  }
   @media (max-width: 992px) {
     .article__single .article__footer .article__pagination {
       display: flex;
@@ -644,6 +684,10 @@
       font-size: 25px;
       margin-bottom: 30px;
     }
+    .article__single .article__hero {
+      margin-bottom: 40px;
+      height: 760px;
+    }
   }
   @media (max-width: 767px) {
     .blog-header__top {
@@ -663,52 +707,6 @@
     }
     .article__pagination-btn--next .article__pagination-direction {
       flex-direction: row;
-    }
-  }
-  .article__related {
-    background: #FFFCF3;
-    padding: 54px 0 80px;
-  }
-  .blog-inner {
-    padding-bottom: 100px;
-  }
-  .article__related .related-blog-title {
-    font-size: 55px;
-    line-height: normal;
-    letter-spacing: 0.413px;
-    color: #1E1C1C;
-    font-weight: 700;
-    margin-bottom: 60px;
-  }
-  .article__single .article__content img, .article__single .article__content iframe {
-    display: block;
-    margin: 20px auto;
-    height: 500px;
-    object-fit: cover;
-    width: 100%;
-    object-position: center;
-  } 
-  blockquote {
-    background: #1E1C1C;
-    padding: 30px 55px;
-    margin-top: 50px;
-  }
-  blockquote p {
-    color: #FFFCF4 !important;
-    font-size: 25px !important;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 38px !important; 
-    text-transform: uppercase;
-  }
-  .article__single .article__hero {
-    margin-bottom: 56px;
-    height: 760px;
-  }
-  @media (max-width: 768px) {
-    .article__single .article__hero {
-      margin-bottom: 40px;
-      height: 760px;
     }
   }
   
