@@ -1,11 +1,4 @@
-/*----------------------------------------------------
-Fonts
------------------------------------------------------*/
-/*----------------------------------------------------
-Ratings Mixin
-Update variables with size, spacing, and path to SVGs
-HTML Example: <div class="rating--2-5"></div>
------------------------------------------------------*/
+
 .rating--0 {
   display: inline-block;
   height: 14px;
