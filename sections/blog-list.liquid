@@ -1,3 +1,17 @@
+{%- comment -%}
+  Shopify Liquid does not expose query string params on the `request` object,
+  so detect ?sort=oldest by parsing the page URL out of content_for_header.
+{%- endcomment -%}
+{%- assign _ch_parts = content_for_header | split: '"pageurl":"' -%}
+{%- assign _page_url = _ch_parts[1] | default: '' | split: '"' | first | default: '' -%}
+{%- if _page_url contains 'sort=oldest' -%}
+  {%- assign is_oldest = true -%}
+  {%- assign sort_query = '?sort=oldest' -%}
+{%- else -%}
+  {%- assign is_oldest = false -%}
+  {%- assign sort_query = '' -%}
+{%- endif -%}
+
 <section class="blog__list tw-font-os">
   <div class="tw-container container-1420">
     <div class="article__wrap d-flex">
