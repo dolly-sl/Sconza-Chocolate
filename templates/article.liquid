@@ -630,14 +630,33 @@
     font-weight: 700;
     margin-bottom: 60px;
   }
-  .article__single .article__content img, .article__single .article__content iframe {
+  .article__single .article__content img {
+    display: block;
+    margin: 20px auto;
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    width: 100%;
+    object-position: center;
+  }
+
+  .article__single .article__content iframe {
+    display: block;
+    margin: 20px auto;
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    width: 100%;
+    object-position: center;
+  }
+  {% comment %} .article__single .article__content img, .article__single .article__content iframe {
     display: block;
     margin: 20px auto;
     height: 500px;
     object-fit: cover;
     width: 100%;
     object-position: center;
-  } 
+  }  {% endcomment %}
   blockquote {
     background: #1E1C1C;
     padding: 10px 55px 30px;
