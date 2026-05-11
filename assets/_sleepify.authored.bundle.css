@@ -2627,6 +2627,9 @@ h6,
   .cart {
     padding: 60px 0;
   }
+  .article__heading h2 {
+    line-height: 36px;
+  }
 }
 .cart__heading {
   padding-bottom: 30px;
