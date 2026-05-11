@@ -1397,7 +1397,7 @@ h6,
   }
 }
 .blog__toolbar .pagination ul li {
-  padding: 0 5px;
+  padding: 0;
 }
 .blog__toolbar .pagination ul li a,
 .blog__toolbar .pagination ul li span {
@@ -2626,6 +2626,9 @@ h6,
 @media (max-width: 768px) {
   .cart {
     padding: 60px 0;
+  }
+  .article__heading h2 {
+    line-height: 36px;
   }
 }
 .cart__heading {
