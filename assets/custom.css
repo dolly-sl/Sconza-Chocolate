@@ -676,6 +676,9 @@ padding-top: 68px;
 .top-categories-section-wrapper {
     padding-top: 20px;
 }
+.top-categories-section__card-title {
+    margin-top: 20px;
+}
 }
 
 .desktop-wrap {
