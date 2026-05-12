@@ -1,3 +1,17 @@
+{%- comment -%}
+  Shopify Liquid does not expose query string params on the `request` object,
+  so detect ?sort=oldest by parsing the page URL out of content_for_header.
+{%- endcomment -%}
+{%- assign _ch_parts = content_for_header | split: '"pageurl":"' -%}
+{%- assign _page_url = _ch_parts[1] | default: '' | split: '"' | first | default: '' -%}
+{%- if _page_url contains 'sort=oldest' -%}
+  {%- assign is_oldest = true -%}
+  {%- assign sort_query = '?sort=oldest' -%}
+{%- else -%}
+  {%- assign is_oldest = false -%}
+  {%- assign sort_query = '' -%}
+{%- endif -%}
+
 <section class="blog__list tw-font-os">
   <div class="tw-container container-1420">
     <div class="article__wrap d-flex">
@@ -12,13 +26,11 @@
 
               <div class="blog__filter-select">
                 <select id="sortBy" class="custom-dropdown-select dropdown-select">
-                  <option value="newest"
-                    {% unless request.query_string contains 'sort=oldest' %}selected{% endunless %}>
+                <option value="newest" {% unless is_oldest %}selected{% endunless %}>
                     Newest First
                   </option>
 
-                  <option value="oldest"
-                    {% if request.query_string contains 'sort=oldest' %}selected{% endif %}>
+                   <option value="oldest" {% if is_oldest %}selected{% endif %}>
                     Oldest First
                   </option>
 
@@ -58,15 +70,9 @@
 
       {%- paginate blog.articles by section.settings.posts_per_page -%}
 
-        {% if request.query_string contains 'sort=oldest' %}
-          {% for article in blog.articles reversed %}
-            {% render 'default-article', data: article %}
-          {% endfor %}
-        {% else %}
-          {% for article in blog.articles %}
-            {% render 'default-article', data: article %}
-          {% endfor %}
-        {% endif %}
+     {% for article in blog.articles %}
+          {% render 'default-article', data: article %}
+        {% endfor %}
 
         <div class="d-flex justify-between blog__toolbar  md:tw-m-0 tw-mx-10">
           <div class="page-count d-flex align-center">
@@ -265,18 +271,74 @@
 </style>
 
 <script>
-document.getElementById('sortBy').addEventListener('change', function () {
-  const sort = this.value;  
-  const url = new URL(window.location.href);
-  url.searchParams.delete('sort');
-  url.searchParams.delete('page');
- 
-  if (sort === 'oldest') {
-    url.searchParams.set('sort', 'oldest');
+
+(function () {
+  var url = new URL(window.location.href);
+  var isOldest = url.searchParams.get('sort') === 'oldest';
+
+  // 1) Reflect current sort in the dropdown (in case Liquid SSR detection failed).
+  var sortByEl = document.getElementById('sortBy');
+  if (sortByEl) {
+    sortByEl.value = isOldest ? 'oldest' : 'newest';
   }
 
-  window.location.href = url.toString();
-});
+  // 2) Reverse the article list in-place when oldest-first is requested.
+  //    Articles are always rendered newest-first by Liquid; JS handles the flip.
+  //    They live as flex children of `.article__wrap` alongside `.blog__tags`
+  //    and `.blog__toolbar` (pagination), so we re-insert them in reverse
+  //    order BEFORE the toolbar to keep pagination at the bottom.
+  if (isOldest) {
+    var wrap = document.querySelector('.blog__list .article__wrap');
+    if (wrap) {
+      var articles = wrap.querySelectorAll(':scope > .article--default');
+      var toolbar = wrap.querySelector(':scope > .blog__toolbar');
+      for (var i = articles.length - 1; i >= 0; i--) {
+        if (toolbar) {
+          wrap.insertBefore(articles[i], toolbar);
+        } else {
+          wrap.appendChild(articles[i]);
+        }
+      }
+    }
+  }
+
+
+  // 3) Make every category dropdown option preserve the current sort param
+  //    so switching tag/category keeps the chosen sort.
+  var categorySelects = document.querySelectorAll('.blog__tags select');
+  Array.prototype.forEach.call(categorySelects, function (sel) {
+    if (sel.id === 'sortBy') return;
+    Array.prototype.forEach.call(sel.options, function (opt) {
+      if (!opt.value) return;
+      try {
+        var optUrl = new URL(opt.value, window.location.origin);
+        optUrl.searchParams.delete('sort');
+        if (isOldest) optUrl.searchParams.set('sort', 'oldest');
+        opt.value = optUrl.pathname + optUrl.search;
+      } catch (err) { /* ignore non-URL values */ }
+    });
+  });
+
+  // 4) Sort dropdown change handler — navigate with updated query string.
+  //    `capture: true` + stopImmediatePropagation prevents the global
+  //    `.blog__tags select` jQuery handler (theme bundle) from hijacking it.
+  if (sortByEl) {
+    sortByEl.addEventListener('change', function (e) {
+      e.stopImmediatePropagation();
+
+      var sort = this.value;
+      var nextUrl = new URL(window.location.href);
+      nextUrl.searchParams.delete('sort');
+      nextUrl.searchParams.delete('page');
+
+      if (sort === 'oldest') {
+        nextUrl.searchParams.set('sort', 'oldest');
+      }
+
+      window.location.href = nextUrl.toString();
+    }, true);
+  }
+})();
 </script>
 {% schema %}
 {
