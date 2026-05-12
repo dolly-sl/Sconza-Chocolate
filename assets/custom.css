@@ -1438,9 +1438,9 @@ margin-bottom: 0;
     width: 100%;
     object-position: center;
   } 
-  blockquote {
+  .article__content blockquote {
     background: #1E1C1C;
-    padding: 10px 55px 30px;
+    padding: 13px 134px 42px 57px;
     margin-top: 50px;
   }
   .article__content blockquote p {
