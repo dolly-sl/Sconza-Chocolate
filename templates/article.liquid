@@ -765,3 +765,17 @@
   }
   
 </style>
+<script>
+window.addEventListener('load', function () {
+  document.querySelectorAll('.article__content p').forEach((p) => {
+    const clean = p.innerHTML
+      .replace(/&nbsp;/g, '')
+      .replace(/\s/g, '')
+      .replace(/<br\s*\/?>/g, '');
+
+    if (clean === '') {
+      p.remove();
+    }
+  });
+});
+</script>
