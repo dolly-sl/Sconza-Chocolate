@@ -902,6 +902,9 @@ margin-bottom: 0;
     .article__image img {
       height: calc(80.1vw - 20px);
     }
+    .article--default .article__image {
+        margin-bottom: 10px;
+    }
   }
 
  /* ── Product Card ─────────────────────────────────────── */
