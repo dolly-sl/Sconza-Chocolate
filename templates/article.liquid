@@ -676,6 +676,9 @@
     margin-bottom: 56px;
     height: 760px;
   }
+  .article__content p:empty {
+    display: none;
+  }
   @media (max-width: 992px) {
     .article__single .article__footer .article__pagination {
       display: flex;
@@ -759,6 +762,34 @@
     .article__footer {
       padding: 17px 0 19px !important;
     }
+    .article__content blockquote p {
+      font-size: 20px !important;
+      line-height: 33px !important; 
+    }
   }
   
 </style>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  document.querySelectorAll('.article__content p').forEach(function (p) {
+    // Clone and remove child elements to check text-only content
+    var clone = p.cloneNode(true);
+
+    // Remove <br> tags
+    clone.querySelectorAll('br').forEach(function (br) { br.remove(); });
+
+    // Get text, strip &nbsp; (actual non-breaking space char) and whitespace
+    var text = clone.textContent.replace(/[\u00a0\s]+/g, '');
+
+    // Also check if only contains empty inline tags
+    var html = p.innerHTML
+      .replace(/<br\s*\/?>/gi, '')
+      .replace(/&nbsp;/g, '')
+      .replace(/\s+/g, '');
+
+    if (text === '' && html === '') {
+      p.style.display = 'none';
+    }
+  });
+});
+</script>
