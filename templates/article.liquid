@@ -164,7 +164,13 @@
           {% endunless %}
         {% endfor %}
         
-        {{ final_content }}
+        {% assign cleaned_content = final_content
+  | replace: '&nbsp;', ''
+  | replace: '<p style="text-align: left;"></p>', ''
+  | replace: '<p></p>', ''
+%}
+
+{{ cleaned_content }}
 
       </div>
 
