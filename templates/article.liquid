@@ -766,15 +766,25 @@
   
 </style>
 <script>
-window.addEventListener('load', function () {
-  document.querySelectorAll('.article__content p').forEach((p) => {
-    const clean = p.innerHTML
-      .replace(/&nbsp;/g, '')
-      .replace(/\s/g, '')
-      .replace(/<br\s*\/?>/g, '');
+document.addEventListener('DOMContentLoaded', function () {
+  document.querySelectorAll('.article__content p').forEach(function (p) {
+    // Clone and remove child elements to check text-only content
+    var clone = p.cloneNode(true);
 
-    if (clean === '') {
-      p.remove();
+    // Remove <br> tags
+    clone.querySelectorAll('br').forEach(function (br) { br.remove(); });
+
+    // Get text, strip &nbsp; (actual non-breaking space char) and whitespace
+    var text = clone.textContent.replace(/[\u00a0\s]+/g, '');
+
+    // Also check if only contains empty inline tags
+    var html = p.innerHTML
+      .replace(/<br\s*\/?>/gi, '')
+      .replace(/&nbsp;/g, '')
+      .replace(/\s+/g, '');
+
+    if (text === '' && html === '') {
+      p.style.display = 'none';
     }
   });
 });
