@@ -179,6 +179,19 @@
       }
     }
   </style>
+<script>
+  (function () {
+    var url = new URL(window.location.href);
+    var page = parseInt(url.searchParams.get('page') || '1', 10);
+    if (page > 1) {
+      var hero = document.querySelector('.blog__hero');
+      if (hero) hero.style.display = 'none';
+      // Also hide the banner section if needed:
+      var banner = document.querySelector('.blog-hero-banner');
+      if (banner) banner.style.display = 'none';
+    }
+  })();
+</script>
 </section>
 
 {% schema %}
