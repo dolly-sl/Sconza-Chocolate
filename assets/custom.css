@@ -1048,6 +1048,12 @@ margin-bottom: 0;
     .sc-product-card__btn {
       width: 100%;
     }
+    .article__single .article__content img {
+        height: 174px;
+    }
+    .article__single .article__content iframe {
+        height: 180px;
+    }
   }
 
   /* ── Mobile ───────────────────────────────────────────── */
