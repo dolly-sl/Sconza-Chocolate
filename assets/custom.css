@@ -905,6 +905,9 @@ margin-bottom: 0;
     .article--default .article__image {
         margin-bottom: 10px;
     }
+    .article--default .article__tags {
+        margin-bottom: 5px;
+    }
   }
 
  /* ── Product Card ─────────────────────────────────────── */
