@@ -1410,6 +1410,7 @@ margin-bottom: 0;
     color: #1E1C1C;
     font-weight: 700;
     margin-bottom: 60px;
+    line-height: 60px;
   }
   .article__single .article__content img {
     display: block;
