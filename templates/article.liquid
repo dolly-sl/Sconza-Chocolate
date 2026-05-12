@@ -164,7 +164,10 @@
           {% endunless %}
         {% endfor %}
         
-        {{ final_content }}
+        {{ final_content
+          | replace: '<p style="text-align: left;">&nbsp;</p>', ''
+          | replace: '<p>&nbsp;</p>', ''
+        }}
 
       </div>
 
@@ -676,7 +679,7 @@
     margin-bottom: 56px;
     height: 760px;
   }
-  .article__content p:empty {
+  .article__single .article__content p:empty {
     display: none;
   }
   @media (max-width: 992px) {
