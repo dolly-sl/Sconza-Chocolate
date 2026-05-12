@@ -493,7 +493,7 @@ background:black!important;
 }
 @media (max-width: 768px) {
     .blog__hero {
-    padding-top: 24px;
+    padding-top: 31px;
     }
     .featured-blog-container img {
     height: 280px;
