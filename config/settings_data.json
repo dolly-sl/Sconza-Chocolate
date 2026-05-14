@@ -767,7 +767,7 @@
       "featured-blog": {
         "type": "featured-blog",
         "settings": {
-          "featured_article": ""
+          "featured_article": "blog/how-to-make-candy-ice-cream-at-home"
         }
       }
     },
