@@ -390,7 +390,6 @@
       "blog-hero": {
         "type": "blog-hero",
         "settings": {
-          "featured_article": "news/blog-title-lorem-ipsum-dolor",
           "heading": "Delicious Insights from the heart of Sconza",
           "subheading": "Our Blog",
           "image": "shopify://shop_images/blog-banner-bg.png"
@@ -714,7 +713,7 @@
             "type": "category_card",
             "settings": {
               "image": "shopify://shop_images/category1.jpg",
-              "card_title": "Category 1",
+              "card_title": "Category 1 loream ipsum dummy text goes here",
               "link": "#"
             }
           },
@@ -736,6 +735,7 @@
           },
           "category_card_k8Xftb": {
             "type": "category_card",
+            "disabled": true,
             "settings": {
               "image": "shopify://shop_images/category4.jpg",
               "card_title": "Category 4",
@@ -744,6 +744,7 @@
           },
           "category_card_PN9meM": {
             "type": "category_card",
+            "disabled": true,
             "settings": {
               "image": "shopify://shop_images/category1.jpg",
               "card_title": "Category 5",
@@ -760,6 +761,12 @@
         ],
         "settings": {
           "title": "Explore our top CATEGORIES"
+        }
+      },
+      "featured-blog": {
+        "type": "featured-blog",
+        "settings": {
+          "featured_article": ""
         }
       }
     },

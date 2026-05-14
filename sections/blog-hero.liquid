@@ -11,6 +11,57 @@
   </div>
 </section>
 
+<section class="blog__hero">
+  {% liquid
+    if section.settings.featured_article != blank
+      assign display_article = section.settings.featured_article
+    else
+      assign display_article = blog.articles.first
+    endif
+  %}
+
+  {% if display_article != blank %}
+    <div class="tw-container container-1420 featured-blog-container">
+      <div class="tw-flex tw-flex-wrap md:tw-flex-nowrap tw-justify-between tw-items-center">
+        <a href="{{ display_article.url }}" class="md:tw-w-1/2 tw-w-full">
+          <img
+            width="670"
+            height="465"
+            src="{{ display_article.image | image_url }}"
+            alt="{{ display_article.image.alt }}"
+            class="tw-w-full">
+        </a>
+
+        <div class="md:tw-w-1/2 tw-w-full featured-right-content">
+          <div class="inner tw-text-left">
+            <p class="tw-text-mainGold tw-text-xl md:tw-text-3xl lg:tw-text-[35px] tw-font-script">Featured Post</p>
+            <a href="{{ display_article.url }}" class="">
+              <h2 class="tw-text-mainBlack2 tw-text-[35px] tw-font-bold tw-font-osc tw-uppercase tw-text-left">
+                {{ display_article.title }}
+              </h2>
+            </a>
+            <p class="description tw-text-base tw-leading-6 tw-font-os tw-text-mainBlack tw-mt-2 tw-mt-[20px]">
+              {{ display_article.content | strip_html | truncatewords: 55, '...' }}
+            </p>
+            <a href="{{ display_article.url }}" class="btn-primary">Read More</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endif %}
+
+  <script>
+    (function () {
+      var url = new URL(window.location.href);
+      var page = parseInt(url.searchParams.get('page') || '1', 10);
+      if (page > 1) {
+        var hero = document.querySelector('.blog__hero');
+        if (hero) hero.style.display = 'none';
+      }
+    })();
+  </script>
+</section>
+
 {% schema %}
   {
     "name": "Blog Hero",
