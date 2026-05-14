@@ -390,7 +390,7 @@
       "blog-hero": {
         "type": "blog-hero",
         "settings": {
-          "featured_article": "news/blog-title-lorem-ipsum-dolor",
+          "featured_article": "blog/start-planning-for-valentines",
           "heading": "Delicious Insights from the heart of Sconza",
           "subheading": "Our Blog",
           "image": "shopify://shop_images/blog-banner-bg.png"
