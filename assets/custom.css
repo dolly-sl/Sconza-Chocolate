@@ -1584,3 +1584,6 @@ margin-bottom: 0;
 .blog-hero-banner .blog-main-title {
     margin-top: 10px;
 }
+.top-categories-swiper.is-centered .swiper-wrapper {
+    justify-content: center;
+  }
