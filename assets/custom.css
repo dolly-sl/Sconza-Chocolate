@@ -679,6 +679,9 @@ padding-top: 68px;
 .top-categories-section__card-title {
     margin-top: 20px;
 }
+.featured-blog-inner {
+  flex-wrap: wrap;
+}
 }
 @media (max-width: 600px) {
 .top-categories-section__slide .image-section {
