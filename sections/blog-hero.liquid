@@ -1,6 +1,6 @@
 <section class="tw-bg-no-repeat tw-relative tw-z-0 before:tw--z-10 before:tw-absolute before:tw-left-0 before:tw-top-0 before:tw-size-full before:tw-bg-menuOverlay tw-bg-cover before:tw-mix-blend-multiply blog-hero-banner"  style="background-image: url({{ section.settings.image | image_url }});">
   <div class="wrapper">
-    <div class="tw-h-[500px] sm:tw-h-[600px] md:tw-h-[370px] tw-text-center tw-flex tw-justify-center tw-items-center tw-flex-col blog-hero-banner">
+    <div class="sm:tw-h-[600px] md:tw-h-[370px] tw-text-center tw-flex tw-justify-center tw-items-center tw-flex-col blog-hero-banner">
       <p class="tw-text-mainGold tw-text-xl md:tw-text-3xl lg:tw-text-4xl tw-font-script">
         {{ section.settings.subheading }}
       </p>
@@ -11,126 +11,21 @@
   </div>
 </section>
 
-<section class="blog__hero">
-  {% if section.settings.featured_article != blank %}
-    <a href="{{ section.settings.featured_article.url }}" class="md:tw-w-1/2 tw-w-full">
-      <img
-        width="620"
-        height="500"
-        src="{{ section.settings.featured_article.image | img_url: '1240' }}"
-        alt="{{ section.settings.featured_article.image.alt }}"
-        class="tw-w-full">
-    </a>
-
-    <div class="hero__copy">
-      <div class="inner text-center">
-        <a href="{{ section.settings.featured_article.url }}" class="">
-          <h1>{{ section.settings.featured_article.title }}</h1>
-        </a>
-        <p>{{ section.settings.featured_article.content | strip_html | truncatewords: 20, '...' }}</p>
-        <a href="{{ section.settings.featured_article.url }}" class="btn-primary-">Read More</a>
-      </div>
-    </div>
-
-    {% if section.settings.featured_article.metafields.global.featured_image_mobile != blank %}
-      <style>
-        .hero__image--mobile {
-          display: none;
-        }
-        @media (max-width: 576px) {
-          .hero__image--desktop {
-            display: none;
-          }
-
-          .hero__image--mobile {
-            display: block;
-          }
-        }
-      </style>
-    {% endif %}
-
-  {% else %}
-    {% for article in blog.articles limit: 1 %}
-      <div class="tw-container container-1420 featured-blog-container">
-        <div class="tw-flex tw-flex-wrap md:tw-flex-nowrap tw-justify-between tw-items-center">
-          <a href="{{ article.url }}" class="md:tw-w-1/2 tw-w-full">
-            <img
-              width="670"
-              height="465"
-              src="{{ article.image | image_url }}"
-              alt="{{ article.image.alt }}"
-              class="tw-w-full">
-          </a>
-
-          <div class="md:tw-w-1/2 tw-w-full featured-right-content">
-            <div class="inner tw-text-left">
-              <p class="tw-text-mainGold tw-text-xl md:tw-text-3xl lg:tw-text-[35px] tw-font-script">Featured Post</p>
-              <a href="{{ article.url }}" class="">
-                <h2 class="tw-text-mainBlack2 tw-text-[35px] tw-font-bold tw-font-osc tw-uppercase tw-text-left">
-                  {{ article.title }}
-                </h2>
-              </a>
-              <p class="description tw-text-base tw-leading-6 tw-font-os tw-text-mainBlack tw-mt-2 tw-mt-[20px] ">
-                {{ article.content | strip_html | truncatewords: 55, '...' }}
-              </p>
-              {% comment %} <p class="tw-text-sm tw-text-mainBlack tw-font-os tw-italic tw-opacity-60 tw-mt-1">
-                {{ article.created_at | date: '%B %d, %Y' }}
-              </p> {% endcomment %}
-              <a href="{{ article.url }}" class="btn-primary">Read More</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {% if article.metafields.global.featured_image_mobile != blank %}
-        <style>
-          .hero__image--mobile {
-            display: none;
-          }
-          @media (max-width: 576px) {
-            .hero__image--desktop {
-              display: none;
-            }
-
-            .hero__image--mobile {
-              display: block;
-            }
-          }
-        </style>
-      {% endif %}
-    {% endfor %}
-  {% endif %}
-
-<script>
-  (function () {
-    var url = new URL(window.location.href);
-    var page = parseInt(url.searchParams.get('page') || '1', 10);
-    if (page > 1) {
-      var hero = document.querySelector('.blog__hero');
-      if (hero) hero.style.display = 'none';
-     
-    }
-  })();
-</script>
-</section>
-
 {% schema %}
   {
     "name": "Blog Hero",
     "settings": [
       {
-        "id": "featured_article",
-        "type": "article",
-        "label": "Choose Featured Article"
-      }, {
         "id": "heading",
         "type": "text",
         "label": "Heading"
-      }, {
+      },
+      {
         "id": "subheading",
         "type": "text",
         "label": "SubHeading"
-      }, {
+      },
+      {
         "id": "image",
         "type": "image_picker",
         "label": "Hero Image"
