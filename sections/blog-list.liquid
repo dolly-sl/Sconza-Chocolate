@@ -18,8 +18,11 @@
       <div class="blog__tags">
         <div class="desktop-wrap">
           <div class="blog__tags-header d-flex align-center justify-between">
-            <h2 class="tw-text-mainBlack2 tw-text-[35px] tw-font-bold tw-font-osc tw-uppercase tw-text-left">
+            {% comment %} <h2 class="tw-text-mainBlack2 tw-text-[35px] tw-font-bold tw-font-osc tw-uppercase tw-text-left">
               Recent Posts
+            </h2> {% endcomment %}
+            <h2 class="tw-text-mainBlack2 tw-text-[35px] tw-font-bold tw-font-osc tw-uppercase tw-text-left">
+              {{ section.settings.title | default: 'Recent Posts' }}
             </h2>
 
             <div class="blog__filters d-flex align-center">
@@ -183,6 +186,12 @@
 {
   "name": "Blog List",
   "settings": [
+    {
+      "id": "title",
+      "type": "text",
+      "label": "Title",
+      "default": "Recent Posts"
+    },
     {
       "id": "posts_per_page",
       "type": "number",
