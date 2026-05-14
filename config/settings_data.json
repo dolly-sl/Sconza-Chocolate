@@ -714,7 +714,7 @@
             "type": "category_card",
             "settings": {
               "image": "shopify://shop_images/category1.jpg",
-              "card_title": "Category 1",
+              "card_title": "Category 1 loream ipsum dummy text goes here",
               "link": "#"
             }
           },
