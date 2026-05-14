@@ -123,44 +123,44 @@
 
 {% schema %}
 {
-  "name": "Top Categories Slider",
+  "name": "4 Card Slider",
   "tag": "section",
   "class": "top-categories-section-wrapper",
   "settings": [
     {
       "type": "text",
       "id": "title",
-      "label": "Section Title",
+      "label": "Title",
       "default": "Explore Our Top Categories"
     }
   ],
   "blocks": [
     {
       "type": "category_card",
-      "name": "Category Card",
+      "name": "Card",
       "settings": [
         {
           "type": "image_picker",
           "id": "image",
-          "label": "Card Image"
+          "label": "Image"
         },
         {
           "type": "text",
           "id": "card_title",
-          "label": "Card Title",
+          "label": "Title",
           "default": "Category Name"
         },
         {
           "type": "url",
           "id": "link",
-          "label": "Card Link"
+          "label": "Link"
         }
       ]
     }
   ],
   "presets": [
     {
-      "name": "Top Categories Slider",
+      "name": "4 Card Slider",
       "blocks": [
         {
           "type": "category_card",
