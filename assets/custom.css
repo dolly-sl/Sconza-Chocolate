@@ -680,7 +680,7 @@ padding-top: 68px;
     margin-top: 20px;
 }
 }
-@media (max-width: 480px) {
+@media (max-width: 600px) {
 .top-categories-section__slide .image-section {
     height: calc(83vw - 10px);
 }
