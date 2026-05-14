@@ -736,7 +736,6 @@
           },
           "category_card_k8Xftb": {
             "type": "category_card",
-            "disabled": true,
             "settings": {
               "image": "shopify://shop_images/category4.jpg",
               "card_title": "Category 4",
@@ -745,7 +744,6 @@
           },
           "category_card_PN9meM": {
             "type": "category_card",
-            "disabled": true,
             "settings": {
               "image": "shopify://shop_images/category1.jpg",
               "card_title": "Category 5",
