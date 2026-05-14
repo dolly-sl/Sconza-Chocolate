@@ -189,14 +189,21 @@
     {
       "id": "title",
       "type": "text",
-      "label": "Title",
+      "label": "Section Title",
+      "info": "Heading displayed above the blog article grid. Defaults to 'Recent Posts' if left unchanged.",
       "default": "Recent Posts"
     },
     {
       "id": "posts_per_page",
       "type": "number",
-      "label": "Articles / Page",
+      "label": "Articles Per Page",
+      "info": "Controls how many blog articles are displayed per page before pagination kicks in. Recommended values are 6, 9, or 12 to maintain a clean grid layout.",
       "default": 12
+    }
+  ],
+  "presets": [
+    {
+      "name": "Blog List"
     }
   ]
 }
