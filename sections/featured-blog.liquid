@@ -51,12 +51,18 @@
 
 {% schema %}
   {
-    "name": "Featured Blog",
+    "name": "Featured Blog Hero",
     "settings": [
       {
         "id": "featured_article",
         "type": "article",
-        "label": "Choose Featured blog"
+        "label": "Featured Blog Post",
+        "info": "Select a specific article to highlight in the hero section. If left blank, the most recent article from the current blog will be displayed automatically."
+      }
+    ],
+    "presets": [
+      {
+        "name": "Featured Blog Hero"
       }
     ]
   }
