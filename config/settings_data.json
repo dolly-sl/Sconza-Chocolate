@@ -744,6 +744,7 @@
           },
           "category_card_PN9meM": {
             "type": "category_card",
+            "disabled": true,
             "settings": {
               "image": "shopify://shop_images/category1.jpg",
               "card_title": "Category 5",
