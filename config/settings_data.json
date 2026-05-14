@@ -390,7 +390,6 @@
       "blog-hero": {
         "type": "blog-hero",
         "settings": {
-          "featured_article": "blog/start-planning-for-valentines",
           "heading": "Delicious Insights from the heart of Sconza",
           "subheading": "Our Blog",
           "image": "shopify://shop_images/blog-banner-bg.png"
@@ -736,7 +735,6 @@
           },
           "category_card_k8Xftb": {
             "type": "category_card",
-            "disabled": true,
             "settings": {
               "image": "shopify://shop_images/category4.jpg",
               "card_title": "Category 4",
@@ -762,6 +760,12 @@
         ],
         "settings": {
           "title": "Explore our top CATEGORIES"
+        }
+      },
+      "featured-blog": {
+        "type": "featured-blog",
+        "settings": {
+          "featured_article": ""
         }
       }
     },
