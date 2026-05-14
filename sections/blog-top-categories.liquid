@@ -146,30 +146,34 @@
     {
       "type": "text",
       "id": "title",
-      "label": "Title",
+      "label": "Section Title",
+      "info": "Main heading displayed above the card slider. Defaults to 'Explore Our Top Categories' if left unchanged.",
       "default": "Explore Our Top Categories"
     }
   ],
   "blocks": [
     {
       "type": "category_card",
-      "name": "Card",
+      "name": "Category Card",
       "settings": [
         {
           "type": "image_picker",
           "id": "image",
-          "label": "Image"
+          "label": "Card Image",
+          "info": "Upload or select an image to represent this category. Recommended to use consistent dimensions across all cards for a uniform slider appearance."
         },
         {
           "type": "text",
           "id": "card_title",
-          "label": "Title",
+          "label": "Card Title",
+          "info": "The category name displayed on or below the card. Keep it short and descriptive (e.g. 'Living Room', 'Outdoor Furniture').",
           "default": "Category Name"
         },
         {
           "type": "url",
           "id": "link",
-          "label": "Link"
+          "label": "Card Link",
+          "info": "URL the card navigates to when clicked. Link to a collection, page, or any relevant destination."
         }
       ]
     }
