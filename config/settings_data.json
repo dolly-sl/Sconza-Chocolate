@@ -638,6 +638,7 @@
       "blog-list": {
         "type": "blog-list",
         "settings": {
+          "title": "Recent Posts",
           "posts_per_page": 9
         }
       },
@@ -735,7 +736,6 @@
           },
           "category_card_k8Xftb": {
             "type": "category_card",
-            "disabled": true,
             "settings": {
               "image": "shopify://shop_images/category4.jpg",
               "card_title": "Category 4",
