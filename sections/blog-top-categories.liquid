@@ -11,29 +11,34 @@
       <h2 class="top-categories-section__title tw-text-[35px] tw-font-bold tw-font-osc tw-uppercase tw-text-center">{{ section.settings.title }}</h2>
     {% endif %}
 
+    {% assign category_blocks = section.blocks | where: 'type', 'category_card' %}
+    {% assign block_count = category_blocks | size %}
+
     <div class="top-categories-section__wrapper tw-relative">
 
-      <!-- Navigation Buttons -->
-      <button
-        type="button"
-        class="tw-absolute tw-z-10 tw-top-[40%] tw-hidden tw--translate-y-1/2 tw-left-10 lg:tw-left-4 button-prev-categories md:tw-block animate"
-        tabindex="-1"
-        aria-label="Previous slide"
-        aria-disabled="true">
-        <img src="{{ 'carousel-button-prev.svg' | asset_url }}" alt="button prev">
-      </button>
+      <!-- Navigation Buttons (only show if more than 4 cards) -->
+      {% if block_count > 4 %}
+        <button
+          type="button"
+          class="tw-absolute tw-z-10 tw-top-[40%] tw-hidden tw--translate-y-1/2 tw-left-10 lg:tw-left-4 button-prev-categories md:tw-block animate"
+          tabindex="-1"
+          aria-label="Previous slide"
+          aria-disabled="true">
+          <img src="{{ 'carousel-button-prev.svg' | asset_url }}" alt="button prev">
+        </button>
 
-      <button
-        type="button"
-        class="tw-absolute tw-z-10 tw-top-[40%] tw-hidden tw--translate-y-1/2 tw-right-10 lg:tw-right-4 button-next-categories md:tw-block animate"
-        tabindex="0"
-        aria-label="Next slide"
-        aria-disabled="false">
-        <img src="{{ 'carousel-button-next.svg' | asset_url }}" alt="button next">
-      </button>
+        <button
+          type="button"
+          class="tw-absolute tw-z-10 tw-top-[40%] tw-hidden tw--translate-y-1/2 tw-right-10 lg:tw-right-4 button-next-categories md:tw-block animate"
+          tabindex="0"
+          aria-label="Next slide"
+          aria-disabled="false">
+          <img src="{{ 'carousel-button-next.svg' | asset_url }}" alt="button next">
+        </button>
+      {% endif %}
 
       <!-- Swiper -->
-      <div class="swiper top-categories-swiper">
+      <div class="swiper top-categories-swiper {% if block_count <= 3 %}is-centered{% endif %}">
         <div class="swiper-wrapper">
 
           {% for block in section.blocks %}
@@ -86,19 +91,27 @@
   </div>
 </section>
 
+<style>
+  .top-categories-swiper.is-centered .swiper-wrapper {
+    justify-content: center;
+  }
+</style>
+
 <script>
   (function () {
     var el = document.querySelector('.top-categories-swiper');
     if (!el) return;
 
+    var blockCount = {{ block_count }};
+
     var swiper = new Swiper('.top-categories-swiper', {
       slidesPerView: 1,
       spaceBetween: 16,
       grabCursor: true,
-      navigation: {
+      navigation: blockCount > 4 ? {
         prevEl: '.button-prev-categories',
         nextEl: '.button-next-categories',
-      },
+      } : false,
       pagination: {
         el: '.top-categories-swiper-pagination',
         clickable: true,
