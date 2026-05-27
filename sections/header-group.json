@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "type": "header",
   "name": "Header Group",
@@ -10,8 +19,8 @@
           "settings": {
             "heading": "Mix & Match",
             "link_text": "Shop Now",
-            "link_url": "shopify:\/\/collections\/mix-match-1",
-            "image": "shopify:\/\/shop_images\/mixmatch4pack.jpg"
+            "link_url": "shopify://collections/build-you-own-bundle",
+            "image": "shopify://shop_images/mixmatch4pack.jpg"
           }
         },
         "mega_menu_Lemoncello": {
@@ -19,8 +28,8 @@
           "settings": {
             "heading": "Lemoncello Season",
             "link_text": "Shop Now",
-            "link_url": "shopify:\/\/collections\/lemoncello-1",
-            "image": "shopify:\/\/shop_images\/Lemoncello.jpg"
+            "link_url": "shopify://collections/lemoncello-1",
+            "image": "shopify://shop_images/Lemoncello.jpg"
           }
         },
         "mega_menu_cta_pgtign": {
@@ -29,8 +38,8 @@
           "settings": {
             "heading": "Holiday Season",
             "link_text": "Shop Now",
-            "link_url": "shopify:\/\/collections\/seasonal-1",
-            "image": "shopify:\/\/shop_images\/Shopify_Menu_Image.png"
+            "link_url": "shopify://collections/seasonal-1",
+            "image": "shopify://shop_images/Shopify_Menu_Image.png"
           }
         },
         "alert_bar_shipping": {
@@ -45,14 +54,14 @@
           "type": "alert_bar",
           "settings": {
             "content": "Warm Weather ☀️ Meltable items ship FedEx 2-Day",
-            "link": "shopify:\/\/pages\/shipping-policy"
+            "link": "shopify://pages/shipping-policy"
           }
         },
         "alert_bar_promo": {
           "type": "alert_bar",
           "settings": {
             "content": "20% off Jordan Almonds 💛 Automatically applied at checkout",
-            "link": "shopify:\/\/collections\/jordan-almonds"
+            "link": "shopify://collections/jordan-almonds"
           }
         }
       },
@@ -75,19 +84,19 @@
           "type": "text",
           "disabled": true,
           "settings": {
-            "alert": "<p><strong>Free Shipping on Orders $75+<\/strong><\/p>"
+            "alert": "<p><strong>Free Shipping on Orders $75+</strong></p>"
           }
         },
         "text_xKGXCG": {
           "type": "text",
           "settings": {
-            "alert": "<p>Warm Weather ☀️ Meltable items ship FedEx 2-Day<\/p>"
+            "alert": "<p>Warm Weather ☀️ Meltable items ship FedEx 2-Day</p>"
           }
         },
         "text_QtCpbC": {
           "type": "text",
           "settings": {
-            "alert": "<p><strong>20% off Jordan Almonds 💛 Automatically applied at checkout<\/strong><\/p>"
+            "alert": "<p><strong>20% off Jordan Almonds 💛 Automatically applied at checkout</strong></p>"
           }
         }
       },
